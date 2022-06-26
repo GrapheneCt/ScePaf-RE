@@ -1,0 +1,140 @@
+emd: 1
+
+Library: ScePafResource attr: auto_export
+Library: ScePafResource version: 1
+Library: ScePafResource stubfile: "libScePafResource_stub"
+Library: ScePafResource nidsuffix: "PAF"
+Library: ScePafResource libnamenid: 0x2836DC9B
+Library: ScePafResource function: _ZN3paf3rco7Element7GetHashEPNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE nidvalue: 0x5F05DE68
+Library: ScePafResource function: _ZN3paf3rco8Resource10GetWStringEjPPKwPj nidvalue: 0x55EB9585
+Library: ScePafResource function: _ZN3paf3rco8Resource10GetWStringEPKcPPKwPj nidvalue: 0x50CD574F
+Library: ScePafResource function: _ZN3paf3rco8Resource10GetWStringERKNS_4cxml7ElementEPPKwPj nidvalue: 0x47A0AC77
+Library: ScePafResource function: _ZN3paf3rco8Resource10GetTextureEjPNS_4cxml4FileEPjPNS1_13TextureFormatE nidvalue: 0x3FA9B5D3
+Library: ScePafResource function: _ZN3paf3rco8Resource10GetTextureEPKcPNS_4cxml4FileEPjPNS1_13TextureFormatE nidvalue: 0x5E1D961A
+Library: ScePafResource function: _ZN3paf3rco8Resource10GetTextureERKNS_4cxml7ElementEPNS2_4FileEPjPNS1_13TextureFormatE nidvalue: 0x5E48B664
+Library: ScePafResource function: _ZN3paf3rco8Resource8GetModelEjPNS_4cxml4FileEPjPNS1_11ModelFormatE nidvalue: 0xC3185EF6
+Library: ScePafResource function: _ZN3paf3rco8Resource8GetModelEPKcPNS_4cxml4FileEPjPNS1_11ModelFormatE nidvalue: 0xACD33BFC
+Library: ScePafResource function: _ZN3paf3rco8Resource8GetModelERKNS_4cxml7ElementEPNS2_4FileEPjPNS1_11ModelFormatE nidvalue: 0xC88E6968
+Library: ScePafResource function: _ZN3paf3rco8Resource8GetSoundEjPNS_4cxml4FileEPjS4_S5_S5_PNS1_11SoundFormatE nidvalue: 0x08129BF8
+Library: ScePafResource function: _ZN3paf3rco8Resource8GetSoundEPKcPNS_4cxml4FileEPjS6_S7_S7_PNS1_11SoundFormatE nidvalue: 0xBEAEA02A
+Library: ScePafResource function: _ZN3paf3rco8Resource8GetSoundERKNS_4cxml7ElementEPNS2_4FileEPjS7_S8_S8_PNS1_11SoundFormatE nidvalue: 0xB4714AEA
+Library: ScePafResource function: _ZN3paf3rco8Resource7GetFileEjPvPjPPKcPNS_6memory13HeapAllocatorE nidvalue: 0xDB5B79E2
+Library: ScePafResource function: _ZN3paf3rco8Resource7GetFileEPKcPvPjPS3_PNS_6memory13HeapAllocatorE nidvalue: 0x255017C9
+Library: ScePafResource function: _ZN3paf3rco8Resource7GetFileERKNS_4cxml7ElementEPvPjPPKcPNS_6memory13HeapAllocatorE nidvalue: 0x9265619A
+Library: ScePafResource function: _ZN3paf3rco8Resource7GetFileEjPjPPKcPNS_6memory13HeapAllocatorES8_ nidvalue: 0x23195E5E
+Library: ScePafResource function: _ZN3paf3rco8Resource7GetFileEPKcPjPS3_PNS_6memory13HeapAllocatorES8_ nidvalue: 0xDAE529C6
+Library: ScePafResource function: _ZN3paf3rco8Resource7GetFileERKNS_4cxml7ElementEPjPPKcPNS_6memory13HeapAllocatorESC_ nidvalue: 0x10E92A4E
+Library: ScePafResource function: _ZN3paf3rco8Resource14IsRegisteredIDEPKcb nidvalue: 0x9228A0D1
+Library: ScePafResource function: _ZN3paf3rco8Resource18IsRegisteredIDHashEj nidvalue: 0x0F67A8FC
+Library: ScePafResource function: _ZNK3paf3rco8Resource11GetDocumentEv nidvalue: 0x80B84E6A
+Library: ScePafResource function: _ZNK3paf3rco8Resource8GetErrorEv nidvalue: 0x04FC462E
+Library: ScePafResource function: _ZNK3paf3rco8Resource7GetTypeEv nidvalue: 0xE3349545
+Library: ScePafResource function: _ZNK3paf3rco8Resource7GetPathEv nidvalue: 0xFA00F835
+Library: ScePafResource function: _ZN3paf3rco8Resource9FindTableENS1_9TableTypeE nidvalue: 0xA7368FD6
+Library: ScePafResource function: _ZN3paf3rco8ResourceC1EPKcPNS1_9InitParamE nidvalue: 0xA70524AD
+Library: ScePafResource function: _ZN3paf3rco8ResourceC2EPKcPNS1_9InitParamE nidvalue: 0x20EA3ADB
+Library: ScePafResource function: _ZN3paf3rco8ResourceC1EPvjPNS1_9InitParamE nidvalue: 0x9E3EE281
+Library: ScePafResource function: _ZN3paf3rco8ResourceC2EPvjPNS1_9InitParamE nidvalue: 0xE629FBF7
+Library: ScePafResource function: _ZN3paf3rco8ResourceD1Ev nidvalue: 0xF194FC6D
+Library: ScePafResource function: _ZN3paf3rco8ResourceD2Ev nidvalue: 0xE617D3AE
+
+Library: ScePafResource function: _ZN3paf3rco12ResourceBaseC1Ev nidvalue: 0x180EF1B4
+Library: ScePafResource function: _ZN3paf3rco12ResourceBaseC2Ev nidvalue: 0xBF8B4FF0
+Library: ScePafResource function: _ZN3paf3rco12ResourceBaseD1Ev nidvalue: 0x4E57A8A9
+Library: ScePafResource function: _ZN3paf3rco12ResourceBaseD0Ev nidvalue: 0xF415C2AB
+Library: ScePafResource function: _ZN3paf3rco12ResourceBaseD2Ev nidvalue: 0x3EAF348A
+Library: ScePafResource function: _ZNK3paf3rco12ResourceBase4nameEv nidvalue: 0xDE473E9E
+
+Library: ScePafResource function: _ZNK3paf3rco11widget_base4nameEv nidvalue: 0xAB60522E
+
+Library: ScePafResource function: _ZNK3paf3rco7DrawObj4nameEv nidvalue: 0x87DB69C5
+
+Library: ScePafResource function: _ZN3paf3rco10LayoutHintC1Ev nidvalue: 0x58A930A8
+Library: ScePafResource function: _ZN3paf3rco10LayoutHintC2Ev nidvalue: 0x4C8794CC
+Library: ScePafResource function: _ZN3paf3rco10LayoutHintD1Ev nidvalue: 0xF6FED963
+Library: ScePafResource function: _ZN3paf3rco10LayoutHintD0Ev nidvalue: 0x614CB16D
+Library: ScePafResource function: _ZN3paf3rco10LayoutHintD2Ev nidvalue: 0x5453FB74
+Library: ScePafResource function: _ZNK3paf3rco10LayoutHint4nameEv nidvalue: 0x122101EC
+
+Library: ScePafResource function: _ZN3paf3rco9FocusHintC1Ev nidvalue: 0x880B1C31
+Library: ScePafResource function: _ZN3paf3rco9FocusHintC2Ev nidvalue: 0xB6D81DC8
+Library: ScePafResource function: _ZN3paf3rco9FocusHintD1Ev nidvalue: 0xE9983D49
+Library: ScePafResource function: _ZN3paf3rco9FocusHintD0Ev nidvalue: 0xB193904E
+Library: ScePafResource function: _ZN3paf3rco9FocusHintD2Ev nidvalue: 0x1AF165BD
+Library: ScePafResource function: _ZNK3paf3rco9FocusHint4nameEv nidvalue: 0xC8CB72B0
+
+Library: ScePafResource function: _ZNK3paf3rco11StyleWidget4nameEv nidvalue: 0xA8996146
+
+Library: ScePafResource variable: _ZTVN3paf3rco12ResourceBaseE nidvalue: 0x945D78C2
+Library: ScePafResource variable: _ZN3paf3rco12ResourceBase7_MynameE nidvalue: 0x00FB7206
+
+Library: ScePafResource variable: _ZTVN3paf3rco11widget_baseE nidvalue: 0xFBAC1812
+Library: ScePafResource variable: _ZN3paf3rco11widget_base7_MynameE nidvalue: 0xC726708F
+
+Library: ScePafResource variable: _ZTVN3paf3rco7DrawObjE nidvalue: 0xB4147D1C
+Library: ScePafResource variable: _ZN3paf3rco7DrawObj7_MynameE nidvalue: 0x452F2DCA
+
+Library: ScePafResource variable: _ZTVN3paf3rco10LayoutHintE nidvalue: 0xCC59E113
+Library: ScePafResource variable: _ZN3paf3rco10LayoutHint7_MynameE nidvalue: 0x8C55101A
+
+Library: ScePafResource variable: _ZTVN3paf3rco9FocusHintE nidvalue: 0x0A6B48A7
+Library: ScePafResource variable: _ZN3paf3rco9FocusHint7_MynameE nidvalue: 0x67D75795
+
+Library: ScePafResource variable: _ZTVN3paf3rco11StyleWidgetE nidvalue: 0x50A500BD
+Library: ScePafResource variable: _ZN3paf3rco11StyleWidget7_MynameE nidvalue: 0x05AC25AD
+
+Library: ScePafResource function: _ZN3paf4cxml16DefaultAllocatorENS0_14AllocationTypeEPvS2_jPS2_Pj
+Library: ScePafResource function: _ZN3paf4cxml4util10GetWStringERKNS0_7ElementEPKcPPKwPj
+Library: ScePafResource function: _ZN3paf4cxml4util11GetIntArrayERKNS0_7ElementEPKcPPKiPj
+Library: ScePafResource function: _ZN3paf4cxml4util12GetIDHashRefERKNS0_7ElementEPKcPjPS2_
+Library: ScePafResource function: _ZN3paf4cxml4util13GetFloatArrayERKNS0_7ElementEPKcPPKfPj
+Library: ScePafResource function: _ZN3paf4cxml4util16CheckElementNameERKNS0_7ElementEPKc
+Library: ScePafResource function: _ZN3paf4cxml4util16FindChildElementERKNS0_7ElementEPKc
+Library: ScePafResource function: _ZN3paf4cxml4util16FindChildElementERKNS0_7ElementEPKcS6_j
+Library: ScePafResource function: _ZN3paf4cxml4util16FindChildElementERKNS0_7ElementEPKcS6_S6_
+Library: ScePafResource function: _ZN3paf4cxml4util18FindEmptyAttributeERKNS0_7ElementEPNS0_9AttributeE
+Library: ScePafResource function: _ZN3paf4cxml4util5GetIDERKNS0_7ElementEPKcPS6_
+Library: ScePafResource function: _ZN3paf4cxml4util6GetIntERKNS0_7ElementEPKcPi
+Library: ScePafResource function: _ZN3paf4cxml4util7GetFileERKNS0_7ElementEPKcPNS0_4FileE
+Library: ScePafResource function: _ZN3paf4cxml4util7GetHashERKNS0_7ElementEPKcPj
+Library: ScePafResource function: _ZN3paf4cxml4util8GetFloatERKNS0_7ElementEPKcPf
+Library: ScePafResource function: _ZN3paf4cxml4util8GetIDRefERKNS0_7ElementEPKcPS6_PS2_
+Library: ScePafResource function: _ZN3paf4cxml4util9GetIDHashERKNS0_7ElementEPKcPj
+Library: ScePafResource function: _ZN3paf4cxml4util9GetStringERKNS0_7ElementEPKcPS6_Pj
+Library: ScePafResource function: _ZN3paf4cxml6HeaderC1Ev
+Library: ScePafResource function: _ZN3paf4cxml6HeaderC2Ev
+Library: ScePafResource function: _ZN3paf4cxml8Document14IsRegisteredIDEPKc
+Library: ScePafResource function: _ZN3paf4cxml8Document16CreateFromBufferEPKvjb
+Library: ScePafResource function: _ZN3paf4cxml8Document18GetDocumentElementEv
+Library: ScePafResource function: _ZN3paf4cxml8Document18IsRegisteredIDHashEj
+Library: ScePafResource function: _ZN3paf4cxml8Document5ClearEv
+Library: ScePafResource function: _ZN3paf4cxml8DocumentC1Ev
+Library: ScePafResource function: _ZN3paf4cxml8DocumentC2Ev
+Library: ScePafResource function: _ZN3paf4cxml8DocumentD1Ev
+Library: ScePafResource function: _ZN3paf4cxml8DocumentD2Ev
+Library: ScePafResource function: _ZNK3paf4cxml4File7GetAddrEv
+Library: ScePafResource function: _ZNK3paf4cxml7Element11GetNumChildEv
+Library: ScePafResource function: _ZNK3paf4cxml7Element12GetAttributeEiPNS0_9AttributeE
+Library: ScePafResource function: _ZNK3paf4cxml7Element12GetAttributeEPKcPNS0_9AttributeE
+Library: ScePafResource function: _ZNK3paf4cxml7Element12GetLastChildEv
+Library: ScePafResource function: _ZNK3paf4cxml7Element12NumAttributeEv
+Library: ScePafResource function: _ZNK3paf4cxml7Element13GetFirstChildEv
+Library: ScePafResource function: _ZNK3paf4cxml7Element14GetNextSiblingEv
+Library: ScePafResource function: _ZNK3paf4cxml7Element18GetPreviousSiblingEv
+Library: ScePafResource function: _ZNK3paf4cxml7Element7GetNameEv
+Library: ScePafResource function: _ZNK3paf4cxml7Element9GetParentEv
+Library: ScePafResource function: _ZNK3paf4cxml8Document14GetHeaderMagicEPc
+Library: ScePafResource function: _ZNK3paf4cxml9Attribute10GetWStringEPPKwPj
+Library: ScePafResource function: _ZNK3paf4cxml9Attribute11GetIntArrayEPPKiPj
+Library: ScePafResource function: _ZNK3paf4cxml9Attribute12GetIDHashRefEPjPNS0_7ElementE
+Library: ScePafResource function: _ZNK3paf4cxml9Attribute13GetFloatArrayEPPKfPj
+Library: ScePafResource function: _ZNK3paf4cxml9Attribute5GetIDEPPKc
+Library: ScePafResource function: _ZNK3paf4cxml9Attribute6GetIntEPi
+Library: ScePafResource function: _ZNK3paf4cxml9Attribute7GetFileEPNS0_4FileE
+Library: ScePafResource function: _ZNK3paf4cxml9Attribute7GetHashEPj
+Library: ScePafResource function: _ZNK3paf4cxml9Attribute7GetNameEv
+Library: ScePafResource function: _ZNK3paf4cxml9Attribute7GetTypeEv
+Library: ScePafResource function: _ZNK3paf4cxml9Attribute8GetFloatEPf
+Library: ScePafResource function: _ZNK3paf4cxml9Attribute8GetIDRefEPPKcPNS0_7ElementE
+Library: ScePafResource function: _ZNK3paf4cxml9Attribute9GetIDHashEPj
+Library: ScePafResource function: _ZNK3paf4cxml9Attribute9GetStringEPPKcPj

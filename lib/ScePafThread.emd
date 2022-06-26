@@ -1,0 +1,127 @@
+emd: 1
+
+Library: ScePafThread attr: auto_export
+Library: ScePafThread version: 1
+Library: ScePafThread stubfile: "libScePafThread_stub"
+Library: ScePafThread nidsuffix: "PAF"
+Library: ScePafThread libnamenid: 0x54276D19
+
+Library: ScePafThread function: _ZN3paf6thread21DefaultThreadPriorityC1Ev nidvalue: 0xEE889AAF
+Library: ScePafThread function: _ZN3paf6thread21DefaultThreadPriorityC2Ev nidvalue: 0x15F029A2
+Library: ScePafThread function: _ZN3paf6thread21DefaultThreadPriority3GetEv nidvalue: 0x2AD8B80F
+Library: ScePafThread function: _ZN3paf6thread21DefaultThreadPriority3SetEv nidvalue: 0x82A6C26A
+Library: ScePafThread function: _ZN3paf6thread6Thread13PafThreadProcEjPv nidvalue: 0x918D89FC
+
+Library: ScePafThread function: _ZN3paf6thread9CallQueue7GetSizeEv nidvalue: 0x9F2131F9
+
+Library: ScePafThread function: _ZN3paf6thread8SyncCall7EnqueueEPFvPvES2_ nidvalue: 0x004445E7
+
+Library: ScePafThread function: _ZN3paf6thread6RWLock10LockSharedEv nidvalue: 0xAFB836B3
+Library: ScePafThread function: _ZN3paf6thread6RWLock12UnlockSharedEv nidvalue: 0x38D35DEF
+Library: ScePafThread function: _ZN3paf6thread6RWLock13LockExclusiveEv nidvalue: 0x39B3F3CA
+Library: ScePafThread function: _ZN3paf6thread6RWLock15UnlockExclusiveEv nidvalue: 0xAEE8496E
+
+Library: ScePafThread function: _ZN3paf6thread12IsMainThreadEi nidvalue: 0xD27FC881
+Library: ScePafThread function: _ZN3paf6thread13GetMainThreadEi nidvalue: 0xC6F80BB3
+Library: ScePafThread function: _ZN3paf6thread13SetMainThreadEi nidvalue: 0xFE2DC4FE
+
+Library: ScePafThread function: _ZN3paf3job8JobQueue20ChangeWorkerPriorityEi nidvalue: 0x64FF39DE
+Library: ScePafThread function: _ZN3paf3job8JobQueue7EnqueueEPNS_9SharedPtrINS0_7JobItemEEE nidvalue: 0x93F7A9D6
+Library: ScePafThread function: _ZN3paf3job8JobQueue6FinishEv nidvalue: 0x88061E60
+Library: ScePafThread function: _ZN3paf3job8JobQueue7GetSizeEv nidvalue: 0xA59ABB3B
+Library: ScePafThread function: _ZN3paf3job8JobQueue4InitEPNS0_8JobQueue6OptionE nidvalue: 0x777E2981
+
+Library: ScePafThread function: _ZN3paf3job7JobItemC1EPKc nidvalue: 0xECF8334D
+Library: ScePafThread function: _ZN3paf3job7JobItemC2EPKc nidvalue: 0xA54DB064
+
+Library: ScePafThread variable: _ZN3paf6thread17s_mainThreadQueueE nidvalue: 0x83CE85DD
+Library: ScePafThread variable: _ZN3paf6thread20s_mainThreadSyncCallE nidvalue: 0x11807592
+Library: ScePafThread variable: _ZN3paf6thread17s_mainThreadMutexE nidvalue: 0x1B570C72
+
+Library: ScePafThread variable: _ZN3paf3job17s_defaultJobQueueE nidvalue: 0x83970927
+
+//CORRECT NAMES
+Library: ScePafThread function: _ZN3paf6thread6Thread6OptionC1Ev
+Library: ScePafThread function: _ZN3paf6thread6Thread6OptionC2Ev
+Library: ScePafThread function: _ZN3paf6thread6Thread14ChangePriorityEi
+Library: ScePafThread function: _ZN3paf6thread6Thread4JoinEv
+Library: ScePafThread function: _ZN3paf6thread6Thread5StartEv
+Library: ScePafThread function: _ZN3paf6thread6Thread5GetIDEv
+Library: ScePafThread function: _ZN3paf6thread6Thread7IsAliveEv
+Library: ScePafThread function: _ZN3paf6thread6Thread6CancelEv
+Library: ScePafThread function: _ZN3paf6thread6Thread10IsCanceledEv
+Library: ScePafThread function: _ZN3paf6thread6ThreadC2EijPKcPKNS1_6OptionE
+Library: ScePafThread function: _ZN3paf6thread6ThreadC1EijPKcPKNS1_6OptionE
+Library: ScePafThread function: _ZN3paf6thread6ThreadD0Ev
+Library: ScePafThread function: _ZN3paf6thread6ThreadD2Ev
+Library: ScePafThread function: _ZN3paf6thread6ThreadD1Ev
+
+Library: ScePafThread function: _ZN3paf6thread9SemaphoreC1EPKciii
+Library: ScePafThread function: _ZN3paf6thread9SemaphoreC2EPKciii
+Library: ScePafThread function: _ZN3paf6thread9SemaphoreD1Ev
+Library: ScePafThread function: _ZN3paf6thread9SemaphoreD2Ev
+Library: ScePafThread function: _ZN3paf6thread9Semaphore7AcquireEv
+Library: ScePafThread function: _ZN3paf6thread9Semaphore7ReleaseEv
+
+Library: ScePafThread function: _ZN3paf6thread6RMutexC1EPKci
+Library: ScePafThread function: _ZN3paf6thread6RMutexC2EPKci
+Library: ScePafThread function: _ZN3paf6thread6RMutexD1Ev
+Library: ScePafThread function: _ZN3paf6thread6RMutexD2Ev
+Library: ScePafThread function: _ZN3paf6thread6RMutex4LockEv
+Library: ScePafThread function: _ZN3paf6thread6RMutex6UnlockEv
+Library: ScePafThread function: _ZN3paf6thread6RMutex7TryLockEv
+
+Library: ScePafThread function: _ZN3paf6thread5MutexC1EPKci
+Library: ScePafThread function: _ZN3paf6thread5MutexC2EPKci
+Library: ScePafThread function: _ZN3paf6thread5MutexD1Ev
+Library: ScePafThread function: _ZN3paf6thread5MutexD2Ev
+Library: ScePafThread function: _ZN3paf6thread5Mutex4LockEv
+Library: ScePafThread function: _ZN3paf6thread5Mutex6UnlockEv
+Library: ScePafThread function: _ZN3paf6thread5Mutex7TryLockEv
+
+Library: ScePafThread function: _ZN3paf6thread4CondC1ERNS0_5MutexEPKci
+Library: ScePafThread function: _ZN3paf6thread4CondC2ERNS0_5MutexEPKci
+Library: ScePafThread function: _ZN3paf6thread4CondD1Ev
+Library: ScePafThread function: _ZN3paf6thread4CondD2Ev
+Library: ScePafThread function: _ZN3paf6thread4Cond4WaitEi
+Library: ScePafThread function: _ZN3paf6thread4Cond6NotifyEv
+Library: ScePafThread function: _ZN3paf6thread4Cond9NotifyAllEv
+
+Library: ScePafThread function: _ZN3paf6thread9CallQueueC1EPKc
+Library: ScePafThread function: _ZN3paf6thread9CallQueueC2EPKc
+Library: ScePafThread function: _ZN3paf6thread9CallQueueD1Ev
+Library: ScePafThread function: _ZN3paf6thread9CallQueueD2Ev
+Library: ScePafThread function: _ZN3paf6thread9CallQueue5CheckEv
+Library: ScePafThread function: _ZN3paf6thread9CallQueue7EnqueueEPKcPFvPvES4_
+Library: ScePafThread function: _ZN3paf6thread9CallQueue9WaitEmptyEv
+
+Library: ScePafThread function: _ZN3paf6thread8SyncCallC1EPKc
+Library: ScePafThread function: _ZN3paf6thread8SyncCallC2EPKc
+Library: ScePafThread function: _ZN3paf6thread8SyncCallD1Ev
+Library: ScePafThread function: _ZN3paf6thread8SyncCallD2Ev
+Library: ScePafThread function: _ZN3paf6thread8SyncCall5CheckEv
+
+Library: ScePafThread function: _ZN3paf6thread6RWLockC1EPKci
+Library: ScePafThread function: _ZN3paf6thread6RWLockC2EPKci
+Library: ScePafThread function: _ZN3paf6thread6RWLockD1Ev
+Library: ScePafThread function: _ZN3paf6thread6RWLockD2Ev
+
+Library: ScePafThread function: _ZN3paf6thread5SleepEi
+
+Library: ScePafThread function: _ZN3paf3job8JobQueue6OptionC1Ev
+Library: ScePafThread function: _ZN3paf3job8JobQueue6OptionC2Ev
+Library: ScePafThread function: _ZN3paf3job8JobQueue9WaitEmptyEv
+Library: ScePafThread function: _ZN3paf3job8JobQueue5CheckEv
+Library: ScePafThread function: _ZN3paf3job8JobQueueC1EPKcPKNS1_6OptionE
+Library: ScePafThread function: _ZN3paf3job8JobQueueC2EPKcPKNS1_6OptionE
+Library: ScePafThread function: _ZN3paf3job8JobQueueD1Ev
+Library: ScePafThread function: _ZN3paf3job8JobQueueD2Ev
+Library: ScePafThread function: _ZN3paf3job8JobQueue4ExitEv
+
+Library: ScePafThread function: _ZN3paf3job7JobItem6CancelEv
+Library: ScePafThread function: _ZN3paf3job7JobItemD0Ev
+Library: ScePafThread function: _ZN3paf3job7JobItemD1Ev
+Library: ScePafThread function: _ZN3paf3job7JobItemD2Ev
+
+Library: ScePafThread variable: _ZTVN3paf3job7JobItemE
+Library: ScePafThread variable: _ZTVN3paf6thread6ThreadE

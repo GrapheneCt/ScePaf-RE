@@ -1,0 +1,78 @@
+emd: 1
+
+Library: ScePafGraphics attr: auto_export
+Library: ScePafGraphics version: 1
+Library: ScePafGraphics stubfile: "libScePafGraphics_stub"
+Library: ScePafGraphics nidsuffix: "PAF"
+Library: ScePafGraphics libnamenid: 0xA070D6A7
+
+Library: ScePafGraphics function: _ZN3paf5graph7DrawObjC1EPi nidvalue: 0x0908A2A6
+Library: ScePafGraphics function: _ZN3paf5graph7DrawObjC2EPi nidvalue: 0xE0782D6E
+Library: ScePafGraphics function: _ZN3paf5graph7DrawObj5equalEPKc nidvalue: 0x8D25DDE9
+Library: ScePafGraphics function: _ZNK3paf5graph7DrawObj4nameEv nidvalue: 0x6A38991D
+Library: ScePafGraphics function: _ZN3paf5graph7DrawObj15SetDrawCallbackEPNS_9SharedPtrINS0_8CallbackEEE nidvalue: 0x0F6790DB
+
+Library: ScePafGraphics function: _ZN3paf5graph7TextObjC1EPi nidvalue: 0xF201F98D
+Library: ScePafGraphics function: _ZN3paf5graph7TextObjC2EPi nidvalue: 0x29013890
+Library: ScePafGraphics function: _ZN3paf5graph7TextObj5equalEPKc nidvalue: 0x930F72BF
+Library: ScePafGraphics function: _ZNK3paf5graph7TextObj4nameEv nidvalue: 0x2467B7D7
+Library: ScePafGraphics function: _ZN3paf5graph7TextObj8GetLabelEPNS_12basic_stringIwNS_11char_traitsIwEENS_9allocatorIwEEEE nidvalue: 0x1BDA4425
+Library: ScePafGraphics function: _ZN3paf5graph7TextObj8SetLabelEPNS_12basic_stringIwNS_11char_traitsIwEENS_9allocatorIwEEEE nidvalue: 0xAE415C90
+Library: ScePafGraphics function: _ZN3paf5graph7TextObj19SetPlaceholderLabelEPNS_12basic_stringIwNS_11char_traitsIwEENS_9allocatorIwEEEE nidvalue: 0xDC2C405E
+Library: ScePafGraphics function: _ZN3paf5graph7TextObj19GetPlaceholderLabelEPNS_12basic_stringIwNS_11char_traitsIwEENS_9allocatorIwEEEE nidvalue: 0xD3BEDF03
+Library: ScePafGraphics function: _ZN3paf5graph7TextObj9GetLengthEPj nidvalue: 0x3B798744
+Library: ScePafGraphics function: _ZN3paf5graph7TextObj16GetDataAndLengthEPPtPj nidvalue: 0x67094D42
+
+Library: ScePafGraphics function: _ZN3paf5graph11SurfacePoolC1EPvjPKcPNS_6memory13HeapAllocator6OptionENS1_15SurfacePoolTypeE nidvalue: 0xEEC40427
+Library: ScePafGraphics function: _ZN3paf5graph11SurfacePoolC2EPvjPKcPNS_6memory13HeapAllocator6OptionENS1_15SurfacePoolTypeE nidvalue: 0xD49AB0A5
+Library: ScePafGraphics function: _ZN3paf5graph11SurfacePool11GetFreeSizeEv nidvalue: 0xD53DC736
+Library: ScePafGraphics function: _ZN3paf5graph11SurfacePool21GetDefaultSurfacePoolEv nidvalue: 0xCDE30B64
+Library: ScePafGraphics function: _ZN3paf5graph11SurfacePool17FreeSurfaceMemoryENS1_10MemoryTypeEPv nidvalue: 0x167F6801
+Library: ScePafGraphics function: _ZN3paf5graph11SurfacePool18AllocSurfaceMemoryENS1_10MemoryTypeEjPKcPNS1_19SurfaceMemoryOptionE nidvalue: 0xBBE8F063
+
+Library: ScePafGraphics function: _ZN3paf5graph7Surface6CreateEPPS1_PNS0_11SurfacePoolEPNS_9SharedPtrINS_4FileEEEPv nidvalue: 0xB228A257
+Library: ScePafGraphics function: _ZN3paf5graph7Surface6CreateEPPS1_PNS0_11SurfacePoolEPvijiS6_ nidvalue: 0x476AB004
+Library: ScePafGraphics function: _ZN3paf5graph7Surface4CopyEjPvNS_5image10ImageOrderEii nidvalue: 0xE57728C4
+Library: ScePafGraphics function: _ZN3paf5graph7SurfaceC1EPNS0_11SurfacePoolEiiNS_5image9ImageModeENS4_10ImageOrderEiji nidvalue: 0x7C8B2A63
+
+Library: ScePafGraphics function: _ZN3paf5graph15GraphicsContext18GetGraphicsContextEv nidvalue: 0x6C448991
+Library: ScePafGraphics function: _ZN3paf5graph15GraphicsContext13GetGxmContextEv nidvalue: 0xE6EB3D67
+Library: ScePafGraphics function: _ZN3paf5graph15GraphicsContext22GetDefaultDrawCallbackEv nidvalue: 0xF3CD22A0
+
+Library: ScePafGraphics variable: _ZN3paf5graph7TextObj7_MynameE nidvalue: 0xA8CE4BF5
+Library: ScePafGraphics variable: _ZN3paf5graph7DrawObj7_MynameE nidvalue: 0x34B13D93
+Library: ScePafGraphics variable: _ZN3paf5graph12s_drawObjRefE nidvalue: 0x560A9546
+
+Library: ScePafGraphics variable: _ZN3paf5graph14s_surfaceMutexE nidvalue: 0x03D6F31B
+Library: ScePafGraphics variable: _ZN3paf5graph18s_surfaceCLUTMutexE nidvalue: 0xF9964495
+
+//CORRECT NAMES
+Library: ScePafGraphics function: _ZN3paf5graph7DrawObjD0Ev
+Library: ScePafGraphics function: _ZN3paf5graph7DrawObjD1Ev
+Library: ScePafGraphics function: _ZN3paf5graph7DrawObjD2Ev
+
+Library: ScePafGraphics function: _ZN3paf5graph7TextObjD0Ev
+Library: ScePafGraphics function: _ZN3paf5graph7TextObjD1Ev
+Library: ScePafGraphics function: _ZN3paf5graph7TextObjD2Ev
+
+Library: ScePafGraphics function: _ZN3paf5graph11SurfacePoolC1EPKNS1_6OptionE
+Library: ScePafGraphics function: _ZN3paf5graph11SurfacePoolC2EPKNS1_6OptionE
+Library: ScePafGraphics function: _ZN3paf5graph11SurfacePoolD0Ev
+Library: ScePafGraphics function: _ZN3paf5graph11SurfacePoolD1Ev
+Library: ScePafGraphics function: _ZN3paf5graph11SurfacePoolD2Ev
+Library: ScePafGraphics function: _ZN3paf5graph11SurfacePool8AllocateEii
+Library: ScePafGraphics function: _ZN3paf5graph11SurfacePool4FreeEPv
+
+Library: ScePafGraphics function: _ZN3paf5graph7SurfaceD0Ev
+Library: ScePafGraphics function: _ZN3paf5graph7SurfaceD1Ev
+Library: ScePafGraphics function: _ZN3paf5graph7SurfaceD2Ev
+Library: ScePafGraphics function: _ZN3paf5graph7Surface4LockEi
+Library: ScePafGraphics function: _ZN3paf5graph7Surface6UnlockEv
+Library: ScePafGraphics function: _ZN3paf5graph7Surface7ReleaseEv
+Library: ScePafGraphics function: _ZN3paf5graph7SurfacedlEPv
+Library: ScePafGraphics function: _ZN3paf5graph7SurfacenwEj
+Library: ScePafGraphics function: _ZN3paf5graph7Surface6AddRefEv
+
+Library: ScePafGraphics variable: _ZTVN3paf5graph7TextObjE
+Library: ScePafGraphics variable: _ZTVN3paf5graph7DrawObjE
+Library: ScePafGraphics variable: _ZTVN3paf5graph7SurfaceE

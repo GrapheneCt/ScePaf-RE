@@ -1,0 +1,16 @@
+emd: 1
+
+Library: SceAppSettings attr: auto_export
+Library: SceAppSettings version: 1
+Library: SceAppSettings stubfile: "libSceAppSettings_stub"
+Library: SceAppSettings nidsuffix: ""
+Library: SceAppSettings libnamenid: 0x9522D063
+Library: SceAppSettings function: _ZN3sce11AppSettings11GetInstanceEPNS0_9InitParamEPPS0_ nidvalue: 0x984AF519
+Library: SceAppSettings function: _ZN3sce11AppSettings14PluginCreateCBEPN3paf6PluginE nidvalue: 0xB3935DD3
+Library: SceAppSettings function: _ZN3sce11AppSettings12PluginInitCBEPN3paf6PluginE nidvalue: 0xD906433B
+Library: SceAppSettings function: _ZN3sce11AppSettings13PluginStartCBEPN3paf6PluginE nidvalue: 0xED46CAFD
+Library: SceAppSettings function: _ZN3sce11AppSettings12PluginStopCBEPN3paf6PluginE nidvalue: 0xD58DE5C7
+Library: SceAppSettings function: _ZN3sce11AppSettings12PluginExitCBEPN3paf6PluginE nidvalue: 0x2CE1780F
+Library: SceAppSettings function: _ZN3sce11AppSettings6GetIntEPKcPii nidvalue: 0xEC529AF7
+Library: SceAppSettings function: _ZN3sce11AppSettings6SetIntEPKci nidvalue: 0x272D902F
+Library: SceAppSettings function: _ZN3sce11AppSettings10InitializeEv nidvalue: 0x75E3F651
