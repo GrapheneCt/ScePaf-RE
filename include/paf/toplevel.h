@@ -14,10 +14,16 @@ namespace paf {
 	public:
 
 		typedef void(*PluginCB)(Plugin *plugin);
+		typedef void(*PluginGraphicsFreeCb)();
 
 		class InitParam //0x94
 		{
 		public:
+
+			enum PluginFlags
+			{
+				PluginFlag_UseRcdDebug = 0x20,
+			};
 
 			InitParam();
 
@@ -25,7 +31,7 @@ namespace paf {
 
 			paf::string pluginName;
 			paf::string scopeName;
-			paf::Plugin::PluginCB pluginCreateCB;	//Called after plugin module is loaded and started
+			paf::Plugin::PluginCB pluginSetParamCB;	//Called after plugin module is loaded and started
 			paf::Plugin::PluginCB pluginInitCB;		//Called after plugin is fully initialized
 			paf::Plugin::PluginCB pluginStartCB;
 			paf::Plugin::PluginCB pluginStopCB;
@@ -44,32 +50,65 @@ namespace paf {
 			paf::string pluginPath;
 			SceInt32 unk_74;
 			paf::Module::Flag pluginModuleFlags;
-			SceUChar8 unk_7C[0x18];
+			SceUInt32 pluginFlags;
+			SceInt32 unk_80;
+			PluginGraphicsFreeCb graphicsFreeCb;
+			SceUChar8 unk_88[0x0C];
 		};
 
 		~Plugin();
 
-		class PageInitParam
+		enum PageEffectType
+		{
+			PageEffectType_None,
+			PageEffectType_SlideFromTop, // effect 0xE
+			PageEffectType_SlideFromBottom, // effect 0xF
+			PageEffectType_SlideFromLeft, // effect 0x10
+			PageEffectType_SlideFromRight, // effect 0x11
+		};
+
+		class PageOpenParam
 		{
 		public:
 
-			PageInitParam();
+			PageOpenParam();
 
-			~PageInitParam() { };
+			~PageOpenParam() { };
 
 			SceInt32 unk_00;
 			SceInt32 unk_04;
 			SceInt32 priority;
-			SceUChar8 unk_0C[0x20];
+			SceInt32 unk_0C;
+			SceInt32 unk_10;
+			bool useFadein;
+			SceFloat32 fadeinTimeMs;
+			PageEffectType effectType;
+			SceInt32 unk_20;
+			SceInt32 unk_24_pageArg_a4;
+			SceInt32 unk_24_pageArg_a5;
 		};
 
-		class TemplateInitParam
+		class PageCloseParam
 		{
 		public:
 
-			TemplateInitParam();
+			PageCloseParam();
 
-			~TemplateInitParam() { };
+			~PageCloseParam() { };
+
+			bool useFadeout;
+			SceFloat32 fadeoutTimeMs;
+			PageEffectType effectType;
+			SceInt32 reserved;
+		};
+
+		class TemplateOpenParam
+		{
+		public:
+
+			TemplateOpenParam();
+
+			~TemplateOpenParam() { };
 
 			SceInt32 unk_00;
 			SceInt32 unk_04;
@@ -82,7 +121,9 @@ namespace paf {
 		//6F7E804D
 		//SceInt32 AddTextureFromFile(paf::string *unk, const char *filePath, const char *a3);
 
-		paf::ui::Widget *PageOpen(paf::rco::Element *widgetInfo, PageInitParam *initParam);
+		paf::ui::Scene *PageOpen(paf::rco::Element *widgetInfo, PageOpenParam *openParam);
+
+		SceVoid PageClose(paf::rco::Element *widgetInfo, PageCloseParam *closeParam);
 
 		paf::ui::Widget *CreateWidgetWithStyle(paf::ui::Widget *parent, const char *widgetType, paf::rco::Element *widgetInfo, paf::rco::Element *styleInfo);
 
@@ -98,7 +139,7 @@ namespace paf {
 
 		paf::ui::Widget *GetChildByHash(paf::rco::Element *widgetInfo);
 
-		SceInt32 TemplateOpen(paf::ui::Widget *targetRoot, paf::rco::Element *templateSearchParam, paf::Plugin::TemplateInitParam *param);
+		SceInt32 TemplateOpen(paf::ui::Widget *targetRoot, paf::rco::Element *templateSearchParam, paf::Plugin::TemplateOpenParam *param);
 
 		wchar_t *GetWString(paf::rco::Element *stringInfo);
 
@@ -149,7 +190,7 @@ namespace paf {
 				FeatureFlag_UseFwUpdateSync = 1,
 				FeatureFlag_DisableInternalCallbackChecks = 2,
 				FeatureFlag_4 = 4,
-				FeatureFlag_8 = 8
+				FeatureFlag_UseDisplayAreaSettings = 8
 			};
 
 			enum FontRasterizerFlags
@@ -185,10 +226,10 @@ namespace paf {
 
 			SceUInt32 unk_1C;
 			SceUInt32 unk_20;
-			SceUInt32 unk_24;
-			SceUInt32 unk_28;
-			SceUInt32 unk_2C;
-			SceUInt32 unk_30;
+			ScePVoid extFont1Buf;
+			SceUInt32 extFont1Size;
+			ScePVoid extFont2Buf;
+			SceUInt32 extFont2Size;
 			SceUInt32 unk_34;
 			SceUInt32 unk_38;
 			SceUInt32 unk_3C;
@@ -284,6 +325,10 @@ namespace paf {
 		//ScePafToplevel_E37EC9D8
 		static paf::ui::Widget *CreateWidgetWithStyle(paf::ui::Widget *parent, const char *widgetType, paf::rco::Element *widgetInfo, paf::rco::Element *styleInfo, Framework *fw);
 
+		static SceVoid LoadPluginCRFinishCallback(Plugin *crPlugin);
+
+		static SceVoid PluginCRGraphicsFreeCallback();
+
 		SceVoid _LoadPluginAsync(Plugin::InitParam *initParam, LoadPluginFinishCallback finishCallback = SCE_NULL, UnloadPluginFinishCallback unloadFinishCallback = SCE_NULL);
 
 		SceInt32 EnterRenderingLoop();
@@ -304,7 +349,7 @@ namespace paf {
 
 		ApplicationMode GetApplicationMode();
 
-		paf::ui::Widget *GetCurrentPage();
+		paf::ui::Context *GetUiContext();
 
 		wchar_t *GetCRWString(paf::rco::Element *stringInfo);
 
@@ -316,9 +361,12 @@ namespace paf {
 
 		Plugin *crPlugin;
 
-		SceUChar8 unk_20[0x2C];
+		SceUChar8 unk_20[0x24];
 
-		ScePVoid widgetFwHandle;
+		ScePVoid crSurfacePoolMem;
+		graph::SurfacePool *crSurfacePool;
+
+		ScePVoid *uiCtx;
 
 		SceUChar8 unk_50[0x4];
 

@@ -45,6 +45,8 @@ void sce_paf_qsort(void *ptr, SceSize count, SceSize size, int(*comp)(const void
 
 unsigned long int sce_paf_strtoul(const char* str, char** endptr, int base);
 
+char *sce_paf_strtok(char *str, const char *delim);
+
 int sce_paf_rand(void);
 void sce_paf_srand(unsigned int seed);
 
@@ -103,6 +105,7 @@ long int sce_paf_ftell(FILE * stream);
 int sce_paf_fgetc(FILE * stream);
 char * sce_paf_strcpy(char * destination, const char * source);
 char * sce_paf_strcat(char * destination, const char * source);
+char * sce_paf_strncat(char *dest, const char *src, size_t n);
 float sce_paf_roundf(float x);
 float sce_paf_cosf(float x);
 float sce_paf_logf(float x);

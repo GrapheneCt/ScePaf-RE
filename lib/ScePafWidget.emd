@@ -17,9 +17,10 @@ Library: ScePafWidget function: _ZN3paf2ui6Widget7SetSizeEPKNS_7Vector4Efiiiii n
 Library: ScePafWidget function: _ZN3paf2ui6Widget11SetRotationEPKNS_7Vector4EfS4_iiiii nidvalue: 0xF50BF15B
 Library: ScePafWidget function: _ZN3paf2ui6Widget14SetFilterColorEPKNS_4RgbaEfiiiii nidvalue: 0x627CDA4E
 Library: ScePafWidget function: _ZN3paf2ui6Widget25UnregisterFwEventCallbackEi nidvalue: 0x8F09D12E
-Library: ScePafWidget function: _ZN3paf2ui6Widget12AssignButtonEj nidvalue: 0x21125870
+Library: ScePafWidget function: _ZN3paf2ui6Widget12SetDirectKeyEj nidvalue: 0x21125870
 Library: ScePafWidget function: _ZN3paf2ui6Widget15SetTextWithFlag5EPNS_7wstringEi nidvalue: 0x922FF349
-Library: ScePafWidget function: _ZN3paf2ui6Widget9SetAdjustEbbb nidvalue: 0xCCD58ACB
+Library: ScePafWidget function: _ZN3paf2ui6Widget9SetAdjustEjjj nidvalue: 0xCCD58ACB
+Library: ScePafWidget function: _ZN3paf2ui6Widget8SetAlignENS0_5AlignES2_S2_i nidvalue: 0x5F04A98E
 Library: ScePafWidget function: _ZN3paf2ui6Widget7SetZoomEPKNS_7Vector4Efiiiii nidvalue: 0xEE467CF8
 Library: ScePafWidget function: _ZN3paf2ui6Widget7DisableEb nidvalue: 0xA1173889
 Library: ScePafWidget function: _ZN3paf2ui6Widget6EnableEb nidvalue: 0x8F1A3A59
@@ -29,6 +30,9 @@ Library: ScePafWidget function: _ZN3paf2ui6Widget19SetGraphicsDisabledEb nidvalu
 Library: ScePafWidget function: _ZN3paf2ui6Widget8GetChildEj nidvalue: 0xB8CA08DA
 Library: ScePafWidget function: _ZN3paf2ui6Widget9GetParentEv nidvalue: 0xCFA1EB7A
 Library: ScePafWidget function: _ZN3paf2ui6Widget14SetOrientationEv nidvalue: 0x0F7A1317
+Library: ScePafWidget function: _ZN3paf2ui6Widget11GetPositionEPNS_7Vector4EPS1_iS4_ nidvalue: 0x83BE8594
+Library: ScePafWidget function: _ZN3paf2ui6Widget7GetSizeEi nidvalue: 0x2F924BAD
+Library: ScePafWidget function: _ZN3paf2ui6Widget5Test1Ei nidvalue: 0x931AD41E
 //Library: ScePafWidget function: _ZN3paf2ui6Widget19getCopyPasteTextObjEv nidvalue: 0x1EE9D37E
 //Library: ScePafWidget function: _ZN3paf2ui6Widget22getCopyPasteTextBoxObjEv nidvalue: 0xBFF4C5A2
 
@@ -49,7 +53,9 @@ Library: ScePafWidget function: _ZN3paf2ui4TextD2Ev
 Library: ScePafWidget function: _ZN3paf2ui4Text8SetColorENS1_9ColorTypeEiiPKNS_4RgbaE nidvalue: 0xCD20EF38
 Library: ScePafWidget function: _ZN3paf2ui4Text9SetOptionENS1_6OptionEiib nidvalue: 0xF2A2E2E6
 Library: ScePafWidget function: _ZN3paf2ui4Text11SetFontSizeEfijj nidvalue: 0x39B15B98
-Library: ScePafWidget function: _ZN3paf2ui4Text8GetColorENS1_9ColorTypeEiPNS_4RgbaE nidvalue: 0xF3281F1C
+Library: ScePafWidget function: _ZN3paf2ui4Text8GetColorENS1_9ColorTypeEi nidvalue: 0xF3281F1C
+Library: ScePafWidget function: _ZN3paf2ui4Text16SetCharacterSizeENS1_13CharacterTypeEiiPKNS1_13CharacterSizeE nidvalue: 0xBF6207EA
+Library: ScePafWidget function: _ZN3paf2ui4Text7SetFontENS1_8FontTypeEiiNS1_6FontIdE nidvalue: 0x56739225
 
 Library: ScePafWidget function: _ZN3paf2ui8RichText11SetRichTextEPcj nidvalue: 0xB5E9FC42
 
@@ -138,11 +144,11 @@ Library: ScePafWidget function: _ZN3paf2ui3BoxD0Ev nidvalue: 0xBA7ACC3E
 Library: ScePafWidget function: _ZN3paf2ui3BoxD1Ev nidvalue: 0xA63BF15B
 Library: ScePafWidget function: _ZN3paf2ui3BoxD2Ev nidvalue: 0x467E5FD1
 
-Library: ScePafWidget function: _ZN3paf2ui5PlaneC1EPNS0_6WidgetEi nidvalue: 0x6B25F540
-Library: ScePafWidget function: _ZN3paf2ui5PlaneC2EPNS0_6WidgetEi nidvalue: 0x62C10420
-Library: ScePafWidget function: _ZN3paf2ui5PlaneD0Ev nidvalue: 0x3DB1D6ED
-Library: ScePafWidget function: _ZN3paf2ui5PlaneD1Ev nidvalue: 0xC2BF23E3
-Library: ScePafWidget function: _ZN3paf2ui5PlaneD2Ev nidvalue: 0x0C9CD7BF
+Library: ScePafWidget function: _ZN3paf2ui5PlaneC1EPNS0_6WidgetEi nidvalue: 0x1A678CB4
+Library: ScePafWidget function: _ZN3paf2ui5PlaneC2EPNS0_6WidgetEi nidvalue: 0x1E708E16
+Library: ScePafWidget function: _ZN3paf2ui5PlaneD0Ev
+Library: ScePafWidget function: _ZN3paf2ui5PlaneD1Ev
+Library: ScePafWidget function: _ZN3paf2ui5PlaneD2Ev
 
 Library: ScePafWidget function: _ZN3paf2ui10ButtonBase12SetThresholdEii nidvalue: 0x16479BA7
 
@@ -188,6 +194,23 @@ Library: ScePafWidget function: _ZN3paf2ui8ListViewC2EPNS0_6WidgetEi nidvalue: 0
 Library: ScePafWidget function: _ZN3paf2ui8ListViewD0Ev nidvalue: 0xE9894F93
 Library: ScePafWidget function: _ZN3paf2ui8ListViewD1Ev nidvalue: 0x380AF118
 Library: ScePafWidget function: _ZN3paf2ui8ListViewD2Ev nidvalue: 0xB82D0601
+Library: ScePafWidget function: _ZN3paf2ui8ListView20RegisterItemCallbackEPNS1_12ItemCallbackE nidvalue: 0x1316E7E8
+Library: ScePafWidget function: _ZN3paf2ui8ListView14SetSegmentSizeEPNS_7Vector4E nidvalue: 0xAE711B96
+Library: ScePafWidget function: _ZN3paf2ui8ListView16SetSegmentEnableEii nidvalue: 0x6381B5FA
+Library: ScePafWidget function: _ZN3paf2ui8ListView11SetCellSizeEiPNS_7Vector4E nidvalue: 0xA2061BF4
+Library: ScePafWidget function: _ZN3paf2ui8ListView7AddItemEiii nidvalue: 0x82515E71
+Library: ScePafWidget function: _ZN3paf2ui8ListView20SetConfigurationTypeEiNS1_17ConfigurationTypeE nidvalue: 0xB3FA381F
+Library: ScePafWidget function: _ZN3paf2ui8ListView12ItemCallbackD2Ev nidvalue: 0x9224D27B
+Library: ScePafWidget function: _ZN3paf2ui8ListView12ItemCallbackC2Ev nidvalue: 0x76C04679
+Library: ScePafWidget function: _ZN3paf2ui8ListView12ItemCallback6CreateEPNS2_5ParamE nidvalue: 0x73BD3A0C
+Library: ScePafWidget function: _ZN3paf2ui8ListView12ItemCallback5StartEPNS2_5ParamE nidvalue: 0x93057A6C
+Library: ScePafWidget function: _ZN3paf2ui8ListView12ItemCallback4StopEPNS2_5ParamE nidvalue: 0x3C914FDB
+Library: ScePafWidget function: _ZN3paf2ui8ListView12ItemCallback7DisposeEPNS2_5ParamE nidvalue: 0x8552BF82
+Library: ScePafWidget function: _ZN3paf2ui8ListView10RemoveItemEiii nidvalue: 0xCBA27AAC
+Library: ScePafWidget function: _ZN3paf2ui8ListView4LockEv nidvalue: 0x434B1CB8
+Library: ScePafWidget function: _ZN3paf2ui8ListView6UnlockEv nidvalue: 0x4FBC907B
+Library: ScePafWidget function: _ZN3paf2ui8ListView18SetSegmentCapacityEii nidvalue: 0x27EB2AEB
+Library: ScePafWidget function: _ZN3paf2ui8ListView10GetCellNumEi nidvalue: 0x57D78B6F
 
 Library: ScePafWidget function: _ZN3paf2ui8PageTurnC1EPNS0_6WidgetEi nidvalue: 0xFAB2F12D
 Library: ScePafWidget function: _ZN3paf2ui8PageTurnC2EPNS0_6WidgetEi nidvalue: 0x603C3B86
@@ -230,6 +253,8 @@ Library: ScePafWidget function: _ZN3paf2ui7ContextC2Ej nidvalue: 0x22303A4C
 Library: ScePafWidget function: _ZN3paf2ui7ContextD1Ev nidvalue: 0xFA21D400
 Library: ScePafWidget function: _ZN3paf2ui7ContextD2Ev nidvalue: 0x7E3CFE67
 Library: ScePafWidget function: _ZN3paf2ui7ContextD0Ev nidvalue: 0xC230312B
+Library: ScePafWidget function: _ZN3paf2ui7Context13SetResolutionEtt nidvalue: 0xE8F38C84
+Library: ScePafWidget function: _ZN3paf2ui7Context5Test1Ei nidvalue: 0xA6B659BB
 
 Library: ScePafWidget variable: _ZN3paf2ui16s_widget19999DA5E nidvalue: 0x19999DA5
 Library: ScePafWidget variable: _ZN3paf2ui16s_widget91871D2DE nidvalue: 0x91871D2D

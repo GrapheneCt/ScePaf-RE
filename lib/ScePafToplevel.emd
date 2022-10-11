@@ -12,12 +12,14 @@ Library: ScePafToplevel function: _ZN3paf6PluginD1Ev
 Library: ScePafToplevel function: _ZN3paf6PluginD2Ev
 Library: ScePafToplevel function: _ZN3paf6Plugin9InitParamC1Ev
 Library: ScePafToplevel function: _ZN3paf6Plugin9InitParamC2Ev
-Library: ScePafToplevel function: _ZN3paf6Plugin13PageInitParamC1Ev nidvalue: 0x34FE1331
-Library: ScePafToplevel function: _ZN3paf6Plugin8PageOpenEPNS_3rco7ElementEPNS0_13PageInitParamE nidvalue: 0x30B442D9
+Library: ScePafToplevel function: _ZN3paf6Plugin13PageOpenParamC1Ev nidvalue: 0x34FE1331
+Library: ScePafToplevel function: _ZN3paf6Plugin14PageCloseParamC1Ev nidvalue: 0x185EC9F9
+Library: ScePafToplevel function: _ZN3paf6Plugin8PageOpenEPNS_3rco7ElementEPNS0_13PageOpenParamE nidvalue: 0x30B442D9
+Library: ScePafToplevel function: _ZN3paf6Plugin9PageCloseEPNS_3rco7ElementEPNS0_14PageCloseParamE nidvalue: 0x3FE812F6
 Library: ScePafToplevel function: _ZN3paf6Plugin13GetPageByHashEPNS_3rco7ElementE nidvalue: 0xE1DC7DF5
 Library: ScePafToplevel function: _ZN3paf6Plugin12GetInterfaceEj nidvalue: 0x1DF2C6FD
-Library: ScePafToplevel function: _ZN3paf6Plugin17TemplateInitParamC1Ev nidvalue: 0x99300D8B
-Library: ScePafToplevel function: _ZN3paf6Plugin12TemplateOpenEPNS_2ui6WidgetEPNS_3rco7ElementEPNS0_17TemplateInitParamE nidvalue: 0xAB0DB9B0
+Library: ScePafToplevel function: _ZN3paf6Plugin17TemplateOpenParamC1Ev nidvalue: 0x99300D8B
+Library: ScePafToplevel function: _ZN3paf6Plugin12TemplateOpenEPNS_2ui6WidgetEPNS_3rco7ElementEPNS0_17TemplateOpenParamE nidvalue: 0xAB0DB9B0
 Library: ScePafToplevel function: _ZN3paf6Plugin10GetTextureEPPNS_5graph7SurfaceEPS0_PNS_3rco7ElementE nidvalue: 0x38FFFE8E
 Library: ScePafToplevel function: _ZN3paf6Plugin10GetWStringEPNS_3rco7ElementE nidvalue: 0x19CEFDA7
 Library: ScePafToplevel function: _ZN3paf6Plugin21CreateWidgetWithStyleEPNS_2ui6WidgetEPKcPNS_3rco7ElementES8_ nidvalue: 0x923F763A
@@ -47,11 +49,13 @@ Library: ScePafToplevel function: _ZN3paf9FrameworkD2Ev
 Library: ScePafToplevel function: _ZN3paf9Framework25InitializeDefaultJobQueueEv nidvalue: 0x7C624212
 Library: ScePafToplevel function: _ZN3paf9Framework11GetInstanceEv nidvalue: 0xF72FC59E
 Library: ScePafToplevel function: _ZN3paf9Framework18GetApplicationModeEv nidvalue: 0x592F13C6
-Library: ScePafToplevel function: _ZN3paf9Framework14GetCurrentPageEv nidvalue: 0x2FB738A8
+Library: ScePafToplevel function: _ZN3paf9Framework12GetUiContextEv nidvalue: 0x2FB738A8
 Library: ScePafToplevel function: _ZN3paf9Framework27GetDefaultSurfaceMemoryPoolEv nidvalue: 0xA0896F7F
 Library: ScePafToplevel function: _ZN3paf9Framework10GetTextureEPPNS_5graph7SurfaceEPS0_PNS_3rco7ElementE nidvalue: 0x7191797C
 Library: ScePafToplevel function: _ZN3paf9Framework23CreateTextureFromMemoryEPPNS_8graphics7SurfaceEPNS_6PluginEPvjNS_5Image4TypeEij nidvalue: 0xF13D2937
 Library: ScePafToplevel function: _ZN3paf9Framework12GetCRWStringEPNS_3rco7ElementE nidvalue: 0x85A057E3
 Library: ScePafToplevel function: _ZN3paf9Framework15SetRenderTargetEPNS0_18RenderSurfaceParamE nidvalue: 0x01EFE482
+Library: ScePafToplevel function: _ZN3paf9Framework28PluginCRGraphicsFreeCallbackEv nidvalue: 0xC9C02705
+Library: ScePafToplevel function: _ZN3paf9Framework26LoadPluginCRFinishCallbackEPNS_6PluginE nidvalue: 0x86F3C133
 
 Library: ScePafToplevel variable: _ZN3paf19s_frameworkInstanceE nidvalue: 0xCB81F1F1

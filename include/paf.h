@@ -55,6 +55,8 @@ namespace paf {
 
 #include <paf/error.h>
 #include <paf/stdc.h>
+#include <paf/stdcxx.h>
+#include <paf/auto_test.h>
 #include <paf/common.h>
 #include <paf/lowlayer.h>
 #include <paf/thread.h>

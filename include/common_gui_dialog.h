@@ -3,6 +3,7 @@
 
 #include <paf.h>
 #include <kernel.h>
+#include <appmgr.h>
 
 namespace sce {
 	namespace CommonGuiDialog {
@@ -176,7 +177,7 @@ namespace sce {
 			ErrorDialog()
 			{
 				unk_48 = 0;
-				faultyAppId = SCE_APPMGR_APP_ID_SELF;
+				faultyAppId = SCE_APPMGR_APP_ID_THIS;
 				unk_50 = 2;
 				unk_54 = 2;
 				unk_58 = 2;

@@ -41,51 +41,63 @@ namespace paf {
 		enum EventMain
 		{
 			EventMain_Tapped = 0x10000003,
+			EventMain_EditBegin = 0x10000005,
+			EventMain_EditEnd = 0x10000006,
 			EventMain_LongDecide = 0x10000007,
-			EventMain_Decide = 0x10000008
+			EventMain_Decide = 0x10000008,
+			EventMain_UpdateParam = 0x10000009
 		};
 
-		class EventCallback
+		enum EventSystem
 		{
-		public:
+			EventSystem_UpdateSize = 0x80004,
+			EventSystem_Destroy = 0x20080000,
+		};
 
-			typedef void(*EventHandler)(SceInt32 eventId, Widget *self, SceInt32, ScePVoid pUserData);
+		enum FocusDirection
+		{
+			FocusDirection_Up,
+			FocusDirection_Down,
+			FocusDirection_Left,
+			FocusDirection_Right,
+		};
 
-			EventCallback() : state(2), pUserData(SCE_NULL)
-			{
+		enum Anchor
+		{
+			Anchor_None = 0,
+			Anchor_Left = 1,
+			Anchor_Right = 2,
+			Anchor_Bottom = 1,
+			Anchor_Top = 2,
+		};
 
-			};
+		enum Align
+		{
+			Align_None = 0,
+			Align_Left = 1,
+			Align_Right = 2,
+			Align_Bottom = 1,
+			Align_Top = 2,
+		};
 
-			virtual ~EventCallback()
-			{
+		enum Adjust
+		{
+			Adjust_None = 0,
+			Adjust_Max = 1,
+			Adjust_ByContent = 2,
+		};
 
-			};
+		enum Origin
+		{
+			Origin_None = 0,
+			Origin_Left = 1,
+			Origin_Right = 2,
+			Origin_Bottom = 1,
+			Origin_Top = 2,
+		};
 
-			virtual SceInt32 HandleEvent(SceInt32 eventId, Widget *self, SceInt32 a3)
-			{
-				SceInt32 ret;
-
-				if ((this->state & 1) == 0) {
-					if (this->eventHandler != 0) {
-						this->eventHandler(eventId, self, a3, this->pUserData);
-					}
-					ret = SCE_OK;
-				}
-				else {
-					ret = SCE_PAF_ERROR_UI_EVENT_CALLBACK_UNHANDLED;
-				}
-
-				return ret;
-			};
-
-			virtual EventHandler GetHandler()
-			{
-				return this->eventHandler;
-			};
-
-			SceInt32 state;
-			ScePVoid pUserData;
-			EventHandler eventHandler;
+		class EventCallback : public paf::autotest::EventCallback
+		{
 
 		};
 
@@ -93,14 +105,17 @@ namespace paf {
 		{
 		public:
 
-			//FE22E2B3 c1
-			//22303A4C c2
+			enum Flag
+			{
+				Flag_None,
+				Flag_1
+			};
+
 			Context(SceUInt32 flags);
 
-			//FA21D400 d1
-			//7E3CFE67 d2
-			//C230312B d0
 			virtual ~Context();
+
+			SceInt32 SetResolution(SceUInt16 width, SceUInt16 height);
 
 		private:
 
@@ -181,10 +196,10 @@ namespace paf {
 			virtual int unkFun_0BC();
 			virtual int unkFun_0C0();
 			virtual int unkFun_0C4();
-			virtual int unkFun_0C8();
+			virtual SceInt32 SetOrigin(Origin x, Origin y, Origin z, SceInt32 a4 = 0);
 			virtual int unkFun_0CC();
 			virtual int unkFun_0D0();
-			virtual int unkFun_0D4();
+			virtual SceInt32 SetAnchor(Anchor x, Anchor y, Anchor z, SceInt32 a4 = 0);
 			virtual int unkFun_0D8();
 			virtual int unkFun_0DC();
 			virtual int unkFun_0E0();
@@ -196,8 +211,8 @@ namespace paf {
 			virtual graph::DrawObj *GetDrawObj(SceInt32 a1 = 0);
 			virtual int SetSurface(paf::graph::Surface **surf, SceInt32 childNum, SceInt32 a3 = 0);
 			virtual int SetSurfaceBase(paf::graph::Surface **surf);
-			virtual int unkFun_104();
-			virtual int unkFun_108();
+			virtual int GetSurface(paf::graph::Surface **surf, SceInt32 childNum, SceInt32 a3 = 0);
+			virtual int GetSurfaceBase(paf::graph::Surface **surf);
 			virtual int unkFun_10C();
 			virtual int unkFun_110();
 			virtual int unkFun_114();
@@ -209,9 +224,9 @@ namespace paf {
 			virtual int unkFun_12C();
 			virtual int unkFun_130(SceInt32);
 			virtual int unkFun_134(SceInt32);
-			virtual int unkFun_138();
+			virtual SceInt32 SetFocusDirectionId(FocusDirection directionType, paf::string *id);
 			virtual int unkFun_13C();
-			virtual int unkFun_140();
+			virtual SceInt32 SetFocusSearchRectangle(paf::Vector4 *rect);
 			virtual int unkFun_144();
 			virtual int unkFun_148();
 			virtual int unkFun_14C();
@@ -239,6 +254,8 @@ namespace paf {
 			virtual int unkFun_1A4();
 			virtual int unkFun_1A8();
 
+			SceInt32 Test1(SceInt32 a1);
+
 			//ScePafWidget_1EE9D37E
 			//static CopyPaste *GetCopyPasteObj();
 
@@ -255,13 +272,26 @@ namespace paf {
 
 			SceInt32 SetPosition(const paf::Vector4 *pPosition, SceFloat32 a2 = 0.0f, SceInt32 a3 = 0, SceInt32 a4 = 0x10000, SceInt32 a5 = 0, SceInt32 a6 = 0, SceInt32 a7 = 0);
 
+			static SceVoid GetPosition(paf::Vector4 *pos, Widget *w, SceInt32 a1, Widget *a2);
+
+			paf::Vector4 GetPosition(SceInt32 a1 = 0, Widget *a2 = SCE_NULL)
+			{
+				paf::Vector4 ret;
+				GetPosition(&ret, this, a1, a2);
+				return ret;
+			}
+
 			SceInt32 SetSize(const paf::Vector4 *pSize, SceFloat32 a2 = 0.0f, SceInt32 a3 = 0, SceInt32 a4 = 0x10004, SceInt32 a5 = 0, SceInt32 a6 = 0, SceInt32 a7 = 0);
+
+			paf::Vector4 *GetSize(SceInt32 a1 = 0);
 
 			SceInt32 SetZoom(const paf::Vector4 *pZoom, SceFloat32 a2 = 0.0f, SceInt32 a3 = 0, SceInt32 a4 = 0x10005, SceInt32 a5 = 0, SceInt32 a6 = 0, SceInt32 a7 = 0);
 
 			SceInt32 SetRotation(const paf::Vector4 *pRot1, SceFloat32 a2 = 0.0f, const paf::Vector4 *pRot2 = SCE_NULL, SceInt32 a4 = 0, SceInt32 a5 = 0x10006, SceInt32 a6 = 0, SceInt32 a7 = 0, SceInt32 a8 = 0);
 
-			SceInt32 SetAdjust(bool x, bool y, bool z);
+			SceInt32 SetAdjust(SceUInt32 x, SceUInt32 y, SceUInt32 z);
+
+			SceInt32 SetAlign(Align x, Align y, Align z, SceInt32 a4 = 0);
 
 			SceVoid SetGraphicsDisabled(bool disable);
 
@@ -275,7 +305,7 @@ namespace paf {
 
 			SceInt32 UnregisterFwEventCallback(SceInt32 eventId);
 
-			SceInt32 AssignButton(SceUInt32 buttons);
+			SceInt32 SetDirectKey(SceUInt32 buttons);
 
 			SceInt32 SetAlpha(SceFloat32 alpha, SceInt32 a2 = 0, SceInt32 a3 = 0x10003, SceInt32 a4 = 0, SceInt32 a5 = 0, SceInt32 a6 = 0);
 
@@ -294,30 +324,29 @@ namespace paf {
 		public:
 
 			SceUChar8 unk_004[0x5D];
-
 			SceUInt8 unk_061;
-
 			SceUChar8 unk_062[0x74];
-
 			SceUInt8 unk_0D6;
-
-			SceUChar8 unk_0D7[0x75];
-
-			SceUInt32 hash;
-
-			SceUChar8 unk_150[0x24];
-
+			SceUChar8 unk_0D7[0x69];
+			rco::Element elem;
+			SceInt32 unk_150;
+			SceInt32 unk_154;
+			SceInt32 unk_158;
+			SceInt32 unk_15C;
+			SceInt32 unk_160;
+			SceInt32 unk_164;
+			ui::Widget *parent;
+			SceInt32 unk_16C;
+			SceInt32 unk_170;
 			SceUInt32 childNum;
-
 			SceUChar8 unk_178[0x1E];
-
 			SceUInt8 animationStatus;
-
 			SceUChar8 unk_197[0x15];
-
 			SceFloat32 alpha;
+			SceUChar8 unk_1B4[0xAC];
+			SceUInt32 adjust;
+			SceUChar8 unk_264[0x20];
 
-			SceUChar8 unk_1B4[0xD0];
 		};
 
 		class BusyIndicator : public Widget
@@ -343,6 +372,16 @@ namespace paf {
 		{
 		public:
 
+			enum FontType
+			{
+				FontType_Text = 0
+			};
+
+			enum CharacterType
+			{
+				CharacterType_Text = 1
+			};
+
 			enum ColorType
 			{
 				ColorType_Text = 2,
@@ -362,9 +401,43 @@ namespace paf {
 
 			enum Option
 			{
-				Text_Bold = 0x7,
-				Text_Shadow = 0xC,
-				Text_ExternalLine = 0xD
+				Option_Bold = 0x7,
+				Option_Shadow = 0xC,
+				Option_ExternalLine = 0xD
+			};
+
+			enum FontId
+			{
+				FontId_0,
+				FontId_1,
+				FontId_2,
+				FontId_3,
+				FontId_4,
+				FontId_5,
+				FontId_6,
+				FontId_7,
+				FontId_8,
+				FontId_9
+			};
+
+			class CharacterSize
+			{
+			public:
+
+				CharacterSize() : width(0.0), height(0.0)
+				{
+
+				};
+
+				CharacterSize(SceFloat32 width, SceFloat32 height) : width(width), height(height)
+				{
+
+				};
+
+				~CharacterSize() { };
+
+				SceFloat32 width;
+				SceFloat32 height;
 			};
 
 
@@ -372,13 +445,17 @@ namespace paf {
 
 			virtual ~Text();
 
-			SceInt32 SetColor(ColorType type, SceInt32 a2, SceInt32 a3, const paf::Rgba *pColor);
+			SceInt32 SetColor(ColorType type, SceInt32 pos, SceInt32 len, const paf::Rgba *pColor);
 
-			SceInt32 GetColor(ColorType type, SceInt32 a2, paf::Rgba *pColor);
+			SceInt32 SetCharacterSize(CharacterType type, SceInt32 pos, SceInt32 len, const CharacterSize *pSize);
 
-			SceInt32 SetOption(Option option, SceInt32 a2, SceInt32 a3, bool enable);
+			SceInt32 SetFont(FontType type, SceInt32 pos, SceInt32 len, FontId fontId);
+
+			SceInt32 SetOption(Option option, SceInt32 pos, SceInt32 len, bool enable);
 
 			SceInt32 SetFontSize(SceFloat32 size, SceInt32 a2, SceSize pos, SceSize len);
+
+			paf::Rgba GetColor(ColorType type, SceInt32 pos);
 
 		public:
 
@@ -414,6 +491,32 @@ namespace paf {
 		private:
 
 			SceChar8 unk_2D8[0x50];
+		};
+
+		class Camera : public Widget
+		{
+		public:
+
+			Camera(Widget *parent, SceInt32 a2);
+
+			virtual ~Camera();
+
+		private:
+
+			SceChar8 unk_280[0x110];
+		};
+
+		class Scene : public Widget
+		{
+		public:
+
+			Scene(Widget *parent, SceInt32 priority, SceInt32 a3, SceInt32 a4, SceInt32 a5);
+
+			virtual ~Scene();
+
+		private:
+
+			SceChar8 unk_280[0x140];
 		};
 
 		class Plane : public Widget
@@ -835,13 +938,70 @@ namespace paf {
 		{
 		public:
 
+			enum ConfigurationType
+			{
+				ConfigurationType_None,
+				ConfigurationType_Advanced,
+				ConfigurationType_Simple
+			};
+
+			class ItemCallback
+			{
+			public:
+
+				class Param
+				{
+				public:
+
+					ui::ListView *list;
+					SceInt32 segment;
+					SceInt32 cellIndex;
+					ui::Widget *parent;
+				};
+
+				ItemCallback();
+
+				virtual ~ItemCallback();
+
+				virtual paf::ui::ListItem *Create(Param *info);
+				virtual SceVoid Start(Param *info);
+				virtual SceVoid Stop(Param *info);
+				virtual SceVoid Dispose(Param *info);
+			};
+
 			ListView(Widget *parent, SceInt32 a2);
 
 			virtual ~ListView();
 
+			SceVoid Lock();
+
+			SceVoid Unlock();
+
+			SceVoid RegisterItemCallback(ItemCallback *callback);
+
+			SceVoid SetSegmentSize(Vector4 *arg);
+
+			SceVoid SetSegmentEnable(SceInt32 segment, SceInt32 val);
+
+			SceVoid SetCellSize(SceInt32 a1, Vector4 *arg);
+
+			SceInt32 AddItem(SceInt32 segment, SceInt32 startingCellIndex, SceInt32 itemCount);
+
+			SceVoid SetConfigurationType(SceInt32 segment, ConfigurationType val);
+
+			SceVoid RemoveItem(SceInt32 segment, SceInt32 startingCellIndex, SceInt32 itemCount);
+
+			SceInt32 GetCellNum(SceInt32 segment);
+
+			SceInt32 SetSegmentCapacity(SceInt32 segment, SceInt32 capacity);
+
+			SceUChar8 unk_400[0x30];
+
+			ItemCallback *itemCb;
+
 		private:
 
-			SceUChar8 unk_400[0xE8];
+			SceUChar8 unk_434[0xB4];
 		};
 
 		class FileList : public ListView

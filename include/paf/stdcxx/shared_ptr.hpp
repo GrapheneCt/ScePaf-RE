@@ -133,6 +133,11 @@ namespace paf {
 			return obj;
 		}
 
+		SharedPtrImpl<T> * getImpl() const
+		{
+			return impl;
+		}
+
 		void reset(T *ptr = NULL)
 		{
 			if (obj != NULL) {

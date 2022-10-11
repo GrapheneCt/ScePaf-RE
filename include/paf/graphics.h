@@ -14,6 +14,8 @@ namespace paf {
 
 	namespace graph {
 
+		class Surface;
+
 		class Callback
 		{
 		public:
@@ -43,11 +45,11 @@ namespace paf {
 			virtual SceInt32 unkFun_14();
 			virtual SceInt32 unkFun_18();
 			virtual SceInt32 unkFun_1C();
-			virtual SceInt32 unkFun_20();
-			virtual SceInt32 unkFun_24();
+			virtual SceInt32 SetSurface(paf::graph::Surface **surf, SceInt32 a3 = 0);
+			virtual SceInt32 GetSurface(paf::graph::Surface **surf, SceInt32 a3 = 0);
 			virtual SceInt32 unkFun_28();
 			virtual SceInt32 unkFun_2C();
-			virtual SceInt32 unkFun_30();
+			virtual SceInt32 SetFilterColor(Rgba *color);
 			virtual SceInt32 unkFun_34();
 			virtual SceInt32 unkFun_38();
 			virtual SceInt32 unkFun_3C();
@@ -101,6 +103,10 @@ namespace paf {
 			SceInt32 GetLength(SceUInt32 *pLength);
 
 			SceInt32 GetDataAndLength(SceWChar16 **ppData, SceUInt32 *pLength);
+
+			SceInt32 SetOption(SceUInt32 option, SceInt32 pos, SceInt32 len, bool enable);
+
+			SceInt32 SetColor(SceUInt32 type, SceInt32 pos, SceInt32 len, const Rgba *pColor);
 
 		private:
 
@@ -242,7 +248,7 @@ namespace paf {
 				ScePVoid gxmData;
 			};
 
-			Surface(SurfacePool *memPool, SceInt32 width, SceInt32 height, paf::image::ImageMode mode, paf::image::ImageOrder order, SceInt32 a6, SceUInt32 numLevel, SceInt32 a8); //0x7C8B2A63
+			Surface(SurfacePool *memPool, SceInt32 width, SceInt32 height, paf::image::ImageMode mode, paf::image::ImageOrder order, SceInt32 a6, SceUInt32 numLevel, SceInt32 level); //0x7C8B2A63
 
 			virtual ~Surface();
 
@@ -265,7 +271,7 @@ namespace paf {
 
 			static SceVoid Create(Surface **res, SurfacePool *memPool, const ScePVoid ptr, SceInt32 unused_1, SceSize size, SceInt32 unused_2 = 0, ScePVoid fwOpt = SCE_NULL);
 
-			SceInt32 Copy(SceUInt32 level, ScePVoid srcAddr, paf::image::ImageOrder srcOrder, SceInt32 srcMemPitch, SceInt32 a6 = -1);
+			SceInt32 Copy(SceUInt32 level, ScePVoid srcAddr, paf::image::ImageOrder srcOrder, SceInt32 srcLinePitch, SceInt32 a6 = -1);
 
 			SceInt32 Release();
 
@@ -288,6 +294,9 @@ namespace paf {
 
 			//ScePafGraphics_804E92B1
 			SceInt32 ApplyFilters();
+
+			//ScePafGraphics_22AB24A0
+			SceUInt32 GetPitchAlign(SceUInt32 width);
 
 			SceInt32 texFormat;
 			SceInt32 unk_08;

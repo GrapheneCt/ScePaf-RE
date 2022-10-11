@@ -23,6 +23,11 @@ namespace paf {
 
 		};
 
+		Rgba(SceFloat32 r, SceFloat32 g, SceFloat32 b, SceFloat32 a) : r(r), g(g), b(b), a(a)
+		{
+
+		};
+
 		~Rgba() { };
 
 		SceFloat32 r;
@@ -705,7 +710,14 @@ namespace paf {
 			string tx7;
 			string tx8;
 			string tx9;
-			SceUChar8 unk_74[0x44];
+			SceInt32 unk_74;
+			SceInt32 unk_78;
+			SceInt32 unk_7C;
+			SceInt32 unk_80;
+			SceInt32 unk_84;
+			SceInt32 unk_88;
+			SceInt32 sslFlags;
+			SceUChar8 unk_90[0x28];
 		};
 
 		HttpFile();
@@ -851,6 +863,30 @@ namespace paf {
 			ModelType_Dolce = 1
 		};
 
+		//ScePafMisc_2C227FFD
+		extern bool SupportsMultiController(); //vsh capability 1
+
+		//ScePafMisc_CB582B61
+		extern bool SupportsCamera(); //vsh capability 2
+
+		//ScePafMisc_B7CFFF5C
+		extern bool SupportsWiredEthernet(); //vsh capability 5 OR 6
+
+		//ScePafMisc_C74F989D
+		extern bool c8(); //vsh capability 7
+
+		//ScePafMisc_D8D642F5
+		extern bool c10(); //vsh capability 8
+
+		//ScePafMisc_9DE7DA6D
+		extern bool c20(); //vsh capability 9
+
+		//ScePafMisc_7ED8F03C
+		extern bool SupportsLocalOutputs(); //vsh capability 10, true if system has screen and speakers
+
+		//ScePafMisc_A6A33C15
+		extern bool IsDolce();
+
 		extern ModelType GetModelType();
 
 		extern SceVoid SuspendTouchInput(SceUInt32 port);
@@ -864,7 +900,39 @@ namespace paf {
 
 		enum ImageMode
 		{
-			ImageMode_0 = 0
+			ImageMode_U5U6U5_BGR,
+			ImageMode_U1U5U5U5_ABGR,
+			ImageMode_U4U4U4U4_ABGR,
+			ImageMode_UNSUPPORTED3,
+			ImageMode_U8U8U8U8_ABGR,
+			ImageMode_U8U8U8U8_BGRA,
+			ImageMode_U8U8U8U8_ARGB,
+			ImageMode_UNSUPPORTED7,
+			ImageMode_UNSUPPORTED8,
+			ImageMode_UNSUPPORTED9,
+			ImageMode_UNSUPPORTED10,
+			ImageMode_UNSUPPORTED11,
+			ImageMode_UNSUPPORTED12,
+			ImageMode_UNSUPPORTED13,
+			ImageMode_U8_R111,
+			ImageMode_U8_1RRR,
+			ImageMode_UBC1_ABGR,
+			ImageMode_UNSUPPORTED17,
+			ImageMode_UBC2_ABGR,
+			ImageMode_UNSUPPORTED19,
+			ImageMode_UBC3_ABGR,
+			ImageMode_P4_ABGR,
+			ImageMode_P8_ABGR,
+			ImageMode_UNSUPPORTED23,
+			ImageMode_UNSUPPORTED24,
+			ImageMode_UNSUPPORTED25,
+			ImageMode_UNSUPPORTED26,
+			ImageMode_YVU420P2,
+			ImageMode_YUV420P3,
+			ImageMode_PVRT2BPP_ABGR,
+			ImageMode_PVRT4BPP_ABGR,
+			ImageMode_PVRTII2BPP_ABGR,
+			ImageMode_PVRTII4BPP_ABGR,
 		};
 
 		enum ImageFormat
@@ -881,7 +949,10 @@ namespace paf {
 
 		enum ImageOrder
 		{
-			ImageOrder_0 = 0
+			ImageOrder_Unsupported,
+			ImageOrder_Linear,
+			ImageOrder_Swizzled,
+			ImageOrder_Tiled,
 		};
 
 		enum ImageResizeType
@@ -1215,6 +1286,11 @@ namespace paf {
 	class Vector4
 	{
 	public:
+
+		Vector4(SceFloat32 x, SceFloat32 y = 0.0f, SceFloat32 z = 0.0f, SceFloat32 w = 0.0f) : x(x), y(y), z(z), w(w)
+		{
+
+		};
 
 		Vector4();
 
