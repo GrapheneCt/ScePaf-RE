@@ -33,7 +33,7 @@ namespace sce {
 			WidgetType_TextTitle,
 			WidgetType_PlaneTitle,
 			WidgetType_PlaneButtonX,
-			WidgetType_Unk9,
+			WidgetType_ScrollView,
 			WidgetType_Box,
 			WidgetType_ListView,
 			WidgetType_Button1,

@@ -102,9 +102,9 @@ namespace sce {
 		SceInt32 GetInt(const char *key, SceInt32 *pValue, SceInt32 defaultValue);
 
 		SceInt32 SetInt(const char *key, SceInt32 value);
-		//1E1BE36B
+
 		SceInt32 GetString(const char *key, const char* value, SceUInt32 size, const char* defaultValue);
-		//9D20A196
+
 		SceInt32 SetString(const char *key, const char* value);
 
 		/*int Test1();

@@ -51,6 +51,10 @@ namespace paf {
 		class SpinBase;
 		class AppIconBase;
 	}
+
+	namespace graph {
+		class SurfacePool;
+	}
 }
 
 #include <paf/error.h>
