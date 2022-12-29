@@ -33,6 +33,7 @@ Library: ScePafThread function: _ZN3paf3job8JobQueue4InitEPNS0_8JobQueue6OptionE
 
 Library: ScePafThread function: _ZN3paf3job7JobItemC1EPKc nidvalue: 0xECF8334D
 Library: ScePafThread function: _ZN3paf3job7JobItemC2EPKc nidvalue: 0xA54DB064
+Library: ScePafThread function: _ZN3paf3job7JobItem10IsCanceledEv nidvalue: 0x142E7F78
 
 Library: ScePafThread variable: _ZN3paf6thread17s_mainThreadQueueE nidvalue: 0x83CE85DD
 Library: ScePafThread variable: _ZN3paf6thread20s_mainThreadSyncCallE nidvalue: 0x11807592

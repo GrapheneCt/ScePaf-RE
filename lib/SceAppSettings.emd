@@ -14,3 +14,5 @@ Library: SceAppSettings function: _ZN3sce11AppSettings12PluginExitCBEPN3paf6Plug
 Library: SceAppSettings function: _ZN3sce11AppSettings6GetIntEPKcPii nidvalue: 0xEC529AF7
 Library: SceAppSettings function: _ZN3sce11AppSettings6SetIntEPKci nidvalue: 0x272D902F
 Library: SceAppSettings function: _ZN3sce11AppSettings10InitializeEv nidvalue: 0x75E3F651
+Library: SceAppSettings function: _ZN3sce11AppSettings9SetStringEPKcS2_ nidvalue: 0x9D20A196
+Library: SceAppSettings function: _ZN3sce11AppSettings9GetStringEPKcS2_jS2_ nidvalue: 0x1E1BE36B

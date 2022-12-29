@@ -18,7 +18,7 @@ Library: ScePafMisc function: _ZN3paf6system16ResumeTouchInputEj nidvalue: 0x156
 Library: ScePafMisc function: _ZN3paf6system17SuspendTouchInputEj nidvalue: 0x0D4B4B67
 
 Library: ScePafMisc function: _ZN3paf8HttpFile7OpenArg6SetUrlEPKc nidvalue: 0xDE80BFD9
-Library: ScePafMisc function: _ZN3paf8HttpFile7OpenArg6SetUrlEPNS_6stringE nidvalue: 0xD6D82FF9
+Library: ScePafMisc function: _ZN3paf8HttpFile7OpenArg6SetUrlEPNS_3UrlE nidvalue: 0xD6D82FF9
 Library: ScePafMisc function: _ZN3paf8HttpFile7OpenArg6SetOptEiNS1_3OptE nidvalue: 0xED1839C2
 
 Library: ScePafMisc function: _ZNK3paf6memory13HeapAllocator12IsCdlgMemoryEv nidvalue: 0xD9E9BEC8
@@ -50,6 +50,11 @@ Library: ScePafMisc function: _ZN3paf8datetime8DateTime10IsLeapYearEi nidvalue: 
 Library: ScePafMisc function: _ZN3paf8datetime8DateTime12ParseISO8601EP10SceRtcTickPKc nidvalue: 0x0853896D
 Library: ScePafMisc function: _ZN3paf8datetime8DateTime14GetDaysInMonthEii nidvalue: 0x3D21E902
 Library: ScePafMisc function: _ZN3paf8datetime8DateTime9ToRtcTickEP10SceRtcTick nidvalue: 0x1B012451
+Library: ScePafMisc function: _ZN3paf8datetime8DateTime8WcsftimeEPwiS2_i nidvalue: 0xF8D1975F
+Library: ScePafMisc function: _ZN3paf8datetime8DateTime13GetTimeFormatEv nidvalue: 0x6227AE12
+Library: ScePafMisc function: _ZN3paf8datetime8DateTime13SetTimeFormatEPKw nidvalue: 0x22CA1B27
+Library: ScePafMisc function: _ZN3paf8datetime8DateTime13GetDateFormatEv nidvalue: 0xD8B77FA4
+Library: ScePafMisc function: _ZN3paf8datetime8DateTime13SetDateFormatEPKw nidvalue: 0x0375FCBA
 
 Library: ScePafMisc function: _ZN3paf5image5Image12DetectFormatENS_9SharedPtrINS_4FileEEExj nidvalue: 0x6D8D3426
 Library: ScePafMisc function: _ZN3paf5image5Image12DetectFormatENS_9SharedPtrINS_6BufferEEE nidvalue: 0x3F9E305E
@@ -77,6 +82,9 @@ Library: ScePafMisc function: _ZN3paf7Matrix47FrustumEffffff nidvalue: 0xF70087F
 Library: ScePafMisc function: _ZN3paf8compress8CompressEPNS_9SharedPtrINS_9LocalFileEEEPvjNS0_14DecompressTypeEPNS_6memory13HeapAllocatorE nidvalue: 0xCBF1D1C9
 Library: ScePafMisc function: _ZN3paf8compress10DecompressEPvjPKvjNS0_14DecompressTypeE nidvalue: 0x5E39FCE1
 
+Library: ScePafMisc function: _ZN3paf3UrlC1EPNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE nidvalue: 0x67BA6456
+Library: ScePafMisc function: _ZN3paf3UrlC2EPNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE nidvalue: 0x987D8B51
+
 //CORRECT NAMES
 Library: ScePafMisc function: _ZN3paf3DirC1Ev
 Library: ScePafMisc function: _ZN3paf3Dir4OpenEPKc
@@ -96,6 +104,12 @@ Library: ScePafMisc function: _ZN3paf5cache12CacheManagerD2Ev
 
 Library: ScePafMisc function: _ZN3paf6ModuleD1Ev
 Library: ScePafMisc function: _ZN3paf6ModuleD2Ev
+
+Library: ScePafMisc function: _ZN3paf3UrlC1Ev
+Library: ScePafMisc function: _ZN3paf3UrlC2Ev
+Library: ScePafMisc function: _ZN3paf3UrlD1Ev
+Library: ScePafMisc function: _ZN3paf3UrlD2Ev
+Library: ScePafMisc function: _ZN3paf3UrlD0Ev
 
 Library: ScePafMisc function: _ZN3paf17LocalFilePsp2Impl10CloseAsyncEv
 Library: ScePafMisc function: _ZN3paf17LocalFilePsp2Impl9SeekAsyncExi

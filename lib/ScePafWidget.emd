@@ -32,9 +32,14 @@ Library: ScePafWidget function: _ZN3paf2ui6Widget9GetParentEv nidvalue: 0xCFA1EB
 Library: ScePafWidget function: _ZN3paf2ui6Widget14SetOrientationEv nidvalue: 0x0F7A1317
 Library: ScePafWidget function: _ZN3paf2ui6Widget11GetPositionEPNS_7Vector4EPS1_iS4_ nidvalue: 0x83BE8594
 Library: ScePafWidget function: _ZN3paf2ui6Widget7GetSizeEi nidvalue: 0x2F924BAD
-Library: ScePafWidget function: _ZN3paf2ui6Widget5Test1Ei nidvalue: 0x931AD41E
+Library: ScePafWidget function: _ZN3paf2ui6Widget15SetCtrlInternalEi nidvalue: 0x931AD41E
+Library: ScePafWidget function: _ZN3paf2ui6Widget9SendEventEjiiii nidvalue: 0x16C6594A
+Library: ScePafWidget function: _ZN3paf2ui7TextBox4HideEv nidvalue: 0x77CE1B80
 //Library: ScePafWidget function: _ZN3paf2ui6Widget19getCopyPasteTextObjEv nidvalue: 0x1EE9D37E
 //Library: ScePafWidget function: _ZN3paf2ui6Widget22getCopyPasteTextBoxObjEv nidvalue: 0xBFF4C5A2
+
+Library: ScePafWidget function: _ZN3paf2ui5EventC1Eiiiiiiii nidvalue: 0xD2E00457
+Library: ScePafWidget function: _ZN3paf2ui5EventC2Eiiiiiiii nidvalue: 0x813CF3EF
 
 Library: ScePafWidget function: _ZN3paf2ui13BusyIndicator5StartEv
 Library: ScePafWidget function: _ZN3paf2ui13BusyIndicator4StopEv
@@ -248,11 +253,12 @@ Library: ScePafWidget function: _ZN3paf2ui9ScrollBarD0Ev nidvalue: 0x511AE382
 Library: ScePafWidget function: _ZN3paf2ui9ScrollBarD1Ev nidvalue: 0x006BF9D8
 Library: ScePafWidget function: _ZN3paf2ui9ScrollBarD2Ev nidvalue: 0x9CCC2A09
 
-Library: ScePafWidget function: _ZN3paf2ui7ContextC1Ej nidvalue: 0xFE22E2B3
-Library: ScePafWidget function: _ZN3paf2ui7ContextC2Ej nidvalue: 0x22303A4C
-Library: ScePafWidget function: _ZN3paf2ui7ContextD1Ev nidvalue: 0xFA21D400
-Library: ScePafWidget function: _ZN3paf2ui7ContextD2Ev nidvalue: 0x7E3CFE67
-Library: ScePafWidget function: _ZN3paf2ui7ContextD0Ev nidvalue: 0xC230312B
+Library: ScePafWidget function: _ZN3paf2ui7Context6OptionC1Ej nidvalue: 0xFE22E2B3
+Library: ScePafWidget function: _ZN3paf2ui7Context6OptionC2Ej nidvalue: 0x22303A4C
+Library: ScePafWidget function: _ZN3paf2ui7Context6OptionD1Ev nidvalue: 0xFA21D400
+Library: ScePafWidget function: _ZN3paf2ui7Context6OptionD2Ev nidvalue: 0x7E3CFE67
+Library: ScePafWidget function: _ZN3paf2ui7Context6OptionD0Ev nidvalue: 0xC230312B
+
 Library: ScePafWidget function: _ZN3paf2ui7Context13SetResolutionEtt nidvalue: 0xE8F38C84
 Library: ScePafWidget function: _ZN3paf2ui7Context5Test1Ei nidvalue: 0xA6B659BB
 
