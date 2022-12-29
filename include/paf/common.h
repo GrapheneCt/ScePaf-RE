@@ -8,12 +8,6 @@
 #include <scetypes.h>
 #include <sce_atomic.h>
 #include <wchar.h>
-#include <paf/stdc.h>
-#include <paf/stdcxx/typeinfo.hpp>
-#include <paf/stdcxx/memory.hpp>
-#include <paf/stdcxx/iosfwd.hpp>
-#include <paf/stdcxx/string.hpp>
-#include <paf/stdcxx/shared_ptr.hpp>
 
 namespace paf {
 

@@ -84,8 +84,8 @@ namespace paf {
 			SceFloat32 fadeinTimeMs;
 			PageEffectType effectType;
 			SceInt32 unk_20;
-			SceInt32 unk_24_pageArg_a4;
-			SceInt32 unk_24_pageArg_a5;
+			ui::Context::Option *uiOpt;
+			SceInt32 unk_28_pageArg_a5;
 		};
 
 		class PageCloseParam
@@ -254,7 +254,7 @@ namespace paf {
 			SceUInt8 unkOptFlag1;
 			SceUInt8 extCtrlMode;
 			SceUInt8 unkOptFlag3;
-			ui::Context *extUiContext;
+			ui::Context::Option *uiCtxOpt;
 			SceInt32 screenOrientationMode;
 			SceInt32 graphicsFlags;
 
@@ -358,35 +358,32 @@ namespace paf {
 		SceUChar8 unk_00[0x18];
 
 		SceUInt32 loadedPluginNum;
-
 		Plugin *crPlugin;
 
-		SceUChar8 unk_20[0x24];
+		SceUChar8 unk_20[0x14];
 
+		memory::HeapAllocator *fwDecodeHeapAlloc;
+		bool hasFwDecodeHeapAlloc;
+		memory::HeapAllocator *fwDefaultPluginHeap;
+		bool hasFwDefaultPluginHeap;
 		ScePVoid crSurfacePoolMem;
 		graph::SurfacePool *crSurfacePool;
-
 		ScePVoid *uiCtx;
 
 		SceUChar8 unk_50[0x4];
 
 		ApplicationMode applicationMode;
-
 		SceUInt32 optionalFeatureFlags;
-
 		SceUInt32 language;
 
 		thread::Mutex *fwUpdateMutex;
-
 		thread::Mutex *fwUpdateCond;
-
 		thread::RWLock *fwListLock;
 
 		SceUChar8 unk_6C[0x8];
 
 		SceUID powerCallbackId;
-
-		paf::memory::HeapAllocator *defaultAllocator;
+		ui::Context::Option *uiCtxOpt;
 	};
 
 	__declspec (dllimport) Framework *s_frameworkInstance;

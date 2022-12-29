@@ -41,8 +41,8 @@ namespace paf {
 		enum EventMain
 		{
 			EventMain_Tapped = 0x10000003,
-			EventMain_EditBegin = 0x10000005,
-			EventMain_EditEnd = 0x10000006,
+			EventMain_EditEnd = 0x10000005,
+			EventMain_EditBegin = 0x10000006,
 			EventMain_LongDecide = 0x10000007,
 			EventMain_Decide = 0x10000008,
 			EventMain_UpdateParam = 0x10000009
@@ -105,21 +105,48 @@ namespace paf {
 		{
 		public:
 
-			enum Flag
+			class Option
 			{
-				Flag_None,
-				Flag_1
+			public:
+
+				enum Flag
+				{
+					Flag_None,
+					Flag_ResolutionDefault = 1,
+					Flag_ResolutionHalfHd = 2,
+					Flag_ResolutionFullHd = 4,
+
+					Flag_OrientationLandscapeDown = 0x1000000,
+					Flag_OrientationPortraitRight = 0x2000000,
+					Flag_OrientationLandscapeUp = 0x4000000,
+					Flag_OrientationPortraitLeft = 0x8000000,
+				};
+
+				Option(SceUInt32 flags);
+
+				virtual ~Option();
+
+				virtual int unkFun_08(SceInt32 width, SceInt32 height, SceInt32 mode);
+				virtual int unkFun_0C(SceInt32 mode1, SceInt32 mode2);
+
+			private:
+
+				SceUChar8 m_work[0x10];
 			};
 
-			Context(SceUInt32 flags);
+			//393F0EF0 c1
+			//038B47A4 c2
+			Context(Option *opt);
 
+			//B01FAD50 d1
+			//C79BAF2C d0
 			virtual ~Context();
 
 			SceInt32 SetResolution(SceUInt16 width, SceUInt16 height);
 
 		private:
 
-			SceUChar8 m_work[0x10];
+			SceUChar8 m_work[0x2D9C];
 		};
 
 		class CopyPaste
@@ -137,6 +164,19 @@ namespace paf {
 		private:
 
 			SceUChar8 work[0x34];
+		};
+
+		class Event
+		{
+		public:
+
+			Event(SceInt32 a1, SceInt32 a2, SceInt32 a3, SceInt32 a4, SceInt32 a5, SceInt32 a6, SceInt32 a7, SceInt32 a8);
+
+			virtual ~Event();
+
+		private:
+
+			SceChar8 m_work[0x20];
 		};
 
 		class Widget
@@ -170,7 +210,7 @@ namespace paf {
 			virtual int unkFun_054();
 			virtual SceVoid SetTouchEnable(bool enable);
 			virtual bool GetTouchEnable();
-			virtual int unkFun_060();
+			virtual SceInt32 SendEvent(SceUInt32 eventId, Event *event);
 			virtual bool equal(const char *pTypeName);
 			virtual const char *name();
 			virtual int unkFun_06C();
@@ -238,7 +278,7 @@ namespace paf {
 			virtual int unkFun_164();
 			virtual int unkFun_168();
 			virtual int unkFun_16C();
-			virtual int SendEvent(SceInt32 eventId, bool a2);
+			virtual int unkFun_170(SceUInt32 eventId, bool a2);
 			virtual int unkFun_174(SceInt32 a1);
 			virtual int unkFun_178(SceInt32 a1);
 			virtual int unkFun_17C();
@@ -254,7 +294,7 @@ namespace paf {
 			virtual int unkFun_1A4();
 			virtual int unkFun_1A8();
 
-			SceInt32 Test1(SceInt32 a1);
+			SceInt32 SetCtrlInternal(SceInt32 a1);
 
 			//ScePafWidget_1EE9D37E
 			//static CopyPaste *GetCopyPasteObj();
@@ -262,7 +302,7 @@ namespace paf {
 			//ScePafWidget_BFF4C5A2
 			//static ScePVoid GetCopyPasteTextBoxObj();
 
-			SceInt32 SetFilterColor(const paf::Rgba *pColor, SceFloat32 a2, SceInt32 a3 = 0, SceInt32 a4 = 0x10001, SceInt32 a5 = 0, SceInt32 a6 = 0, SceInt32 a7 = 0);
+			SceInt32 SetFilterColor(const paf::Rgba *pColor, SceFloat32 a2 = 0.0f, SceInt32 a3 = 0, SceInt32 a4 = 0x10001, SceInt32 a5 = 0, SceInt32 a6 = 0, SceInt32 a7 = 0);
 
 			Widget *GetChild(paf::rco::Element *widgetInfo, SceUInt32 param); //param can be 0,1,2
 
@@ -297,7 +337,7 @@ namespace paf {
 
 			SceVoid SetOrientation();
 
-			SceInt32 RegisterEventCallback(SceInt32 eventId, EventCallback *cb, bool a3);
+			SceInt32 RegisterEventCallback(SceInt32 eventId, EventCallback *cb, bool a3 = false);
 
 			SceInt32 UnregisterEventCallback(SceInt32 eventId, SceInt32 a2, SceInt32 a3);
 
@@ -321,13 +361,43 @@ namespace paf {
 
 			SceInt32 PlayEffectReverse(SceFloat32 parameter, paf::effect::EffectType animId, EventCallback::EventHandler animCB = 0, ScePVoid pUserData = SCE_NULL);
 
+			SceVoid SendEvent(SceUInt32 eventId, SceInt32 a2 = 0, SceInt32 a3 = 0, SceInt32 a4 = 0, SceInt32 a5 = 0);
+
+			static SceVoid SetControlFlags(paf::ui::Widget *widget, SceUInt32 flags)
+			{
+				unsigned char bVar1;
+				int iVar2;
+				int iVar3;
+				int param_1 = (int)widget;
+
+				bVar1 = *(unsigned char *)(param_1 + 0x194);
+				if (((flags & 0xff) == 0) && ((int)(char)bVar1 << 0x1b < 0)) {
+					ui::Widget *widg = (ui::Widget *)param_1;
+					widg->SetCtrlInternal(1);
+					bVar1 = *(unsigned char *)(param_1 + 0x194);
+				}
+				iVar2 = *(int *)(param_1 + 0x170);
+				*(unsigned char *)(param_1 + 0x194) = bVar1 & 0xef | (unsigned char)(flags << 4) & 0x10;
+				iVar3 = 0;
+				if (iVar2 != 0) {
+					iVar3 = *(int *)(iVar2 + 4);
+				}
+				if (iVar3 != iVar2) {
+					do {
+						SetControlFlags(*(paf::ui::Widget **)(iVar3 + 8), flags & 0xff);
+						if (iVar3 != 0) {
+							iVar3 = *(int *)(iVar3 + 4);
+						}
+					} while (iVar3 != *(int *)(param_1 + 0x170));
+				}
+			}
+
+			//84BE12BE
+			static SceInt32 CreateSurface(paf::string *file, paf::graph::Surface **res);
+
 		public:
 
-			SceUChar8 unk_004[0x5D];
-			SceUInt8 unk_061;
-			SceUChar8 unk_062[0x74];
-			SceUInt8 unk_0D6;
-			SceUChar8 unk_0D7[0x69];
+			SceUChar8 unk_004[0x13C];
 			rco::Element elem;
 			SceInt32 unk_150;
 			SceInt32 unk_154;
@@ -343,10 +413,10 @@ namespace paf {
 			SceUInt8 animationStatus;
 			SceUChar8 unk_197[0x15];
 			SceFloat32 alpha;
+			SceUInt32 color;
 			SceUChar8 unk_1B4[0xAC];
 			SceUInt32 adjust;
-			SceUChar8 unk_264[0x20];
-
+			SceUChar8 unk_264[0x1C];
 		};
 
 		class BusyIndicator : public Widget
@@ -487,6 +557,8 @@ namespace paf {
 			TextBox(Widget *parent, SceInt32 a2);
 
 			virtual ~TextBox();
+
+			SceInt32 Hide();
 
 		private:
 

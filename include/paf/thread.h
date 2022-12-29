@@ -301,6 +301,8 @@ namespace paf {
 
 			virtual SceVoid Finish() = 0;
 
+			bool IsCanceled();
+
 			paf::string name;
 
 		private:

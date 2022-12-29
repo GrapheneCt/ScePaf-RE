@@ -248,6 +248,26 @@ namespace paf {
 				ScePVoid gxmData;
 			};
 
+			
+			class CreateOptParam
+			{
+			public:
+
+				CreateOptParam()
+				{
+					sce_paf_memset(this, 0, sizeof(CreateOptParam));
+					*(SceInt32*)&unk_04[108] = 1;
+					*(SceInt32*)&unk_04[112] = 1;
+					*(SceInt32*)&unk_04[128] = -1;
+				}
+
+				~CreateOptParam() {}
+
+				paf::memory::HeapAllocator *allocator;
+				char unk_04[144];
+			};
+			
+
 			Surface(SurfacePool *memPool, SceInt32 width, SceInt32 height, paf::image::ImageMode mode, paf::image::ImageOrder order, SceInt32 a6, SceUInt32 numLevel, SceInt32 level); //0x7C8B2A63
 
 			virtual ~Surface();

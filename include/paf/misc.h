@@ -14,6 +14,24 @@
 
 namespace paf {
 
+	class Url
+	{
+	public:
+
+		Url();
+
+		//67BA6456 c1
+		//987D8B51 c2
+		Url(paf::string *url);
+
+		virtual ~Url();
+
+	private:
+
+		SceUChar8 m_work[0x38];
+		paf::swstring url;
+	};
+
 	class Rgba
 	{
 	public:
@@ -341,6 +359,14 @@ namespace paf {
 
 			static SceInt32 GetDaysInMonth(SceInt32 year, SceInt32 month);
 
+			static SceVoid SetTimeFormat(const wchar_t *format);
+
+			static wchar_t *GetTimeFormat();
+
+			static SceVoid SetDateFormat(const wchar_t *format);
+
+			static wchar_t *GetDateFormat();
+
 			SceVoid SetFromTick(paf::rtc::Tick *tick);
 
 			SceVoid SetFromRFC3339(const char *pszDateTime);
@@ -352,6 +378,8 @@ namespace paf {
 			SceVoid Now();
 
 			SceVoid NetworkUTC();
+
+			SceUInt32 Wcsftime(wchar_t *buf, SceInt32 maxLen, wchar_t *format, SceInt32 flags = 0);
 
 			paf::rtc::Tick ToRtcTick();
 
@@ -450,13 +478,18 @@ namespace paf {
 
 		SceInt32 GetStartResult();
 
+		SceUID GetModuleId()
+		{
+			return *(SceUID *)(*(SceUInt32 *)impl + 0xC);
+		}
+
 		ScePVoid GetInterface(SceInt32 slot);
 
 		SceVoid SetInterface(SceInt32 slot, ScePVoid interface);
 
 	private:
 
-		SceUChar8 m_work[0x4];
+		ScePVoid impl;
 
 	};
 
@@ -480,6 +513,8 @@ namespace paf {
 
 	class LocalFileStat
 	{
+	public:
+
 		SceIoMode			st_mode;
 		SceUInt32			st_attr;
 		SceOff				st_size;
@@ -561,7 +596,7 @@ namespace paf {
 
 		virtual SceInt32 GetFileType() const;
 		virtual SceInt32 GetCapability() const;
-		virtual SceInt32 GetFileSize() const;
+		virtual SceOff   GetFileSize() const;
 		virtual SceInt32 Open(const File::OpenArg *param);
 		virtual SceInt32 OpenAsync(const File::OpenArg *param);
 		virtual SceInt32 Close();
@@ -631,7 +666,7 @@ namespace paf {
 
 		virtual SceInt32 GetFileType() const;
 		virtual SceInt32 GetCapability() const;
-		virtual SceInt32 GetFileSize() const;
+		virtual SceOff   GetFileSize() const;
 		virtual SceInt32 Open(const File::OpenArg *param);
 		virtual SceInt32 OpenAsync(const File::OpenArg *param);
 		virtual SceInt32 Close();
@@ -695,7 +730,7 @@ namespace paf {
 
 			SceVoid SetUrl(const char *url);
 
-			SceVoid SetUrl(paf::string *url);
+			SceVoid SetUrl(Url *url);
 
 			SceInt32 SetOpt(SceInt32 optValue, Opt optType);
 
@@ -724,7 +759,7 @@ namespace paf {
 
 		virtual SceInt32 GetFileType() const;
 		virtual SceInt32 GetCapability() const;
-		virtual SceInt32 GetFileSize() const;
+		virtual SceOff   GetFileSize() const;
 		virtual SceInt32 Open(const File::OpenArg *param);
 		virtual SceInt32 OpenAsync(const File::OpenArg *param);
 		virtual SceInt32 Close();
@@ -785,7 +820,7 @@ namespace paf {
 
 		virtual SceInt32 GetFileType() const;
 		virtual SceInt32 GetCapability() const;
-		virtual SceInt32 GetFileSize() const;
+		virtual SceOff   GetFileSize() const;
 		virtual SceInt32 Open(const File::OpenArg *param);
 		virtual SceInt32 OpenAsync(const File::OpenArg *param);
 		virtual SceInt32 Close();
@@ -1103,23 +1138,23 @@ namespace paf {
 
 			typedef bool(*ImageDecodeCancelFunc)(ScePVoid arg);
 
-			Image CopyWithEdge(SceUInt32 edge);
+			SharedPtr<Image> CopyWithEdge(SceUInt32 edge);
 
-			Image FadeWithEdge();
+			SharedPtr<Image> FadeWithEdge();
 
-			Image Transparentize(SceFloat32 factor);
+			SharedPtr<Image> Transparentize(SceFloat32 factor);
 
-			Image Blur(SceFloat32 factor);
+			SharedPtr<Image> Blur(SceFloat32 factor);
 
-			Image Sharpen(SceFloat32 factor, SceInt32 a2);
+			SharedPtr<Image> Sharpen(SceFloat32 factor, SceInt32 a2);
 
-			Image Copy();
+			SharedPtr<Image> Copy();
 
-			Image Flip(ImageFlipType type);
+			SharedPtr<Image> Flip(ImageFlipType type);
 
-			Image Resize(const ImageExtent& extent, ImageResizeType type);
+			SharedPtr<Image> Resize(const ImageExtent& extent, ImageResizeType type);
 
-			Image Rotate(ImageRotateType type);
+			SharedPtr<Image> Rotate(ImageRotateType type);
 
 			bool Load(bool canCancel);
 
@@ -1203,9 +1238,12 @@ namespace paf {
 
 			static ImageFormat DetectFormat(SharedPtr<Buffer> buf);
 
-			static Image Open(const char *path, paf::memory::HeapAllocator *allocator, ImageFormat format, SceOff offset, SceSize size);
+			static SharedPtr<Image> Open(const char *path, paf::memory::HeapAllocator *allocator, ImageFormat format, SceOff offset, SceSize size);
 
-			static Image Open(ScePVoid mem, SceUInt32 size, paf::memory::HeapAllocator *allocator, ImageFormat format);
+			static SharedPtr<Image> Open(ScePVoid mem, SceUInt32 size, paf::memory::HeapAllocator *allocator, ImageFormat format);
+
+			//3EAFA4C0
+			static SharedPtr<Image> Open(SharedPtr<File> file, paf::memory::HeapAllocator *allocator, ImageFormat format, SceOff offset, SceSize size);
 
 		private:
 
@@ -1324,9 +1362,52 @@ namespace paf {
 		{
 		public:
 
+			class InitParam
+			{
+			public:
+
+				InitParam() { };
+
+				~InitParam() { };
+
+				string name;
+				memory::HeapAllocator *decodeAllocator1;
+				memory::HeapAllocator *decodeAllocator2;
+				SceInt32 unk_14; // 0
+				SceUInt8 unk_18; // 4
+				SceUInt8 unk_19; // 4
+				paf::graph::SurfacePool *workSurfacePool;
+				SceInt32 unk_20; // 0
+				SceInt32 unk_24; // 0
+				SceInt32 unk_28; // 0
+				SceInt32 unk_2C; // 0
+				SceInt32 unk_30; // 0
+				SceUInt8 unk_34; // 1 -> 0
+				SceUInt8 unk_35; // 0
+				SceUInt8 unk_36; // 0 -> 1
+				SceInt32 unk_38; // 0
+				SceInt32 unk_3C; // 0
+				SceUInt32 localJobPrio;
+				SceUInt32 netJobPrio;
+				SceUInt32 operatingJobPrio;
+			};
+
 			CacheManager();
 
-			~CacheManager();
+			virtual ~CacheManager();
+			//virtual SceInt32 Lookup(string *path, graph::Surface **surface, void *optParam = SCE_NULL, void *cacheManagerJob = SCE_NULL, void *unk = SCE_NULL);
+
+			//104FE238
+			SceInt32 Finish();
+
+			//52C7998E
+			SceUInt32 GetRemainingJobCount();
+
+
+
+		private:
+
+			SceChar8 m_work[0x8];
 		};
 	}
 }
