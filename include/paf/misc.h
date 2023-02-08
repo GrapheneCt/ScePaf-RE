@@ -14,24 +14,6 @@
 
 namespace paf {
 
-	class Url
-	{
-	public:
-
-		Url();
-
-		//67BA6456 c1
-		//987D8B51 c2
-		Url(paf::string *url);
-
-		virtual ~Url();
-
-	private:
-
-		SceUChar8 m_work[0x38];
-		paf::swstring url;
-	};
-
 	class Rgba
 	{
 	public:
@@ -218,7 +200,7 @@ namespace paf {
 
 	class Buffer
 	{
-
+		
 	};
 
 	class UnmanagedBuffer : public Buffer
@@ -231,7 +213,7 @@ namespace paf {
 
 		virtual ~UnmanagedBuffer();
 
-		static SharedPtr<UnmanagedBuffer> Create(ScePVoid addr, SceSize size);
+		static common::SharedPtr<UnmanagedBuffer> Create(ScePVoid addr, SceSize size);
 
 	private:
 
@@ -249,7 +231,7 @@ namespace paf {
 
 		virtual ~UnmanagedConstBuffer();
 
-		static SharedPtr<UnmanagedConstBuffer> Create(ScePVoid addr, SceSize size);
+		static common::SharedPtr<UnmanagedConstBuffer> Create(ScePVoid addr, SceSize size);
 
 	private:
 
@@ -268,9 +250,9 @@ namespace paf {
 
 		virtual ~MallocBuffer();
 
-		static SharedPtr<MallocBuffer> Create(ScePVoid addr, SceSize size);
+		static common::SharedPtr<MallocBuffer> Create(ScePVoid addr, SceSize size);
 
-		static SharedPtr<MallocBuffer> Allocate(SceSize size);
+		static common::SharedPtr<MallocBuffer> Allocate(SceSize size);
 
 	private:
 
@@ -288,9 +270,9 @@ namespace paf {
 
 		virtual ~HeapAllocBuffer();
 
-		static SharedPtr<HeapAllocBuffer> Create(ScePVoid addr, SceSize size, paf::memory::HeapAllocator *allocator);
+		static common::SharedPtr<HeapAllocBuffer> Create(ScePVoid addr, SceSize size, paf::memory::HeapAllocator *allocator);
 
-		static SharedPtr<HeapAllocBuffer> Allocate(SceSize size, paf::memory::HeapAllocator *allocator);
+		static common::SharedPtr<HeapAllocBuffer> Allocate(SceSize size, paf::memory::HeapAllocator *allocator);
 
 	private:
 
@@ -299,9 +281,166 @@ namespace paf {
 		paf::memory::HeapAllocator *allocator;
 	};
 
+	class Url
+	{
+	public:
+
+		Url();
+
+		//67BA6456 c1
+		//987D8B51 c2
+		Url(paf::string *url);
+
+		virtual ~Url();
+
+	private:
+
+		SceUChar8 m_work[0x38];
+		paf::common::String url;
+	};
+
+	namespace http {
+
+		class Template
+		{
+		public:
+
+			class Option
+			{
+			public:
+
+				Option()
+				{
+					debugFlags = 1;
+					resolveTimeout = 0;
+					resolveRetry = 0;
+					connectTimeout = 0;
+					sendTimeout = 0;
+					recvTimeout = 0;
+					unk_48 = 1;
+				}
+
+				~Option() { }
+
+				string userAgent;
+				SceInt32 debugFlags; // can be 2, 4 or 8
+				string username;
+				string password;
+				string referer;
+				SceInt32 resolveTimeout;
+				SceInt32 resolveRetry;
+				SceInt32 connectTimeout;
+				SceInt32 sendTimeout;
+				SceInt32 recvTimeout;
+				SceInt32 unk_48;
+			};
+
+			Template(Option *pOpt);
+
+			~Template();
+
+			SceInt32 SetResponseHeaderMaxSize(SceSize size);
+
+		protected:
+
+			string userAgent;
+			SceInt32 debugFlags;
+			string username;
+			string password;
+			string referer;
+			SceInt32 resolveTimeout;
+			SceInt32 resolveRetry;
+			SceInt32 connectTimeout;
+			SceInt32 sendTimeout;
+			SceInt32 recvTimeout;
+			SceInt32 unk_48;
+			SceInt32 templateId;
+		};
+
+		class Request
+		{
+		public:
+
+			Request(Template *pTmp);
+
+			~Request();
+
+			SceInt32 Connect(const char *url, const char *method, ScePVoid unkCb = SCE_NULL);
+
+			//2D83836A
+			//SceInt32 Connect(const char *url, const char *method, ScePVoid unkCb, SceInt32 unkHttpFlag, SceULong64 postContentLength);
+
+			SceInt32 AddRequestHeader(const char *name, const char *value);
+
+			SceInt32 Send(const ScePVoid postData = SCE_NULL, SceSize size = 0);
+
+			SceInt32 GetStatusCode(SceInt32 *statusCode);
+
+			SceInt32 GetFilename(string *filename);
+
+			SceInt32 GetMimeType(string *mimeType);
+
+			SceInt32 GetResponseHeaderField(const char *fieldName, string *fieldValue);
+
+			SceInt32 GetContentLength(SceULong64 *contentLength);
+
+			SceInt32 Read(common::SharedPtr<MallocBuffer> *pBuf, SceSize *pReadSize);
+
+			SceInt32 GetAutoRedirect(bool *pEnabled);
+
+			SceInt32 SetAutoRedirect(bool *enabled);
+
+			SceInt32 Abort();
+
+			SceInt32 GetUrl(string *pUrl);
+
+		protected:
+
+			Template *tmp;
+			ScePVoid cbTask;
+			SceInt32 connectionId;
+			SceInt32 requestId;
+			SceInt32 unk_10;
+			string url;
+		};
+	}
+
 	namespace rtc {
 
 		typedef SceUInt64 Tick;
+
+		class SQLiteDateTimeFormatType
+		{
+
+		};
+
+		class DateTime
+		{
+
+		};
+
+		class DateTimeEx
+		{
+
+		};
+
+		extern SceInt32 IsLeapYear(SceUInt16 year);
+
+		extern SceInt32 IsLeapYear(const Tick *pTick);
+
+		extern SceInt32 GetDaysInMonth(const Tick *pTick);
+
+		extern SceInt32 GetDaysInMonth(const SceUInt16 *pA1, SceUInt16 a2);
+
+		extern SceInt32 ParseSQLiteDateTime(Tick *pTick, const char *dt);
+
+		extern SceInt32 ParseSQLiteDateTime(Tick *pTick, SQLiteDateTimeFormatType *ftype, const char *dt);
+
+		extern SceInt32 ConvertDateTimeToTick(DateTime const* src, Tick *pTick);
+
+		extern SceInt32 ConvertTickToDateTime(Tick *pTick, DateTime *dst);
+
+		extern SceInt32 GetCurrentLocalTick(Tick *pTick);
 
 		extern SceInt32 GetCurrentTick(Tick *pTick);
 
@@ -329,6 +468,8 @@ namespace paf {
 
 		extern SceInt32 ParseRFC3339(Tick *pUtc, const char *pszDateTime);
 
+		extern SceInt32 ParseRFC3339LocalTime(Tick *pUtc, const char *pszDateTime);
+
 		extern SceInt32 FormatRFC3339(char *pszDateTime, const Tick *pUtc, SceInt32 iTimeZoneMinutes);
 
 		extern SceInt32 FormatRFC3339LocalTime(char *pszDateTime, const Tick *pUtc);
@@ -355,23 +496,21 @@ namespace paf {
 
 			~DateTime();
 
-			static SceInt32 IsLeapYear(SceInt32 year);
-
-			static SceInt32 GetDaysInMonth(SceInt32 year, SceInt32 month);
-
 			static SceVoid SetTimeFormat(const wchar_t *format);
-
 			static wchar_t *GetTimeFormat();
 
 			static SceVoid SetDateFormat(const wchar_t *format);
-
 			static wchar_t *GetDateFormat();
 
-			SceVoid SetFromTick(paf::rtc::Tick *tick);
+			static SceVoid SetDateTimeFormat(const wchar_t *format);
 
-			SceVoid SetFromRFC3339(const char *pszDateTime);
+			static rtc::Tick ConvertDateTimeToRtcTick(DateTime& dt);
 
-			SceVoid SetFromISO8601(const char *pszDateTime);
+			SceVoid ConvertRtcTickToDateTime(paf::rtc::Tick *tick);
+
+			SceVoid ParseRFC3339(const char *pszDateTime);
+
+			SceVoid ParseSQLiteDateTime(const char *pszDateTime);
 
 			SceVoid UTC();
 
@@ -379,17 +518,13 @@ namespace paf {
 
 			SceVoid NetworkUTC();
 
+			SceVoid DayOfWeek(SceUInt16 a1, SceUInt16 a2, SceUInt16 a3);
+
 			SceUInt32 Wcsftime(wchar_t *buf, SceInt32 maxLen, wchar_t *format, SceInt32 flags = 0);
 
-			paf::rtc::Tick ToRtcTick();
+			DateTime operator+(const DateTime& s) const;
 
-			SceVoid ToRtcTick(paf::rtc::Tick *tick);
-
-			DateTime operator+(const DateTime& s);
-			DateTime operator+(const DateTime *s);
-
-			bool operator<(const DateTime& pDt);
-			bool operator<(const DateTime *pDt);
+			bool operator<(const DateTime& pDt) const;
 
 			SceUInt16 year;
 			SceUInt16 month;
@@ -405,27 +540,27 @@ namespace paf {
 
 	}
 
-	class Dir
+	class DirEnt
 	{
 	public:
 
-		class Entry
+		enum Type
 		{
-		public:
-
-			enum Type
-			{
-				Type_Dir,
-				Type_File,
-				Type_Reg,
-				Type_Lnk
-			};
-
-			Type type;
-			paf::string name;
-			SceInt32 size;
-			SceUInt32 creationYear;
+			Type_Dir,
+			Type_File,
+			Type_Reg,
+			Type_Lnk
 		};
+
+		Type type;
+		paf::string name;
+		SceInt32 size;
+		SceUInt32 creationYear;
+	};
+
+	class Dir
+	{
+	public:
 
 		Dir();
 
@@ -435,7 +570,7 @@ namespace paf {
 
 		SceInt32 Close();
 
-		SceInt32 Read(Entry *entry);
+		SceInt32 Read(DirEnt *entry);
 
 		static SceInt32 Create(const char *dirname, SceUInt32 mode);
 
@@ -480,7 +615,7 @@ namespace paf {
 
 		SceUID GetModuleId()
 		{
-			return *(SceUID *)(*(SceUInt32 *)impl + 0xC);
+			return *(SceUID *)((char *)impl + 0xC);
 		}
 
 		ScePVoid GetInterface(SceInt32 slot);
@@ -619,9 +754,9 @@ namespace paf {
 
 		virtual ~LocalFile();
 
-		static SharedPtr<LocalFile> Open(const char *path, SceUInt32 flag, SceUInt32 mode, SceInt32 *error);
+		static common::SharedPtr<LocalFile> Open(const char *path, SceUInt32 flag, SceUInt32 mode, SceInt32 *error);
 
-		static SharedPtr<LocalFile> OpenUrl(const char *path, SceUInt32 flag, SceUInt32 mode, SceInt32 *error, bool *pIsRemote);
+		static common::SharedPtr<LocalFile> OpenUrl(const char *path, SceUInt32 flag, SceUInt32 mode, SceInt32 *error, bool *pIsRemote);
 
 		static SceInt32 Getstat(const char *path, LocalFileStat *buf);
 
@@ -689,9 +824,9 @@ namespace paf {
 
 		virtual ~MemFile();
 
-		static SharedPtr<MemFile> Open(const void *ptr, SceSize size, SceInt32 *error);
+		static common::SharedPtr<MemFile> Open(const void *ptr, SceSize size, SceInt32 *error);
 
-		static SharedPtr<MemFile> Open(SharedPtr<MemFile> *memory, SceInt32 *error);
+		static common::SharedPtr<MemFile> Open(common::SharedPtr<MemFile> *memory, SceInt32 *error);
 
 		SceInt8 unk_04;
 		SceInt8 unk_05;
@@ -784,11 +919,11 @@ namespace paf {
 
 		SceInt32 GetResponseCode(SceInt32 *code);
 
-		static SharedPtr<HttpFile> Open(const char *path, SceUInt32 flag, SceUInt32 mode, SceInt32 *error);
+		static common::SharedPtr<HttpFile> Open(const char *path, SceUInt32 flag, SceUInt32 mode, SceInt32 *error);
 
-		static SharedPtr<HttpFile> Open(const SceWChar16 *url, SceInt32 *error, SceUInt32 flag);
+		static common::SharedPtr<HttpFile> Open(const SceWChar16 *url, SceInt32 *error, SceUInt32 flag);
 
-		static SharedPtr<HttpFile> Open(const char *url, SceInt32 *error, SceUInt32 flag);
+		static common::SharedPtr<HttpFile> Open(const char *url, SceInt32 *error, SceUInt32 flag);
 
 		static SceInt32 GetStat(const char *url, HttpFileStat *stat);
 
@@ -846,9 +981,9 @@ namespace paf {
 		virtual int unkFun_060();
 		virtual int unkFun_064();
 		virtual int unkFun_068();
-		virtual SceInt32 Open(const File::OpenArg *param, SharedPtr<Buffer> *buffer);
+		virtual SceInt32 Open(const File::OpenArg *param, common::SharedPtr<Buffer> *buffer);
 
-		static SharedPtr<BufferedFile> Open(SharedPtr<File> *file, SceInt32 *error, SharedPtr<Buffer> *buffer);
+		static common::SharedPtr<BufferedFile> Open(common::SharedPtr<File> *file, SceInt32 *error, common::SharedPtr<Buffer> *buffer);
 
 	private:
 
@@ -871,7 +1006,7 @@ namespace paf {
 
 		extern SceInt32 Decompress(ScePVoid memOut, SceSize origsize, const ScePVoid memIn, SceSize size, DecompressType type = DecompressType_Deflate);
 
-		extern SceInt32 Compress(SharedPtr<LocalFile> *out, const ScePVoid memIn, SceSize size, DecompressType type = DecompressType_Deflate, paf::memory::HeapAllocator *allocator = SCE_NULL);
+		extern SceInt32 Compress(common::SharedPtr<LocalFile> *out, const ScePVoid memIn, SceSize size, DecompressType type = DecompressType_Deflate, paf::memory::HeapAllocator *allocator = SCE_NULL);
 	}
 
 	namespace sha1 {
@@ -898,13 +1033,10 @@ namespace paf {
 			ModelType_Dolce = 1
 		};
 
-		//ScePafMisc_2C227FFD
 		extern bool SupportsMultiController(); //vsh capability 1
 
-		//ScePafMisc_CB582B61
 		extern bool SupportsCamera(); //vsh capability 2
 
-		//ScePafMisc_B7CFFF5C
 		extern bool SupportsWiredEthernet(); //vsh capability 5 OR 6
 
 		//ScePafMisc_C74F989D
@@ -916,10 +1048,8 @@ namespace paf {
 		//ScePafMisc_9DE7DA6D
 		extern bool c20(); //vsh capability 9
 
-		//ScePafMisc_7ED8F03C
 		extern bool SupportsLocalOutputs(); //vsh capability 10, true if system has screen and speakers
 
-		//ScePafMisc_A6A33C15
 		extern bool IsDolce();
 
 		extern ModelType GetModelType();
@@ -927,6 +1057,8 @@ namespace paf {
 		extern SceVoid SuspendTouchInput(SceUInt32 port);
 
 		extern SceVoid ResumeTouchInput(SceUInt32 port);
+
+		extern SceUInt64 GetProcessTime();
 
 		#define SCE_PAF_IS_DOLCE (paf::system::GetModelType() == paf::system::ModelType_Dolce)
 	}
@@ -1007,18 +1139,24 @@ namespace paf {
 
 		class ImageExtent
 		{
+		public:
+
 			SceInt32 width;
 			SceInt32 height;
 		};
 
 		class ImagePoint
 		{
+		public:
+
 			SceInt32 x;
 			SceInt32 y;
 		};
 
 		class ImageRect
 		{
+		public:
+
 			SceInt32 x;
 			SceInt32 y;
 			SceInt32 width;
@@ -1071,6 +1209,14 @@ namespace paf {
 			SceUInt16 pitchAlign;
 			SceUInt16 heightAlign;
 			SceUInt32 resizeType;
+		};
+
+		class ImageBuffer
+		{
+		public:
+
+			ScePVoid addr;
+			SceInt32 size;
 		};
 
 		class ImageArray
@@ -1138,23 +1284,23 @@ namespace paf {
 
 			typedef bool(*ImageDecodeCancelFunc)(ScePVoid arg);
 
-			SharedPtr<Image> CopyWithEdge(SceUInt32 edge);
+			common::SharedPtr<Image> CopyWithEdge(SceUInt32 edge);
 
-			SharedPtr<Image> FadeWithEdge();
+			common::SharedPtr<Image> FadeWithEdge();
 
-			SharedPtr<Image> Transparentize(SceFloat32 factor);
+			common::SharedPtr<Image> Transparentize(SceFloat32 factor);
 
-			SharedPtr<Image> Blur(SceFloat32 factor);
+			common::SharedPtr<Image> Blur(SceFloat32 factor);
 
-			SharedPtr<Image> Sharpen(SceFloat32 factor, SceInt32 a2);
+			common::SharedPtr<Image> Sharpen(SceFloat32 factor, SceInt32 a2);
 
-			SharedPtr<Image> Copy();
+			common::SharedPtr<Image> Copy();
 
-			SharedPtr<Image> Flip(ImageFlipType type);
+			common::SharedPtr<Image> Flip(ImageFlipType type);
 
-			SharedPtr<Image> Resize(const ImageExtent& extent, ImageResizeType type);
+			common::SharedPtr<Image> Resize(const ImageExtent& extent, ImageResizeType type);
 
-			SharedPtr<Image> Rotate(ImageRotateType type);
+			common::SharedPtr<Image> Rotate(ImageRotateType type);
 
 			bool Load(bool canCancel);
 
@@ -1174,9 +1320,9 @@ namespace paf {
 
 			bool CheckAlignArgument(SceInt32 arg);
 
-			UnmanagedBuffer ToCLUTBuffer(bool canCancel);
+			ImageBuffer ToCLUTBuffer(bool canCancel);
 
-			UnmanagedBuffer ToBuffer(bool canCancel);
+			ImageBuffer ToBuffer(bool canCancel);
 
 			bool SetArrayPos(ImagePoint& pos);
 
@@ -1234,16 +1380,21 @@ namespace paf {
 
 			static ImageFormat DetectFormat(const char *path, SceOff offset, SceUInt32 whence);
 
-			static ImageFormat DetectFormat(SharedPtr<File> file, SceOff offset, SceUInt32 whence);
+			static ImageFormat DetectFormat(common::SharedPtr<File> file, SceOff offset, SceUInt32 whence);
 
-			static ImageFormat DetectFormat(SharedPtr<Buffer> buf);
+			static ImageFormat DetectFormat(common::SharedPtr<Buffer> buf);
 
-			static SharedPtr<Image> Open(const char *path, paf::memory::HeapAllocator *allocator, ImageFormat format, SceOff offset, SceSize size);
+			static common::SharedPtr<Image> Open(const char *path, paf::memory::HeapAllocator *allocator, ImageFormat format, SceOff offset, SceSize size);
 
-			static SharedPtr<Image> Open(ScePVoid mem, SceUInt32 size, paf::memory::HeapAllocator *allocator, ImageFormat format);
+			static common::SharedPtr<Image> Open(ScePVoid mem, SceUInt32 size, paf::memory::HeapAllocator *allocator, ImageFormat format);
 
 			//3EAFA4C0
-			static SharedPtr<Image> Open(SharedPtr<File> file, paf::memory::HeapAllocator *allocator, ImageFormat format, SceOff offset, SceSize size);
+			static common::SharedPtr<Image> Open(common::SharedPtr<File> file, paf::memory::HeapAllocator *allocator, ImageFormat format, SceOff offset, SceSize size);
+
+			SceInt32 unk_00;
+			ImageArray *array;
+			SceChar8 unk_08[0x28];
+			ImagePoint point;
 
 		private:
 

@@ -14,6 +14,16 @@ namespace paf {
 
 	namespace graph {
 
+		class Region
+		{
+		public:
+
+			SceFloat32 x;
+			SceFloat32 y;
+			SceFloat32 width;
+			SceFloat32 height;
+		};
+
 		class Surface;
 
 		class Callback
@@ -43,20 +53,30 @@ namespace paf {
 			virtual ~DrawObj();
 			virtual SceInt32 unkFun_10();
 			virtual SceInt32 unkFun_14();
-			virtual SceInt32 unkFun_18();
+			virtual SceInt32 ReleaseAll();
 			virtual SceInt32 unkFun_1C();
-			virtual SceInt32 SetSurface(paf::graph::Surface **surf, SceInt32 a3 = 0);
-			virtual SceInt32 GetSurface(paf::graph::Surface **surf, SceInt32 a3 = 0);
+			virtual SceInt32 SetSurface(paf::graph::Surface **surf, SceInt32 texNum = 0);
+			virtual SceInt32 GetSurface(paf::graph::Surface **surf, SceInt32 texNum = 0);
 			virtual SceInt32 unkFun_28();
-			virtual SceInt32 unkFun_2C();
-			virtual SceInt32 SetFilterColor(Rgba *color);
-			virtual SceInt32 unkFun_34();
+			virtual SceInt32 SetScale(const Vector4 &scale);
+			virtual SceInt32 SetFilterColor(const Rgba &color);
+			virtual SceInt32 SetRot(const Vector4 &rot);
 			virtual SceInt32 unkFun_38();
 			virtual SceInt32 unkFun_3C();
 			virtual SceInt32 unkFun_40();
 			virtual SceInt32 unkFun_44();
 
-			SceVoid SetDrawCallback(SharedPtr<Callback> *drawCb);
+			SceVoid SetDrawCallback(common::SharedPtr<Callback> *drawCb);
+
+			SceVoid SetTexRegion(const Region &reg);
+
+			SceInt32 SetScaleMode(SceUInt32 x, SceUInt32 y);
+
+			//1005231C
+			//SceVoid SetDivPosScale(Vector4 *a1);
+
+			SceUChar8 unk_00[0x14];
+			Vector4 size;
 
 		protected:
 
@@ -64,7 +84,7 @@ namespace paf {
 
 		private:
 
-			SceUChar8 unk_00[0x4C];
+			SceUChar8 unk_28[0x28];
 
 		};
 
@@ -287,7 +307,7 @@ namespace paf {
 
 			void operator delete(void*);
 
-			static SceVoid Create(Surface **res, SurfacePool *memPool, SharedPtr<File> *file, ScePVoid fwOpt = SCE_NULL);
+			static SceVoid Create(Surface **res, SurfacePool *memPool, common::SharedPtr<File> *file, ScePVoid fwOpt = SCE_NULL);
 
 			static SceVoid Create(Surface **res, SurfacePool *memPool, const ScePVoid ptr, SceInt32 unused_1, SceSize size, SceInt32 unused_2 = 0, ScePVoid fwOpt = SCE_NULL);
 
@@ -350,7 +370,7 @@ namespace paf {
 
 			static GraphicsContext *GetGraphicsContext();
 
-			static SharedPtr<Callback> *GetDefaultDrawCallback();
+			static common::SharedPtr<Callback> *GetDefaultDrawCallback();
 
 			static SceGxmContext *GetGxmContext();
 

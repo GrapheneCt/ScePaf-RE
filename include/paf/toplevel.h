@@ -58,6 +58,12 @@ namespace paf {
 
 		~Plugin();
 
+		enum PluginOperationFlag
+		{
+			PluginOperationFlag_None,
+			PluginOperationFlag_DisableInput,
+		};
+
 		enum PageEffectType
 		{
 			PageEffectType_None,
@@ -78,7 +84,7 @@ namespace paf {
 			SceInt32 unk_00;
 			SceInt32 unk_04;
 			SceInt32 priority;
-			SceInt32 unk_0C;
+			SceInt32 flags;
 			SceInt32 unk_10;
 			bool useFadein;
 			SceFloat32 fadeinTimeMs;
@@ -114,9 +120,20 @@ namespace paf {
 			SceInt32 unk_04;
 		};
 
+		typedef void(*LoadPluginFinishCallback)(Plugin *plugin);
+		typedef void(*UnloadPluginFinishCallback)(paf::string *name);
+
 		static Plugin *Find(const char *pluginName);
 
+		static SceVoid LoadAsync(InitParam const& initParam, LoadPluginFinishCallback finishCallback = SCE_NULL, SceInt32 flags = PluginOperationFlag_None);
+
+		static SceVoid LoadSync(InitParam const& initParam, LoadPluginFinishCallback finishCallback = SCE_NULL, SceInt32 flags = PluginOperationFlag_None);
+
+		static SceVoid UnloadAsync(const char *pluginName, UnloadPluginFinishCallback finishCallback = SCE_NULL, SceInt32 flags = PluginOperationFlag_None);
+
 		static SceVoid GetTexture(paf::graph::Surface **res, Plugin *plugin, paf::rco::Element *textureSearchParam);
+
+		SceVoid UnloadAsync(UnloadPluginFinishCallback finishCallback = SCE_NULL, SceInt32 flags = PluginOperationFlag_None);
 
 		//6F7E804D
 		//SceInt32 AddTextureFromFile(paf::string *unk, const char *filePath, const char *a3);
@@ -132,12 +149,13 @@ namespace paf {
 
 		paf::ui::Widget *GetPageByHash(paf::rco::Element *widgetInfo);
 
-		ScePVoid GetInterface(SceUInt32 slot);
+		ScePVoid GetInterface(SceInt32 slot) const;
 
-		//F5354FEF
-		SceInt32 SetInterface(SceUInt32 slot, ScePVoid interfaceTable);
+		SceInt32 SetInterface(SceInt32 slot, ScePVoid interfaceTable);
 
-		paf::ui::Widget *GetChildByHash(paf::rco::Element *widgetInfo);
+		paf::ui::Scene *GetScene(const paf::rco::Element& widgetInfo);
+
+		paf::ui::Scene *GetScene(const cxml::Element& elm);
 
 		SceInt32 TemplateOpen(paf::ui::Widget *targetRoot, paf::rco::Element *templateSearchParam, paf::Plugin::TemplateOpenParam *param);
 
@@ -296,9 +314,7 @@ namespace paf {
 			SceGxmSyncObject *displaySyncObject;
 		};
 
-		typedef void(*LoadCRFinishCallback)();
-		typedef void(*LoadPluginFinishCallback)(Plugin *plugin);
-		typedef void(*UnloadPluginFinishCallback)(Plugin *plugin);
+		typedef void(*LoadCRFinishCallback)(Plugin *pl);
 
 		Framework(const InitParam& fwInitParam);
 
@@ -307,12 +323,6 @@ namespace paf {
 		static SceVoid InitializeDefaultJobQueue();
 
 		static SceUInt32 GetFwLangBySystemLang(SceUInt32 systemLanguage);
-
-		static SceVoid LoadPluginAsync(Plugin::InitParam *initParam, LoadPluginFinishCallback finishCallback = SCE_NULL, UnloadPluginFinishCallback unloadFinishCallback = SCE_NULL);
-
-		static SceVoid UnloadPluginAsync(const char *pluginName, LoadPluginFinishCallback finishCallback = SCE_NULL, UnloadPluginFinishCallback unloadFinishCallback = SCE_NULL);
-
-		static SceVoid LoadPlugin(Plugin::InitParam *initParam, LoadPluginFinishCallback finishCallback = SCE_NULL, UnloadPluginFinishCallback unloadFinishCallback = SCE_NULL);
 
 		static Framework *GetInstance();
 
@@ -329,25 +339,27 @@ namespace paf {
 
 		static SceVoid PluginCRGraphicsFreeCallback();
 
-		SceVoid _LoadPluginAsync(Plugin::InitParam *initParam, LoadPluginFinishCallback finishCallback = SCE_NULL, UnloadPluginFinishCallback unloadFinishCallback = SCE_NULL);
+		SceVoid LoadPluginAsync(Plugin::InitParam const& initParam, Plugin::LoadPluginFinishCallback finishCallback = SCE_NULL, SceInt32 flags = Plugin::PluginOperationFlag_None);
 
-		SceInt32 EnterRenderingLoop();
+		SceVoid UnloadPluginAsync(Plugin *plugin, const char *pluginName, Plugin::LoadPluginFinishCallback finishCallback = SCE_NULL, SceInt32 flags = Plugin::PluginOperationFlag_None);
 
-		SceVoid ExitRenderingLoop();
+		SceInt32 Run();
+
+		SceVoid Exit();
 
 		SceVoid SetRenderTarget(RenderSurfaceParam *param);
 
 		SceVoid LoadCommonResourceAsync(LoadCRFinishCallback finishCallback = SCE_NULL);
 
-		SceVoid LoadCommonResourceAsync(CommonResourceInitParam *initParam, LoadCRFinishCallback finishCallback = SCE_NULL);
+		SceVoid LoadCommonResourceAsync(CommonResourceInitParam& initParam, LoadCRFinishCallback finishCallback = SCE_NULL);
 
-		SceVoid LoadCommonResource(LoadCRFinishCallback finishCallback = SCE_NULL);
+		SceVoid LoadCommonResourceSync(LoadCRFinishCallback finishCallback = SCE_NULL);
 
-		SceVoid LoadCommonResource(CommonResourceInitParam *initParam, LoadCRFinishCallback finishCallback = SCE_NULL);
+		SceVoid LoadCommonResourceSync(CommonResourceInitParam& initParam, LoadCRFinishCallback finishCallback = SCE_NULL);
 
-		Plugin *FindPluginByName(const char *pluginName, bool enableSomeCheck = SCE_FALSE);
+		Plugin *FindPlugin(const char *pluginName, bool enableSomeCheck = SCE_FALSE);
 
-		ApplicationMode GetApplicationMode();
+		ApplicationMode GetMode();
 
 		paf::ui::Context *GetUiContext();
 

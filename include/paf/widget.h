@@ -38,11 +38,16 @@ namespace paf {
 			EventFocus_Off = 0x40002
 		};
 
+		enum EventRender
+		{
+			EventRender_RenderStateReady = 0x100004,
+		};
+
 		enum EventMain
 		{
 			EventMain_Tapped = 0x10000003,
-			EventMain_EditEnd = 0x10000005,
-			EventMain_EditBegin = 0x10000006,
+			EventMain_EditBegin = 0x10000005,
+			EventMain_EditEnd = 0x10000006,
 			EventMain_LongDecide = 0x10000007,
 			EventMain_Decide = 0x10000008,
 			EventMain_UpdateParam = 0x10000009
@@ -83,8 +88,8 @@ namespace paf {
 		enum Adjust
 		{
 			Adjust_None = 0,
-			Adjust_Max = 1,
-			Adjust_ByContent = 2,
+			Adjust_ByParent = 1,
+			Adjust_ByChild = 2,
 		};
 
 		enum Origin
@@ -248,10 +253,10 @@ namespace paf {
 			virtual int unkFun_0EC();
 			virtual int unkFun_0F0();
 			virtual int unkFun_0F4();
-			virtual graph::DrawObj *GetDrawObj(SceInt32 a1 = 0);
-			virtual int SetSurface(paf::graph::Surface **surf, SceInt32 childNum, SceInt32 a3 = 0);
+			virtual graph::DrawObj *GetDrawObj(SceInt32 objNum = 0);
+			virtual int SetSurface(paf::graph::Surface **surf, SceInt32 objNum, SceInt32 texNum = 0);
 			virtual int SetSurfaceBase(paf::graph::Surface **surf);
-			virtual int GetSurface(paf::graph::Surface **surf, SceInt32 childNum, SceInt32 a3 = 0);
+			virtual int GetSurface(paf::graph::Surface **surf, SceInt32 objNum, SceInt32 texNum = 0);
 			virtual int GetSurfaceBase(paf::graph::Surface **surf);
 			virtual int unkFun_10C();
 			virtual int unkFun_110();
@@ -347,7 +352,7 @@ namespace paf {
 
 			SceInt32 SetDirectKey(SceUInt32 buttons);
 
-			SceInt32 SetAlpha(SceFloat32 alpha, SceInt32 a2 = 0, SceInt32 a3 = 0x10003, SceInt32 a4 = 0, SceInt32 a5 = 0, SceInt32 a6 = 0);
+			SceInt32 SetFadeout(SceFloat32 alpha, SceInt32 a2 = 0, SceInt32 a3 = 0x10003, SceInt32 a4 = 0, SceInt32 a5 = 0, SceInt32 a6 = 0);
 
 			SceVoid Disable(bool a1);
 
@@ -635,13 +640,13 @@ namespace paf {
 			virtual ~AppIconBase();
 		};
 
-		class AppIcon2D : public AppIconBase
+		class AppIcon2d : public AppIconBase
 		{
 		public:
 
-			AppIcon2D(Widget *parent, SceInt32 a2);
+			AppIcon2d(Widget *parent, SceInt32 a2);
 
-			virtual ~AppIcon2D();
+			virtual ~AppIcon2d();
 		};
 
 		class ButtonBase : public Widget

@@ -5,9 +5,8 @@
 
 namespace paf {
 	template<class _Ty,
-		class _Alloc = std::allocator<_Ty> >
-		class vector
-		: public std::vector<_Ty, _Alloc>
+		class _Alloc = paf::allocator<_Ty> >
+		class vector : public std::vector<_Ty, _Alloc>
 	{
 
 	};

@@ -338,7 +338,7 @@ namespace paf {
 
 			~JobQueue();
 
-			SceInt32 Enqueue(SharedPtr<JobItem> *queueItem);
+			SceInt32 Enqueue(common::SharedPtr<JobItem>& queueItem);
 
 			SceVoid WaitEmpty();
 

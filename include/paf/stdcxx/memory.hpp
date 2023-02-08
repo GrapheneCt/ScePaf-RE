@@ -29,7 +29,7 @@ namespace paf {
 
 		const_pointer address(const_reference x) const { return &x; }
 
-		size_type max_size() const { return memory::HeapAllocator::GetGlobalHeapAllocator()->GetFreeSize() / sizeof(value_type); }
+		size_type max_size() const { return paf::memory::HeapAllocator::GetGlobalHeapAllocator()->GetFreeSize() / sizeof(value_type); }
 
 		pointer allocate(size_type n, const void * hint = 0)
 		{
@@ -54,6 +54,11 @@ namespace paf {
 		void destroy(pointer p)
 		{
 			p->~T();
+		}
+
+		bool operator==(const allocator& other)
+		{
+			return true;
 		}
 	};
 }

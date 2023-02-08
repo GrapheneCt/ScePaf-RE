@@ -684,17 +684,17 @@ namespace paf {
 
 			SceInt32 GetSound(const paf::cxml::Element & elm, cxml::File *leftOrMono, SceUInt32 *leftOrMonoSize, cxml::File *right, SceUInt32 *rightSize, SceUInt32 *samplerate, SoundFormat *format);
 
-			SharedPtr<MemFile> GetFile(SceUInt32 hash, ScePVoid decompMem, SceSize *size, const char **type, paf::memory::HeapAllocator *decompAlloc = SCE_NULL);
+			common::SharedPtr<MemFile> GetFile(SceUInt32 hash, ScePVoid decompMem, SceSize *size, const char **type, paf::memory::HeapAllocator *decompAlloc = SCE_NULL);
 
-			SharedPtr<MemFile> GetFile(const char *id, ScePVoid decompMem, SceSize *size, const char **type, paf::memory::HeapAllocator *decompAlloc = SCE_NULL);
+			common::SharedPtr<MemFile> GetFile(const char *id, ScePVoid decompMem, SceSize *size, const char **type, paf::memory::HeapAllocator *decompAlloc = SCE_NULL);
 
-			SharedPtr<MemFile> GetFile(const paf::cxml::Element & elm, ScePVoid decompMem, SceSize *size, const char **type, paf::memory::HeapAllocator *decompAlloc = SCE_NULL);
+			common::SharedPtr<MemFile> GetFile(const paf::cxml::Element & elm, ScePVoid decompMem, SceSize *size, const char **type, paf::memory::HeapAllocator *decompAlloc = SCE_NULL);
 
-			SharedPtr<MemFile> GetFile(SceUInt32 hash, SceSize *size, const char **type, paf::memory::HeapAllocator *fileAlloc = SCE_NULL, paf::memory::HeapAllocator *decompAlloc = SCE_NULL);
+			common::SharedPtr<MemFile> GetFile(SceUInt32 hash, SceSize *size, const char **type, paf::memory::HeapAllocator *fileAlloc = SCE_NULL, paf::memory::HeapAllocator *decompAlloc = SCE_NULL);
 
-			SharedPtr<MemFile> GetFile(const char *id, SceSize *size, const char **type, paf::memory::HeapAllocator *fileAlloc = SCE_NULL, paf::memory::HeapAllocator *decompAlloc = SCE_NULL);
+			common::SharedPtr<MemFile> GetFile(const char *id, SceSize *size, const char **type, paf::memory::HeapAllocator *fileAlloc = SCE_NULL, paf::memory::HeapAllocator *decompAlloc = SCE_NULL);
 
-			SharedPtr<MemFile> GetFile(const paf::cxml::Element & elm, SceSize *size, const char **type, paf::memory::HeapAllocator *fileAlloc = SCE_NULL, paf::memory::HeapAllocator *decompAlloc = SCE_NULL);
+			common::SharedPtr<MemFile> GetFile(const paf::cxml::Element & elm, SceSize *size, const char **type, paf::memory::HeapAllocator *fileAlloc = SCE_NULL, paf::memory::HeapAllocator *decompAlloc = SCE_NULL);
 
 			bool IsRegisteredID(const char* id, bool checkByHash = false);
 
