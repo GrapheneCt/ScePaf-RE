@@ -46,7 +46,7 @@ Library: ScePafToplevel function: _ZN3paf6PluginD1Ev
 Library: ScePafToplevel function: _ZN3paf6PluginD2Ev
 Library: ScePafToplevel function: _ZN3paf6Plugin9InitParamC1Ev
 Library: ScePafToplevel function: _ZN3paf6Plugin9InitParamC2Ev
-Library: ScePafToplevel function: _ZN3paf6Plugin12GetInterfaceEi
+Library: ScePafToplevel function: _ZNK3paf6Plugin12GetInterfaceEi
 Library: ScePafToplevel function: _ZN3paf6Plugin12SetInterfaceEiPv
 Library: ScePafToplevel function: _ZN3paf6Plugin9LoadAsyncERKNS0_9InitParamEPFvPS0_Ei
 Library: ScePafToplevel function: _ZN3paf6Plugin8LoadSyncERKNS0_9InitParamEPFvPS0_Ei
