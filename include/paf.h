@@ -52,8 +52,26 @@ namespace paf {
 		class AppIconBase;
 	}
 
+	namespace memory {
+		class HeapAllocator;
+	}
+
 	namespace graph {
+		class Surface;
 		class SurfacePool;
+	}
+
+	namespace thread {
+		class Mutex;
+		class RMutex;
+	}
+
+	namespace job {
+		class JobQueue;
+	}
+
+	namespace datetime {
+		class DateTime;
 	}
 }
 
