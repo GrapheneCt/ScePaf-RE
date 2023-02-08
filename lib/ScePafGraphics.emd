@@ -10,7 +10,9 @@ Library: ScePafGraphics function: _ZN3paf5graph7DrawObjC1EPi nidvalue: 0x0908A2A
 Library: ScePafGraphics function: _ZN3paf5graph7DrawObjC2EPi nidvalue: 0xE0782D6E
 Library: ScePafGraphics function: _ZN3paf5graph7DrawObj5equalEPKc nidvalue: 0x8D25DDE9
 Library: ScePafGraphics function: _ZNK3paf5graph7DrawObj4nameEv nidvalue: 0x6A38991D
-Library: ScePafGraphics function: _ZN3paf5graph7DrawObj15SetDrawCallbackEPNS_9SharedPtrINS0_8CallbackEEE nidvalue: 0x0F6790DB
+Library: ScePafGraphics function: _ZN3paf5graph7DrawObj15SetDrawCallbackEPNS_6common9SharedPtrINS0_8CallbackEEE nidvalue: 0x0F6790DB
+Library: ScePafGraphics function: _ZN3paf5graph7DrawObj12SetTexRegionERKNS0_6RegionE nidvalue: 0xC9B5FD52
+Library: ScePafGraphics function: _ZN3paf5graph7DrawObj12SetScaleModeEjj nidvalue: 0x14F2FA80
 
 Library: ScePafGraphics function: _ZN3paf5graph7TextObjC1EPi nidvalue: 0xF201F98D
 Library: ScePafGraphics function: _ZN3paf5graph7TextObjC2EPi nidvalue: 0x29013890
@@ -32,7 +34,7 @@ Library: ScePafGraphics function: _ZN3paf5graph11SurfacePool21GetDefaultSurfaceP
 Library: ScePafGraphics function: _ZN3paf5graph11SurfacePool17FreeSurfaceMemoryENS1_10MemoryTypeEPv nidvalue: 0x167F6801
 Library: ScePafGraphics function: _ZN3paf5graph11SurfacePool18AllocSurfaceMemoryENS1_10MemoryTypeEjPKcPNS1_19SurfaceMemoryOptionE nidvalue: 0xBBE8F063
 
-Library: ScePafGraphics function: _ZN3paf5graph7Surface6CreateEPPS1_PNS0_11SurfacePoolEPNS_9SharedPtrINS_4FileEEEPv nidvalue: 0xB228A257
+Library: ScePafGraphics function: _ZN3paf5graph7Surface6CreateEPPS1_PNS0_11SurfacePoolEPNS_6common9SharedPtrINS_4FileEEEPv nidvalue: 0xB228A257
 Library: ScePafGraphics function: _ZN3paf5graph7Surface6CreateEPPS1_PNS0_11SurfacePoolEPvijiS6_ nidvalue: 0x476AB004
 Library: ScePafGraphics function: _ZN3paf5graph7Surface4CopyEjPvNS_5image10ImageOrderEii nidvalue: 0xE57728C4
 Library: ScePafGraphics function: _ZN3paf5graph7SurfaceC1EPNS0_11SurfacePoolEiiNS_5image9ImageModeENS4_10ImageOrderEiji nidvalue: 0x7C8B2A63

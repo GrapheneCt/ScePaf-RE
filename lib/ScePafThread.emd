@@ -26,7 +26,6 @@ Library: ScePafThread function: _ZN3paf6thread13GetMainThreadEi nidvalue: 0xC6F8
 Library: ScePafThread function: _ZN3paf6thread13SetMainThreadEi nidvalue: 0xFE2DC4FE
 
 Library: ScePafThread function: _ZN3paf3job8JobQueue20ChangeWorkerPriorityEi nidvalue: 0x64FF39DE
-Library: ScePafThread function: _ZN3paf3job8JobQueue7EnqueueEPNS_9SharedPtrINS0_7JobItemEEE nidvalue: 0x93F7A9D6
 Library: ScePafThread function: _ZN3paf3job8JobQueue6FinishEv nidvalue: 0x88061E60
 Library: ScePafThread function: _ZN3paf3job8JobQueue7GetSizeEv nidvalue: 0xA59ABB3B
 Library: ScePafThread function: _ZN3paf3job8JobQueue4InitEPNS0_8JobQueue6OptionE nidvalue: 0x777E2981
@@ -113,6 +112,7 @@ Library: ScePafThread function: _ZN3paf3job8JobQueue6OptionC1Ev
 Library: ScePafThread function: _ZN3paf3job8JobQueue6OptionC2Ev
 Library: ScePafThread function: _ZN3paf3job8JobQueue9WaitEmptyEv
 Library: ScePafThread function: _ZN3paf3job8JobQueue5CheckEv
+Library: ScePafThread function: _ZN3paf3job8JobQueue7EnqueueERNS_6common9SharedPtrINS0_7JobItemEEE
 Library: ScePafThread function: _ZN3paf3job8JobQueueC1EPKcPKNS1_6OptionE
 Library: ScePafThread function: _ZN3paf3job8JobQueueC2EPKcPKNS1_6OptionE
 Library: ScePafThread function: _ZN3paf3job8JobQueueD1Ev

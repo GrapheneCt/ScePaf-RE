@@ -16,3 +16,10 @@ Library: SceAppSettings function: _ZN3sce11AppSettings6SetIntEPKci nidvalue: 0x2
 Library: SceAppSettings function: _ZN3sce11AppSettings10InitializeEv nidvalue: 0x75E3F651
 Library: SceAppSettings function: _ZN3sce11AppSettings9SetStringEPKcS2_ nidvalue: 0x9D20A196
 Library: SceAppSettings function: _ZN3sce11AppSettings9GetStringEPKcS2_jS2_ nidvalue: 0x1E1BE36B
+Library: SceAppSettings function: _ZN3sce11AppSettings9TerminateEv nidvalue: 0x1C135375
+Library: SceAppSettings function: _ZN3sce11AppSettings7GetBoolEPKcbb nidvalue: 0x67FD397D
+Library: SceAppSettings function: _ZN3sce11AppSettings7SetBoolEPKcb nidvalue: 0x562213F4
+
+Library: SceAppSettings function: _ZN3sce11AppSettings7Element11GetPropertyEPKc nidvalue: 0xEECA5057
+Library: SceAppSettings function: _ZN3sce11AppSettings7Element11SetPropertyEPKcS3_ nidvalue: 0x5FD4997E
+Library: SceAppSettings function: _ZN3sce11AppSettings8ListItemC1Ev nidvalue: 0x131CF769

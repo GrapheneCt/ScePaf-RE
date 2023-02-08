@@ -19,19 +19,17 @@ Library: ScePafWidget function: _ZN3paf2ui6Widget14SetFilterColorEPKNS_4RgbaEfii
 Library: ScePafWidget function: _ZN3paf2ui6Widget25UnregisterFwEventCallbackEi nidvalue: 0x8F09D12E
 Library: ScePafWidget function: _ZN3paf2ui6Widget12SetDirectKeyEj nidvalue: 0x21125870
 Library: ScePafWidget function: _ZN3paf2ui6Widget15SetTextWithFlag5EPNS_7wstringEi nidvalue: 0x922FF349
-Library: ScePafWidget function: _ZN3paf2ui6Widget9SetAdjustEjjj nidvalue: 0xCCD58ACB
 Library: ScePafWidget function: _ZN3paf2ui6Widget8SetAlignENS0_5AlignES2_S2_i nidvalue: 0x5F04A98E
 Library: ScePafWidget function: _ZN3paf2ui6Widget7SetZoomEPKNS_7Vector4Efiiiii nidvalue: 0xEE467CF8
 Library: ScePafWidget function: _ZN3paf2ui6Widget7DisableEb nidvalue: 0xA1173889
 Library: ScePafWidget function: _ZN3paf2ui6Widget6EnableEb nidvalue: 0x8F1A3A59
-Library: ScePafWidget function: _ZN3paf2ui6Widget8SetAlphaEfiiiii nidvalue: 0x543F0959
+Library: ScePafWidget function: _ZN3paf2ui6Widget10SetFadeoutEfiiiii nidvalue: 0x543F0959
 Library: ScePafWidget function: _ZN3paf2ui6Widget17SetLimitedFpsModeEb nidvalue: 0x66847A11
 Library: ScePafWidget function: _ZN3paf2ui6Widget19SetGraphicsDisabledEb nidvalue: 0x23C283D3
 Library: ScePafWidget function: _ZN3paf2ui6Widget8GetChildEj nidvalue: 0xB8CA08DA
 Library: ScePafWidget function: _ZN3paf2ui6Widget9GetParentEv nidvalue: 0xCFA1EB7A
 Library: ScePafWidget function: _ZN3paf2ui6Widget14SetOrientationEv nidvalue: 0x0F7A1317
 Library: ScePafWidget function: _ZN3paf2ui6Widget11GetPositionEPNS_7Vector4EPS1_iS4_ nidvalue: 0x83BE8594
-Library: ScePafWidget function: _ZN3paf2ui6Widget7GetSizeEi nidvalue: 0x2F924BAD
 Library: ScePafWidget function: _ZN3paf2ui6Widget15SetCtrlInternalEi nidvalue: 0x931AD41E
 Library: ScePafWidget function: _ZN3paf2ui6Widget9SendEventEjiiii nidvalue: 0x16C6594A
 Library: ScePafWidget function: _ZN3paf2ui7TextBox4HideEv nidvalue: 0x77CE1B80
@@ -41,20 +39,11 @@ Library: ScePafWidget function: _ZN3paf2ui7TextBox4HideEv nidvalue: 0x77CE1B80
 Library: ScePafWidget function: _ZN3paf2ui5EventC1Eiiiiiiii nidvalue: 0xD2E00457
 Library: ScePafWidget function: _ZN3paf2ui5EventC2Eiiiiiiii nidvalue: 0x813CF3EF
 
-Library: ScePafWidget function: _ZN3paf2ui13BusyIndicator5StartEv
-Library: ScePafWidget function: _ZN3paf2ui13BusyIndicator4StopEv
-Library: ScePafWidget function: _ZN3paf2ui13BusyIndicator11SetBallSizeEf
 Library: ScePafWidget function: _ZN3paf2ui13BusyIndicatorC1EPNS0_6WidgetEi nidvalue: 0x93174EC7
 Library: ScePafWidget function: _ZN3paf2ui13BusyIndicatorC2EPNS0_6WidgetEi nidvalue: 0x196FE988
-Library: ScePafWidget function: _ZN3paf2ui13BusyIndicatorD0Ev
-Library: ScePafWidget function: _ZN3paf2ui13BusyIndicatorD1Ev
-Library: ScePafWidget function: _ZN3paf2ui13BusyIndicatorD2Ev
 
 Library: ScePafWidget function: _ZN3paf2ui4TextC1EPNS0_6WidgetEi nidvalue: 0x5C2962E1
 Library: ScePafWidget function: _ZN3paf2ui4TextC2EPNS0_6WidgetEi nidvalue: 0x0FF7D929
-Library: ScePafWidget function: _ZN3paf2ui4TextD1Ev
-Library: ScePafWidget function: _ZN3paf2ui4TextD0Ev
-Library: ScePafWidget function: _ZN3paf2ui4TextD2Ev
 Library: ScePafWidget function: _ZN3paf2ui4Text8SetColorENS1_9ColorTypeEiiPKNS_4RgbaE nidvalue: 0xCD20EF38
 Library: ScePafWidget function: _ZN3paf2ui4Text9SetOptionENS1_6OptionEiib nidvalue: 0xF2A2E2E6
 Library: ScePafWidget function: _ZN3paf2ui4Text11SetFontSizeEfijj nidvalue: 0x39B15B98
@@ -69,136 +58,79 @@ Library: ScePafWidget function: _ZN3paf2ui11AppIconBaseC2EPNS0_6WidgetEi nidvalu
 
 Library: ScePafWidget function: _ZN3paf2ui11ImageButtonC1EPNS0_6WidgetEi nidvalue: 0x1F8C6717
 Library: ScePafWidget function: _ZN3paf2ui11ImageButtonC2EPNS0_6WidgetEi nidvalue: 0xBB2570E1
-Library: ScePafWidget function: _ZN3paf2ui11ImageButtonD0Ev
-Library: ScePafWidget function: _ZN3paf2ui11ImageButtonD1Ev
-Library: ScePafWidget function: _ZN3paf2ui11ImageButtonD2Ev
 
 Library: ScePafWidget function: _ZN3paf2ui11PlaneButtonC1EPNS0_6WidgetEi nidvalue: 0x7A34D477
 Library: ScePafWidget function: _ZN3paf2ui11PlaneButtonC2EPNS0_6WidgetEi nidvalue: 0xA6EE275A
 
 Library: ScePafWidget function: _ZN3paf2ui11ProgressBarC1EPNS0_6WidgetEi nidvalue: 0x8C227A15
 Library: ScePafWidget function: _ZN3paf2ui11ProgressBarC2EPNS0_6WidgetEi nidvalue: 0xEC1B845D
-Library: ScePafWidget function: _ZN3paf2ui11ProgressBarD0Ev nidvalue: 0x4C42311C
-Library: ScePafWidget function: _ZN3paf2ui11ProgressBarD1Ev nidvalue: 0x76449651
-Library: ScePafWidget function: _ZN3paf2ui11ProgressBarD2Ev nidvalue: 0x71F4BE03
 
 Library: ScePafWidget function: _ZN3paf2ui11RadioButtonC1EPNS0_6WidgetEi nidvalue: 0xCA4A826C
 Library: ScePafWidget function: _ZN3paf2ui11RadioButtonC2EPNS0_6WidgetEi nidvalue: 0x0D494399
 
 Library: ScePafWidget function: _ZN3paf2ui11ScrollBar2DC1EPNS0_6WidgetEi nidvalue: 0xA13B217C
 Library: ScePafWidget function: _ZN3paf2ui11ScrollBar2DC2EPNS0_6WidgetEi nidvalue: 0x2C1DDA7E
-Library: ScePafWidget function: _ZN3paf2ui11ScrollBar2DD0Ev nidvalue: 0x30C8D581
-Library: ScePafWidget function: _ZN3paf2ui11ScrollBar2DD1Ev nidvalue: 0x8A373B41
-Library: ScePafWidget function: _ZN3paf2ui11ScrollBar2DD2Ev nidvalue: 0xCBC08650
 
 Library: ScePafWidget function: _ZN3paf2ui12CornerButtonC1EPNS0_6WidgetEi nidvalue: 0x9AF9A420
 Library: ScePafWidget function: _ZN3paf2ui12CornerButtonC2EPNS0_6WidgetEi nidvalue: 0x5AEB4C96
-Library: ScePafWidget function: _ZN3paf2ui12CornerButtonD0Ev nidvalue: 0x0893AE97
-Library: ScePafWidget function: _ZN3paf2ui12CornerButtonD1Ev nidvalue: 0x565D6895
-Library: ScePafWidget function: _ZN3paf2ui12CornerButtonD2Ev nidvalue: 0xF3DC2331
 
 Library: ScePafWidget function: _ZN3paf2ui13ImageSlidebarC1EPNS0_6WidgetEi nidvalue: 0x01730380
 Library: ScePafWidget function: _ZN3paf2ui13ImageSlidebarC2EPNS0_6WidgetEi nidvalue: 0x749FF603
-Library: ScePafWidget function: _ZN3paf2ui13ImageSlidebarD0Ev nidvalue: 0x35689523
-Library: ScePafWidget function: _ZN3paf2ui13ImageSlidebarD1Ev nidvalue: 0xF5E9D5F2
-Library: ScePafWidget function: _ZN3paf2ui13ImageSlidebarD2Ev nidvalue: 0xFE05C9F5
 
 Library: ScePafWidget function: _ZN3paf2ui13SlidingDrawerC1EPNS0_6WidgetEi nidvalue: 0x815A26F6
 Library: ScePafWidget function: _ZN3paf2ui13SlidingDrawerC2EPNS0_6WidgetEi nidvalue: 0x102AD75B
-Library: ScePafWidget function: _ZN3paf2ui13SlidingDrawerD0Ev nidvalue: 0x731E18A6
-Library: ScePafWidget function: _ZN3paf2ui13SlidingDrawerD1Ev nidvalue: 0xD76769AC
-Library: ScePafWidget function: _ZN3paf2ui13SlidingDrawerD2Ev nidvalue: 0x62FF22E7
 
 Library: ScePafWidget function: _ZN3paf2ui13SpeechBalloonC1EPNS0_6WidgetEi nidvalue: 0xF25F3B4A
 
 Library: ScePafWidget function: _ZN3paf2ui14ScrollBarTouchC1EPNS0_6WidgetEi nidvalue: 0x388F18D0
 Library: ScePafWidget function: _ZN3paf2ui14ScrollBarTouchC2EPNS0_6WidgetEi nidvalue: 0x83A1A81C
-Library: ScePafWidget function: _ZN3paf2ui14ScrollBarTouchD0Ev nidvalue: 0x1FF1A14C
-Library: ScePafWidget function: _ZN3paf2ui14ScrollBarTouchD1Ev nidvalue: 0xE26E4241
-Library: ScePafWidget function: _ZN3paf2ui14ScrollBarTouchD2Ev nidvalue: 0x3CAAF9FF
 
 Library: ScePafWidget function: _ZN3paf2ui15CompositeButtonC1EPNS0_6WidgetEi nidvalue: 0xA5FDA893
 
 Library: ScePafWidget function: _ZN3paf2ui15CompositeDrawerC1EPNS0_6WidgetEi nidvalue: 0x3E183ACE
 Library: ScePafWidget function: _ZN3paf2ui15CompositeDrawerC2EPNS0_6WidgetEi nidvalue: 0x47CEF730
-Library: ScePafWidget function: _ZN3paf2ui15CompositeDrawerD0Ev nidvalue: 0x1617B198
-Library: ScePafWidget function: _ZN3paf2ui15CompositeDrawerD1Ev nidvalue: 0xE28A3C09
-Library: ScePafWidget function: _ZN3paf2ui15CompositeDrawerD2Ev nidvalue: 0x070A2502
 
 Library: ScePafWidget function: _ZN3paf2ui16ProgressBarTouchC1EPNS0_6WidgetEi nidvalue: 0x8C39024C
 Library: ScePafWidget function: _ZN3paf2ui16ProgressBarTouchC2EPNS0_6WidgetEi nidvalue: 0x805C35B2
-Library: ScePafWidget function: _ZN3paf2ui16ProgressBarTouchD0Ev nidvalue: 0xD13E0F08
-Library: ScePafWidget function: _ZN3paf2ui16ProgressBarTouchD1Ev nidvalue: 0x41ED9224
-Library: ScePafWidget function: _ZN3paf2ui16ProgressBarTouchD2Ev nidvalue: 0x35FA4988
 
 Library: ScePafWidget function: _ZN3paf2ui16ScrollViewParentC1EPNS0_6WidgetEi nidvalue: 0x2F75E51D
 Library: ScePafWidget function: _ZN3paf2ui16ScrollViewParentC2EPNS0_6WidgetEi nidvalue: 0xAD03A4B6
-Library: ScePafWidget function: _ZN3paf2ui16ScrollViewParentD0Ev nidvalue: 0xF22A1F37
-Library: ScePafWidget function: _ZN3paf2ui16ScrollViewParentD1Ev nidvalue: 0x5BC1A611
-Library: ScePafWidget function: _ZN3paf2ui16ScrollViewParentD2Ev nidvalue: 0x08C31745
 
 Library: ScePafWidget function: _ZN3paf2ui10ScrollViewC1EPNS0_6WidgetEi nidvalue: 0x46DE1318
 Library: ScePafWidget function: _ZN3paf2ui10ScrollViewC2EPNS0_6WidgetEi nidvalue: 0xCC28BB62
-Library: ScePafWidget function: _ZN3paf2ui10ScrollViewD0Ev nidvalue: 0x1EA76BAE
-Library: ScePafWidget function: _ZN3paf2ui10ScrollViewD1Ev nidvalue: 0xE024C815
-Library: ScePafWidget function: _ZN3paf2ui10ScrollViewD2Ev nidvalue: 0x3EB61E47
 
 Library: ScePafWidget function: _ZN3paf2ui3BoxC1EPNS0_6WidgetEi nidvalue: 0xBE20C3D9
 Library: ScePafWidget function: _ZN3paf2ui3BoxC2EPNS0_6WidgetEi nidvalue: 0x5CB29873
-Library: ScePafWidget function: _ZN3paf2ui3BoxD0Ev nidvalue: 0xBA7ACC3E
-Library: ScePafWidget function: _ZN3paf2ui3BoxD1Ev nidvalue: 0xA63BF15B
-Library: ScePafWidget function: _ZN3paf2ui3BoxD2Ev nidvalue: 0x467E5FD1
 
 Library: ScePafWidget function: _ZN3paf2ui5PlaneC1EPNS0_6WidgetEi nidvalue: 0x1A678CB4
 Library: ScePafWidget function: _ZN3paf2ui5PlaneC2EPNS0_6WidgetEi nidvalue: 0x1E708E16
-Library: ScePafWidget function: _ZN3paf2ui5PlaneD0Ev
-Library: ScePafWidget function: _ZN3paf2ui5PlaneD1Ev
-Library: ScePafWidget function: _ZN3paf2ui5PlaneD2Ev
 
 Library: ScePafWidget function: _ZN3paf2ui10ButtonBase12SetThresholdEii nidvalue: 0x16479BA7
 
 Library: ScePafWidget function: _ZN3paf2ui6ButtonC1EPNS0_6WidgetEi nidvalue: 0xD00B2806
 Library: ScePafWidget function: _ZN3paf2ui6ButtonC2EPNS0_6WidgetEi nidvalue: 0x859C45CC
-Library: ScePafWidget function: _ZN3paf2ui6ButtonD0Ev nidvalue: 0x4E3FCEFA
-Library: ScePafWidget function: _ZN3paf2ui6ButtonD1Ev nidvalue: 0x99E67510
-Library: ScePafWidget function: _ZN3paf2ui6ButtonD2Ev nidvalue: 0x110033D4
 
 Library: ScePafWidget function: _ZN3paf2ui6DialogC1EPNS0_6WidgetEi nidvalue: 0xDDA9E9A3
 Library: ScePafWidget function: _ZN3paf2ui6DialogC2EPNS0_6WidgetEi nidvalue: 0x97EA03F1
-Library: ScePafWidget function: _ZN3paf2ui6DialogD0Ev nidvalue: 0x7FD0AA07
-Library: ScePafWidget function: _ZN3paf2ui6DialogD1Ev nidvalue: 0xB0C077BF
-Library: ScePafWidget function: _ZN3paf2ui6DialogD2Ev nidvalue: 0x23457800
 
 Library: ScePafWidget function: _ZN3paf2ui7NumSpinC1EPNS0_6WidgetEi nidvalue: 0xD1C8B72E
 
 Library: ScePafWidget function: _ZN3paf2ui7TextBoxC1EPNS0_6WidgetEi nidvalue: 0x931809E8
 Library: ScePafWidget function: _ZN3paf2ui7TextBoxC2EPNS0_6WidgetEi nidvalue: 0x7519CFD9
-Library: ScePafWidget function: _ZN3paf2ui7TextBoxD0Ev nidvalue: 0x1422C3C8
-Library: ScePafWidget function: _ZN3paf2ui7TextBoxD1Ev nidvalue: 0x00F08AA4
-Library: ScePafWidget function: _ZN3paf2ui7TextBoxD2Ev nidvalue: 0xA2C93CD2
 
 Library: ScePafWidget function: _ZN3paf2ui8CheckBoxC1EPNS0_6WidgetEi nidvalue: 0xB58B9830
 Library: ScePafWidget function: _ZN3paf2ui8CheckBoxC2EPNS0_6WidgetEi nidvalue: 0xF194BCFF
 
 Library: ScePafWidget function: _ZN3paf2ui8FileListC1EPNS0_6WidgetEi nidvalue: 0xFDBD3FCE
-Library: ScePafWidget function: _ZN3paf2ui8FileListD0Ev nidvalue: 0xAB56D0A8
-Library: ScePafWidget function: _ZN3paf2ui8FileListD1Ev nidvalue: 0x25175236
-Library: ScePafWidget function: _ZN3paf2ui8FileListD2Ev nidvalue: 0xE1A3CAF5
 
 Library: ScePafWidget function: _ZN3paf2ui8ItemSpinC1EPNS0_6WidgetEi nidvalue: 0x5A3142CD
 Library: ScePafWidget function: _ZN3paf2ui8ItemSpinC2EPNS0_6WidgetEi nidvalue: 0xA4AFCC4B
 
 Library: ScePafWidget function: _ZN3paf2ui8ListItemC1EPNS0_6WidgetEi nidvalue: 0xF49CC5B3
 Library: ScePafWidget function: _ZN3paf2ui8ListItemC2EPNS0_6WidgetEi nidvalue: 0x7DFC7EE6
-Library: ScePafWidget function: _ZN3paf2ui8ListItemD0Ev nidvalue: 0x81A2F165
-Library: ScePafWidget function: _ZN3paf2ui8ListItemD1Ev nidvalue: 0x56621852
-Library: ScePafWidget function: _ZN3paf2ui8ListItemD2Ev nidvalue: 0xD2ECBA17
 
 Library: ScePafWidget function: _ZN3paf2ui8ListViewC1EPNS0_6WidgetEi nidvalue: 0xB492AC24
 Library: ScePafWidget function: _ZN3paf2ui8ListViewC2EPNS0_6WidgetEi nidvalue: 0xB23FF29F
-Library: ScePafWidget function: _ZN3paf2ui8ListViewD0Ev nidvalue: 0xE9894F93
-Library: ScePafWidget function: _ZN3paf2ui8ListViewD1Ev nidvalue: 0x380AF118
-Library: ScePafWidget function: _ZN3paf2ui8ListViewD2Ev nidvalue: 0xB82D0601
 Library: ScePafWidget function: _ZN3paf2ui8ListView20RegisterItemCallbackEPNS1_12ItemCallbackE nidvalue: 0x1316E7E8
 Library: ScePafWidget function: _ZN3paf2ui8ListView14SetSegmentSizeEPNS_7Vector4E nidvalue: 0xAE711B96
 Library: ScePafWidget function: _ZN3paf2ui8ListView16SetSegmentEnableEii nidvalue: 0x6381B5FA
@@ -219,39 +151,24 @@ Library: ScePafWidget function: _ZN3paf2ui8ListView10GetCellNumEi nidvalue: 0x57
 
 Library: ScePafWidget function: _ZN3paf2ui8PageTurnC1EPNS0_6WidgetEi nidvalue: 0xFAB2F12D
 Library: ScePafWidget function: _ZN3paf2ui8PageTurnC2EPNS0_6WidgetEi nidvalue: 0x603C3B86
-Library: ScePafWidget function: _ZN3paf2ui8PageTurnD0Ev nidvalue: 0x8A9E7746
-Library: ScePafWidget function: _ZN3paf2ui8PageTurnD1Ev nidvalue: 0x4CB32950
-Library: ScePafWidget function: _ZN3paf2ui8PageTurnD2Ev nidvalue: 0x78E7525C
 
 Library: ScePafWidget function: _ZN3paf2ui8RadioBoxC1EPNS0_6WidgetEi nidvalue: 0x6038BEDA
 Library: ScePafWidget function: _ZN3paf2ui8RadioBoxC2EPNS0_6WidgetEi nidvalue: 0x895230B6
 
 Library: ScePafWidget function: _ZN3paf2ui8RichTextC1EPNS0_6WidgetEi nidvalue: 0x83AFCA07
 Library: ScePafWidget function: _ZN3paf2ui8RichTextC2EPNS0_6WidgetEi nidvalue: 0x0F972691
-Library: ScePafWidget function: _ZN3paf2ui8RichTextD0Ev nidvalue: 0x8DD27642
-Library: ScePafWidget function: _ZN3paf2ui8RichTextD1Ev nidvalue: 0xAAAB3D3A
-Library: ScePafWidget function: _ZN3paf2ui8RichTextD2Ev nidvalue: 0xC0821FEB
 
 Library: ScePafWidget function: _ZN3paf2ui8SlideBarC1EPNS0_6WidgetEi nidvalue: 0x2A49B44F
 Library: ScePafWidget function: _ZN3paf2ui8SlideBarC2EPNS0_6WidgetEi nidvalue: 0xD848DC3E
-Library: ScePafWidget function: _ZN3paf2ui8SlideBarD0Ev nidvalue: 0x471E0031
-Library: ScePafWidget function: _ZN3paf2ui8SlideBarD1Ev nidvalue: 0xD10169EB
-Library: ScePafWidget function: _ZN3paf2ui8SlideBarD2Ev nidvalue: 0x4A70528D
 
 Library: ScePafWidget function: _ZN3paf2ui8SpinBaseC1EPNS0_6WidgetEi nidvalue: 0x6A8DA1E8
 Library: ScePafWidget function: _ZN3paf2ui8SpinBaseC2EPNS0_6WidgetEi nidvalue: 0xF927A409
 
-Library: ScePafWidget function: _ZN3paf2ui9AppIcon2DC1EPNS0_6WidgetEi nidvalue: 0xA80A895D
-Library: ScePafWidget function: _ZN3paf2ui9AppIcon2DC2EPNS0_6WidgetEi nidvalue: 0xA95F67A6
-Library: ScePafWidget function: _ZN3paf2ui9AppIcon2DD0Ev nidvalue: 0x0EF50FDE
-Library: ScePafWidget function: _ZN3paf2ui9AppIcon2DD1Ev nidvalue: 0xE0EF522B
-Library: ScePafWidget function: _ZN3paf2ui9AppIcon2DD2Ev nidvalue: 0xBB9EA627
+Library: ScePafWidget function: _ZN3paf2ui9AppIcon2dC1EPNS0_6WidgetEi nidvalue: 0xA80A895D
+Library: ScePafWidget function: _ZN3paf2ui9AppIcon2dC2EPNS0_6WidgetEi nidvalue: 0xA95F67A6
 
 Library: ScePafWidget function: _ZN3paf2ui9ScrollBarC1EPNS0_6WidgetEi nidvalue: 0x3564FD90
 Library: ScePafWidget function: _ZN3paf2ui9ScrollBarC2EPNS0_6WidgetEi nidvalue: 0xAD2346F1
-Library: ScePafWidget function: _ZN3paf2ui9ScrollBarD0Ev nidvalue: 0x511AE382
-Library: ScePafWidget function: _ZN3paf2ui9ScrollBarD1Ev nidvalue: 0x006BF9D8
-Library: ScePafWidget function: _ZN3paf2ui9ScrollBarD2Ev nidvalue: 0x9CCC2A09
 
 Library: ScePafWidget function: _ZN3paf2ui7Context6OptionC1Ej nidvalue: 0xFE22E2B3
 Library: ScePafWidget function: _ZN3paf2ui7Context6OptionC2Ej nidvalue: 0x22303A4C
@@ -264,4 +181,102 @@ Library: ScePafWidget function: _ZN3paf2ui7Context5Test1Ei nidvalue: 0xA6B659BB
 
 Library: ScePafWidget variable: _ZN3paf2ui16s_widget19999DA5E nidvalue: 0x19999DA5
 Library: ScePafWidget variable: _ZN3paf2ui16s_widget91871D2DE nidvalue: 0x91871D2D
+
+Library: ScePafWidget function: _ZN3paf2ui6Widget7GetSizeEi
+Library: ScePafWidget function: _ZN3paf2ui6Widget9SetAdjustEjjj
+
+Library: ScePafWidget function: _ZN3paf2ui13BusyIndicator5StartEv
+Library: ScePafWidget function: _ZN3paf2ui13BusyIndicator4StopEv
+Library: ScePafWidget function: _ZN3paf2ui13BusyIndicator11SetBallSizeEf
+Library: ScePafWidget function: _ZN3paf2ui13BusyIndicatorD0Ev
+Library: ScePafWidget function: _ZN3paf2ui13BusyIndicatorD1Ev
+Library: ScePafWidget function: _ZN3paf2ui13BusyIndicatorD2Ev
+
+Library: ScePafWidget function: _ZN3paf2ui4TextD1Ev
+Library: ScePafWidget function: _ZN3paf2ui4TextD0Ev
+Library: ScePafWidget function: _ZN3paf2ui4TextD2Ev
+
+Library: ScePafWidget function: _ZN3paf2ui11ImageButtonD0Ev
+Library: ScePafWidget function: _ZN3paf2ui11ImageButtonD1Ev
+Library: ScePafWidget function: _ZN3paf2ui11ImageButtonD2Ev
+
+Library: ScePafWidget function: _ZN3paf2ui11ProgressBarD0Ev
+Library: ScePafWidget function: _ZN3paf2ui11ProgressBarD1Ev
+Library: ScePafWidget function: _ZN3paf2ui11ProgressBarD2Ev
+
+Library: ScePafWidget function: _ZN3paf2ui12CornerButtonD0Ev
+Library: ScePafWidget function: _ZN3paf2ui12CornerButtonD1Ev
+Library: ScePafWidget function: _ZN3paf2ui12CornerButtonD2Ev
+
+Library: ScePafWidget function: _ZN3paf2ui13SlidingDrawerD0Ev
+Library: ScePafWidget function: _ZN3paf2ui13SlidingDrawerD1Ev
+Library: ScePafWidget function: _ZN3paf2ui13SlidingDrawerD2Ev
+
+Library: ScePafWidget function: _ZN3paf2ui14ScrollBarTouchD0Ev
+Library: ScePafWidget function: _ZN3paf2ui14ScrollBarTouchD1Ev
+Library: ScePafWidget function: _ZN3paf2ui14ScrollBarTouchD2Ev
+
+Library: ScePafWidget function: _ZN3paf2ui15CompositeDrawerD0Ev
+Library: ScePafWidget function: _ZN3paf2ui15CompositeDrawerD1Ev
+Library: ScePafWidget function: _ZN3paf2ui15CompositeDrawerD2Ev
+
+Library: ScePafWidget function: _ZN3paf2ui16ProgressBarTouchD0Ev
+Library: ScePafWidget function: _ZN3paf2ui16ProgressBarTouchD1Ev
+Library: ScePafWidget function: _ZN3paf2ui16ProgressBarTouchD2Ev
+
+Library: ScePafWidget function: _ZN3paf2ui10ScrollViewD0Ev
+Library: ScePafWidget function: _ZN3paf2ui10ScrollViewD1Ev
+Library: ScePafWidget function: _ZN3paf2ui10ScrollViewD2Ev
+
+Library: ScePafWidget function: _ZN3paf2ui3BoxD0Ev
+Library: ScePafWidget function: _ZN3paf2ui3BoxD1Ev
+Library: ScePafWidget function: _ZN3paf2ui3BoxD2Ev
+
+Library: ScePafWidget function: _ZN3paf2ui5PlaneD0Ev
+Library: ScePafWidget function: _ZN3paf2ui5PlaneD1Ev
+Library: ScePafWidget function: _ZN3paf2ui5PlaneD2Ev
+
+Library: ScePafWidget function: _ZN3paf2ui6ButtonD0Ev
+Library: ScePafWidget function: _ZN3paf2ui6ButtonD1Ev
+Library: ScePafWidget function: _ZN3paf2ui6ButtonD2Ev
+
+Library: ScePafWidget function: _ZN3paf2ui6DialogD0Ev
+Library: ScePafWidget function: _ZN3paf2ui6DialogD1Ev
+Library: ScePafWidget function: _ZN3paf2ui6DialogD2Ev
+
+Library: ScePafWidget function: _ZN3paf2ui7TextBoxD0Ev
+Library: ScePafWidget function: _ZN3paf2ui7TextBoxD1Ev
+Library: ScePafWidget function: _ZN3paf2ui7TextBoxD2Ev
+
+Library: ScePafWidget function: _ZN3paf2ui8FileListD0Ev
+Library: ScePafWidget function: _ZN3paf2ui8FileListD1Ev
+Library: ScePafWidget function: _ZN3paf2ui8FileListD2Ev
+
+Library: ScePafWidget function: _ZN3paf2ui8ListItemD0Ev
+Library: ScePafWidget function: _ZN3paf2ui8ListItemD1Ev
+Library: ScePafWidget function: _ZN3paf2ui8ListItemD2Ev
+
+Library: ScePafWidget function: _ZN3paf2ui8ListViewD0Ev
+Library: ScePafWidget function: _ZN3paf2ui8ListViewD1Ev
+Library: ScePafWidget function: _ZN3paf2ui8ListViewD2Ev
+
+Library: ScePafWidget function: _ZN3paf2ui8PageTurnD0Ev
+Library: ScePafWidget function: _ZN3paf2ui8PageTurnD1Ev
+Library: ScePafWidget function: _ZN3paf2ui8PageTurnD2Ev
+
+Library: ScePafWidget function: _ZN3paf2ui8RichTextD0Ev
+Library: ScePafWidget function: _ZN3paf2ui8RichTextD1Ev
+Library: ScePafWidget function: _ZN3paf2ui8RichTextD2Ev
+
+Library: ScePafWidget function: _ZN3paf2ui8SlideBarD0Ev
+Library: ScePafWidget function: _ZN3paf2ui8SlideBarD1Ev
+Library: ScePafWidget function: _ZN3paf2ui8SlideBarD2Ev
+
+Library: ScePafWidget function: _ZN3paf2ui9AppIcon2dD0Ev
+Library: ScePafWidget function: _ZN3paf2ui9AppIcon2dD1Ev
+Library: ScePafWidget function: _ZN3paf2ui9AppIcon2dD2Ev
+
+Library: ScePafWidget function: _ZN3paf2ui9ScrollBarD0Ev
+Library: ScePafWidget function: _ZN3paf2ui9ScrollBarD1Ev
+Library: ScePafWidget function: _ZN3paf2ui9ScrollBarD2Ev
 
