@@ -1,0 +1,84 @@
+#ifndef _VDSUITE_USER_PAF_STD_MEMORY_H
+#define _VDSUITE_USER_PAF_STD_MEMORY_H
+
+namespace paf {
+
+	template <typename T>
+	class intrusive_ptr
+	{
+	public:
+
+		inline intrusive_ptr()
+		{
+			m_ptr = NULL;
+		}
+
+		inline intrusive_ptr(T *p, bool add_ref_flag)
+		{
+			m_ptr = p;
+			if (add_ref_flag)
+			{
+				add_ref();
+			}
+		}
+
+		inline intrusive_ptr(const intrusive_ptr<T>& r)
+		{
+			m_ptr = r.m_ptr;
+			add_ref();
+		}
+
+		inline ~intrusive_ptr()
+		{
+			if (m_ptr != NULL)
+			{
+				m_ptr->Release();
+			}
+		}
+
+		inline T* get() const
+		{
+			return m_ptr;
+		}
+
+		inline T& operator*() const
+		{
+			return *m_ptr;
+		}
+
+		inline T* operator->() const
+		{
+			return m_ptr;
+		}
+
+	protected:
+
+		inline void assign(T *p)
+		{
+			if (p != m_ptr)
+			{
+				if (m_ptr != NULL)
+				{
+					m_ptr->Release();
+				}
+				m_ptr = p;
+				add_ref();
+			}
+		}
+
+		inline void add_ref()
+		{
+			if (m_ptr != NULL)
+			{
+				m_ptr->AddRef();
+			}
+		}
+
+		T* m_ptr;
+	};
+}
+
+#include <memory>
+#include <paf/std/std_bridge>
+
+#endif

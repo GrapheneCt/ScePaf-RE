@@ -1,0 +1,494 @@
+﻿#ifndef _VDSUITE_USER_PAF_STD_STRINGCXX_H
+#define _VDSUITE_USER_PAF_STD_STRINGCXX_H
+
+#include <stddef.h>
+#include <stdint.h>
+#include <paf/std/iosfwd>
+#include <paf/std/memory>
+#include <paf/std/algorithm>
+
+namespace paf {
+template<class _Elem,
+	class _Traits = char_traits<_Elem>,
+	class _Ax = allocator<_Elem> >
+	class basic_string;
+
+		// TEMPLATE CLASS basic_string
+template<class _Elem,
+	class _Traits,
+	class _Alloc>
+	class basic_string
+{	// null-terminated transparent array of elements
+public:
+	typedef basic_string<_Elem, _Traits, _Alloc> _Myt;
+
+	basic_string()
+	{
+		ptr = &empty_string;
+		count = 0;
+	}
+
+	basic_string(const _Elem *src, size_t len)
+	{
+		ptr = &empty_string;
+		count = 0;
+		assign(src, len);
+	}
+
+	basic_string(const _Elem *src)
+	{
+		ptr = &empty_string;
+		count = 0;
+		assign(src);
+	}
+
+	basic_string(const _Elem *src, size_t len, _Alloc const& _Al)
+	{
+		ptr = &empty_string;
+		count = 0;
+		alloc = _Al;
+		assign(src, len);
+	}
+
+	basic_string(const _Elem *src, _Alloc const& _Al)
+	{
+		ptr = &empty_string;
+		count = 0;
+		alloc = _Al;
+		assign(src);
+	}
+
+	basic_string(_Alloc const& _Al)
+	{
+		ptr = &empty_string;
+		count = 0;
+		alloc = _Al;
+	}
+
+	basic_string(_Myt const& src)
+	{
+		ptr = &empty_string;
+		count = 0;
+		alloc = src.alloc;
+		assign(src);
+	}
+
+	basic_string(_Myt const& src, size_t pos, size_t len)
+	{
+		ptr = &empty_string;
+		count = 0;
+		alloc = src.alloc;
+		assign(src, pos, len);
+	}
+
+	~basic_string()
+	{
+		if (ptr != &empty_string)
+		{
+			alloc.deallocate(ptr, count + 1);
+		}
+	}
+
+	_Myt& assign(const _Elem *src)
+	{
+		size_t len = 0;
+		if (src != NULL)
+		{
+			len = _Traits::traits_strlen(src);
+		}
+		return assign(src, len);
+	}
+
+	_Myt& assign(const _Elem *src, size_t len)
+	{
+		if (ptr != &empty_string)
+		{
+			alloc.deallocate(ptr, count + 1);
+		}
+
+		if ((src == NULL) || (*src == 0))
+		{
+			ptr = &empty_string;
+			count = 0;
+		}
+		else
+		{
+			ptr = alloc.allocate(len + 1);
+			count = len;
+			sce_paf_memcpy((void *)ptr, (void *)src, len);
+			ptr[len] = 0;
+		}
+
+		return *this;
+	}
+
+	_Myt& assign(_Myt const& src)
+	{
+		if (ptr != &empty_string)
+		{
+			alloc.deallocate(ptr, count + 1);
+		}
+
+		if (src.count == 0)
+		{
+			ptr = &empty_string;
+			count = 0;
+		}
+		else
+		{
+			ptr = alloc.allocate(src.count + 1);
+			count = src.count;
+			sce_paf_memcpy((void *)ptr, (void *)src.ptr, count + 1);
+		}
+
+		return *this;
+	}
+
+	_Myt& assign(_Myt const& src, size_t pos, size_t len)
+	{
+		size_t to_copy = 0;
+
+		if (pos < src.count)
+		{
+			to_copy = min<size_t>(src.count - pos, len);
+		}
+
+		if (ptr != &empty_string)
+		{
+			alloc.deallocate(ptr, count + 1);
+		}
+
+		if (to_copy == 0)
+		{
+			ptr = &empty_string;
+			count = 0;
+		}
+		else
+		{
+			ptr = alloc.allocate(to_copy + 1);
+			count = to_copy;
+			sce_paf_memcpy((void *)ptr, (void *)(src.ptr + pos), to_copy);
+			ptr[to_copy] = 0;
+		}
+
+		return *this;
+	}
+
+	void clear()
+	{
+		assign(NULL, 0);
+	}
+
+	_Myt& erase(size_t sce_paf_index, size_t len)
+	{
+		size_t n;
+		void *dest;
+		size_t to_erase;
+
+		if (count < sce_paf_index)
+		{
+			return *this;
+		}
+
+		to_erase = len;
+		if (count - sce_paf_index < len)
+		{
+			to_erase = count - sce_paf_index;
+		}
+
+		n = (count - sce_paf_index) - to_erase;
+
+		dest = (void *)alloc.allocate((count - to_erase) + 1);
+
+		sce_paf_memcpy(dest, (void *)ptr, sce_paf_index);
+		sce_paf_memcpy((void *)((int32_t)dest + sce_paf_index), (void *)(ptr + to_erase + sce_paf_index), n);
+
+		*(undefined *)((int32_t)dest + n + sce_paf_index) = 0;
+
+		if (ptr != &empty_string)
+		{
+			alloc.deallocate(>ptr, count + 1);
+		}
+		ptr = (_Elem *)dest;
+		count -= to_erase;
+
+		return *this;
+	}
+
+	_Myt& append(size_t len, _Elem src)
+	{
+		void *dest;
+		uint32_t i = 0;
+
+		dest = (void *)alloc.allocate(count + len + 1);
+		sce_paf_memcpy(dest, (void *)ptr, count);
+		if (len != 0)
+		{
+			do {
+				*(_Elem *)((int32_t)dest + count + i) = src;
+				i++;
+			} while (i < len);
+		}
+		*(_Elem *)((int32_t)dest + count + len) = 0;
+
+		if (ptr != &empty_string)
+		{
+			alloc.deallocate(ptr, count + 1);
+		}
+
+		ptr = (_Elem *)dest;
+		count += len;
+
+		return *this;
+	}
+
+	_Myt& append(const _Elem *src, size_t num)
+	{
+		void *dest;
+
+		dest = (void *)alloc.allocate(count + num + 1);
+		sce_paf_memcpy(dest, (void *)ptr, count);
+		sce_paf_memcpy((void *)((int32_t)dest + count), (void *)src, num);
+		*(_Elem *)((int32_t)dest + count + num) = 0;
+
+		if (ptr != &empty_string)
+		{
+			alloc.deallocate(ptr, count + 1);
+		}
+
+		ptr = (_Elem *)dest;
+		count += num;
+
+		return *this;
+	}
+
+	_Myt& append(const _Elem *src)
+	{
+		return append(src, _Traits::traits_strlen(src));
+	}
+
+	_Myt& append(_Myt const& src)
+	{
+		return append(src.ptr, src.count);
+	}
+
+	void resize(size_t len, _Elem ch)
+	{
+		if (len < count)
+		{
+			erase(len, 0xffffffff);
+		}
+		else if (count < len)
+		{
+			append(len - count, ch);
+		}
+	}
+
+	void resize(size_t len)
+	{
+		resize(len, 0);
+	}
+
+	_Myt& operator=(const _Elem *src)
+	{
+		return assign(src);
+	}
+
+	_Myt& operator=(_Myt const& src)
+	{
+		return assign(src);
+	}
+
+	_Elem& operator[](size_t i)
+	{
+		return ptr + i;
+	}
+
+	_Myt& operator+=(const _Elem *src)
+	{
+		return append(src);
+	}
+
+	_Myt& operator+=(_Myt const& src)
+	{
+		return append(src);
+	}
+
+	size_t find_first_not_of(const _Elem *str, size_t sce_paf_index, size_t len) const
+	{
+		_Elem *str_ptr;
+
+		if (sce_paf_index < count)
+		{
+			for (_Elem *curr_ptr = ptr + sce_paf_index; curr_ptr != ptr + count; curr_ptr++)
+			{
+				str_ptr = str;
+				if (str != str + len)
+				{
+					do
+					{
+						if (*str_ptr != *curr_ptr)
+						{
+							return (int32_t)curr_ptr - (int32_t)ptr;
+						}
+						str_ptr++;
+					} while (str_ptr != str + len);
+				}
+			}
+		}
+
+		return 0xffffffff;
+	}
+
+	size_t find_first_not_of(_Elem ch, size_t sce_paf_index) const
+	{
+		return find_first_not_of(&ch, sce_paf_index, 1);
+	}
+
+	_Elem *data() const
+	{
+		return ptr;
+	}
+
+	_Elem *c_str() const
+	{
+		return ptr;
+	}
+
+	size_t size() const
+	{
+		return count;
+	}
+
+	size_t length() const
+	{
+		return count;
+	}
+
+	size_t find(const _Elem *str, size_t sce_paf_index, size_t len) const
+	{
+		_Elem *s1;
+		uint32_t i;
+		_Elem *src_ptr;
+
+		if ((len != 0) || (count < sce_paf_index))
+		{
+			i = count - sce_paf_index;
+			if ((sce_paf_index < count) && (len <= i))
+			{
+				src_ptr = ptr + sce_paf_index;
+				while ((i != 0 && (s1 = _Traits::traits_strchr(src_ptr, str), s1 != NULL)))
+				{
+					if (_Traits::traits_strncmp(s1, str, len) == 0)
+					{
+						return (int32_t)s1 - (int32_t)ptr;
+					}
+					i = i - (int32_t)(s1 + (1 - (int32_t)src_ptr));
+					src_ptr = s1 + 1;
+				}
+			}
+			sce_paf_index = 0xffffffff;
+		}
+
+		return sce_paf_index;
+	}
+
+	size_t find(_Elem ch, size_t sce_paf_index) const
+	{
+		return find(&ch, sce_paf_index, 1);
+	}
+
+	bool empty() const
+	{
+		return (count == 0);
+	}
+
+	size_t rfind(const _Elem *str, size_t sce_paf_index, size_t len) const
+	{
+		_Elem *iptr;
+		size_t wlen;
+
+		if (len == 0)
+		{
+			if (count <= sce_paf_index)
+			{
+				sce_paf_index = count;
+			}
+		}
+		else
+		{
+			if (len <= count)
+			{
+				wlen = sce_paf_index;
+				if (count - len <= sce_paf_index)
+				{
+					wlen = count - len;
+				}
+				iptr = ptr + wlen;
+				while (true)
+				{
+					if ((*str == *iptr) && (_Traits::traits_strncmp(iptr, str, len) == 0))
+					{
+						return (int32_t)iptr - (int32_t)ptr;
+					}
+					if (iptr == ptr) break;
+					iptr = iptr + -1;
+				}
+			}
+			sce_paf_index = 0xffffffff;
+		}
+
+		return sce_paf_index;
+	}
+
+	size_t rfind(_Elem ch, size_t sce_paf_index) const
+	{
+		return rfind(&ch, sce_paf_index, 1);
+	}
+
+	_Myt substr(size_t sce_paf_index, size_t len) const
+	{
+		size_t new_len;
+
+		if (sce_paf_index < count)
+		{
+			if (len == 0xffffffff)
+			{
+				new_len = count - sce_paf_index;
+			}
+			else
+			{
+				new_len = len;
+				if (count < len + sce_paf_index)
+				{
+					new_len = count - sce_paf_index;
+				}
+			}
+			return _Myt(ptr + sce_paf_index, new_len);
+		}
+		
+		return _Myt();
+	}
+
+	_Elem *operator[](size_t i) const
+	{
+		return ptr + i;
+	}
+
+	__declspec(dllimport) static _Elem empty_string;
+		
+private:
+
+	_Elem *ptr;
+	size_t count;
+	_Alloc alloc;
+	
+};
+	
+typedef basic_string<char, char_traits<char>, allocator<char> >
+	string;
+typedef basic_string<wchar_t, char_traits<wchar_t>, allocator<wchar_t> >
+	wstring;
+
+}
+#endif

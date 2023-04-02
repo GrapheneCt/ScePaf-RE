@@ -1,0 +1,12 @@
+emd: 1
+
+Library: SceWebUIPlugin attr: auto_export
+Library: SceWebUIPlugin version: 1
+Library: SceWebUIPlugin stubfile: "libSceWebUIPlugin_stub"
+Library: SceWebUIPlugin nidsuffix: ""
+Library: SceWebUIPlugin libnamenid: 0x04FA0166
+Library: SceWebUIPlugin function: _ZN3paf5WebUI14PluginCreateCBEPNS_6PluginE nidvalue: 0x93C92A4A
+Library: SceWebUIPlugin function: _ZN3paf5WebUI12PluginInitCBEPNS_6PluginE nidvalue: 0x07F112B1
+Library: SceWebUIPlugin function: _ZN3paf5WebUI13PluginStartCBEPNS_6PluginE nidvalue: 0x9CD848A2
+Library: SceWebUIPlugin function: _ZN3paf5WebUI12PluginStopCBEPNS_6PluginE nidvalue: 0xD480614B
+Library: SceWebUIPlugin function: _ZN3paf5WebUI12PluginExitCBEPNS_6PluginE nidvalue: 0x12EDFFFD

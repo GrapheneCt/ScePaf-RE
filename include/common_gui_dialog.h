@@ -11,78 +11,80 @@ namespace sce {
 		class BaseHashTable;
 		class ContentsHashTable;
 
-		enum ButtonCode
+		enum DIALOG_CB
 		{
-			ButtonCode_X = 1,
-			ButtonCode_Ok,
-			ButtonCode_Cancel,
-			ButtonCode_Yes,
-			ButtonCode_No,
-			ButtonCode_Unk6,
-			ButtonCode_JoinPSPlus,
-			ButtonCode_AboutPSPlus
+			DIALOG_CB_X = 1,
+			DIALOG_CB_OK,
+			DIALOG_CB_CANCEL,
+			DIALOG_CB_YES,
+			DIALOG_CB_NO,
+			DIALOG_CB_UNK6,
+			DIALOG_CB_JOINPSPLUS,
+			DIALOG_CB_ABOUTPSPLUS
 		};
 
-		enum WidgetType
+		enum REGISTER_ID
 		{
-			WidgetType_TextMessage1 = 1,
-			WidgetType_TextMessage2,
-			WidgetType_PlaneBody,
-			WidgetType_Dialog,
-			WidgetType_PlaneIcon,
-			WidgetType_TextTitle,
-			WidgetType_PlaneTitle,
-			WidgetType_PlaneButtonX,
-			WidgetType_ScrollView,
-			WidgetType_Box,
-			WidgetType_ListView,
-			WidgetType_Button1,
-			WidgetType_Button2,
-			WidgetType_Button3,
-			WidgetType_Unk15,
-			WidgetType_Unk16,
-			WidgetType_Unk17,
-			WidgetType_Progressbar,
-			WidgetType_TextProgressbar,
+			REGISTER_ID_TEXT_MESSAGE_1 = 1,
+			REGISTER_ID_TEXT_MESSAGE_2,
+			REGISTER_ID_PLANE_BODY,
+			REGISTER_ID_DIALOG,
+			REGISTER_ID_PLANE_ICON,
+			REGISTER_ID_TEXT_TITLE,
+			REGISTER_ID_PLANE_TITLE,
+			REGISTER_ID_PLANE_BUTTON_X,
+			REGISTER_ID_SCROLL_VIEW,
+			REGISTER_ID_BOX,
+			REGISTER_ID_LIST_VIEW,
+			REGISTER_ID_BUTTON_1,
+			REGISTER_ID_BUTTON_2,
+			REGISTER_ID_BUTTON_3,
+			REGISTER_ID_UNK15,
+			REGISTER_ID_UNK16,
+			REGISTER_ID_UNK17,
+			REGISTER_ID_PROGRESSBAR,
+			REGISTER_ID_TEXT_PROGRESSBAR,
 
-			WidgetType_TextAboutPSPlus = 23
+			REGISTER_ID_TEXT_ABOUTPSPLUS = 23
 		};
 
-		class EventCallback
+		class EventCBListener
 		{
 		public:
 
-			typedef void(*EventHandler)(SceInt32 instanceSlot, ButtonCode buttonCode, ScePVoid pUserArg);
+			typedef void(*HandlerCB)(int32_t instance_slot, DIALOG_CB type, void *userdata);
 
-			EventCallback() : eventHandler(SCE_NULL), pUserData(SCE_NULL)
+			EventCBListener(HandlerCB func, void *data) : m_func(func), m_data(data)
 			{
 
-			};
+			}
 
-			virtual ~EventCallback()
+			virtual ~EventCBListener()
 			{
 
-			};
+			}
 
-			virtual SceInt32 HandleEvent(SceInt32 instanceSlot, ButtonCode buttonCode)
+			virtual int32_t Do(int32_t instance_slot, DIALOG_CB type)
 			{
-				if (eventHandler) {
-					eventHandler(instanceSlot, buttonCode, pUserData);
+				if (m_func) {
+					m_func(instance_slot, type, m_data);
 				}
-			};
+			}
 
-			EventHandler eventHandler;
-			ScePVoid pUserData;
+		protected:
 
+			HandlerCB m_func;
+			void *m_data;
 		};
+
 
 		class Param
 		{
 		public:
 
-			BaseHashTable *baseList;
-			SceInt32 unk_04;
-			ContentsHashTable *contentsList;
+			BaseHashTable *base_list;
+			int32_t unk_04;
+			ContentsHashTable *contents_list;
 
 			static Param s_dialogOk;
 			static Param s_dialogCancel;
@@ -120,21 +122,21 @@ namespace sce {
 
 			~Dialog() {};
 
-			static paf::ui::Widget *GetWidget(SceInt32 instanceSlot, WidgetType type);
+			static paf::ui::Widget *GetWidget(int32_t instanceSlot, REGISTER_ID id);
 
-			static SceInt32 SetDimmerColor(SceInt32 instanceSlot, paf::Rgba *color);
+			static int32_t SetDimmerColor(int32_t instanceSlot, paf::math::v4 const& color);
 
-			static SceInt32 SetTitleTextColor(SceInt32 instanceSlot, paf::Rgba *color);
+			static int32_t SetTitleTextColor(int32_t instanceSlot, paf::math::v4 const& color);
 
-			static SceInt32 SetDialogColor(SceInt32 instanceSlot, paf::Rgba *color);
+			static int32_t SetDialogColor(int32_t instanceSlot, paf::math::v4 const& color);
 
-			static SceInt32 SetTexture(SceInt32 instanceSlot, WidgetType type, paf::graph::Surface **tex);
+			static int32_t SetTexture(int32_t instanceSlot, REGISTER_ID id, paf::intrusive_ptr<paf::graph::Surface> const& tex);
 
-			static SceInt32 Show(paf::Plugin *workPlugin, paf::wstring *title, paf::wstring *message, Param *param, EventCallback::EventHandler buttonCB, ScePVoid pUserArg);
+			static int32_t Show(paf::Plugin *workPlugin, paf::wstring *title, paf::wstring *message, Param *param, EventCBListener::HandlerCB buttonCB, ScePVoid pUserArg);
 
-			static SceInt32 Show(paf::Plugin *workPlugin, paf::wstring *title, paf::wstring *message, Param *param, EventCallback *cb);
+			static int32_t Show(paf::Plugin *workPlugin, paf::wstring *title, paf::wstring *message, Param *param, EventCBListener *cb);
 
-			static SceInt32 Close(SceInt32 instanceSlot);
+			static int32_t Close(int32_t instanceSlot);
 		};
 
 		class CommonDialog : public Dialog
@@ -142,32 +144,32 @@ namespace sce {
 		public:
 
 			// SceCommonGuiDialog_CCFCD9A6
-			SceInt32 Show();
+			int32_t Show();
 
 			paf::Plugin *workPlugin;
-			SceInt32 unk_04; // unused?
-			paf::Rgba color1;
-			paf::Rgba color2;
-			SceInt32 unk_28; // default 0
-			SceInt32 unk_2C; // default 0
-			SceInt32 unk_30; // default -1
-			SceInt32 unk_34; // default 0
-			SceInt32 unk_38; // default -1
-			ScePVoid unk_3C; // default SCE_NULL
-			ScePVoid unk_40; // default 0x80
-			SceBool  unk_44;
-			Param    param;
+			int32_t unk_04; // unused?
+			paf::math::v4 color1;
+			paf::math::v4 color2;
+			int32_t unk_28; // default 0
+			int32_t unk_2C; // default 0
+			int32_t unk_30; // default -1
+			int32_t unk_34; // default 0
+			int32_t unk_38; // default -1
+			void *unk_3C; // default SCE_NULL
+			void *unk_40; // default 0x80
+			bool  unk_44;
+			Param param;
 			paf::wstring title;
 			paf::wstring message;
-			SceInt32 unk_6C;
-			paf::Rgba color3;
+			int32_t unk_6C;
+			paf::math::v4 color3;
 			paf::ui::Widget *unk_80_widget;
 			paf::graph::Surface *unk_84_surface;
-			ScePVoid unk_88;
+			void *unk_88;
 			paf::graph::Surface *unk_8C_surface;
-			EventCallback *eventHandler;
-			ScePVoid unk_94_cb;
-			ScePVoid unk_98_cb;
+			EventCBListener *eventHandler;
+			void *unk_94_cb;
+			void *unk_98_cb;
 		};
 
 		class ErrorDialog : public Dialog
@@ -177,7 +179,7 @@ namespace sce {
 			ErrorDialog()
 			{
 				unk_48 = 0;
-				faultyAppId = SCE_APPMGR_APP_ID_THIS;
+				faulty_app_id = SCE_APPMGR_APP_ID_THIS;
 				unk_50 = 2;
 				unk_54 = 2;
 				unk_58 = 2;
@@ -192,53 +194,53 @@ namespace sce {
 				unk_9C = 0;
 				unk_A0 = 0;
 				unk_A8 = 0;
-				hasOkButton = 1;
+				has_ok_button = true;
 				unk_AA = 0;
 
-				errorCode = 0;
-				eventHandler = SCE_NULL;
-				unk_BC_cb = SCE_NULL;
+				error = 0;
+				listener = NULL;
+				unk_BC_cb = NULL;
 			}
 
 			~ErrorDialog() {};
 
-			SceInt32 Show();
+			int32_t Show();
 
-			paf::Plugin *workPlugin;
-			SceUChar8 unk_04[0x2C];
-			SceInt32 unk_30;
-			SceInt32 unk_34;
-			SceInt32 unk_38;
-			SceInt32 unk_3C;
-			SceInt32 unk_40;
-			SceInt32 errorCode;
-			SceInt32 unk_48;
-			SceInt32 faultyAppId;
-			SceInt32 unk_50;
-			SceInt32 unk_54;
-			SceInt32 unk_58;
-			SceInt32 unk_5C;
+			paf::Plugin *work_plugin;
+			char unk_04[0x2C];
+			int32_t unk_30;
+			int32_t unk_34;
+			int32_t unk_38;
+			int32_t unk_3C;
+			int32_t unk_40;
+			int32_t error;
+			int32_t unk_48;
+			int32_t faulty_app_id;
+			int32_t unk_50;
+			int32_t unk_54;
+			int32_t unk_58;
+			int32_t unk_5C;
 			paf::wstring title;
-			SceInt32 unk_6C;
-			SceInt32 unk_70;
-			SceInt32 unk_74;
-			SceInt32 unk_78;
+			int32_t unk_6C;
+			int32_t unk_70;
+			int32_t unk_74;
+			int32_t unk_78;
 			paf::wstring message;
-			SceInt32 unk_88;
-			SceInt32 unk_8C;
-			SceInt32 unk_90;
-			SceInt32 unk_94;
-			SceInt32 unk_98;
-			SceInt32 unk_9C;
-			SceInt32 unk_A0;
-			SceInt32 unk_A4;
-			SceByte unk_A8;
-			SceByte hasOkButton;
-			SceByte unk_AA;
-			SceByte unk_AB;
-			SceUChar8 unk_AC[0xC];
-			EventCallback *eventHandler;
-			EventCallback *unk_BC_cb;
+			int32_t unk_88;
+			int32_t unk_8C;
+			int32_t unk_90;
+			int32_t unk_94;
+			int32_t unk_98;
+			int32_t unk_9C;
+			int32_t unk_A0;
+			int32_t unk_A4;
+			bool unk_A8;
+			bool has_ok_button;
+			bool unk_AA;
+			bool unk_AB;
+			char unk_AC[0xC];
+			EventCBListener *listener;
+			EventCBListener *unk_BC_cb;
 		};
 	}
 }

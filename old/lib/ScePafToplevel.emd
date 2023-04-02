@@ -1,0 +1,70 @@
+emd: 1
+
+Library: ScePafToplevel attr: auto_export
+Library: ScePafToplevel version: 1
+Library: ScePafToplevel stubfile: "libScePafToplevel_stub"
+Library: ScePafToplevel nidsuffix: "PAF"
+Library: ScePafToplevel libnamenid: 0x4D9A9DD0
+Library: ScePafToplevel function: _ZN3paf6Plugin4FindEPKc
+//Library: ScePafToplevel function: _ZN3paf6PluginC1Ev nidvalue: 0x875D7D39
+//Library: ScePafToplevel function: _ZN3paf6PluginC2Ev nidvalue: 0x4BD12CD8
+Library: ScePafToplevel function: _ZN3paf6Plugin8PageOpenEPNS_3rco7ElementEPNS0_13PageOpenParamE nidvalue: 0x30B442D9
+Library: ScePafToplevel function: _ZN3paf6Plugin9PageCloseEPNS_3rco7ElementEPNS0_14PageCloseParamE nidvalue: 0x3FE812F6
+Library: ScePafToplevel function: _ZN3paf6Plugin13GetPageByHashEPNS_3rco7ElementE nidvalue: 0xE1DC7DF5
+Library: ScePafToplevel function: _ZN3paf6Plugin12TemplateOpenEPNS_2ui6WidgetEPNS_3rco7ElementEPNS0_17TemplateOpenParamE nidvalue: 0xAB0DB9B0
+Library: ScePafToplevel function: _ZN3paf6Plugin10GetTextureEPPNS_5graph7SurfaceEPS0_PNS_3rco7ElementE nidvalue: 0x38FFFE8E
+Library: ScePafToplevel function: _ZN3paf6Plugin10GetWStringEPNS_3rco7ElementE nidvalue: 0x19CEFDA7
+Library: ScePafToplevel function: _ZN3paf6Plugin21CreateWidgetWithStyleEPNS_2ui6WidgetEPKcPNS_3rco7ElementES8_ nidvalue: 0x923F763A
+Library: ScePafToplevel function: _ZN3paf6Plugin8GetSceneERKNS_3rco7ElementE nidvalue: 0x16A302B9
+Library: ScePafToplevel function: _ZN3paf6Plugin8GetSceneERKNS_4cxml7ElementE nidvalue: 0x3A3A54DA
+Library: ScePafToplevel function: _ZN3paf6Plugin11UnloadAsyncEPKcPFvPNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEi nidvalue: 0x664A8AB3
+Library: ScePafToplevel function: _ZN3paf6Plugin11UnloadAsyncEPFvPNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEEEi nidvalue: 0x1ADB3A22
+
+Library: ScePafToplevel function: _ZN3paf9Framework17UnloadPluginAsyncEPNS_6PluginEPKcPFvS2_Ei nidvalue: 0x0AAE521D
+Library: ScePafToplevel function: _ZN3paf9Framework15LoadPluginAsyncERKNS_6Plugin9InitParamEPFvPS1_Ei nidvalue: 0xF975994E
+Library: ScePafToplevel function: _ZN3paf9Framework4ExitEv nidvalue: 0x9A4B0DC4
+Library: ScePafToplevel function: _ZN3paf9Framework9InitParam17LoadDefaultParamsEv nidvalue: 0x907BA948
+Library: ScePafToplevel function: _ZN3paf9Framework21GetFwLangBySystemLangEj nidvalue: 0x1AEDE4E0
+Library: ScePafToplevel function: _ZN3paf9Framework25InitializeDefaultJobQueueEv nidvalue: 0x7C624212
+Library: ScePafToplevel function: _ZN3paf9Framework11GetInstanceEv nidvalue: 0xF72FC59E
+Library: ScePafToplevel function: _ZN3paf9Framework12GetUiContextEv nidvalue: 0x2FB738A8
+Library: ScePafToplevel function: _ZN3paf9Framework27GetDefaultSurfaceMemoryPoolEv nidvalue: 0xA0896F7F
+Library: ScePafToplevel function: _ZN3paf9Framework10GetTextureEPPNS_5graph7SurfaceEPS0_PNS_3rco7ElementE nidvalue: 0x7191797C
+Library: ScePafToplevel function: _ZN3paf9Framework23CreateTextureFromMemoryEPPNS_8graphics7SurfaceEPNS_6PluginEPvjNS_5Image4TypeEij nidvalue: 0xF13D2937
+Library: ScePafToplevel function: _ZN3paf9Framework12GetCRWStringEPNS_3rco7ElementE nidvalue: 0x85A057E3
+Library: ScePafToplevel function: _ZN3paf9Framework15SetRenderTargetEPNS0_18RenderSurfaceParamE nidvalue: 0x01EFE482
+Library: ScePafToplevel function: _ZN3paf9Framework28PluginCRGraphicsFreeCallbackEv nidvalue: 0xC9C02705
+Library: ScePafToplevel function: _ZN3paf9Framework26LoadPluginCRFinishCallbackEPNS_6PluginE nidvalue: 0x86F3C133
+
+Library: ScePafToplevel function: _ZN3paf6Plugin13PageOpenParamC1Ev
+Library: ScePafToplevel function: _ZN3paf6Plugin13PageOpenParamC2Ev
+Library: ScePafToplevel function: _ZN3paf6Plugin14PageCloseParamC1Ev
+Library: ScePafToplevel function: _ZN3paf6Plugin14PageCloseParamC2Ev
+Library: ScePafToplevel function: _ZN3paf6Plugin17TemplateOpenParamC1Ev
+Library: ScePafToplevel function: _ZN3paf6Plugin17TemplateOpenParamC2Ev
+Library: ScePafToplevel function: _ZN3paf6PluginD1Ev
+Library: ScePafToplevel function: _ZN3paf6PluginD2Ev
+Library: ScePafToplevel function: _ZN3paf6Plugin9InitParamC1Ev
+Library: ScePafToplevel function: _ZN3paf6Plugin9InitParamC2Ev
+Library: ScePafToplevel function: _ZNK3paf6Plugin12GetInterfaceEi
+Library: ScePafToplevel function: _ZN3paf6Plugin12SetInterfaceEiPv
+Library: ScePafToplevel function: _ZN3paf6Plugin9LoadAsyncERKNS0_9InitParamEPFvPS0_Ei
+Library: ScePafToplevel function: _ZN3paf6Plugin8LoadSyncERKNS0_9InitParamEPFvPS0_Ei
+
+Library: ScePafToplevel function: _ZN3paf9Framework9InitParamC1Ev
+Library: ScePafToplevel function: _ZN3paf9Framework9InitParamC2Ev
+Library: ScePafToplevel function: _ZN3paf9FrameworkC1ERKNS0_9InitParamE
+Library: ScePafToplevel function: _ZN3paf9FrameworkC2ERKNS0_9InitParamE
+Library: ScePafToplevel function: _ZN3paf9FrameworkD1Ev
+Library: ScePafToplevel function: _ZN3paf9FrameworkD2Ev
+Library: ScePafToplevel function: _ZN3paf9Framework3RunEv
+Library: ScePafToplevel function: _ZN3paf9Framework7GetModeEv
+Library: ScePafToplevel function: _ZN3paf9Framework10FindPluginEPKcb
+Library: ScePafToplevel function: _ZN3paf9Framework23CommonResourceInitParamC1Ev
+Library: ScePafToplevel function: _ZN3paf9Framework23CommonResourceInitParamC2Ev
+Library: ScePafToplevel function: _ZN3paf9Framework22LoadCommonResourceSyncEPFvvE
+Library: ScePafToplevel function: _ZN3paf9Framework22LoadCommonResourceSyncERNS0_23CommonResourceInitParamEPFvvE
+Library: ScePafToplevel function: _ZN3paf9Framework23LoadCommonResourceAsyncEPFvvE
+Library: ScePafToplevel function: _ZN3paf9Framework23LoadCommonResourceAsyncERNS0_23CommonResourceInitParamEPFvvE
+
+Library: ScePafToplevel variable: _ZN3paf19s_frameworkInstanceE nidvalue: 0xCB81F1F1

@@ -1,0 +1,82 @@
+﻿/*
+	Vita Development Suite Libraries
+*/
+
+#ifndef _VDSUITE_USER_PAF_MODULE_MODULE_H
+#define _VDSUITE_USER_PAF_MODULE_MODULE_H
+
+#include <stdint.h>
+#include <scetypes.h>
+#include <paf/std/string>
+#include <paf/std/map>
+
+namespace paf {
+
+	class ModuleImpl;
+
+	class Module
+	{
+	public:
+
+		enum Option
+		{
+			Option_None = 0,
+			Option_UseInterface = 1,
+			Option_LoadTypeCdlg = 2
+		};
+
+		class ExtraOption
+		{
+
+		};
+
+		Module(const char *_name, const char *funcname, int32_t option, const ExtraOption *extra_option);
+
+		~Module();
+
+		void SetInterface(int32_t version, void *_interface);
+
+		void *GetInterface(int32_t version) const;
+
+	private:
+
+		ModuleImpl *impl;
+	};
+
+	class ModuleImpl
+	{
+	public:
+
+		string GetName() const
+		{
+			return name;
+		}
+
+		SceUID GetHandle() const
+		{
+			return handle;
+		}
+
+		int32_t GetResult() const
+		{
+			return result;
+		}
+
+	private:
+
+		ModuleImpl(const char *_name, int _option, const Module::ExtraOption *extra_option);
+
+		~ModuleImpl();
+
+		void Start(Module *referer, char *funcname);
+
+		string name;
+		SceUID handle;
+		map<int, void*> interface_table;
+		int32_t ref_count;
+		int32_t option;
+		int32_t result;
+	};
+}
+
+#endif /* _VDSUITE_USER_PAF_MODULE_MODULE_H */

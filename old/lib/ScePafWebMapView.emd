@@ -1,0 +1,13 @@
+emd: 1
+
+Library: ScePafWebMapView attr: auto_export
+Library: ScePafWebMapView version: 1
+Library: ScePafWebMapView stubfile: "libScePafWebMapView_stub"
+Library: ScePafWebMapView nidsuffix: ""
+Library: ScePafWebMapView libnamenid: 0x83D6C628
+Library: ScePafWebMapView function: _ZN3paf10WebMapView12InitGraphicsEv nidvalue: 0x6E0719FB
+Library: ScePafWebMapView function: _ZN3paf10WebMapView7InitIPCEv nidvalue: 0x273F200C
+Library: ScePafWebMapView function: _ZN3paf10WebMapView10InitializeEv nidvalue: 0x5E7D0BE7
+//Library: ScePafWebMapView function: _ZN3paf10WebMapView10CreateEv nidvalue: 0xDE7C5CBE
+Library: ScePafWebMapView function: _ZN3paf10WebMapView11GetInstanceEv nidvalue: 0xC2581D7F
+//Library: ScePafWebMapView function: _ZN3paf10WebMapView21CreateGraphicsContextEv nidvalue: 0xEE99BD02

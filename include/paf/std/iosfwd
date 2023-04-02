@@ -1,0 +1,105 @@
+#ifndef _VDSUITE_USER_PAF_STD_IOSFWD_H
+#define _VDSUITE_USER_PAF_STD_IOSFWD_H
+
+#include <stddef.h>
+#include <stdint.h>
+#include <paf/std/stdio.h>
+#include <paf/std/string.h>
+
+namespace paf {
+// TEMPLATE STRUCT char_traits
+template<class _Elem>
+struct char_traits
+{	// properties of a string or stream unknown element
+};
+
+// STRUCT char_traits<wchar_t> (FROM <string>)
+template<>
+struct char_traits<wchar_t>
+{	// properties of a string or stream wchar_t element
+	typedef wchar_t _Elem;
+	typedef _Elem char_type;
+	typedef int32_t size_type;
+
+	static bool traits_equal(const char_type *s1, const char_type *s2)
+	{
+		bool ret = false;
+		if (*s1 == *s2)
+		{
+			ret = (sce_paf_wcscmp(s1, s2) == 0);
+		}
+		return ret;
+	}
+
+	static bool traits_less(const char_type *s1, const char_type *s2)
+	{
+		bool ret = true;
+		if (*s2 <= *s1)
+		{
+			ret = ((uint32_t)sce_paf_wcscmp(s1, s2) >> 0x1F);
+		}
+		return ret;
+	}
+
+	static char_type *traits_strchr(const char_type *str, const char_type& ch)
+	{
+		return sce_paf_wcschr(str, ch);
+	}
+
+	static size_type traits_strlen(const char_type *src)
+	{
+		return sce_paf_wcslen(src);
+	}
+
+	static size_type traits_strncmp(const char_type *s1, const char_type *s2, size_type len)
+	{
+		return sce_paf_wcsncmp(s1, s2, len);
+	}
+};
+
+// STRUCT char_traits<char> (FROM <string>)
+template<>
+struct char_traits<char>
+{	// properties of a string or stream char element
+	typedef char _Elem;
+	typedef _Elem char_type;
+	typedef int32_t size_type;
+
+	static bool traits_equal(const char_type *s1, const char_type *s2)
+	{
+		bool ret = false;
+		if (*s1 == *s2)
+		{
+			ret = (sce_paf_strcmp(s1, s2) == 0);
+		}
+		return ret;
+	}
+
+	static bool traits_less(const char_type *s1, const char_type *s2)
+	{
+		bool ret = true;
+		if (*s2 <= *s1)
+		{
+			ret = ((uint32_t)sce_paf_strcmp(s1, s2) >> 0x1F);
+		}
+		return ret;
+	}
+
+	static char_type *traits_strchr(const char_type *str, const char_type& ch)
+	{
+		return sce_paf_strchr(str, ch);
+	}
+
+	static size_type traits_strlen(const char_type *src)
+	{
+		return sce_paf_strlen(src);
+	}
+
+	static size_type traits_strncmp(const char_type *s1, const char_type *s2, size_type len)
+	{
+		return sce_paf_strncmp(s1, s2, len);
+	}
+};
+}
+
+#endif /* _VDSUITE_USER_PAF_STD_IOSFWD_H */

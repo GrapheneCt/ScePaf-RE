@@ -1,0 +1,8 @@
+emd: 1
+
+Library: ScePafLowlayer attr: auto_export
+Library: ScePafLowlayer version: 1
+Library: ScePafLowlayer stubfile: "libScePafLowlayer_stub"
+Library: ScePafLowlayer nidsuffix: ""
+Library: ScePafLowlayer libnamenid: 0x2342266A
+Library: ScePafLowlayer function: _ZN3paf5deflt10DecompressEPvjS2_PKS2_ nidvalue: 0xD7DAA151

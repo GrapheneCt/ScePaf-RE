@@ -5,4 +5,5 @@ Library: ScePafAutoTestTty version: 1
 Library: ScePafAutoTestTty stubfile: "libScePafAutoTestTty_stub"
 Library: ScePafAutoTestTty nidsuffix: ""
 Library: ScePafAutoTestTty libnamenid: 0xC503BD7C
+
 Library: ScePafAutoTestTty function: _ZN3paf8autotest4DumpENS0_8TestTypeEPKcz nidvalue: 0x9E10E873

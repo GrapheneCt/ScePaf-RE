@@ -1,0 +1,21 @@
+#ifndef _VDSUITE_USER_PAF_STD_STDC_H
+#define _VDSUITE_USER_PAF_STD_STDC_H
+
+#include <scetypes.h>
+
+namespace paf {
+	class TTY
+	{
+	public:
+
+		TTY();
+
+		~TTY();
+
+		SceUID fd_stdout;
+		SceUID fd_stdin;
+		SceUID fd_extratty;
+	};
+}
+
+#endif

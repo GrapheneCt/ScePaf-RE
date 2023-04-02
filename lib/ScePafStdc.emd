@@ -6,13 +6,15 @@ Library: ScePafStdc stubfile: "libScePafStdc_stub"
 Library: ScePafStdc nidsuffix: "PAF"
 Library: ScePafStdc libnamenid: 0xA7D28DAE
 Library: ScePafStdc function: sce_paf_printf nidvalue: 0xD41FD265 //dummy in current PAF versions
-Library: ScePafStdc function: _ZN3paf6memory13HeapAllocator22GetGlobalHeapAllocatorEv nidvalue: 0x261CAF72
 Library: ScePafStdc function: sce_paf_vswprintf_internal nidvalue: 0xAFB23563
 Library: ScePafStdc function: sce_paf_vsnprintf_internal nidvalue: 0xAE0F3820
-Library: ScePafStdc function: sce_paf_towlower nidvalue: 0xC8C2CDAC
-
 
 //CORRECT NAMES
+Library: ScePafStdc function: GetGlobalHeapAllocator
+Library: ScePafStdc function: _ZN3paf3TTYC1Ev
+Library: ScePafStdc function: _ZN3paf3TTYC2Ev
+Library: ScePafStdc function: _ZN3paf3TTYD1Ev
+Library: ScePafStdc function: _ZN3paf3TTYD2Ev
 Library: ScePafStdc function: __aeabi_atexit
 Library: ScePafStdc function: __cxa_atexit
 Library: ScePafStdc function: __cxa_finalize
@@ -145,6 +147,9 @@ Library: ScePafStdc function: sce_paf_dump_heap_info
 Library: ScePafStdc function: sce_paf_dump_heap_status
 Library: ScePafStdc function: sce_paf_mtrim
 Library: ScePafStdc function: sce_paf_musable_size
+Library: ScePafStdc function: __wcstolower
+Library: ScePafStdc function: sce_paf_memset32
+Library: ScePafStdc function: sce_paf_report_memoryblocks
 
 Library: ScePafStdc variable: _ZN3paf12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE12empty_stringE
 Library: ScePafStdc variable: _ZN3paf12basic_stringIwNS_11char_traitsIwEENS_9allocatorIwEEE12empty_stringE

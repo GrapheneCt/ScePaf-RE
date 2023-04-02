@@ -10,6 +10,22 @@
 
 namespace paf {
 
+	namespace ui {
+
+		class WebView : public Widget //0x830
+		{
+			//ScePafWebMapView_28D5A209 c1
+			//ScePafWebMapView_37E2F9BD c2
+			WebView();
+
+			//DD15B10B d1
+			//8A929D79 d0
+			//316A5F32 d2
+			~WebView();
+		}
+
+	}
+
 	class WebMapView
 	{
 	public:
