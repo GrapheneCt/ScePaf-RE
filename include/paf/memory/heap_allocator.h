@@ -100,7 +100,7 @@ namespace paf {
 			uint32_t heap_memblk_type;
 		};
 
-		HeapAllocator *GetGlobalHeapAllocator()
+		static inline HeapAllocator *GetGlobalHeapAllocator()
 		{
 			return (HeapAllocator *)::GetGlobalHeapAllocator();
 		}

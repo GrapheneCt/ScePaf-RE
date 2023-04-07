@@ -61,24 +61,24 @@ namespace paf {
 
 			extern string ToString(const void *x, size_t size);
 
-			void ToString(string& str, wstring const& wstr)
+			static inline void ToString(string& str, wstring const& wstr)
 			{
 				Utf16ToUtf8(wstr, &str);
 			}
 
-			string ToString(wstring const& wstr)
+			static inline string ToString(wstring const& wstr)
 			{
 				string str;
 				Utf16ToUtf8(wstr, &str);
 				return str;
 			}
 
-			void ToWString(wstring& wstr, string const& str)
+			static inline void ToWString(wstring& wstr, string const& str)
 			{
 				Utf8ToUtf16(str, &wstr);
 			}
 
-			wstring ToWString(string const& str)
+			static inline wstring ToWString(string const& str)
 			{
 				wstring wstr;
 				Utf8ToUtf16(str, &wstr);

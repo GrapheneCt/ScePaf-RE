@@ -13,7 +13,7 @@ namespace paf {
 	namespace math {
 
 		template<typename T>
-		T min(const T& a, const T& b)
+		static inline T min(const T& a, const T& b)
 		{
 			if (b <= a)
 			{
@@ -23,7 +23,7 @@ namespace paf {
 		}
 
 		template<typename T>
-		T max(const T& a, const T& b)
+		static inline T max(const T& a, const T& b)
 		{
 			if (b <= a)
 			{
@@ -33,7 +33,7 @@ namespace paf {
 		}
 
 		template<typename T>
-		T clamp(const T& x, const T& mi, const T& ma)
+		static inline T clamp(const T& x, const T& mi, const T& ma)
 		{
 			T ret;
 			ret = max<T>(x, mi);
@@ -41,27 +41,27 @@ namespace paf {
 			return ret;
 		}
 
-		float cos(float x)
+		static inline float cos(float x)
 		{
 			return sce_paf_cosf(x);
 		}
 
-		float sin(float x)
+		static inline float sin(float x)
 		{
 			return sce_paf_sinf(x);
 		}
 
-		float safe_atan2f(float x, float y)
+		static inline float safe_atan2f(float x, float y)
 		{
 			return sce_paf_atan2f(x, y);
 		}
 
-		bool is_pow2(int i)
+		static inline bool is_pow2(int i)
 		{
 			return ((i | 0x80000000U) & i - 1U) == 0;
 		}
 
-		float rand1(uint32_t *seed)
+		static float rand1(uint32_t *seed)
 		{
 			if (*seed == 0)
 			{
@@ -71,7 +71,7 @@ namespace paf {
 			return (float)(*seed >> 9 | 0x40000000) - 3.0f;
 		}
 
-		float rand0(uint32_t *seed)
+		static inline float rand0(uint32_t *seed)
 		{
 			return (rand1(seed) + 1.0f) * 0.5f;
 		}

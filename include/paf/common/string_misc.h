@@ -25,14 +25,14 @@ namespace paf {
 		extern T FromString(char const* buf, size_t size);
 
 		template <typename T>
-		T FromString(string const& value)
+		static inline T FromString(string const& value)
 		{
 			return FromString<T>(value.c_str(), value.length());
 		}
 
 		extern string ToString(float value, bool c_style, bool sane_fraction, bool paf_print_workaround);
 
-		string ToString(bool value)
+		static inline string ToString(bool value)
 		{
 			if (value)
 			{
@@ -41,26 +41,26 @@ namespace paf {
 			return "false";
 		}
 
-		string ToString(float value)
+		static inline string ToString(float value)
 		{
 			return ToString(value, false, true, true);
 		}
 
-		string ToString(int32_t value)
+		static inline string ToString(int32_t value)
 		{
 			char buf[64];
 			sce_paf_snprintf(buf, sizeof(buf), "%i", value);
 			return buf;
 		}
 
-		string ToString(uint32_t value)
+		static inline string ToString(uint32_t value)
 		{
 			char buf[64];
 			sce_paf_snprintf(buf, sizeof(buf), "%u", value);
 			return buf;
 		}
 
-		string ToString(const void *value)
+		static inline string ToString(const void *value)
 		{
 			return FormatString("0x%p", value);
 		}
@@ -75,7 +75,7 @@ namespace paf {
 		 */
 		extern string StripFilename(string const& path, string const& opt);
 
-		int32_t digit_to_int(char c)
+		static inline int32_t digit_to_int(char c)
 		{
 			if ((c < '0') || ('9' < c))
 			{
@@ -84,7 +84,7 @@ namespace paf {
 			return c - 0x30;
 		}
 
-		void eat_trailing_fraction_zeros(char *buf)
+		static void eat_trailing_fraction_zeros(char *buf)
 		{
 			char chara = *buf;
 			int32_t p1 = -1;

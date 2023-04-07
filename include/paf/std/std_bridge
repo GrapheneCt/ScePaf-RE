@@ -5,4 +5,22 @@ namespace paf {
 	using namespace std;
 }
 
+namespace std
+{
+	static inline void _Xlength_error(char const*)
+	{
+
+	}
+
+	static inline void _Xout_of_range(char const*)
+	{
+
+	}
+
+	static inline void* memmove(void* dest, const void* src, size_t count)
+	{
+		return sce_paf_memmove(dest, src, count);
+	}
+}
+
 #endif

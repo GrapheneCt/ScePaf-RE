@@ -630,17 +630,17 @@ namespace paf {
 			return _impl;
 		}
 
-		float dot3(v4 vec1, v4 vec2)
+		static inline float dot3(v4 vec1, v4 vec2)
 		{
 			return sce::Vectormath::Simd::Aos::dot(vec1.getImpl().getXYZ(), vec2.getImpl().getXYZ());
 		}
 
-		v4 normalize3(v4 vec)
+		static inline v4 normalize3(v4 vec)
 		{
 			return v4(sce::Vectormath::Simd::Aos::Vector4(sce::Vectormath::Simd::Aos::normalize(vec.getImpl().getXYZ()), vec.getImpl().getW()));
 		}
 
-		v4 cross3(v4 vec1, v4 vec2)
+		static inline v4 cross3(v4 vec1, v4 vec2)
 		{
 			return v4(sce::Vectormath::Simd::Aos::Vector4(sce::Vectormath::Simd::Aos::cross(vec1.getImpl().getXYZ(), vec2.getImpl().getXYZ()), vec1.getImpl().getW()));
 		}

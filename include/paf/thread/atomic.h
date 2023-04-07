@@ -12,12 +12,12 @@ namespace paf {
 	namespace thread {
 		namespace atomic {
 
-			inline int32_t dec32(volatile int32_t* ptr)
+			static inline int32_t dec32(volatile int32_t* ptr)
 			{
 				return sceAtomicDecrement32(ptr);
 			}
 
-			inline int32_t inc32(volatile int32_t* ptr)
+			static inline int32_t inc32(volatile int32_t* ptr)
 			{
 				return sceAtomicIncrement32(ptr);
 			}
