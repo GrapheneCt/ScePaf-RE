@@ -119,7 +119,7 @@ namespace paf {
 
 			uint32_t NumItems() const;
 
-			__declspec (dllimport) static JobQueue default_queue;
+			__declspec (dllimport) static JobQueue *default_queue;
 
 			__declspec (dllimport) static list<JobQueue*> queue_list;
 

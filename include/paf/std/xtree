@@ -4,7 +4,6 @@
 #define _XTREE_
 
 #include <xmemory>
-#include <stdexcept>
 
 _STD_BEGIN
 // TEMPLATE CLASS _Tree_unchecked_const_iterator

@@ -70,7 +70,7 @@ namespace paf {
 
 		bool is_opened;
 		SceUID fd;
-		SceIoAsync async;
+		char async[24]; // SceIoAsync async;
 		AsyncType async_type;
 	};
 }

@@ -400,7 +400,7 @@ namespace paf {
 			int32_t SetSize(math::v4 const& size, Timer *t = NULL, int32_t id = ANIM_SIZE, int32_t opt = 0, float delay = 0.0f, AnimCB cb_fin = NULL, void *usrdata = NULL);
 			int32_t SetPos(math::v4 const& pos, Timer *t = NULL, int32_t id = ANIM_MOVE, int32_t opt = 0, float delay = 0.0f, AnimCB cb_fin = NULL, void *usrdata = NULL);
 			int32_t SetMetaAlpha(float _alpha, Timer *t = NULL, int32_t id = ANIM_META_ALPHA, int32_t opt = 0, float delay = 0.0f, AnimCB cb_fin = NULL, void *usrdata = NULL);
-			int32_t SetShowAlpha(float _alpha, Timer *t = NULL, int32_t id = ANIM_SHOW_ALPHA, float delay = 0.0f, AnimCB cb_fin = NULL, void *usrdata = NULL);
+			int32_t SetShowAlpha(float _alpha, Timer *t = NULL, int32_t id = ANIM_SHOW_ALPHA, int32_t opt = 0, float delay = 0.0f, AnimCB cb_fin = NULL);
 			int32_t SetScale(float x, float y, float z, Timer *t = NULL, int32_t id = ANIM_SCALE, int32_t opt = 0, float delay = 0.0f, AnimCB cb_fin = NULL, void *usrdata = NULL)
 			{
 				math::v4 val(x, y, z, 0.0f);
@@ -472,8 +472,8 @@ namespace paf {
 			math::v4 GetOriginOffset(int32_t opt);
 			math::v4 GetAnchorOffset(int32_t opt);
 
-			int32_t Show(Timer *t, int32_t opt = 0, float delay = 0.0f, AnimCB cb_fin = NULL);
-			int32_t Hide(Timer *t, int32_t opt = 0, float delay = 0.0f, AnimCB cb_fin = NULL);
+			int32_t Show(Timer *t = NULL, int32_t opt = 0, float delay = 0.0f, AnimCB cb_fin = NULL);
+			int32_t Hide(Timer *t = NULL, int32_t opt = 0, float delay = 0.0f, AnimCB cb_fin = NULL);
 
 			int32_t Show(common::transition::Type type, float parameter = 0.0f, HandlerCB cb = NULL, void *userdata = NULL);
 			int32_t Hide(common::transition::Type type, float parameter = 0.0f, HandlerCB cb = NULL, void *userdata = NULL);
@@ -498,13 +498,8 @@ namespace paf {
 
 			int32_t SetParent(Widget *parent, Widget *sibling, int32_t flag);
 
-			Widget *FindChild(IDParam const& id_name, int32_t option);
-			Widget *FindChild(Widget *obj, int32_t option);
-			Widget *FindChild(const char *name, int32_t option)
-			{
-				IDParam param(name);
-				return FindChild(param, option);
-			}
+			Widget *FindChild(IDParam const& id_name, int32_t option = 0);
+			Widget *FindChild(Widget *obj, int32_t option = 0);
 
 			void CountFocusEnableChildren(int32_t diff);
 
@@ -784,6 +779,11 @@ namespace paf {
 			void SetName(IDParam const& name)
 			{
 				m_name = name;
+			}
+
+			void SetName(uint32_t name_idhash)
+			{
+				m_name.SetIDHash(name_idhash);
 			}
 
 			void SetUserData2(UserData *data, int32_t n)

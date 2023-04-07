@@ -152,7 +152,7 @@ namespace paf {
 		static float DoFuncBackIn(float _rate);
 		static float DoFuncSwing(float _rate);
 
-		Timer(float total, int32_t func, int32_t repeat, int32_t rep_count, float* param, int32_t userdata)
+		Timer(float total, int32_t func = FUNC_LINEAR, int32_t repeat = 0, int32_t rep_count = -1, float* param = NULL, int32_t userdata = 0)
 		{
 			m_is_2d = false;
 			m_is_3d = false;

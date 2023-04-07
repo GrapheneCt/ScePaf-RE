@@ -186,6 +186,10 @@ namespace paf {
 
 			static int32_t IsAllocatableSurfacePool(SurfacePool *pool, size_t size, size_t align_bytes);
 
+			static intrusive_ptr<Surface> Load(SurfacePool *pool, common::SharedPtr<File> src, LoadOption *option = NULL);
+
+			static intrusive_ptr<Surface> Load(SurfacePool *pool, void *buf, off_t size, LoadOption *option = NULL);
+
 			Surface(SurfacePool *pool, int32_t width, int32_t height, ImageMode format, ImageOrder order, int32_t num_page, int32_t num_level, bool unk_base_08);
 
 			Surface(int32_t width, int32_t height, ImageMode format, ImageOrder order, int32_t num_page, void *bp, int32_t line_bytes, int32_t num_level, bool unk_base_08);
@@ -262,10 +266,6 @@ namespace paf {
 			int32_t Initialize(SurfacePool *pool, int32_t width, int32_t height, ImageMode format, ImageOrder order, SurfaceType surf_type, int32_t num_page, int32_t align_bytes, int32_t size_byte, int32_t line_bytes, int32_t num_level);
 
 			void InitObj(int32_t line_bytes);
-
-			void Load(SurfacePool *pool, common::SharedPtr<File> src, LoadOption *option);
-
-			void Load(SurfacePool *pool, void *buf, off_t size, LoadOption *option);
 
 			void Reorder();
 

@@ -48,7 +48,7 @@ namespace paf {
 
 			v4(float value);
 
-			v4(float xvalue, float yvalue, float zvalue, float wvalue);
+			v4(float xvalue, float yvalue, float zvalue = 0.0f, float wvalue = 0.0f);
 
 			v4();
 

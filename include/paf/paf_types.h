@@ -115,6 +115,8 @@ typedef enum CharEncoding
 	CharEncoding_AllowSrcBufferEnd = 0x10
 } CharEncoding;
 
+#define SCE_PAF_OK	(0)
+
 #ifdef __cplusplus
 }
 #endif

@@ -160,12 +160,12 @@ namespace paf {
 
 			math::v3 GetPos() const
 			{
-				return math::v3(m_pos);
+				return m_pos;
 			}
 
 			math::v3 GetSize() const
 			{
-				return math::v3(m_size);
+				return m_size;
 			}
 
 			math::v4 GetColor() const
@@ -179,7 +179,7 @@ namespace paf {
 
 			math::v3 GetRot() const
 			{
-				return math::v3(*m_rot);
+				return *m_rot;
 			}
 
 			__declspec(dllimport) static uint32_t s_dirty_count;

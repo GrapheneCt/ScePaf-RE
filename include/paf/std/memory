@@ -24,8 +24,7 @@ namespace paf {
 
 		inline intrusive_ptr(const intrusive_ptr<T>& r)
 		{
-			m_ptr = r.m_ptr;
-			add_ref();
+			assign(r.m_ptr);
 		}
 
 		inline ~intrusive_ptr()
@@ -34,6 +33,25 @@ namespace paf {
 			{
 				m_ptr->Release();
 			}
+		}
+
+		inline clear()
+		{
+			if (m_ptr != NULL)
+			{
+				m_ptr->Release();
+				m_ptr = NULL;
+			}
+		}
+
+		inline intrusive_ptr<T>& operator=(T *p)
+		{
+			assign(p);
+		}
+
+		inline intrusive_ptr<T>& operator=(const intrusive_ptr<T>& r)
+		{
+			assign(r.m_ptr);
 		}
 
 		inline T* get() const

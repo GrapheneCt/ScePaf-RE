@@ -83,8 +83,8 @@ namespace paf {
 			int32_t tree_size;
 			int32_t idtable_offset;
 			int32_t idtable_size;
-			int32_t idhashtable_size;
 			int32_t idhashtable_offset;
+			int32_t idhashtable_size;
 			int32_t stringtable_offset;
 			int32_t stringtable_size;
 			int32_t wstringtable_offset;

@@ -301,7 +301,7 @@ namespace paf {
 			TransitionType transition_type;
 			Timer *timer;
 			ui::EnvironmentParam *env_param;
-			int32_t unk_28_pageArg_a5;
+			int32_t graphics_flag;
 		};
 
 		class PageCloseParam

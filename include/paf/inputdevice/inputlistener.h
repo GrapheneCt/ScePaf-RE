@@ -12,6 +12,16 @@
 namespace paf {
 	namespace inputdevice {
 
+		enum
+		{
+			DEVICE_TYPE_TOUCHSCREEN_FRONT = 3,
+			DEVICE_TYPE_TOUCHSCREEN_BACK = 4,
+			DEVICE_TYPE_MOTIONSENSOR = 5,
+			DEVICE_TYPE_BTRM = 8,
+			DEVICE_TYPE_HIDRM = 9,
+			DEVICE_TYPE_KEYBOARD = 10
+		};
+
 		class InputListener
 		{
 		public:

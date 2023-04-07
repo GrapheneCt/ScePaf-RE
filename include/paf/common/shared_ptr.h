@@ -154,7 +154,7 @@ namespace paf {
 			{
 				release();
 				m_ptr = NULL;
-				m_ref_counter = (NULL;
+				m_ref_counter = NULL;
 			}
 
 			T* get() const

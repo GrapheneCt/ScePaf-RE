@@ -12,6 +12,7 @@
 #include <paf/math/math.h>
 #include <paf/graphics/surface/surface.h>
 #include <paf/graphics/graphics.h>
+#include <paf/widget/core/event.h>
 
 namespace paf {
 	namespace ui {
@@ -248,6 +249,11 @@ namespace paf {
 				return m_screen;
 			}
 
+			EventQueue& GetEventQueue()
+			{
+				return m_ev_queue;
+			}
+
 			bool IsTermRequested() const
 			{
 				return m_term_requested;
@@ -273,9 +279,13 @@ namespace paf {
 			bool m_term_requested;
 			bool m_draw_cutoff;
 			int32_t m_unk_0D8;
-			char m_unk_0DC[0x250];
+			char m_unk_0DC[0x1F4];
+			EventQueue m_ev_queue;
+			list<Event> m_ev_subrouting;
+			list<Event> m_ev_doevent;
+			list<Widget*> m_scenes_onupdate;
 			Screen *m_screen;
-			char m_unk_330[0x2A70];
+			char m_unk_330[0x2A6C];
 		};
 
 		class FocusInfo

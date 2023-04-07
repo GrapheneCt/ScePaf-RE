@@ -4,7 +4,6 @@
 #define _LIST_
 
 #include <xmemory>
-#include <stdexcept>
 #include <paf/std/memory>
 #include <paf/std/string>
 

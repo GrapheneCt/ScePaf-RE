@@ -165,6 +165,8 @@ namespace paf {
 
 		static void SampleInit(InitParam *init_param);
 
+		static Framework *Instance();
+
 		Framework(InitParam const& init_param);
 
 		~Framework();
@@ -200,8 +202,6 @@ namespace paf {
 		int32_t GetMode();
 
 		int32_t GetMode_ApplicationC();
-
-		Framework *Instance();
 
 		ui::Environment *GetEnvironmentInstance();
 

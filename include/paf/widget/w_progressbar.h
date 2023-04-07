@@ -110,11 +110,11 @@ namespace paf {
 			virtual int32_t SetMinValueAsync(float val);
 			virtual int32_t SetMinValueAsync(int32_t val);
 			virtual float GetMinValue();
-			virtual int32_t SetValue(float val, bool bWithAnim, BarId id);
-			virtual int32_t SetValue(int32_t val, bool bWithAnim, BarId id);
-			virtual int32_t SetValueAsync(float val, bool bWithAnim, BarId id);
-			virtual int32_t SetValueAsync(int32_t val, bool bWithAnim, BarId id);
-			virtual float GetValue(BarId id);
+			virtual int32_t SetValue(float val, bool bWithAnim = false, BarId id = BAR_FORE);
+			virtual int32_t SetValue(int32_t val, bool bWithAnim = false, BarId id = BAR_FORE);
+			virtual int32_t SetValueAsync(float val, bool bWithAnim = false, BarId id = BAR_FORE);
+			virtual int32_t SetValueAsync(int32_t val, bool bWithAnim = false, BarId id = BAR_FORE);
+			virtual float GetValue(BarId id = BAR_FORE);
 			virtual int32_t SetBarAnim(float animTime, int32_t animFunc);
 			virtual int32_t AttachLabelWidget(Widget *pWidget);
 			virtual int32_t DetachLabelWidget();
@@ -130,7 +130,7 @@ namespace paf {
 			virtual void Sync();
 			virtual void CheckDirtyFlag();
 			virtual void UpdateBaseShadow();
-			virtual void UpdateBar(BarId id, bool bWithAnim);
+			virtual void UpdateBar(BarId id = BAR_FORE, bool bWithAnim = false);
 			virtual void UpdateLabel();
 			virtual void UpdateLabelPos();
 

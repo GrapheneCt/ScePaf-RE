@@ -156,35 +156,21 @@ namespace paf {
 
 			enum
 			{
-				CB_STATE = 0x80000,
-				CB_STATE_INIT = 0x80001,
-				CB_STATE_TERM = 0x80002,
-				CB_STATE_PREPARE = 0x80003,
-				CB_STATE_READY = 0x80004,
-				CB_STATE_READY_CACHEIMAGE = 0x80005,
-				CB_COMMAND = 0x80006,
+				CB_STATE = 0x100000,
+				CB_STATE_INIT = 0x100001,
+				CB_STATE_TERM = 0x100002,
+				CB_STATE_PREPARE = 0x100003,
+				CB_STATE_READY = 0x100004,
+				CB_STATE_READY_CACHEIMAGE = 0x100005,
+				CB_COMMAND = 0x100006,
 			};
 
 			enum
 			{
-				CB_SYSTEM = 0x100000,
-				CB_SYSTEM_MEMSTORAGE_INSERT = 0x100001,
-				CB_SYSTEM_MEMSTORAGE_REMOVE = 0x100002,
-				CB_SYSTEM_DISC_INSERT = 0x100003,
-				CB_SYSTEM_DISC_REMOVE = 0x100004,
-				CB_SYSTEM_ONSUSPEND = 0x100005,
-				CB_SYSTEM_RESOLUTION_CHANGE_BEGIN = 0x100006,
-				CB_SYSTEM_RESOLUTION_CHANGE_END = 0x100007,
-				CB_SYSTEM_LOCALE_CHANGED = 0x100008,
-				CB_SYSTEM_DATE_TIME_FMT_CHANGED = 0x100009
-			};
-
-			enum
-			{
-				CB_TIMEOUT = 0x01000000,
-				CB_TIMEOUT_END = 0x0100FFFF,
-				CB_INTERVAL = 0x02000000,
-				CB_INTERVAL_END = 0x0200FFFF,
+				CB_TIMEOUT = 0x1000000,
+				CB_TIMEOUT_END = 0x100FFFF,
+				CB_INTERVAL = 0x2000000,
+				CB_INTERVAL_END = 0x200FFFF,
 			};
 
 			Handler(uint32_t enable);
@@ -215,7 +201,7 @@ namespace paf {
 			virtual int32_t unkFun_5C();
 			virtual int32_t DoEvent(int32_t type, Event *e);
 
-			int32_t AddEventListener(int32_t type, EventListener *listener, bool del_prev);
+			int32_t AddEventListener(int32_t type, EventListener *listener, bool del_prev = false);
 
 			int32_t DeleteEventListener(int32_t type, EventListener *listener);
 
@@ -223,13 +209,13 @@ namespace paf {
 
 			void UpdateTimer();
 
-			int32_t AddEventCallback(int32_t type, HandlerCB func, void *data)
+			int32_t AddEventCallback(int32_t type, HandlerCB func, void *data = NULL)
 			{
 				EventCBListener *listener = new EventCBListener(func, data);
 				return AddEventListener(type, listener, false);
 			}
 
-			int32_t SetEventCallback(int32_t type, HandlerCB func, void *data)
+			int32_t SetEventCallback(int32_t type, HandlerCB func, void *data = NULL)
 			{
 				EventCBListener *listener = new EventCBListener(func, data);
 				return AddEventListener(type, listener, true);

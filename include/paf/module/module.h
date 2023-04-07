@@ -30,7 +30,7 @@ namespace paf {
 
 		};
 
-		Module(const char *_name, const char *funcname, int32_t option, const ExtraOption *extra_option);
+		Module(const char *_name, const char *funcname = NULL, int32_t option = 0, const ExtraOption *extra_option = NULL);
 
 		~Module();
 

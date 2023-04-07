@@ -6,6 +6,7 @@
 #define _VDSUITE_USER_PAF_INPUTDEVICE_PAD_PAD_H
 
 #include <stdint.h>
+#include <ctrl.h>
 
 namespace paf {
 	namespace inputdevice {
@@ -36,10 +37,10 @@ namespace paf {
 					PAD_DOWN = 0x2,
 					PAD_LEFT = 0x4,
 					PAD_RIGHT = 0x8,
-					PAD_ENTER = 0x10,
-					PAD_ESCAPE = 0x20,
-					PAD_MENU = 0x40,
-					PAD_DISPLAY = 0x80,
+					PAD_ENTER = 0x10,		// cross
+					PAD_ESCAPE = 0x20,		// circle
+					PAD_MENU = 0x40,		// triangle
+					PAD_DISPLAY = 0x80,		// square
 					PAD_SELECT = 0x100,
 					PAD_START = 0x200,
 					PAD_L = 0x400,

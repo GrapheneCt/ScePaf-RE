@@ -65,19 +65,15 @@ namespace paf {
 			m_idhash = ID2IDHash(id);
 		}
 
+		void SetID(const char *id)
+		{
+			m_id = id;
+			m_idhash = ID2IDHash(m_id);
+		}
+
 		void SetIDOnly(const string& id)
 		{
 			m_id = id;
-		}
-
-		string GetID()
-		{
-			return m_id;
-		}
-
-		uint32_t GetIDHash()
-		{
-			return m_idhash;
 		}
 
 		IDParam& operator=(uint32_t idhash)
@@ -104,6 +100,16 @@ namespace paf {
 			m_id = idparam.m_id;
 			m_idhash = idparam.m_idhash;
 			return *this;
+		}
+
+		string GetID() const
+		{
+			return m_id;
+		}
+
+		uint32_t GetIDHash() const
+		{
+			return m_idhash;
 		}
 
 		operator uint32_t() const

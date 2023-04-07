@@ -39,9 +39,9 @@ namespace paf {
 
 			Event();
 
-			Event(uint32_t _type, Handler *_target, uint32_t _route, uint32_t _detail, int32_t d0, int32_t d1, int32_t d2, int32_t d3);
+			Event(uint32_t _type, Handler *_target, uint32_t _route, uint32_t _detail, int32_t d0 = 0, int32_t d1 = 0, int32_t d2 = 0, int32_t d3 = 0);
 
-			Event(uint32_t _type, uint32_t _mode, uint32_t _route, uint32_t _detail, int32_t d0, int32_t d1, int32_t d2, int32_t d3);
+			Event(uint32_t _type, uint32_t _mode, uint32_t _route, uint32_t _detail, int32_t d0 = 0, int32_t d1 = 0, int32_t d2 = 0, int32_t d3 = 0);
 
 			virtual ~Event()
 			{
@@ -157,7 +157,7 @@ namespace paf {
 				return type & 0xffff;
 			}
 
-			int32_t paf::ui::Event::GetValue(int32_t num) const
+			int32_t GetValue(int32_t num) const
 			{
 				return GetValue4(num);
 			}
@@ -251,6 +251,11 @@ namespace paf {
 			virtual HandlerCB GetFunc()
 			{
 				return NULL;
+			}
+
+			void SetAutoDelete(bool value)
+			{
+				m_autodelete = value;
 			}
 
 			bool IsAutoDelete()

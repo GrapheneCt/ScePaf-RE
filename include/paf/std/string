@@ -475,6 +475,19 @@ public:
 		return ptr + i;
 	}
 
+	bool operator==(_Myt const& src) const
+	{
+		if (src.count != count) return false;
+		return _Traits::traits_equal(ptr, src.ptr);
+	}
+
+	_Myt operator+(_Myt const& src) const
+	{
+		_Myt ret(*this);
+		ret += src;
+		return ret;
+	}
+
 	__declspec(dllimport) static _Elem empty_string;
 		
 private:

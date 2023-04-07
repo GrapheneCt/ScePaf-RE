@@ -31,13 +31,13 @@ namespace paf {
 
 			~String();
 
-			SceVoid Split(char delimiter);
+			void Split(char delimiter);
 
-			SceVoid Split(string const& delimiter);
+			void Split(string const& delimiter);
 
-			SceVoid SetFormattedString(char const* format, ...);
+			void SetFormattedString(char const* format, ...);
 
-			SceVoid SetFormattedString(wchar_t const* format, ...);
+			void SetFormattedString(wchar_t const* format, ...);
 
 			String& operator+=(String const& rhs);
 
