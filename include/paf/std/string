@@ -115,7 +115,7 @@ public:
 		{
 			ptr = alloc.allocate(len + 1);
 			count = len;
-			sce_paf_memcpy((void *)ptr, (void *)src, len);
+			_Traits::traits_copy(ptr, src, len);
 			ptr[len] = 0;
 		}
 
@@ -138,7 +138,7 @@ public:
 		{
 			ptr = alloc.allocate(src.count + 1);
 			count = src.count;
-			sce_paf_memcpy((void *)ptr, (void *)src.ptr, count + 1);
+			_Traits::traits_copy(ptr, src.ptr, count + 1);
 		}
 
 		return *this;
@@ -167,7 +167,7 @@ public:
 		{
 			ptr = alloc.allocate(to_copy + 1);
 			count = to_copy;
-			sce_paf_memcpy((void *)ptr, (void *)(src.ptr + pos), to_copy);
+			_Traits::traits_copy(ptr, (src.ptr + pos), to_copy);
 			ptr[to_copy] = 0;
 		}
 
@@ -200,8 +200,8 @@ public:
 
 		dest = (void *)alloc.allocate((count - to_erase) + 1);
 
-		sce_paf_memcpy(dest, (void *)ptr, sce_paf_index);
-		sce_paf_memcpy((void *)((int32_t)dest + sce_paf_index), (void *)(ptr + to_erase + sce_paf_index), n);
+		_Traits::traits_copy(dest, ptr, sce_paf_index);
+		_Traits::traits_copy(((int32_t)dest + sce_paf_index), (ptr + to_erase + sce_paf_index), n);
 
 		*(undefined *)((int32_t)dest + n + sce_paf_index) = 0;
 
@@ -221,7 +221,7 @@ public:
 		uint32_t i = 0;
 
 		dest = (void *)alloc.allocate(count + len + 1);
-		sce_paf_memcpy(dest, (void *)ptr, count);
+		_Traits::traits_copy(dest, ptr, count);
 		if (len != 0)
 		{
 			do {
@@ -247,8 +247,8 @@ public:
 		void *dest;
 
 		dest = (void *)alloc.allocate(count + num + 1);
-		sce_paf_memcpy(dest, (void *)ptr, count);
-		sce_paf_memcpy((void *)((int32_t)dest + count), (void *)src, num);
+		_Traits::traits_copy(dest, ptr, count);
+		_Traits::traits_copy(((int32_t)dest + count), src, num);
 		*(_Elem *)((int32_t)dest + count + num) = 0;
 
 		if (ptr != &empty_string)

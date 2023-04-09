@@ -55,6 +55,11 @@ struct char_traits<wchar_t>
 	{
 		return sce_paf_wcsncmp(s1, s2, len);
 	}
+
+	static char_type *traits_copy(char_type *dst, const char_type *src, size_type len)
+	{
+		return sce_paf_wmemcpy(dst, src, len);
+	}
 };
 
 // STRUCT char_traits<char> (FROM <string>)
@@ -98,6 +103,11 @@ struct char_traits<char>
 	static size_type traits_strncmp(const char_type *s1, const char_type *s2, size_type len)
 	{
 		return sce_paf_strncmp(s1, s2, len);
+	}
+
+	static char_type *traits_copy(char_type *dst, const char_type *src, size_type len)
+	{
+		return (char_type*)sce_paf_memcpy((void*)dst, (void*)src, len);
 	}
 };
 }
