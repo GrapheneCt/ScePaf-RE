@@ -369,7 +369,10 @@ namespace paf {
 					ListItem *list_item;
 				};
 
-				ItemFactory();
+				ItemFactory()
+				{
+
+				}
 
 				virtual ~ItemFactory();
 

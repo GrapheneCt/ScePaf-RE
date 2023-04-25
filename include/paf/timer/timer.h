@@ -319,6 +319,7 @@ namespace paf {
 		uint32_t m_repeat : 4;
 		uint32_t m_state : 4;
 		bool m_first_tick : 1;
+		bool m_unk_12_1 : 1;
 		bool m_is_2d : 1;
 		bool m_is_3d : 1;
 		uint32_t m_func_x : 8;

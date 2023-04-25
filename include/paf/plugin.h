@@ -376,10 +376,6 @@ namespace paf {
 
 		void PageInactivate(IDParam const& id);
 
-		ui::Scene *PageRoot(IDParam const& id);
-
-		ui::Scene *PageRoot(cxml::Element const& node);
-
 		void SetLocale(Locale _locale);
 
 		ui::Widget *CallFactoryWidget(const char *name, ui::Widget *parent);
@@ -469,6 +465,10 @@ namespace paf {
 		int32_t GetSound(IDParam const& id, void **addr1, uint32_t *size1, void **addr2, uint32_t *size2, int32_t *samplerate, uint32_t *type);
 
 		wchar_t *GetString(IDParam const& id) const;
+
+		ui::Scene *PageRoot(IDParam const& id) const;
+
+		ui::Scene *PageRoot(cxml::Element const& node) const;
 
 		Argument GetArg(const char *key, bool *exist) const;
 

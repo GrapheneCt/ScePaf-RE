@@ -41,15 +41,14 @@ namespace paf {
 			thread::RMutex m_item_mtx;
 		};
 
-	}
+		namespace MainThreadCallList {
 
-	namespace MainThreadCallList {
+			typedef void(*Function)(void *userdata);
 
-		typedef void(*Function)(void *userdata);
+			extern void Register(Function func, void *userdata);
 
-		static void Register(Function func, void *userdata);
-
-		static void Unregister(Function func, void *userdata);
+			extern void Unregister(Function func, void *userdata);
+		}
 	}
 }
 

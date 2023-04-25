@@ -26,6 +26,12 @@ namespace paf {
 
 			}
 
+			virtual uint32_t GetType() const = 0;
+			virtual AllocationBlockType GetBlockType() const = 0;
+			virtual char *GetName() const = 0;
+			virtual void GetRange(void **membase, size_t *size) const = 0;
+			virtual size_t GetFreeSize() = 0;
+
 			virtual ~MemoryAllocator()
 			{
 

@@ -1,6 +1,8 @@
 #ifndef _VDSUITE_USER_PAF_STD_MEMORY_H
 #define _VDSUITE_USER_PAF_STD_MEMORY_H
 
+#include <paf/memory/heap_allocator.h>
+
 namespace paf {
 
 	template <typename T>
@@ -24,7 +26,8 @@ namespace paf {
 
 		inline intrusive_ptr(const intrusive_ptr<T>& r)
 		{
-			assign(r.m_ptr);
+			m_ptr = r.m_ptr;
+			add_ref();
 		}
 
 		inline ~intrusive_ptr()
@@ -35,7 +38,7 @@ namespace paf {
 			}
 		}
 
-		inline clear()
+		inline void clear()
 		{
 			if (m_ptr != NULL)
 			{
@@ -47,11 +50,13 @@ namespace paf {
 		inline intrusive_ptr<T>& operator=(T *p)
 		{
 			assign(p);
+			return *this;
 		}
 
 		inline intrusive_ptr<T>& operator=(const intrusive_ptr<T>& r)
 		{
 			assign(r.m_ptr);
+			return *this;
 		}
 
 		inline T* get() const
@@ -120,7 +125,7 @@ namespace paf {
 
 		const_pointer address(const_reference x) const { return &x; }
 
-		size_type max_size() const { return paf::memory::HeapAllocator::GetGlobalHeapAllocator()->GetFreeSize() / sizeof(value_type); }
+		size_type max_size() const { return paf::memory::GetGlobalHeapAllocator()->GetFreeSize() / sizeof(value_type); }
 
 		pointer allocate(size_type n, const void * hint = 0)
 		{

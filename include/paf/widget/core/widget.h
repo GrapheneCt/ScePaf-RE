@@ -798,6 +798,11 @@ namespace paf {
 				}
 			}
 
+			void SetTransitionComplete(bool complete)
+			{
+				m_transition_complete = complete;
+			}
+
 			Widget *GetParent() const
 			{
 				return m_parent;

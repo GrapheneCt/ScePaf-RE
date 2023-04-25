@@ -182,7 +182,7 @@ public:
 	_Myt& erase(size_t sce_paf_index, size_t len)
 	{
 		size_t n;
-		void *dest;
+		_Elem *dest;
 		size_t to_erase;
 
 		if (count < sce_paf_index)
@@ -198,18 +198,18 @@ public:
 
 		n = (count - sce_paf_index) - to_erase;
 
-		dest = (void *)alloc.allocate((count - to_erase) + 1);
+		dest = alloc.allocate((count - to_erase) + 1);
 
 		_Traits::traits_copy(dest, ptr, sce_paf_index);
-		_Traits::traits_copy(((int32_t)dest + sce_paf_index), (ptr + to_erase + sce_paf_index), n);
+		_Traits::traits_copy(dest + sce_paf_index, ptr + to_erase + sce_paf_index, n);
 
-		*(undefined *)((int32_t)dest + n + sce_paf_index) = 0;
+		dest[n + sce_paf_index] = 0;
 
 		if (ptr != &empty_string)
 		{
-			alloc.deallocate(>ptr, count + 1);
+			alloc.deallocate(ptr, count + 1);
 		}
-		ptr = (_Elem *)dest;
+		ptr = dest;
 		count -= to_erase;
 
 		return *this;
@@ -217,26 +217,26 @@ public:
 
 	_Myt& append(size_t len, _Elem src)
 	{
-		void *dest;
+		_Elem *dest;
 		uint32_t i = 0;
 
-		dest = (void *)alloc.allocate(count + len + 1);
+		dest = alloc.allocate(count + len + 1);
 		_Traits::traits_copy(dest, ptr, count);
 		if (len != 0)
 		{
 			do {
-				*(_Elem *)((int32_t)dest + count + i) = src;
+				dest[count + i] = src;
 				i++;
 			} while (i < len);
 		}
-		*(_Elem *)((int32_t)dest + count + len) = 0;
+		dest[count + len] = 0;
 
 		if (ptr != &empty_string)
 		{
 			alloc.deallocate(ptr, count + 1);
 		}
 
-		ptr = (_Elem *)dest;
+		ptr = dest;
 		count += len;
 
 		return *this;
@@ -244,19 +244,19 @@ public:
 
 	_Myt& append(const _Elem *src, size_t num)
 	{
-		void *dest;
+		_Elem *dest;
 
-		dest = (void *)alloc.allocate(count + num + 1);
+		dest = alloc.allocate(count + num + 1);
 		_Traits::traits_copy(dest, ptr, count);
-		_Traits::traits_copy(((int32_t)dest + count), src, num);
-		*(_Elem *)((int32_t)dest + count + num) = 0;
+		_Traits::traits_copy(dest + count, src, num);
+		dest[count + num] = 0;
 
 		if (ptr != &empty_string)
 		{
 			alloc.deallocate(ptr, count + 1);
 		}
 
-		ptr = (_Elem *)dest;
+		ptr = dest;
 		count += num;
 
 		return *this;

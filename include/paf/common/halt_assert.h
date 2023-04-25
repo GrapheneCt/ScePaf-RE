@@ -13,6 +13,8 @@ namespace paf {
 		extern void on_error(void);
 
 		extern void SetErrorCallBack(void(*)());
+
+		extern bool printf_enabled();
 	}
 
 	namespace common {

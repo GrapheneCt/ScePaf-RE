@@ -363,9 +363,9 @@ Library: ScePafWidget function: _ZN3paf2ui6Widget12SetMetaAlphaEfPNS_5TimerEiifP
 Library: ScePafWidget function: _ZN3paf2ui6Widget17SetMetaAlpha_coreEf
 Library: ScePafWidget function: _ZN3paf2ui6Widget17NotifyLayoutDirtyEj
 Library: ScePafWidget function: _ZN3paf2ui6Widget18SetSize_core_forceERKNS_4math2v4Ejb
+Library: ScePafWidget function: _ZN3paf2ui6Widget12SetShowAlphaEfPNS_5TimerEiifPFvS3_PNS0_12AnimListenerEPvS6_S6_E
 Library: ScePafWidget function: _ZN3paf2ui6Widget4ShowEPNS_5TimerEifPFvS3_PNS0_12AnimListenerEPvS6_S6_E nidvalue: 0xFF5BC957
 Library: ScePafWidget function: _ZN3paf2ui6Widget4HideEPNS_5TimerEifPFvS3_PNS0_12AnimListenerEPvS6_S6_E nidvalue: 0x4588699E
-Library: ScePafWidget function: _ZN3paf2ui6Widget12SetShowAlphaEfPNS_5TimerEif nidvalue: 0x1D697704
 Library: ScePafWidget function: _ZN3paf2ui6Widget10SetKeycodeEj nidvalue: 0x21125870
 Library: ScePafWidget function: _ZN3paf2ui6Widget12ClearKeycodeEj nidvalue: 0x164BFFA5
 Library: ScePafWidget function: _ZN3paf2ui6Widget4ShowENS_6common10transition4TypeEfPFviPNS0_7HandlerEPNS0_5EventEPvES9_ nidvalue: 0x44B22ACA
@@ -1790,4 +1790,5 @@ Library: ScePafWidget variable: _ZTVN3paf2ui15CompositeButtonE
 Library: ScePafWidget variable: _ZN3paf2ui15CompositeButton13m_widget_typeE
 Library: ScePafWidget variable: _ZTVN3paf2ui15CompositeDrawerE
 Library: ScePafWidget variable: _ZN3paf2ui15CompositeDrawer13m_widget_typeE
+Library: ScePafWidget variable: _ZTVN3paf2ui8listview11ItemFactoryE
 Library: ScePafWidget variable: _ZN3paf2ui16s_widget91871D2DE nidvalue: 0x91871D2D

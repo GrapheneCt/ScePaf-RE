@@ -34,6 +34,8 @@ namespace paf {
 		{
 		public:
 
+			//TODO: bad values, recheck
+			/*
 			enum
 			{
 				CB_TEXT_BOX_EDIT_BEGIN = 0x10000003,
@@ -47,6 +49,12 @@ namespace paf {
 				CB_TEXT_BOX_CARET_RIGHT = 0x1000000B,
 				CB_TEXT_BOX_CARET_POS_CHANGED = 0x1000000C,
 				CB_TEXT_BOX_END = 0x1000000D
+			};
+			*/
+
+			enum
+			{
+				CB_TEXT_BOX_ENTER_PRESSED = 0x1000000B,
 			};
 
 			static const char *TypeName();
