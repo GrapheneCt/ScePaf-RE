@@ -14,6 +14,7 @@
 #include <paf/thread/rmutex.h>
 #include <paf/common/shared_ptr.h>
 #include <paf/graphics/surface/surface_base.h>
+#include <paf/image/image_types.h>
 #include <paf/image/image_region.h>
 
 namespace paf {
@@ -145,8 +146,32 @@ namespace paf {
 			{
 			public:
 
+				LoadOption()
+				{
+					decode_heap = NULL;
+					data_load_heap = NULL;
+					unk_08 = 0;
+					error = 0;
+					sce_paf_memset(unk_10, 0, sizeof(unk_10));
+					unk_68 = true;
+					resize_type = ImageResizeType_NearestNeighbor;
+					read_size = 0;
+					read_offset = 0;
+					direct_load = false;
+					rotate_type = ImageRotateType_None;
+					flip_type = ImageFlipType_None;
+					image_order = ImageOrder_NONE;
+					unk_88 = 0;
+					unk_8C = 0;
+					unk_90 = 0;
+					unk_94 = false;
+				}
+
+				//TODO: fill struct
+				/*
 				memory::HeapAllocator *decode_heap;
 				memory::HeapAllocator *data_load_heap;
+				int32_t unk_08;
 				int32_t error;
 				void *data_buff;
 				off_t size;
@@ -163,11 +188,30 @@ namespace paf {
 				ImageResizeType resize_type;
 				size_t read_size;
 				size_t read_offset;
+				//bool direct_load;
+				//ImageRotateType rotate_type;
+				//ImageFlipType flip_type;
+				//ImageOrder image_order;
+				//int32_t reserved;
+				*/
+
+				memory::HeapAllocator *decode_heap;
+				memory::HeapAllocator *data_load_heap;
+				int32_t unk_08;
+				int32_t error;
+				char unk_10[0x58];
+				bool unk_68;
+				ImageResizeType resize_type;
+				size_t read_size;
+				size_t read_offset;
 				bool direct_load;
 				ImageRotateType rotate_type;
 				ImageFlipType flip_type;
 				ImageOrder image_order;
-				int32_t reserved;
+				int32_t unk_88;
+				int32_t unk_8C;
+				int32_t unk_90;
+				bool unk_94;
 			};
 
 			static void DeactivateSurfacePool(SurfacePool *pool);
@@ -188,7 +232,9 @@ namespace paf {
 
 			static intrusive_ptr<Surface> Load(SurfacePool *pool, common::SharedPtr<File> src, LoadOption *option = NULL);
 
-			static intrusive_ptr<Surface> Load(SurfacePool *pool, void *buf, off_t size, LoadOption *option = NULL);
+			static intrusive_ptr<Surface> Load(SurfacePool *pool, void *buf, off_t size, LoadOption *option);
+
+			//static intrusive_ptr<Surface> Load(SurfacePool *pool, void *buf, off_t size, uint32_t ununsed = 0, LoadOption *option = NULL);
 
 			Surface(SurfacePool *pool, int32_t width, int32_t height, ImageMode format, ImageOrder order, int32_t num_page, int32_t num_level, bool unk_base_08);
 

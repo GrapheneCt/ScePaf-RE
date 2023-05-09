@@ -100,7 +100,7 @@ typedef enum ResolutionType {
 } ResolutionType;
 
 typedef enum ImageOrder {
-	ImageOrder_NONE = 0,
+	ImageOrder_NONE = -1,
 	ImageOrder_Linear = 1,
 	ImageOrder_Normal = 1,
 	ImageOrder_Swizzle = 2,

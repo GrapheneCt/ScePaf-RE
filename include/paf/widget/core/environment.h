@@ -244,6 +244,11 @@ namespace paf {
 				m_draw_cutoff = on_off;
 			}
 
+			bool GetDrawCutoff()
+			{
+				return m_draw_cutoff;
+			}
+
 			Screen *GetScreen()
 			{
 				return m_screen;

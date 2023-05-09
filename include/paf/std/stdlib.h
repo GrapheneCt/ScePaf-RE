@@ -16,6 +16,7 @@ void sce_paf_free(void *ptr);
 void *sce_paf_malloc(size_t size);
 void* sce_paf_calloc(size_t num, size_t size);
 void *sce_paf_realloc(void *ptr, size_t new_size);
+size_t sce_paf_musable_size(void *ptr);
 
 int sce_paf_abs(int x);
 double sce_paf_atof(const char *nptr);

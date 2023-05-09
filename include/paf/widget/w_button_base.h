@@ -147,11 +147,8 @@ namespace paf {
 			char m_unk_295;
 			uint32_t m_repeat_begin : 16;
 			uint32_t m_repeat_msec : 16;
+			uint32_t m_unk_29A : 16;
 			char m_unk_29C[0x10];
-			char m_unk_2AC;
-			bool m_is_checked;
-			char m_unk_2AE;
-			char m_unk_2AF;
 
 			__declspec(dllimport) static const char *m_widget_type;
 		};

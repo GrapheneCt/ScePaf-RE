@@ -149,6 +149,17 @@ namespace paf {
 
 			static common::SharedPtr<Image> Open(common::SharedPtr<Buffer> buffptr, memory::HeapAllocator *allocator, ImageFormat format);
 
+			// Supported ImageMode: ImageMode_RGBA8888, ImageMode_BGRA8888
+			static int32_t SaveAsPng(const char *filename, const void *addr, uint32_t pitch, ImageExtent const& ext, ImageMode mode, uint32_t io_mode, memory::HeapAllocator *allocator = NULL);
+
+			// Supported ImageMode: ImageMode_RGBA8888, ImageMode_BGRA8888, ImageMode_DXT1, ImageMode_DXT3, ImageMode_DXT5
+			static int32_t SaveAsDds(const char *filename, const void *addr, uint32_t pitch, ImageExtent const& ext, ImageMode mode, uint32_t io_mode, memory::HeapAllocator *allocator = NULL);
+
+			static int32_t SaveAsDds(void *dst, uint32_t max_size, const void *addr, uint32_t pitch, ImageExtent const& ext, ImageMode mode);
+
+			// Supported ImageMode: ImageMode_RGBA8888, ImageMode_BGRA8888
+			static int32_t SaveAsBmp(const char *filename, const void *addr, uint32_t pitch, ImageExtent const& ext, ImageMode mode, uint32_t io_mode, memory::HeapAllocator *allocator = NULL);
+
 			Image(memory::HeapAllocator *allocator) : m_images(allocator), m_cluts(allocator)
 			{
 				m_imagesrc = NULL;

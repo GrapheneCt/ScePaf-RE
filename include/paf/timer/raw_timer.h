@@ -44,7 +44,7 @@ namespace paf {
 			return (get_time_internal() - _start) / 1000000.0f;
 		}
 
-		float paf::RawTimer::milliseconds() const
+		float milliseconds() const
 		{
 			return seconds() * 1000.0f;
 		}

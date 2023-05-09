@@ -34,7 +34,7 @@ namespace paf {
 
 			virtual ~StateButtonBase();
 
-			virtual void SetCheck(bool onoff, float time, bool ch_anim);
+			virtual void SetCheck(bool onoff, float time = 0.0f, bool ch_anim = false);
 			virtual void OnButtonDecide();
 			virtual int32_t unkFun_1C4();
 			virtual int32_t unkFun_1C8();
@@ -60,6 +60,10 @@ namespace paf {
 
 		protected: //0x2C8
 
+			char m_unk_2AC;
+			bool m_is_checked;
+			char m_unk_2AE;
+			char m_unk_2AF;
 			int32_t m_frame_num;
 			float m_frame_time;
 			int32_t m_unk_2B8;
