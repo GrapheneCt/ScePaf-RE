@@ -103,11 +103,29 @@ namespace paf {
 				m_debug_focus_func = func;
 			}
 
+			DebugFocusCB GetDebugFocusCB()
+			{
+				return m_debug_focus_func;
+			}
+
+			ui::Widget *GetDebugCube()
+			{
+				return m_debug_cube;
+			}
+
+			ui::Widget *GetDebugCubeChild()
+			{
+				return m_debug_cube_child;
+			}
+
 		protected: //0x3C0
 
 			int32_t m_unk_27C;
 			Camera *m_camera;
-			char m_unk_284[0x9C];
+			char m_unk_284[0xE4];
+			graph::RenderStage *m_renderstage;
+			graph::RenderStage *m_renderstage_2;
+			char m_unk_370[0x10];
 			uint32_t m_debug_mode;
 			Widget *m_debug_focus;
 			Widget *m_debug_cube;
@@ -123,11 +141,7 @@ namespace paf {
 			uint32_t m_debug_quant_z_restore;
 			float m_debug_showalpha_restore;
 			DebugFocusCB m_debug_focus_func;
-			int32_t m_unk_35C;
-			int32_t m_unk_360;
-			int32_t m_unk_364;
-			graph::RenderStage *m_renderstage;
-			char m_unk_36C[0x54];
+			int32_t m_unk_3BC;
 
 			__declspec(dllimport) static const char *m_widget_type;
 		};

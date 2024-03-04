@@ -75,9 +75,9 @@ namespace paf {
 
 			void EnableRepeat(uint32_t begin_msec, uint32_t repeat_msec);
 
-			void Enable(bool unk);
+			void Enable(bool unk = true);
 
-			void Disable(bool unk);
+			void Disable(bool unk = true);
 
 			void SetDisableColor(math::v4 const& color)
 			{

@@ -239,6 +239,8 @@ namespace paf {
 
 			int32_t SetResolution(uint16_t width, uint16_t height);
 
+			void UpdateOrientation();
+
 			void SetDrawCutoff(bool on_off)
 			{
 				m_draw_cutoff = on_off;

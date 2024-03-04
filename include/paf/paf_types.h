@@ -99,6 +99,14 @@ typedef enum ResolutionType {
 	ResolutionType_PSP = 13
 } ResolutionType;
 
+typedef enum OrientationType {
+	OrientationType_Standard = 0,
+	OrientationType_Upsidedown = 1,
+	OrientationType_Rightsidedown = 2,
+	OrientationType_Leftsidedown = 3,
+	OrientationType_Auto = 4
+} OrientationType;
+
 typedef enum ImageOrder {
 	ImageOrder_NONE = -1,
 	ImageOrder_Linear = 1,

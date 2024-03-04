@@ -73,7 +73,7 @@ namespace paf {
 
 			image::ImageRect m_sub_rect;
 			image::ImageExtent m_scale;
-			ImageResizeType m_resize_type;
+			image::ImageResizeType m_resize_type;
 			bool m_direct_load;
 			bool m_surface_retry;
 			intrusive_ptr<graph::Surface> m_surface;

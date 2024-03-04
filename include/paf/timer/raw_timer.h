@@ -19,7 +19,7 @@ namespace paf {
 	{
 	public:
 
-		RawTimer(size_t _Ave) : _val(_Ave), _start_flag(false)
+		RawTimer(size_t _Ave = 0) : _val(_Ave), _start_flag(false)
 		{
 			_start = get_time_internal();
 		}
@@ -41,12 +41,17 @@ namespace paf {
 
 		float seconds() const
 		{
-			return (get_time_internal() - _start) / 1000000.0f;
+			return (float)(get_time_internal() - _start) / 1000000.0f;
 		}
 
 		float milliseconds() const
 		{
-			return seconds() * 1000.0f;
+			return (float)(get_time_internal() - _start) / 1000.0f;
+		}
+
+		float average() const
+		{
+			return _val;
 		}
 
 	private:

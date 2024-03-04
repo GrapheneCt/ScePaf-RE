@@ -28,8 +28,8 @@ namespace paf {
 			assign(T* a_data, size_t a_capacity, size_t a_size)
 			{
 				m_buffer = a_data;
-				m_size = a_capacity;
-				m_capacity = a_size;
+				m_size = a_size;
+				m_capacity = a_capacity;
 			}
 
 			T* at(size_t index)

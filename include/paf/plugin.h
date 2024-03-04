@@ -154,7 +154,8 @@ namespace paf {
 		enum PageDebugMode
 		{
 			PageDebugMode_PageVisual = 0,
-			PageDebugMode_PageHide = 1,
+			PageDebugMode_PageVisualEdit = 1,
+			PageDebugMode_PageHide = 2,
 		};
 
 		class InitParam2;
@@ -502,6 +503,10 @@ namespace paf {
 			return (resource_data != NULL);
 		}
 
+		ui::Widget *GetNodeEntity_Widget(cxml::Element const& node) const;
+
+		ui::Widget *GetNodeEntity_Widget(IDParam const& id) const;
+
 	private:
 
 		static void WidgetDebugDeleteCb(ui::Widget *obj, void *data);
@@ -579,10 +584,6 @@ namespace paf {
 		ui::Widget *GetNodeEntity_CreatePage(IDParam const& id) const;
 
 		AddTextureInfo *GetNodeEntity_AddTexture(IDParam const& id) const;
-
-		ui::Widget *GetNodeEntity_Widget(cxml::Element const& node) const;
-
-		ui::Widget *GetNodeEntity_Widget(IDParam const& id) const;
 
 		bool initialized;
 		string name;

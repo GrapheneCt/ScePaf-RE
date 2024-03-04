@@ -236,7 +236,7 @@ namespace paf {
 			void reset()
 			{
 				release();
-				m_ref_counter = (NULL;
+				m_ref_counter = NULL;
 			}
 
 			T* get() const

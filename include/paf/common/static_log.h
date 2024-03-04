@@ -21,7 +21,7 @@ namespace paf {
 			template <typename T>
 			StaticLog(T& r) : _pos(0), _size(0)
 			{
-				_buffer = r.front(cont);
+				_buffer = r.front();
 				_capacity = r.size() - 1;
 				if (_capacity == 0)
 				{

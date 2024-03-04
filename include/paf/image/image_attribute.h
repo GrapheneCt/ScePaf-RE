@@ -67,11 +67,6 @@ namespace paf {
 				return m_order;
 			}
 
-			ImageResizeType GetResizeType() const
-			{
-				return m_resizetype;
-			}
-
 			ImageXType GetXType()
 			{
 				return m_xtype;
@@ -80,6 +75,11 @@ namespace paf {
 			ImageYType GetYType()
 			{
 				return m_ytype;
+			}
+
+			ImageResizeType GetResizeType() const
+			{
+				return m_resizetype;
 			}
 
 			uint16_t GetPitchAlign() const

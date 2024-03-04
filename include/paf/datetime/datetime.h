@@ -60,6 +60,41 @@ namespace paf {
 
 			bool operator<(const DateTime& r) const;
 
+			uint16_t Year() const
+			{
+				return year;
+			}
+
+			uint16_t Month() const
+			{
+				return month;
+			}
+
+			uint16_t Day() const
+			{
+				return day;
+			}
+
+			uint16_t Hour() const
+			{
+				return hour;
+			}
+
+			uint16_t Minute() const
+			{
+				return minute;
+			}
+
+			uint16_t Second() const
+			{
+				return second;
+			}
+
+			uint32_t Microsecond() const
+			{
+				return microsecond;
+			}
+
 		private:
 
 			uint16_t year;

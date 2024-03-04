@@ -109,10 +109,27 @@ namespace paf {
 				ImageMode mode,
 				ImageFormat format,
 				float alpha);
+
+			/*
+			extern bool ConvertMode(
+				ImageBuffer *dstimage,
+				const ImageBuffer *srcimage,
+				const ImageBuffer *srcclut,
+				int32_t dstpitch,
+				int32_t srcpitch,
+				ImageExtent ext,
+				???
+				ImageMode mode,
+				ImageFormat format,
+				ImageMode dstmode,
+				ImageConvertModeType type = ImageConvertModeType_Default);
+			*/
 		}
 
 		class ImageSource
 		{
+		public:
+
 			ImageSource()
 			{
 
@@ -127,6 +144,26 @@ namespace paf {
 			{
 
 			}
+
+		};
+
+		class ImageOperation : public ImageSource
+		{
+		public:
+
+			virtual bool GetHeader(ImageFormat format, ImageAttribute **attr, ImageArray *images, ImageArray *cluts);
+			virtual bool LoadImage(ImageAttribute *attr, ImageArray *images, ImageArray *cluts, bool delete_flag, DecodeCancelFunc cancelfunc, void *userdata);
+			virtual int32_t GetErrorType();
+			virtual bool SetErrorType(int32_t type);
+			virtual ~ImageOperation();
+			virtual bool Init(const ImageAttribute *srcattr, const ImageArray *srcimages, const ImageArray *srccluts, ImageAttribute *dstattr, ImageArray *dstimages, ImageArray *dstcluts);
+			virtual bool OperateImage(ImagePoint const& sce_paf_index, const ImageAttribute *srcattr, const ImageBuffer *srcimage, const ImageBuffer *srcclut, ImageAttribute *dstattr, ImageBuffer *dstimage, ImageArray *dstclut) = 0;
+
+		protected:
+
+			memory::HeapAllocator *m_allocator;
+			Image *m_parent;
+			int32_t m_errortype;
 		};
 
 		class Image
@@ -199,6 +236,19 @@ namespace paf {
 
 			common::SharedPtr<Image> Rotate(ImageRotateType type);
 
+			common::SharedPtr<Image> ConvertMode(ImageMode mode, ImageConvertModeType type = ImageConvertModeType_Default);
+
+			//ScePafMisc_3CA35598
+			//common::SharedPtr<Image> Paste();
+
+			common::SharedPtr<Image> Crop(ImageRect const& crop);
+
+			common::SharedPtr<Image> ResizeWithConvertMode(ImageExtent const& extent, ImageResizeType resize_type, ImageMode mode, ImageConvertModeType type = ImageConvertModeType_Default);
+
+			common::SharedPtr<Image> RoundCorner(int32_t a1, int32_t a2);
+
+			common::SharedPtr<Image> Blend(common::SharedPtr<Image> const& other);
+
 			bool Load(bool delete_flag);
 
 			bool UnLoad();
@@ -245,9 +295,9 @@ namespace paf {
 
 			uint32_t GetCLUTSize() const;
 
-			size_t GetMemPitch(uint32_t sce_paf_index) const;
+			size_t GetMemPitch(uint32_t sce_paf_index = 0) const;
 
-			uint32_t GetMemHeight(uint32_t sce_paf_index) const;
+			uint32_t GetMemHeight(uint32_t sce_paf_index = 0) const;
 
 			size_t GetPitchAlign() const;
 

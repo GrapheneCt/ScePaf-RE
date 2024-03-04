@@ -21,7 +21,7 @@ namespace paf {
 				math::v3 gyroscope;
 				math::quaternion device_quat;
 				math::matrix rotation_matrix;
-				math::v3 basicOrientation;
+				math::v3 basic_orientation;
 			};
 
 			typedef void(*DeviceHandler)(Data*);

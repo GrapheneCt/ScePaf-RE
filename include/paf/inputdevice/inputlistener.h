@@ -14,6 +14,7 @@ namespace paf {
 
 		enum
 		{
+			DEVICE_TYPE_PAD = 0,
 			DEVICE_TYPE_TOUCHSCREEN_FRONT = 3,
 			DEVICE_TYPE_TOUCHSCREEN_BACK = 4,
 			DEVICE_TYPE_MOTIONSENSOR = 5,
@@ -26,7 +27,12 @@ namespace paf {
 		{
 		public:
 
-			InputListener() : m_init(false)
+			InputListener() : m_init(false), m_type(DEVICE_TYPE_TOUCHSCREEN_FRONT)
+			{
+				Init();
+			}
+
+			InputListener(int32_t type) : m_init(false), m_type(type)
 			{
 				Init();
 			}
@@ -38,6 +44,7 @@ namespace paf {
 
 			virtual void Init()
 			{
+
 				m_init = true;
 			}
 
@@ -46,9 +53,20 @@ namespace paf {
 
 			}
 
+			virtual void unkFun_10()
+			{
+
+			}
+
+			virtual void unkFun_14()
+			{
+
+			}
+
 		protected:
 
 			bool m_init;
+			int32_t m_type;
 		};
 
 		class InputGestureListener;

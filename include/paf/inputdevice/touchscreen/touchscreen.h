@@ -48,7 +48,7 @@ namespace paf {
 					STATE_MOVE = 3
 				};
 
-				uint32_t time_stamp;
+				uint64_t time_stamp;
 				int32_t x;
 				int32_t y;
 				int32_t force;

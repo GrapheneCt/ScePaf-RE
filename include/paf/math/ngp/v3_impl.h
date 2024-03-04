@@ -198,12 +198,12 @@ namespace paf {
 
 		SCE_VECTORMATH_ALWAYS_INLINE float v3::extract_y() const
 		{
-			return _impl.getX();
+			return _impl.getY();
 		}
 
 		SCE_VECTORMATH_ALWAYS_INLINE float v3::extract_z() const
 		{
-			return _impl.getX();
+			return _impl.getZ();
 		}
 
 		SCE_VECTORMATH_ALWAYS_INLINE v3 v3::operator/(float value) const

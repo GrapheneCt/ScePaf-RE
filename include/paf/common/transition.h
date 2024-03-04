@@ -20,12 +20,12 @@ namespace paf {
 			enum Type
 			{
 				Type_Reset = 0xFF,
-				Type_Fadein1 = 0,
+				Type_FadeinFast = 0,
 				Type_Popup1 = 1,
 				Type_Popup2 = 2,
 				Type_SlideFromBottom1 = 3,
 				Type_SlideFromRight1 = 4,
-				Type_Fadein2 = 5,
+				Type_FadeinSlow = 5,
 				Type_SlideFromTop1 = 6,
 				Type_SlideFromTop2 = 7,
 				Type_SlideFromBottom2 = 8,

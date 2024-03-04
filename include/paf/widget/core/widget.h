@@ -475,8 +475,8 @@ namespace paf {
 			int32_t Show(Timer *t = NULL, int32_t opt = 0, float delay = 0.0f, AnimCB cb_fin = NULL);
 			int32_t Hide(Timer *t = NULL, int32_t opt = 0, float delay = 0.0f, AnimCB cb_fin = NULL);
 
-			int32_t Show(common::transition::Type type, float parameter = 0.0f, HandlerCB cb = NULL, void *userdata = NULL);
-			int32_t Hide(common::transition::Type type, float parameter = 0.0f, HandlerCB cb = NULL, void *userdata = NULL);
+			int32_t Show(paf::common::transition::Type type, float parameter = 0.0f, HandlerCB cb = NULL, void *userdata = NULL);
+			int32_t Hide(paf::common::transition::Type type, float parameter = 0.0f, HandlerCB cb = NULL, void *userdata = NULL);
 
 			int32_t ReleaseFocus();
 
