@@ -20,6 +20,21 @@ namespace paf {
 			return v2i(0, 0);
 		}
 
+		SCE_VECTORMATH_ALWAYS_INLINE v2i v2i::_01()
+		{
+			return v2i(0, 1);
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE v2i v2i::_10()
+		{
+			return v2i(1, 0);
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE v2i v2i::_11()
+		{
+			return v2i(1, 1);
+		}
+
 		SCE_VECTORMATH_ALWAYS_INLINE v2i::v2i(int a_x, int a_y)
 		{
 			_x = a_x;
@@ -29,6 +44,16 @@ namespace paf {
 		SCE_VECTORMATH_ALWAYS_INLINE v2i::v2i()
 		{
 
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE void v2i::set_x(int value)
+		{
+			_x = value;
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE void v2i::set_y(int value)
+		{
+			_y = value;
 		}
 
 		SCE_VECTORMATH_ALWAYS_INLINE int v2i::x() const
@@ -41,6 +66,41 @@ namespace paf {
 			return _y;
 		}
 
+		SCE_VECTORMATH_ALWAYS_INLINE v2i& v2i::operator+=(v2i rhs)
+		{
+			_x += rhs._x;
+			_y += rhs._y;
+			return *this;
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE v2i& v2i::operator-=(v2i rhs)
+		{
+			_x -= rhs._x;
+			_y -= rhs._y;
+			return *this;
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE v2i& v2i::operator*=(v2i rhs)
+		{
+			_x *= rhs._x;
+			_y *= rhs._y;
+			return *this;
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE v2i& v2i::operator*=(int value)
+		{
+			_x *= value;
+			_y *= value;
+			return *this;
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE v2i& v2i::operator/=(int value)
+		{
+			_x /= value;
+			_y /= value;
+			return *this;
+		}
+
 		SCE_VECTORMATH_ALWAYS_INLINE bool v2i::operator==(const v2i& rhs) const
 		{
 			if ((_x == rhs._x) && (_y == rhs._y))
@@ -50,13 +110,19 @@ namespace paf {
 			return false;
 		}
 
+		SCE_VECTORMATH_ALWAYS_INLINE bool v2i::operator!=(const v2i& rhs) const
+		{
+			return !(*this == rhs);
+		}
+
 		SCE_VECTORMATH_ALWAYS_INLINE bool v2i::operator<(const v2i& rhs) const
 		{
-			if ((_x < rhs._x) && (_y < rhs._y))
-			{
-				return true;
-			}
-			return false;
+			return (_x < rhs._x) || ((_x == rhs._x) && (_y < rhs._y));
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE bool v2i::operator>(const v2i& rhs) const
+		{
+			return (_x > rhs._x) || ((_x == rhs._x) && (_y > rhs._y));
 		}
 
 		SCE_VECTORMATH_ALWAYS_INLINE v2i v2i::operator-(const v2i& rhs) const
@@ -64,9 +130,39 @@ namespace paf {
 			return v2i(_x - rhs._x, _y - rhs._y);
 		}
 
+		SCE_VECTORMATH_ALWAYS_INLINE v2i v2i::operator+(const v2i& rhs) const
+		{
+			return v2i(_x + rhs._x, _y + rhs._y);
+		}
+
 		SCE_VECTORMATH_ALWAYS_INLINE v2i v2i::operator>>(const v2i& rhs) const
 		{
 			return v2i(_x >> (rhs._y & 0xff), _y >> (rhs._y & 0xff));
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE v2i v2i::operator*(const v2i& rhs) const
+		{
+			return v2i(_x * rhs._x, _y * rhs._y);
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE v2i v2i::operator*(int value) const
+		{
+			return v2i(_x * value, _y * value);
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE v2i v2i::operator/(int value) const
+		{
+			return v2i(_x / value, _y / value);
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE v2i v2i::min(v2i other) const
+		{
+			return v2i((_x < other._x) ? _x : other._x, (_y < other._y) ? _y : other._y);
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE v2i v2i::max(v2i other) const
+		{
+			return v2i((_x > other._x) ? _x : other._x, (_y > other._y) ? _y : other._y);
 		}
 
 		SCE_VECTORMATH_ALWAYS_INLINE v2 v2::_00()

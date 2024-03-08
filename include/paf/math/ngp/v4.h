@@ -16,6 +16,68 @@ namespace paf {
 		class v2;
 		class v3;
 
+		class v4i
+		{
+		public:
+
+			static v4i _0000();
+			static v4i _0001();
+			static v4i _0010();
+			static v4i _0011();
+			static v4i _0100();
+			static v4i _0101();
+			static v4i _0110();
+			static v4i _0111();
+			static v4i _1000();
+			static v4i _1001();
+			static v4i _1010();
+			static v4i _1011();
+			static v4i _1100();
+			static v4i _1101();
+			static v4i _1110();
+			static v4i _1111();
+
+			v4i(int a_x, int a_y, int a_z, int a_w);
+			v4i();
+
+			void set_x(int value);
+			void set_y(int value);
+			void set_z(int value);
+			void set_w(int value);
+
+			int x() const;
+			int y() const;
+			int z() const;
+			int w() const;
+
+			v4i& operator+=(v4i rhs);
+			v4i& operator-=(v4i rhs);
+			v4i& operator*=(v4i rhs);
+			v4i& operator*=(int value);
+			v4i& operator/=(int value);
+
+			bool operator==(const v4i& rhs) const;
+			bool operator!=(const v4i& rhs) const;
+			bool operator<(const v4i& rhs) const;
+			bool operator>(const v4i& rhs) const;
+
+			v4i operator-(const v4i& rhs) const;
+			v4i operator+(const v4i& rhs) const;
+			v4i operator*(const v4i& rhs) const;
+			v4i operator*(int value) const;
+			v4i operator/(int value) const;
+
+			v4i min(v4i other) const;
+			v4i max(v4i other) const;
+
+		private:
+
+			int _x;
+			int _y;
+			int _z;
+			int _w;
+		};
+
 		class v4
 		{
 		public:

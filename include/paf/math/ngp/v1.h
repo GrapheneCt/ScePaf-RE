@@ -12,6 +12,40 @@ namespace paf {
 
 		class v4;
 
+		class v1i
+		{
+		public:
+			static v1i _0();
+			static v1i _1();
+
+			v1i(int a_x);
+			v1i();
+
+			void set_x(int value);
+			int x() const;
+
+			v1i& operator+=(const v1i& rhs);
+			v1i& operator-=(const v1i& rhs);
+			v1i& operator*=(const v1i& rhs);
+			v1i& operator*=(int value);
+			v1i& operator/=(int value);
+
+			bool operator==(const v1i& rhs) const;
+			bool operator!=(const v1i& rhs) const;
+			bool operator<(const v1i& rhs) const;
+			bool operator>(const v1i& rhs) const;
+
+			v1i operator-(const v1i& rhs) const;
+			v1i operator+(const v1i& rhs) const;
+			v1i operator*(const v1i& rhs) const;
+			v1i operator*(int value) const;
+			v1i operator/(int value) const;
+
+		private:
+
+			int _x;
+		};
+
 		class v1
 		{
 		public:

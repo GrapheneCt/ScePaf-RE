@@ -17,6 +17,149 @@
 namespace paf {
 	namespace math {
 
+		SCE_VECTORMATH_ALWAYS_INLINE v4i v4i::_0000() { return v4i(0, 0, 0, 0); }
+		SCE_VECTORMATH_ALWAYS_INLINE v4i v4i::_0001() { return v4i(0, 0, 0, 1); }
+		SCE_VECTORMATH_ALWAYS_INLINE v4i v4i::_0010() { return v4i(0, 0, 1, 0); }
+		SCE_VECTORMATH_ALWAYS_INLINE v4i v4i::_0011() { return v4i(0, 0, 1, 1); }
+		SCE_VECTORMATH_ALWAYS_INLINE v4i v4i::_0100() { return v4i(0, 1, 0, 0); }
+		SCE_VECTORMATH_ALWAYS_INLINE v4i v4i::_0101() { return v4i(0, 1, 0, 1); }
+		SCE_VECTORMATH_ALWAYS_INLINE v4i v4i::_0110() { return v4i(0, 1, 1, 0); }
+		SCE_VECTORMATH_ALWAYS_INLINE v4i v4i::_0111() { return v4i(0, 1, 1, 1); }
+		SCE_VECTORMATH_ALWAYS_INLINE v4i v4i::_1000() { return v4i(1, 0, 0, 0); }
+		SCE_VECTORMATH_ALWAYS_INLINE v4i v4i::_1001() { return v4i(1, 0, 0, 1); }
+		SCE_VECTORMATH_ALWAYS_INLINE v4i v4i::_1010() { return v4i(1, 0, 1, 0); }
+		SCE_VECTORMATH_ALWAYS_INLINE v4i v4i::_1011() { return v4i(1, 0, 1, 1); }
+		SCE_VECTORMATH_ALWAYS_INLINE v4i v4i::_1100() { return v4i(1, 1, 0, 0); }
+		SCE_VECTORMATH_ALWAYS_INLINE v4i v4i::_1101() { return v4i(1, 1, 0, 1); }
+		SCE_VECTORMATH_ALWAYS_INLINE v4i v4i::_1110() { return v4i(1, 1, 1, 0); }
+		SCE_VECTORMATH_ALWAYS_INLINE v4i v4i::_1111() { return v4i(1, 1, 1, 1); }
+
+		SCE_VECTORMATH_ALWAYS_INLINE v4i::v4i(int a_x, int a_y, int a_z, int a_w) : _x(a_x), _y(a_y), _z(a_z), _w(a_w) {}
+		SCE_VECTORMATH_ALWAYS_INLINE v4i::v4i() : v4i(0, 0, 0, 0) {}
+
+		SCE_VECTORMATH_ALWAYS_INLINE void v4i::set_x(int value) { _x = value; }
+		SCE_VECTORMATH_ALWAYS_INLINE void v4i::set_y(int value) { _y = value; }
+		SCE_VECTORMATH_ALWAYS_INLINE void v4i::set_z(int value) { _z = value; }
+		SCE_VECTORMATH_ALWAYS_INLINE void v4i::set_w(int value) { _w = value; }
+
+		SCE_VECTORMATH_ALWAYS_INLINE int v4i::x() const { return _x; }
+		SCE_VECTORMATH_ALWAYS_INLINE int v4i::y() const { return _y; }
+		SCE_VECTORMATH_ALWAYS_INLINE int v4i::z() const { return _z; }
+		SCE_VECTORMATH_ALWAYS_INLINE int v4i::w() const { return _w; }
+
+		SCE_VECTORMATH_ALWAYS_INLINE v4i& v4i::operator+=(v4i rhs)
+		{
+			_x += rhs._x;
+			_y += rhs._y;
+			_z += rhs._z;
+			_w += rhs._w;
+			return *this;
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE v4i& v4i::operator-=(v4i rhs)
+		{
+			_x -= rhs._x;
+			_y -= rhs._y;
+			_z -= rhs._z;
+			_w -= rhs._w;
+			return *this;
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE v4i& v4i::operator*=(v4i rhs)
+		{
+			_x *= rhs._x;
+			_y *= rhs._y;
+			_z *= rhs._z;
+			_w *= rhs._w;
+			return *this;
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE v4i& v4i::operator*=(int value)
+		{
+			_x *= value;
+			_y *= value;
+			_z *= value;
+			_w *= value;
+			return *this;
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE v4i& v4i::operator/=(int value)
+		{
+			if (value != 0) {
+				_x /= value;
+				_y /= value;
+				_z /= value;
+				_w /= value;
+			}
+			return *this;
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE bool v4i::operator==(const v4i& rhs) const
+		{
+			return _x == rhs._x && _y == rhs._y && _z == rhs._z && _w == rhs._w;
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE bool v4i::operator!=(const v4i& rhs) const
+		{
+			return !(*this == rhs);
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE bool v4i::operator<(const v4i& rhs) const
+		{
+			return (_x < rhs._x) || (_x == rhs._x && _y < rhs._y) ||
+				(_x == rhs._x && _y == rhs._y && _z < rhs._z) ||
+				(_x == rhs._x && _y == rhs._y && _z == rhs._z && _w < rhs._w);
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE bool v4i::operator>(const v4i& rhs) const
+		{
+			return !(*this < rhs) && !(*this == rhs);
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE v4i v4i::operator-(const v4i& rhs) const
+		{
+			return v4i(_x - rhs._x, _y - rhs._y, _z - rhs._z, _w - rhs._w);
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE v4i v4i::operator+(const v4i& rhs) const
+		{
+			return v4i(_x + rhs._x, _y + rhs._y, _z + rhs._z, _w + rhs._w);
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE v4i v4i::operator*(const v4i& rhs) const
+		{
+			return v4i(_x * rhs._x, _y * rhs._y, _z * rhs._z, _w * rhs._w);
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE v4i v4i::operator*(int value) const
+		{
+			return v4i(_x * value, _y * value, _z * value, _w * value);
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE v4i v4i::operator/(int value) const
+		{
+			if (value != 0)
+				return v4i(_x / value, _y / value, _z / value, _w / value);
+			else
+				return *this;
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE v4i v4i::min(v4i other) const
+		{
+			return v4i((_x < other._x) ? _x : other._x,
+				(_y < other._y) ? _y : other._y,
+				(_z < other._z) ? _z : other._z,
+				(_w < other._w) ? _w : other._w);
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE v4i v4i::max(v4i other) const
+		{
+			return v4i((_x > other._x) ? _x : other._x,
+				(_y > other._y) ? _y : other._y,
+				(_z > other._z) ? _z : other._z,
+				(_w > other._w) ? _w : other._w);
+		}
+
 		SCE_VECTORMATH_ALWAYS_INLINE v4 v4::_0000()
 		{
 			return v4(0.0f, 0.0f, 0.0f, 0.0f);

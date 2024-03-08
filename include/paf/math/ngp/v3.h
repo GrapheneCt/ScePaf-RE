@@ -14,6 +14,81 @@ namespace paf {
 		class v2;
 		class v4;
 
+		class v3i
+		{
+		public:
+
+			static v3i _000();
+
+			static v3i _001();
+
+			static v3i _010();
+
+			static v3i _011();
+
+			static v3i _100();
+
+			static v3i _101();
+
+			static v3i _110();
+
+			static v3i _111();
+
+			v3i(int a_x, int a_y, int a_z);
+
+			v3i();
+
+			void set_x(int value);
+
+			void set_y(int value);
+
+			void set_z(int value);
+
+			int x() const;
+
+			int y() const;
+
+			int z() const;
+
+			v3i& operator+=(v3i rhs);
+
+			v3i& operator-=(v3i rhs);
+
+			v3i& operator*=(v3i rhs);
+
+			v3i& operator*=(int value);
+
+			v3i& operator/=(int value);
+
+			bool operator==(const v3i& rhs) const;
+
+			bool operator!=(const v3i& rhs) const;
+
+			bool operator<(const v3i& rhs) const;
+
+			bool operator>(const v3i& rhs) const;
+
+			v3i operator-(const v3i& rhs) const;
+
+			v3i operator+(const v3i& rhs) const;
+
+			v3i operator*(const v3i& rhs) const;
+
+			v3i operator*(int value) const;
+
+			v3i operator/(int value) const;
+
+			v3i min(v3i other) const;
+
+			v3i max(v3i other) const;
+
+		private:
+
+			int _x;
+			int _y;
+			int _z;
+		};
+
 		class v3
 		{
 		public:

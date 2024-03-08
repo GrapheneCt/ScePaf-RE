@@ -19,6 +19,111 @@ namespace paf {
 
 		}
 
+		SCE_VECTORMATH_ALWAYS_INLINE v1i v1i::_0()
+		{
+			return v1i(0);
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE v1i v1i::_1()
+		{
+			return v1i(1);
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE v1i::v1i(int a_x) : _x(a_x)
+		{
+
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE v1i::v1i() : _x(0)
+		{
+
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE void v1i::set_x(int value)
+		{
+			_x = value;
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE int v1i::x() const
+		{
+			return _x;
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE v1i& v1i::operator+=(const v1i& rhs)
+		{
+			_x += rhs._x;
+			return *this;
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE v1i& v1i::operator-=(const v1i& rhs)
+		{
+			_x -= rhs._x;
+			return *this;
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE v1i& v1i::operator*=(const v1i& rhs)
+		{
+			_x *= rhs._x;
+			return *this;
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE v1i& v1i::operator*=(int value)
+		{
+			_x *= value;
+			return *this;
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE v1i& v1i::operator/=(int value)
+		{
+			_x /= value;
+			return *this;
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE bool v1i::operator==(const v1i& rhs) const
+		{
+			return (_x == rhs._x);
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE bool v1i::operator!=(const v1i& rhs) const
+		{
+			return !(*this == rhs);
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE bool v1i::operator<(const v1i& rhs) const
+		{
+			return (_x < rhs._x);
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE bool v1i::operator>(const v1i& rhs) const
+		{
+			return (_x > rhs._x);
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE v1i v1i::operator-(const v1i& rhs) const
+		{
+			return v1i(_x - rhs._x);
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE v1i v1i::operator+(const v1i& rhs) const
+		{
+			return v1i(_x + rhs._x);
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE v1i v1i::operator*(const v1i& rhs) const
+		{
+			return v1i(_x * rhs._x);
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE v1i v1i::operator*(int value) const
+		{
+			return v1i(_x * value);
+		}
+
+		SCE_VECTORMATH_ALWAYS_INLINE v1i v1i::operator/(int value) const
+		{
+			return v1i(_x / value);
+		}
+
 		SCE_VECTORMATH_ALWAYS_INLINE v1::v1(float value) : _impl(value)
 		{
 

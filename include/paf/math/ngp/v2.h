@@ -20,21 +20,57 @@ namespace paf {
 
 			static v2i _00();
 
+			static v2i _01();
+
+			static v2i _10();
+
+			static v2i _11();
+
 			v2i(int a_x, int a_y);
 
 			v2i();
+
+			void set_x(int value);
+
+			void set_y(int value);
 
 			int x() const;
 
 			int y() const;
 
+			v2i& operator+=(v2i rhs);
+
+			v2i& operator-=(v2i rhs);
+
+			v2i& operator*=(v2i rhs);
+
+			v2i& operator*=(int value);
+
+			v2i& operator/=(int value);
+
 			bool operator==(const v2i& rhs) const;
+
+			bool operator!=(const v2i& rhs) const;
 
 			bool operator<(const v2i& rhs) const;
 
+			bool operator>(const v2i& rhs) const;
+
 			v2i operator-(const v2i& rhs) const;
 
+			v2i operator+(const v2i& rhs) const;
+
 			v2i operator>>(const v2i& rhs) const;
+
+			v2i operator*(const v2i& rhs) const;
+
+			v2i operator*(int value) const;
+
+			v2i operator/(int value) const;
+
+			v2i min(v2i other) const;
+
+			v2i max(v2i other) const;
 
 		private:
 
