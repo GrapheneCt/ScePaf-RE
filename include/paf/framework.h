@@ -133,11 +133,11 @@ namespace paf {
 			uint32_t screen_orientation_mode;
 			uint32_t graphics_option;
 			uint32_t edit_listener;
-			uint32_t web_edit_listener;
+			uint32_t unk_94;
 			uint32_t message_dialog_listener;
 			uint32_t unk_9C;
-			uint32_t webview_listener;
-			uint32_t unk_A4;
+			void *webview_listener;
+			void * web_edit_listener;
 			uint32_t sound_mode;
 			uint32_t unk_AC;
 			uint32_t unk_B0;

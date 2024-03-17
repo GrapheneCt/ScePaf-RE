@@ -5,8 +5,13 @@ Library: SceWebUIPlugin version: 1
 Library: SceWebUIPlugin stubfile: "libSceWebUIPlugin_stub"
 Library: SceWebUIPlugin nidsuffix: ""
 Library: SceWebUIPlugin libnamenid: 0x04FA0166
-Library: SceWebUIPlugin function: _ZN3paf5WebUI14PluginCreateCBEPNS_6PluginE nidvalue: 0x93C92A4A
+Library: SceWebUIPlugin function: _ZN3paf5WebUI16PluginSetParamCBEPNS_6Plugin10InitParam2E nidvalue: 0x93C92A4A
 Library: SceWebUIPlugin function: _ZN3paf5WebUI12PluginInitCBEPNS_6PluginE nidvalue: 0x07F112B1
 Library: SceWebUIPlugin function: _ZN3paf5WebUI13PluginStartCBEPNS_6PluginE nidvalue: 0x9CD848A2
 Library: SceWebUIPlugin function: _ZN3paf5WebUI12PluginStopCBEPNS_6PluginE nidvalue: 0xD480614B
 Library: SceWebUIPlugin function: _ZN3paf5WebUI12PluginExitCBEPNS_6PluginE nidvalue: 0x12EDFFFD
+
+Library: SceWebUIPlugin function: _ZN3paf5WebUI23SceWebUIPlugin_732FD74DEPvS1_ nidvalue: 0x732FD74D
+Library: SceWebUIPlugin function: _ZN3paf5WebUI23SceWebUIPlugin_C59CB476EiPvRNS_12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEE nidvalue: 0xC59CB476
+Library: SceWebUIPlugin function: _ZN3paf5WebUI23SceWebUIPlugin_E6A8A5BCEii nidvalue: 0xE6A8A5BC
+Library: SceWebUIPlugin function: _ZN3paf5WebUI23SceWebUIPlugin_B888A5A6Ei nidvalue: 0xB888A5A6

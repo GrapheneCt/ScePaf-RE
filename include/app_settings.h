@@ -35,7 +35,7 @@ namespace sce {
 			typedef void(*TermCallback)(int32_t result);
 			typedef void(*PageCallback)(const char *elementId, int32_t type);
 			typedef wchar_t*(*GetStringCallback)(const char *elementId);
-			typedef int32_t(*CheckVisibleCallback)(const char *elementId, int32_t *pIsVisible);
+			typedef int32_t(*CheckVisibleCallback)(const char *elementId, bool *pIsVisible);
 			typedef int32_t(*PressCallback)(const char *elementId, const char *newValue);
 			typedef int32_t(*PreCreateCallback)(const char *elementId, Element *element);
 			typedef int32_t(*PostCreateCallback)(const char *elementId, paf::ui::Widget *widget);

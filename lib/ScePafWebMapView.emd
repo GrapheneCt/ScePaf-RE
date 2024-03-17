@@ -5,9 +5,24 @@ Library: ScePafWebMapView version: 1
 Library: ScePafWebMapView stubfile: "libScePafWebMapView_stub"
 Library: ScePafWebMapView nidsuffix: ""
 Library: ScePafWebMapView libnamenid: 0x83D6C628
-Library: ScePafWebMapView function: _ZN3paf10WebMapView12InitGraphicsEv nidvalue: 0x6E0719FB
-Library: ScePafWebMapView function: _ZN3paf10WebMapView7InitIPCEv nidvalue: 0x273F200C
-Library: ScePafWebMapView function: _ZN3paf10WebMapView10InitializeEv nidvalue: 0x5E7D0BE7
-//Library: ScePafWebMapView function: _ZN3paf10WebMapView10CreateEv nidvalue: 0xDE7C5CBE
-Library: ScePafWebMapView function: _ZN3paf10WebMapView11GetInstanceEv nidvalue: 0xC2581D7F
-//Library: ScePafWebMapView function: _ZN3paf10WebMapView21CreateGraphicsContextEv nidvalue: 0xEE99BD02
+Library: ScePafWebMapView function: _ZN3paf7webview7Context6CreateEPKcjjjj nidvalue: 0xDE7C5CBE
+Library: ScePafWebMapView function: _ZN3paf7webview7Context3GetEv nidvalue: 0xC2581D7F
+Library: ScePafWebMapView function: _ZN3paf7webview7Context12InitGraphicsEv nidvalue: 0x6E0719FB
+Library: ScePafWebMapView function: _ZN3paf7webview7Context7InitIPCEv nidvalue: 0x273F200C
+Library: ScePafWebMapView function: _ZN3paf7webview7Context16SetGraphicsParamEPNS1_13GraphicsParamE nidvalue: 0xEE99BD02
+Library: ScePafWebMapView function: _ZN3paf7webview7Context10InitializeEv nidvalue: 0x5E7D0BE7
+
+Library: ScePafWebMapView function: _ZN3paf7webview12ViewListenerC1Ev nidvalue: 0x0BA0348D
+Library: ScePafWebMapView function: _ZN3paf7webview12ViewListenerC2Ev nidvalue: 0x794A8DD2
+Library: ScePafWebMapView function: _ZN3paf7webview12ViewListenerD0Ev nidvalue: 0x74B967D9
+Library: ScePafWebMapView function: _ZN3paf7webview12ViewListenerD1Ev nidvalue: 0x6CA6CFC0
+Library: ScePafWebMapView function: _ZN3paf7webview12ViewListenerD2Ev nidvalue: 0x36FCBE5F
+
+Library: ScePafWebMapView function: _ZN3paf7webview12EditListenerC1Ev nidvalue: 0xCA377603
+Library: ScePafWebMapView function: _ZN3paf7webview12EditListenerC2Ev nidvalue: 0x7B01B9F2
+Library: ScePafWebMapView function: _ZN3paf7webview12EditListenerD0Ev nidvalue: 0xB3EDD645
+Library: ScePafWebMapView function: _ZN3paf7webview12EditListenerD1Ev nidvalue: 0x6AB2C061
+Library: ScePafWebMapView function: _ZN3paf7webview12EditListenerD2Ev nidvalue: 0x3BCB03B2
+
+
+Library: ScePafWebMapView function: _ZN3paf7webview25ScePafWebMapView_B8CFECAEEPvRNS_6common6StringES4_ nidvalue: 0xB8CFECAE

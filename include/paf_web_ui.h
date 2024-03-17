@@ -17,7 +17,7 @@ namespace paf {
 		//PAF plugin loader callbacks
 
 		//SceWebUIPlugin_93C92A4A
-		static SceVoid PluginCreateCB(paf::Plugin *plugin);
+		static SceVoid PluginSetParamCB(paf::Plugin::InitParam2 *param);
 		//SceWebUIPlugin_07F112B1
 		static SceVoid PluginInitCB(paf::Plugin *plugin);
 		//SceWebUIPlugin_9CD848A2
@@ -26,6 +26,14 @@ namespace paf {
 		static SceVoid PluginStopCB(paf::Plugin *plugin);
 		//SceWebUIPlugin_12EDFFFD
 		static SceVoid PluginExitCB(paf::Plugin *plugin);
+
+		static int32_t SceWebUIPlugin_732FD74D(void *a1, void *a2);
+
+		static int32_t SceWebUIPlugin_C59CB476(int32_t a1, void *a2, string& a3);
+
+		static int32_t SceWebUIPlugin_E6A8A5BC(int32_t a1, int32_t a2);
+
+		static int32_t SceWebUIPlugin_B888A5A6(int32_t a1);
 	};
 
 }
