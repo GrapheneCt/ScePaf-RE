@@ -5,8 +5,11 @@
 #ifndef _VDSUITE_USER_PAF_WIDGET_W_LIST_VIEW_H
 #define _VDSUITE_USER_PAF_WIDGET_W_LIST_VIEW_H
 
+#include <paf/widget/factory.h>
 #include <paf/widget/w_scroll_view_base.h>
 #include <paf/common/shared_ptr.h>
+
+__declspec(dllimport) extern paf::ui::FactoryFuncTable g_factoryListView;
 
 namespace paf {
 	

@@ -6,9 +6,12 @@
 #define _VDSUITE_USER_PAF_WIDGET_W_TEXT_H
 
 #include <paf/widget/core/widget.h>
+#include <paf/widget/factory.h>
 #include <paf/graphics/text/text_layout.h>
 #include <paf/graphics/text/text_style.h>
 #include <paf/graphics/text/attributed_string.h>
+
+__declspec(dllimport) extern paf::ui::FactoryFuncTable g_factoryText;
 
 namespace paf {
 

@@ -5,7 +5,10 @@
 #ifndef _VDSUITE_USER_PAF_WIDGET_W_DIALOG_H
 #define _VDSUITE_USER_PAF_WIDGET_W_DIALOG_H
 
+#include <paf/widget/factory.h>
 #include <paf/widget/w_box.h>
+
+__declspec(dllimport) extern paf::ui::FactoryFuncTable g_factoryDialog;
 
 namespace paf {
 

@@ -5,7 +5,10 @@
 #ifndef _VDSUITE_USER_PAF_WIDGET_W_RICH_TEXT_H
 #define _VDSUITE_USER_PAF_WIDGET_W_RICH_TEXT_H
 
+#include <paf/widget/factory.h>
 #include <paf/widget/w_scroll_view_base.h>
+
+__declspec(dllimport) extern paf::ui::FactoryFuncTable g_factoryRichText;
 
 namespace paf {
 	

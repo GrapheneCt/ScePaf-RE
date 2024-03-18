@@ -5,7 +5,10 @@
 #ifndef _VDSUITE_USER_PAF_WIDGET_W_CORNER_BUTTON_H
 #define _VDSUITE_USER_PAF_WIDGET_W_CORNER_BUTTON_H
 
+#include <paf/widget/factory.h>
 #include <paf/widget/w_button.h>
+
+__declspec(dllimport) extern paf::ui::FactoryFuncTable g_factoryCornerButton;
 
 namespace paf {
 

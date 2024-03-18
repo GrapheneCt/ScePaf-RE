@@ -6,6 +6,9 @@
 #define _VDSUITE_USER_PAF_WIDGET_W_PLANE_H
 
 #include <paf/widget/core/widget.h>
+#include <paf/widget/factory.h>
+
+__declspec(dllimport) extern paf::ui::FactoryFuncTable g_factoryPlane;
 
 namespace paf {
 

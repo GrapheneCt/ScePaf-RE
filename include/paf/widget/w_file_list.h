@@ -5,8 +5,11 @@
 #ifndef _VDSUITE_USER_PAF_WIDGET_W_FILE_LIST_H
 #define _VDSUITE_USER_PAF_WIDGET_W_FILE_LIST_H
 
+#include <paf/widget/factory.h>
 #include <paf/widget/w_list_view.h>
 #include <paf/common/ref_obj.h>
+
+__declspec(dllimport) extern paf::ui::FactoryFuncTable g_factoryFileList;
 
 namespace paf {
 
