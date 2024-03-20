@@ -6,6 +6,9 @@
 #define _VDSUITE_USER_PAF_WIDGET_W_SLIDING_DRAWER_H
 
 #include <paf/widget/w_scroll_view_base.h>
+#include <paf/widget/factory.h>
+
+__declspec(dllimport) extern paf::ui::FactoryFuncTable g_factorySlidingDrawer;
 
 namespace paf {
 	

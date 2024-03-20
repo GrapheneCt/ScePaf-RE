@@ -5,7 +5,10 @@
 #ifndef _VDSUITE_USER_PAF_WIDGET_W_CHECK_BOX_H
 #define _VDSUITE_USER_PAF_WIDGET_W_CHECK_BOX_H
 
+#include <paf/widget/factory.h>
 #include <paf/widget/w_state_button_base.h>
+
+__declspec(dllimport) extern paf::ui::FactoryFuncTable g_factoryCheckBox;
 
 namespace paf {
 

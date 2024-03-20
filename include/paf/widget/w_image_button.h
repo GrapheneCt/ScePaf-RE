@@ -6,6 +6,9 @@
 #define _VDSUITE_USER_PAF_WIDGET_W_IMAGE_BUTTON_H
 
 #include <paf/widget/w_button.h>
+#include <paf/widget/factory.h>
+
+__declspec(dllimport) extern paf::ui::FactoryFuncTable g_factoryImageButton;
 
 namespace paf {
 

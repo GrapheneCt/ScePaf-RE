@@ -191,6 +191,11 @@
 #include <paf/widget/w_corner_button.h>
 #include <paf/widget/w_composite_button.h>
 #include <paf/widget/w_composite_drawer.h>
+#include <paf/widget/w_group.h>
+#include <paf/widget/w_pageturn_base.h>
+#include <paf/widget/w_pageturn.h>
+#include <paf/widget/w_slidebar.h>
+#include <paf/widget/w_supplier.h>
 #include <paf/widget/factory.h>
 
 /* AUTOTEST */

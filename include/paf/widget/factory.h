@@ -28,12 +28,14 @@ namespace paf {
 		{
 		public:
 
-			char *m_name;
+			const char *m_name;
 			Widget*(*m_factory_widget)(Widget *);
 			WidgetParam*(*m_factory_param)();
 			WidgetLayoutParam*(*m_factory_layout)();
 			WidgetStyleParam*(*m_factory_style)();
 			WidgetHandlerParam*(*m_factory_handler)();
+			void *(*unk_0x18)();
+			void *(*unk_0x1C)();
 		};
 
 		class FactoryFuncDrawObj
