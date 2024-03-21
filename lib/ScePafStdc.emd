@@ -5,11 +5,7 @@ Library: ScePafStdc version: 1
 Library: ScePafStdc stubfile: "libScePafStdc_stub"
 Library: ScePafStdc nidsuffix: "PAF"
 Library: ScePafStdc libnamenid: 0xA7D28DAE
-Library: ScePafStdc function: sce_paf_printf nidvalue: 0xD41FD265 //dummy in current PAF versions
-Library: ScePafStdc function: sce_paf_vswprintf_internal nidvalue: 0xAFB23563
-Library: ScePafStdc function: sce_paf_vsnprintf_internal nidvalue: 0xAE0F3820
 
-//CORRECT NAMES
 Library: ScePafStdc function: GetGlobalHeapAllocator
 Library: ScePafStdc function: _ZN3paf3TTYC1Ev
 Library: ScePafStdc function: _ZN3paf3TTYC2Ev
@@ -26,10 +22,21 @@ Library: ScePafStdc function: __cxa_pure_virtual
 Library: ScePafStdc function: __cxa_set_dso_handle_main
 Library: ScePafStdc function: exit
 Library: ScePafStdc function: abort
-Library: ScePafStdc function: _ZdlPv
-Library: ScePafStdc function: _ZdaPv
-Library: ScePafStdc function: _Znwj
+Library: ScePafStdc function: sce_paf___assert // not present in 3.60
+Library: ScePafStdc function: prnt
+Library: ScePafStdc function: wprnt
 Library: ScePafStdc function: _Znaj
+Library: ScePafStdc function: _Znajj
+Library: ScePafStdc function: _Znwj
+Library: ScePafStdc function: _Znwjj
+Library: ScePafStdc function: _ZdaPv
+Library: ScePafStdc function: _ZdaPvjj
+Library: ScePafStdc function: _ZdlPv
+Library: ScePafStdc function: _ZdlPvjj
+Library: ScePafStdc function: _stdinit_stdio
+Library: ScePafStdc function: _fflush_readbuff
+Library: ScePafStdc function: write_to_stdout
+Library: ScePafStdc function: read_char_from_stdin
 Library: ScePafStdc function: sce_paf_abs
 Library: ScePafStdc function: sce_paf_atof
 Library: ScePafStdc function: sce_paf_atoi
@@ -150,6 +157,11 @@ Library: ScePafStdc function: sce_paf_musable_size
 Library: ScePafStdc function: __wcstolower
 Library: ScePafStdc function: sce_paf_memset32
 Library: ScePafStdc function: sce_paf_report_memoryblocks
+Library: ScePafStdc function: sce_paf_printf // not present in 3.60
+Library: ScePafStdc function: sce_paf_printf_dummy
+Library: ScePafStdc function: sce_paf_wprintf // not present in 3.60
+Library: ScePafStdc function: sce_paf_wprintf_dummy
 
+Library: ScePafStdc variable: sce_paf_is_common_dialog_mode
 Library: ScePafStdc variable: _ZN3paf12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE12empty_stringE
 Library: ScePafStdc variable: _ZN3paf12basic_stringIwNS_11char_traitsIwEENS_9allocatorIwEEE12empty_stringE
