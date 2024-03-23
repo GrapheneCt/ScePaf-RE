@@ -42,6 +42,40 @@ namespace paf {
 		class Focuser;
 		class Environment;
 
+		class WidgetStyleParam : public VersatileParam
+		{
+		public:
+			static const char *ParamName();
+			WidgetStyleParam();
+			virtual const char *GetParamName() const;
+			virtual ~WidgetStyleParam();
+			virtual int32_t Set();
+			virtual int32_t Get();
+			virtual int32_t Create(int32_t mode);
+			virtual int32_t Destroy(int32_t mode);
+			virtual int32_t OnUpdate();
+			virtual void OnDraw();
+			virtual int32_t AttachPlugin(paf::Plugin *plugin);
+			virtual int32_t Read(paf::cxml::Element *elem);
+			virtual int32_t Write(paf::common::SharedPtr<File> fp, uint32_t type, uint32_t indent);
+
+			virtual int32_t SetEach(Widget *widget);
+			virtual int32_t GetEach(Widget *widget);
+			virtual void *GetDrawObjParam(int);
+			virtual void ScePafResource_CCA19F0F(); // maybe SetDrawObjParam(int, paf::graph::DrawObjParam*, int);
+
+			int delete_cb(Widget *widget, void*);
+			int AddWidget(Widget *widget);
+			int DelWidget(Widget *widget);
+			void Init();
+
+		private:
+			unsigned char unk_0x24[0x3C];
+
+			__declspec (dllimport) static const char * const s_names[];
+			__declspec (dllimport) static const char m_param_name[];
+		};
+
 		class Widget : public Handler
 		{
 		public:
@@ -1000,7 +1034,7 @@ namespace paf {
 			Focuser *m_focuser;
 			char m_unk_220[0x5C];
 
-			__declspec(dllimport) static const char *m_widget_type;
+			__declspec (dllimport) static const char *m_widget_type;
 
 			__declspec (dllimport) static int32_t s_base_destroy_count;
 
