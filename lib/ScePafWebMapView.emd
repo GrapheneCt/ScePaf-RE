@@ -24,5 +24,39 @@ Library: ScePafWebMapView function: _ZN3paf7webview12EditListenerD0Ev nidvalue: 
 Library: ScePafWebMapView function: _ZN3paf7webview12EditListenerD1Ev nidvalue: 0x6AB2C061
 Library: ScePafWebMapView function: _ZN3paf7webview12EditListenerD2Ev nidvalue: 0x3BCB03B2
 
+Library: ScePafWebMapView function: _ZN3paf17WebViewControllerC1Ev nidvalue: 0x46DA0ABA
+Library: ScePafWebMapView function: _ZN3paf17WebViewControllerC2Ev nidvalue: 0xD2EDAB2E
+Library: ScePafWebMapView function: _ZN3paf17WebViewControllerD0Ev nidvalue: 0x6F5AF8DC
+Library: ScePafWebMapView function: _ZN3paf17WebViewControllerD1Ev nidvalue: 0xA7382CB8
+Library: ScePafWebMapView function: _ZN3paf17WebViewControllerD2Ev nidvalue: 0xA0CFE141
+
+Library: ScePafWebMapView function: _ZN3paf17WebViewController11OnStartLoadEPNS_2ui7WebViewE nidvalue: 0xF91FFDB9
+Library: ScePafWebMapView function: _ZN3paf17WebViewController12OnFinishLoadEPNS_2ui7WebViewEi nidvalue: 0x20AA4727
+Library: ScePafWebMapView function: _ZN3paf17WebViewController10unk_fun_04Ev nidvalue: 0x0A56228A
+Library: ScePafWebMapView function: _ZN3paf17WebViewController10unk_fun_05Ev nidvalue: 0xA3B06138
+Library: ScePafWebMapView function: _ZN3paf17WebViewController10unk_fun_06Ev nidvalue: 0x3A12A202
+Library: ScePafWebMapView function: _ZN3paf17WebViewController17OnProgressChangedEPNS_2ui7WebViewEi nidvalue: 0x6F6840B5
+Library: ScePafWebMapView function: _ZN3paf17WebViewController15OnReceivedErrorEPNS_2ui7WebViewEPNS_6common6StringE nidvalue: 0x56E2C6CD
+Library: ScePafWebMapView function: _ZN3paf17WebViewController12OnUrlChangedEPNS_2ui7WebViewEPNS_3UrlE nidvalue: 0x9669F687
+Library: ScePafWebMapView function: _ZN3paf17WebViewController10unk_fun_10Ev nidvalue: 0xFCE2E385
+Library: ScePafWebMapView function: _ZN3paf17WebViewController10unk_fun_11Ev nidvalue: 0x3296078D
+Library: ScePafWebMapView function: _ZN3paf17WebViewController10unk_fun_12Ev nidvalue: 0x253DB37C
+Library: ScePafWebMapView function: _ZN3paf17WebViewController10unk_fun_13Ev nidvalue: 0xF797AC06
+Library: ScePafWebMapView function: _ZN3paf17WebViewController10unk_fun_14Ev nidvalue: 0xECA6E27A
+Library: ScePafWebMapView function: _ZN3paf17WebViewController10unk_fun_15Ev nidvalue: 0x47C1B5A1
+Library: ScePafWebMapView function: _ZN3paf17WebViewController10unk_fun_16Ev nidvalue: 0xE1EE8D06
+Library: ScePafWebMapView function: _ZN3paf17WebViewController10unk_fun_17Ev nidvalue: 0x894953B1
+Library: ScePafWebMapView function: _ZN3paf17WebViewController10unk_fun_18Ev nidvalue: 0x2F60365B
+Library: ScePafWebMapView function: _ZN3paf17WebViewController10unk_fun_19Ev nidvalue: 0x2EB2C1F3
+Library: ScePafWebMapView function: _ZN3paf17WebViewController10unk_fun_20Ev nidvalue: 0xE0C6CE55
+Library: ScePafWebMapView function: _ZN3paf17WebViewController10unk_fun_21Ev nidvalue: 0x9E4B7B93
+Library: ScePafWebMapView function: _ZN3paf17WebViewController10unk_fun_22Ev nidvalue: 0xF9495204
+Library: ScePafWebMapView function: _ZN3paf17WebViewController10unk_fun_23Ev nidvalue: 0x5E7AE865
+Library: ScePafWebMapView function: _ZN3paf17WebViewController27OnHistoryStackStatusChangedEPNS_2ui7WebViewEbb nidvalue: 0x8C5A139B
+Library: ScePafWebMapView function: _ZN3paf17WebViewController10unk_fun_25Ev nidvalue: 0x1458AD11
+Library: ScePafWebMapView function: _ZN3paf17WebViewController10unk_fun_26Ev nidvalue: 0x4ACAC34F
+Library: ScePafWebMapView function: _ZN3paf17WebViewController10unk_fun_27Ev nidvalue: 0xF89545AE
 
 Library: ScePafWebMapView function: _ZN3paf7webview25ScePafWebMapView_B8CFECAEEPvRNS_6common6StringES4_ nidvalue: 0xB8CFECAE
+
+Library: ScePafWebMapView variable: _ZTVN3paf17WebViewControllerE nidvalue: 0x603F27F4

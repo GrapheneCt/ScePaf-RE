@@ -394,7 +394,6 @@ namespace paf {
 	protected:
 
 		ResourceParam *m_serial;
-		VisualParam *m_visual;
 		Plugin *m_plugin;
 		IDParam m_id;
 		cxml::Element *m_node;
