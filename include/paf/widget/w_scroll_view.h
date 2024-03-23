@@ -52,9 +52,8 @@ namespace paf {
 			map<Widget*, int32_t> m_snap_map;
 			vector<Widget*> m_ignore_list;
 			bool m_is_auto_snap;
-			bool m_unk_419;
-			int32_t m_unk_41C;
-			char m_unk_420[0x20];
+			bool m_unk_41D;
+			int m_unk_420[8];
 
 			__declspec(dllimport) static const char *m_widget_type;
 		};

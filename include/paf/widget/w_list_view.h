@@ -148,7 +148,7 @@ namespace paf {
 
 			ScrollType m_scroll_type;
 			math::v2 m_generate_margin;
-			char m_unk_408[0x18];
+			char m_unk_40C[0x14];
 			int32_t m_block_count;
 			char m_unk_424[0xC4];
 

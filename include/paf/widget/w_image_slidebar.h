@@ -110,7 +110,10 @@ namespace paf {
 			float m_animTime;
 			int32_t m_animFunc;
 			float m_normValue;
-
+			int m_unk_0x298;
+			int m_unk_0x29C;
+			int m_unk_0x2A0;
+			int m_unk_0x2A4;
 
 			__declspec(dllimport) static const char *m_widget_type;
 		};

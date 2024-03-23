@@ -158,7 +158,7 @@ namespace paf {
 
 			void UnblockUpdateViewPort();
 
-		protected: //0x3FC
+		protected: //0x400
 
 			void ResetScrollBar(ScrollBar*& scroll_bar, ScrollBar *next_bar);
 
@@ -172,7 +172,7 @@ namespace paf {
 
 			char m_unk_27C[0x144];
 			float m_snap_power;
-			char m_unk_3C4[0x38];
+			char m_unk_3C4[0x3C];
 
 			__declspec(dllimport) static const char *m_widget_type;
 		};

@@ -25,7 +25,9 @@ namespace paf {
 			virtual int32_t unkFun_174();
 			virtual int32_t unkFun_178();
 
-		protected: //0x27C
+		protected: //0x280
+
+			int m_unk_0x27C;
 
 			__declspec(dllimport) static const char *m_widget_type;
 		};

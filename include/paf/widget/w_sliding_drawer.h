@@ -57,7 +57,6 @@ namespace paf {
 
 		protected: //0x430
 
-			uint32_t m_move_dir_ext;
 			math::v4 m_last_view_pos;
 			math::v4 m_view_velocity;
 			math::v4 m_movable_range;
