@@ -526,6 +526,8 @@ Library: ScePafWidget function: _ZN3paf2ui16ButtonStyleParam4InitEv
 Library: ScePafWidget function: _ZN3paf2ui16ButtonStyleParam6CreateEi
 Library: ScePafWidget function: _ZN3paf2ui16ButtonStyleParam7SetEachEPNS0_6WidgetE
 Library: ScePafWidget function: _ZN3paf2ui16ButtonStyleParam7GetEachEPNS0_6WidgetE
+Library: ScePafWidget variable: _ZTVN3paf2ui16ButtonStyleParamE
+Library: ScePafWidget variable: _ZN3paf2ui16ButtonStyleParam12m_param_nameE
 
 Library: ScePafWidget function: _ZN3paf2ui11ButtonParamC1Ev
 Library: ScePafWidget function: _ZNK3paf2ui11ButtonParam12GetParamNameEv
