@@ -157,6 +157,28 @@ namespace paf {
 
 			__declspec(dllimport) static const char *m_drawobj_type;
 		};
+
+		class TextObjParam : public DrawObjParam
+		{
+		public:
+
+			virtual const char *GetParamName(void) const;
+
+			TextObjParam();
+			virtual ~TextObjParam();
+
+			virtual int Create(int mode);
+			virtual int SetEach(DrawObj *);
+			virtual int GetEach(DrawObj *);
+
+			const char *ParamName(void);
+
+		private:
+
+			unsigned char m_unk_0x50[0xB8];
+
+			__declspec(dllimport) static const char m_param_name[];
+		};
 	}
 }
 
