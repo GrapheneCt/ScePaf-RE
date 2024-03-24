@@ -57,6 +57,18 @@ Library: ScePafWebMapView function: _ZN3paf17WebViewController10unk_fun_25Ev nid
 Library: ScePafWebMapView function: _ZN3paf17WebViewController10unk_fun_26Ev nidvalue: 0x4ACAC34F
 Library: ScePafWebMapView function: _ZN3paf17WebViewController10unk_fun_27Ev nidvalue: 0xF89545AE
 
+Library: ScePafWebMapView function: _ZN3paf2ui7WebViewC1Ev nidvalue: 0x28D5A209
+Library: ScePafWebMapView function: _ZN3paf2ui7WebViewC2Ev nidvalue: 0x37E2F9BD
+Library: ScePafWebMapView function: _ZN3paf2ui7WebViewD0Ev nidvalue: 0x8A929D79
+Library: ScePafWebMapView function: _ZN3paf2ui7WebViewD1Ev nidvalue: 0xDD15B10B
+Library: ScePafWebMapView function: _ZN3paf2ui7WebViewD2Ev nidvalue: 0x316A5F32
+Library: ScePafWebMapView function: _ZN3paf2ui7WebView16EnableJavaScriptEb nidvalue: 0x0A8125D7
+Library: ScePafWebMapView function: _ZN3paf2ui7WebView7LoadUrlENS_3UrlE nidvalue: 0x4F3F5380
+Library: ScePafWebMapView function: _ZN3paf2ui7WebView12EnableCookieEb nidvalue: 0xAA0A053C
+Library: ScePafWebMapView function: _ZN3paf2ui7WebView14SetCursorParamEPNS_13intrusive_ptrINS_5graph7SurfaceEEES6_S6_S6_ nidvalue: 0x23039C08
+Library: ScePafWebMapView function: _ZN3paf2ui7WebView25ScePafWebMapView_48BF783BEi nidvalue: 0x48BF783B
+
 Library: ScePafWebMapView function: _ZN3paf7webview25ScePafWebMapView_B8CFECAEEPvRNS_6common6StringES4_ nidvalue: 0xB8CFECAE
 
+Library: ScePafWebMapView variable: _ZTVN3paf2ui7WebViewE nidvalue: 0xA1403FBA
 Library: ScePafWebMapView variable: _ZTVN3paf17WebViewControllerE nidvalue: 0x603F27F4

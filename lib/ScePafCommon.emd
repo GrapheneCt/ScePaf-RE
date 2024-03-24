@@ -136,6 +136,7 @@ Library: ScePafCommon function: _ZN3paf4ViewC2ERKNS_12basic_stringIcNS_11char_tr
 Library: ScePafCommon function: _ZN3paf4ViewD0Ev nidvalue: 0xED9652F0
 Library: ScePafCommon function: _ZN3paf4ViewD1Ev nidvalue: 0x17280204
 Library: ScePafCommon function: _ZN3paf4ViewD2Ev nidvalue: 0x8BC826E1
+Library: ScePafCommon function: _ZN3paf4View10BindWidgetEPNS_6PluginEPNS_2ui6WidgetE nidvalue: 0xE234DA6E
 
 Library: ScePafCommon variable: _ZN3paf6common15_error_callbackE
 Library: ScePafCommon variable: _ZN3paf6common13property_list15PropertyElement11m_type_nameE
