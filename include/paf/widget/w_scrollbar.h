@@ -118,6 +118,7 @@ namespace paf {
 			float m_normVisible;
 			float m_normValue;
 			float m_normBase;
+			int32_t m_unk_2CC;
 
 			__declspec(dllimport) static const char *m_widget_type;
 		};

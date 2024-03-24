@@ -83,7 +83,7 @@ namespace paf {
 			MemoryAllocator m_text_allocator;
 			char *m_str;
 			char *m_str_end;
-			char m_unk_40C[0xA0];
+			char m_unk_410[0x9C];
 			float m_content_height;
 			float m_visible_top;
 			bool m_layout_done;

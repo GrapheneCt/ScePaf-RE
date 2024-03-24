@@ -154,6 +154,7 @@ namespace paf {
 			float m_children_height;
 			LayoutType m_layout_type;
 			LayoutVars m_layout_vars;
+			int m_unk_31C;
 
 			__declspec(dllimport) static const char *m_widget_type;
 
