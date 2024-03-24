@@ -96,7 +96,13 @@ namespace paf {
 		IDParam m_style_id;
 	};
 
-	class InitEventFunctionEntry;
+	class InitEventFunctionEntry
+	{
+	public:
+
+		IDParam id;
+	};
+
 	class LayoutFunctionEntry;
 	class EventFunctionEntry;
 

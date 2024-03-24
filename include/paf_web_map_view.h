@@ -7,8 +7,54 @@
 
 #include <kernel.h>
 #include <gxm.h>
+#include <paf/common/view.h>
 
 namespace paf {
+
+	namespace ui {
+		class WebView;
+	}
+
+	class WebViewController
+	{
+	public:
+
+		//ScePafWebMapView_D2EDAB2E c2
+		//ScePafWebMapView_46DA0ABA c1
+		WebViewController();
+
+		//ScePafWebMapView_A7382CB8 d1
+		//ScePafWebMapView_6F5AF8DC d0
+		//ScePafWebMapView_A0CFE141 d2
+		~WebViewController();
+
+		virtual void OnStartLoad(ui::WebView *view);
+		virtual void OnFinishLoad(ui::WebView *view, int32_t unk);
+		virtual void unk_fun_04();
+		virtual void unk_fun_05();
+		virtual void unk_fun_06();
+		virtual void OnProgressChanged(ui::WebView *view, int32_t progress);
+		virtual void OnReceivedError(ui::WebView *view, common::String *error_msg);
+		virtual void OnUrlChanged(ui::WebView *view, Url *url);
+		virtual void unk_fun_10();
+		virtual void unk_fun_11();
+		virtual void unk_fun_12();
+		virtual void unk_fun_13();
+		virtual void unk_fun_14();
+		virtual void unk_fun_15();
+		virtual void unk_fun_16();
+		virtual void unk_fun_17();
+		virtual void unk_fun_18();
+		virtual void unk_fun_19();
+		virtual void unk_fun_20();
+		virtual void unk_fun_21();
+		virtual void unk_fun_22();
+		virtual void unk_fun_23();
+		virtual void OnHistoryStackStatusChanged(ui::WebView *view, bool canBack, bool canForward);
+		virtual void unk_fun_25();
+		virtual void unk_fun_26();
+		virtual void unk_fun_27();
+	};
 
 	namespace ui {
 
@@ -22,6 +68,37 @@ namespace paf {
 			//8A929D79 d0
 			//316A5F32 d2
 			~WebView();
+
+			//ScePafWebMapView_4F3F5380
+			int32_t LoadUrl(Url url);
+
+			//ScePafWebMapView_0A8125D7
+			int32_t EnableJavaScript(bool enable);
+
+			//ScePafWebMapView_AA0A053C
+			int32_t EnableCookie(bool enable);
+
+			//ScePafWebMapView_23039C08
+			int32_t SetCursorParam(intrusive_ptr<graph::Surface> *base, intrusive_ptr<graph::Surface> *base_highlight, intrusive_ptr<graph::Surface> *interact, intrusive_ptr<graph::Surface> *interact_highlight);
+
+			//ScePafWebMapView_48BF783B
+			int32_t ScePafWebMapView_48BF783B(int32_t a1);
+
+			void SetController(WebViewController *controller)
+			{
+				m_controller = controller;
+			}
+
+			WebViewController *GetController() const
+			{
+				return m_controller;
+			}
+
+		private:
+
+			char m_unk_440[0x18];
+			WebViewController *m_controller;
+			char m_unk_45C[0x3D4];
 		};
 	}
 
@@ -38,8 +115,8 @@ namespace paf {
 			public:
 
 				SceGxmContext *gxm_ctx;
-				uint32_t width;
-				uint32_t height;
+				uint32_t viewport_width;
+				uint32_t viewport_height;
 			};
 
 			//ScePafWebMapView_5E7D0BE7
@@ -87,8 +164,8 @@ namespace paf {
 			// ScePafWebMapView_36FCBE5F d2
 			virtual ~ViewListener();
 
-			virtual int32_t Initialize(int32_t *webview) = 0;
-			virtual int32_t Term(int32_t *webview) = 0;
+			virtual int32_t Initialize(ui::Widget *webview) = 0;
+			virtual int32_t Term(ui::Widget *webview) = 0;
 			virtual bool Get_0D() = 0;
 			virtual bool IsGameAppAndMiniWebCore() = 0;
 			virtual int32_t UnloadWebCore(int32_t type) = 0;
@@ -109,7 +186,7 @@ namespace paf {
 			bool m_isMiniCore;
 			bool m_unk_10;
 			SceUID m_webcorePID;
-			int32_t *m_webview;
+			ui::Widget *m_webview;
 		};
 
 		class EditListener //size is 0x8
