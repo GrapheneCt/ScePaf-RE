@@ -92,17 +92,43 @@ namespace paf {
 		{
 		public:
 
-		private:
+			static const char *ParamName(void);
 
 			DrawObjParam()
 			{
-
+				Init();
 			}
 
-			virtual ~DrawObjParam()
-			{
+			virtual const char *GetParamName(void) const;
 
+			virtual ~DrawObjParam();
+
+			virtual int Set(void);
+			virtual int Get(void);
+			virtual int Create(int mode);
+
+			virtual int AttachPlugin(paf::Plugin *plugin){
+				m_plugin = plugin;
+				return 0;
 			}
+
+			virtual int SetEach(DrawObj *);
+			virtual int GetEach(DrawObj *);
+
+			int Init(void);
+			int AddDrawObj(DrawObj *);
+			int DelDrawObj(DrawObj *);
+			int delete_cb(DrawObj *, void *);
+
+		private:
+
+			int m_unk_0x20;
+			int m_unk_0x24;
+			paf::list<int> m_list; // TODO: fix list type
+			unsigned char m_unk_0x34[0x1C];
+
+			__declspec(dllimport) static const char m_param_name[];
+			__declspec(dllimport) static const char * const s_names[];
 		};
 
 		class DrawObj

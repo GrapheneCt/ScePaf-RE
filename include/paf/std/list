@@ -156,7 +156,7 @@ namespace paf {
 
 		void clear()
 		{
-			_list_node<_Type, _Alloc> cnode = root_node->next;
+			_list_node<_Type, _Alloc> *cnode = root_node->next;
 			if (cnode != root_node)
 			{
 				do
