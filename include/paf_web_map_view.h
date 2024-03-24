@@ -7,98 +7,125 @@
 
 #include <kernel.h>
 #include <gxm.h>
-#include <paf/common/view.h>
+#include <paf/widget/w_scroll_view.h>
 
 namespace paf {
 
 	namespace ui {
+
 		class WebView;
-	}
 
-	class WebViewController
-	{
-	public:
+		class IWebViewListener
+		{
+		public:
 
-		//ScePafWebMapView_D2EDAB2E c2
-		//ScePafWebMapView_46DA0ABA c1
-		WebViewController();
+			IWebViewListener();
 
-		//ScePafWebMapView_A7382CB8 d1
-		//ScePafWebMapView_6F5AF8DC d0
-		//ScePafWebMapView_A0CFE141 d2
-		~WebViewController();
+			virtual ~IWebViewListener();
 
-		virtual void OnStartLoad(ui::WebView *view);
-		virtual void OnFinishLoad(ui::WebView *view, int32_t unk);
-		virtual void unk_fun_04();
-		virtual void unk_fun_05();
-		virtual void unk_fun_06();
-		virtual void OnProgressChanged(ui::WebView *view, int32_t progress);
-		virtual void OnReceivedError(ui::WebView *view, common::String *error_msg);
-		virtual void OnUrlChanged(ui::WebView *view, Url *url);
-		virtual void unk_fun_10();
-		virtual void unk_fun_11();
-		virtual void unk_fun_12();
-		virtual void unk_fun_13();
-		virtual void unk_fun_14();
-		virtual void unk_fun_15();
-		virtual void unk_fun_16();
-		virtual void unk_fun_17();
-		virtual void unk_fun_18();
-		virtual void unk_fun_19();
-		virtual void unk_fun_20();
-		virtual void unk_fun_21();
-		virtual void unk_fun_22();
-		virtual void unk_fun_23();
-		virtual void OnHistoryStackStatusChanged(ui::WebView *view, bool canBack, bool canForward);
-		virtual void unk_fun_25();
-		virtual void unk_fun_26();
-		virtual void unk_fun_27();
-	};
+			virtual int32_t Initialize(WebView *webview) = 0;
+			virtual int32_t Term(WebView *webview) = 0;
+		};
 
-	namespace ui {
+		class WebViewDelegate
+		{
+		public:
+
+			WebViewDelegate();
+
+			~WebViewDelegate();
+
+			virtual void OnStartLoad(WebView *webview);
+			virtual void OnFinishLoad(WebView *webview, int32_t unk);
+			virtual void OnReceivedError(WebView *webview, int32_t error_code, paf::common::String const& error_msg);
+			virtual void OnStartLoadWithRequest(WebView *webview);
+			virtual void OnInitializedBrowser(WebView *webview);
+			virtual void OnProgressChanged(WebView *webview, int32_t progress);
+			virtual void OnTitleChanged(WebView *webview, paf::common::String const& title);
+			virtual void OnUrlChanged(WebView *webview, Url const& url);
+			virtual void unk_fun_10();
+			virtual void unk_fun_11();
+			virtual void unk_fun_12();
+			virtual void unk_fun_13();
+			virtual void unk_fun_14();
+			virtual void unk_fun_15();
+			virtual void unk_fun_16();
+			virtual void unk_fun_17();
+			virtual void unk_fun_18();
+			virtual void unk_fun_19();
+			virtual void unk_fun_20();
+			virtual void unk_fun_21();
+			virtual void unk_fun_22();
+			virtual void unk_fun_23();
+			virtual void historyStackStatusChanged(WebView *webview, bool canBack, bool canForward);
+			virtual void unk_fun_25();
+			virtual void unk_fun_26();
+			virtual void unk_fun_27();
+		};
+
+		class WebViewEditListener //size is 0x8
+		{
+		public:
+
+			WebViewEditListener();
+
+			virtual ~WebViewEditListener();
+
+			virtual int32_t f1(void *unk_1, void *unk_2) = 0;
+			virtual int32_t f2(void *unk_1) = 0;
+			virtual int32_t f3() = 0;
+			virtual int32_t f4(char *unk_1, void *unk_2) = 0;
+
+		protected:
+
+			void *m_unk_04;
+		};
 
 		class WebView : public ScrollView //0x830
 		{
-			//ScePafWebMapView_28D5A209 c1
-			//ScePafWebMapView_37E2F9BD c2
-			WebView();
+		public:
 
-			//DD15B10B d1
-			//8A929D79 d0
-			//316A5F32 d2
+			WebView(Widget *_parent, CreateParam *_param);
+
 			~WebView();
 
-			//ScePafWebMapView_4F3F5380
-			int32_t LoadUrl(Url url);
+			int32_t LoadUrl(Url const& url);
 
-			//ScePafWebMapView_0A8125D7
 			int32_t EnableJavaScript(bool enable);
 
-			//ScePafWebMapView_AA0A053C
 			int32_t EnableCookie(bool enable);
 
-			//ScePafWebMapView_23039C08
+			int32_t GoForward();
+
+			int32_t GoBack();
+
+			int32_t Wakeup();
+
+			int32_t StopLoading();
+
+			int32_t Reload();
+
 			int32_t SetCursorParam(intrusive_ptr<graph::Surface> *base, intrusive_ptr<graph::Surface> *base_highlight, intrusive_ptr<graph::Surface> *interact, intrusive_ptr<graph::Surface> *interact_highlight);
 
-			//ScePafWebMapView_48BF783B
 			int32_t ScePafWebMapView_48BF783B(int32_t a1);
 
-			void SetController(WebViewController *controller)
+			void SetDelegate(WebViewDelegate *controller)
 			{
-				m_controller = controller;
+				m_delegate = controller;
 			}
 
-			WebViewController *GetController() const
+			WebViewDelegate *GetDelegate() const
 			{
-				return m_controller;
+				return m_delegate;
 			}
 
 		private:
 
 			char m_unk_440[0x18];
-			WebViewController *m_controller;
+			WebViewDelegate *m_delegate;
 			char m_unk_45C[0x3D4];
+
+			__declspec(dllimport) static const char *m_widget_type;
 		};
 	}
 
@@ -142,74 +169,6 @@ namespace paf {
 			Context();
 
 			~Context();
-		};
-
-
-		class ViewListener //size is 0x1C
-		{
-		public:
-
-			enum
-			{
-				WEBCORE_FULL = 0,
-				WEBCORE_MINI = 1,
-			};
-
-			// ScePafWebMapView_794A8DD2 c1
-			// ScePafWebMapView_6CA6CFC0 c2
-			ViewListener();
-
-			// ScePafWebMapView_6CA6CFC0 d1
-			// ScePafWebMapView_74B967D9 d0
-			// ScePafWebMapView_36FCBE5F d2
-			virtual ~ViewListener();
-
-			virtual int32_t Initialize(ui::Widget *webview) = 0;
-			virtual int32_t Term(ui::Widget *webview) = 0;
-			virtual bool Get_0D() = 0;
-			virtual bool IsGameAppAndMiniWebCore() = 0;
-			virtual int32_t UnloadWebCore(int32_t type) = 0;
-			virtual int32_t UnloadWebCore() = 0;
-
-			void SetWebCorePID(SceUID pid)
-			{
-				m_webcorePID = pid;
-			}
-
-		protected:
-
-			int32_t m_reserved;
-			int32_t m_unk_08;
-			bool m_isInitialized;
-			bool m_unk_0D;
-			bool m_unk_0E;
-			bool m_isMiniCore;
-			bool m_unk_10;
-			SceUID m_webcorePID;
-			ui::Widget *m_webview;
-		};
-
-		class EditListener //size is 0x8
-		{
-		public:
-
-			// ScePafWebMapView_CA377603 c1
-			// ScePafWebMapView_7B01B9F2 c2
-			EditListener();
-
-			// ScePafWebMapView_6AB2C061 d1
-			// ScePafWebMapView_B3EDD645 d0
-			// ScePafWebMapView_3BCB03B2 d2
-			virtual ~EditListener();
-
-			virtual int32_t f1(void *unk_1, void *unk_2) = 0;
-			virtual int32_t f2(void *unk_1) = 0;
-			virtual int32_t f3() = 0;
-			virtual int32_t f4(char *unk_1, void *unk_2) = 0;
-
-		protected:
-
-			void *m_unk_04;
 		};
 	}
 

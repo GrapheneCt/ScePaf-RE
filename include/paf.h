@@ -71,6 +71,7 @@
 #include <paf/common/intrusive_list.h>
 #include <paf/common/transition.h>
 #include <paf/common/path.h>
+#include <paf/common/view.h>
 
 /* MISC */
 

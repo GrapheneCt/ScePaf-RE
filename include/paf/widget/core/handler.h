@@ -195,7 +195,7 @@ namespace paf {
 			virtual int32_t HandleSystemEvent(Event *e);
 			virtual int32_t HandleTimerEvent(Event *e);
 			virtual void EnableFocusEvent(bool on_off);
-			virtual int32_t EnableBackTouch(bool on_off);
+			virtual int32_t EnableTouchRearEvent(bool on_off);
 			virtual int32_t unkFun_54();
 			virtual int32_t unkFun_58();
 			virtual int32_t unkFun_5C();
