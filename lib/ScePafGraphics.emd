@@ -314,6 +314,8 @@ Library: ScePafGraphics function: _ZN3paf5graph13PlaneObjParamD2Ev
 Library: ScePafGraphics function: _ZN3paf5graph13PlaneObjParam6CreateEi
 Library: ScePafGraphics function: _ZN3paf5graph13PlaneObjParam7SetEachEPNS0_7DrawObjE
 Library: ScePafGraphics function: _ZN3paf5graph13PlaneObjParam7GetEachEPNS0_7DrawObjE
+Library: ScePafGraphics variable: _ZTVN3paf5graph13PlaneObjParamE
+Library: ScePafGraphics variable: _ZN3paf5graph13PlaneObjParam12m_param_nameE
 
 Library: ScePafGraphics function: _ZNK3paf5graph7TextObj9IsInheritEPKc
 Library: ScePafGraphics function: _ZNK3paf5graph7TextObj14GetDrawObjTypeEv
@@ -390,6 +392,8 @@ Library: ScePafGraphics function: _ZN3paf5graph12TextObjParamD2Ev
 Library: ScePafGraphics function: _ZN3paf5graph12TextObjParam6CreateEi
 Library: ScePafGraphics function: _ZN3paf5graph12TextObjParam7SetEachEPNS0_7DrawObjE
 Library: ScePafGraphics function: _ZN3paf5graph12TextObjParam7GetEachEPNS0_7DrawObjE
+Library: ScePafGraphics variable: _ZTVN3paf5graph12TextObjParamE
+Library: ScePafGraphics variable: _ZN3paf5graph12TextObjParam12m_param_nameE
 
 Library: ScePafGraphics function: _ZN3paf5graph10TextLayout17GetSelectionRangeERjS2_
 Library: ScePafGraphics function: _ZN3paf5graph10TextLayout8GetStateERi
