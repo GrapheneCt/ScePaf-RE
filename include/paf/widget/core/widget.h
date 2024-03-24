@@ -70,7 +70,7 @@ namespace paf {
 			void Init();
 
 		private:
-			unsigned char unk_0x24[0x3C];
+			unsigned char unk_0x20[0x40];
 
 			__declspec (dllimport) static const char * const s_names[];
 			__declspec (dllimport) static const char m_param_name[];
