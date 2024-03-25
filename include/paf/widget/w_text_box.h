@@ -116,6 +116,7 @@ namespace paf {
 			static void OnCaretBlinkFadeOut(Timer *timer, AnimListener *anim, void *data1, void *data2, void *data3);
 
 			__declspec(dllimport) static const char *m_widget_type;
+			__declspec(dllimport) static const float c_caretWidth;
 		};
 
 		class TextBoxEditListener

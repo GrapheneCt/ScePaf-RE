@@ -1733,6 +1733,7 @@ Library: ScePafWidget variable: _ZN3paf2ui10ScrollView13m_widget_typeE
 Library: ScePafWidget variable: _ZTVN3paf2ui7TextBoxE
 Library: ScePafWidget variable: _ZN3paf2ui7TextBox13m_widget_typeE
 Library: ScePafWidget variable: _ZTVN3paf2ui19TextBoxEditListenerE
+Library: ScePafWidget variable: _ZN3paf2ui7TextBox12c_caretWidthE
 Library: ScePafWidget variable: _ZTVN3paf2ui8ListViewE
 Library: ScePafWidget variable: _ZN3paf2ui8ListView13m_widget_typeE
 Library: ScePafWidget variable: _ZTVN3paf2ui11ItemFactoryE
