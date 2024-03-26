@@ -84,6 +84,20 @@ namespace paf {
 			void *m_unk_04;
 		};
 
+		class WebViewStyleParam : public WidgetStyleParam
+		{
+		public:
+
+			static const char *ParamName(void);
+
+			virtual const char *GetParamName(void) const;
+			virtual ~WebViewStyleParam();
+
+		private:
+
+			__declspec(dllimport) static const char m_param_name[];
+		};
+
 		class WebView : public ScrollView //0x830
 		{
 		public:
