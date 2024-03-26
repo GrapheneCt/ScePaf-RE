@@ -155,7 +155,7 @@ namespace paf {
 			int32_t unk_50;
 			int32_t unk_54;
 
-			__declspec(dllimport) static const char *m_drawobj_type;
+			__declspec(dllimport) static const char m_drawobj_type[];
 		};
 
 		class TextObjParam : public DrawObjParam

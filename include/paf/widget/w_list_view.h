@@ -152,7 +152,7 @@ namespace paf {
 			int32_t m_block_count;
 			char m_unk_424[0xC4];
 
-			__declspec(dllimport) static const char *m_widget_type;
+			__declspec(dllimport) static const char m_widget_type[];
 		};
 
 		namespace listview {

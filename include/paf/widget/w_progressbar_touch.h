@@ -91,7 +91,7 @@ namespace paf {
 			float m_labelSliderMargin;
 			char m_unk_300[0x18];
 
-			__declspec(dllimport) static const char *m_widget_type;
+			__declspec(dllimport) static const char m_widget_type[];
 		};
 	}
 }

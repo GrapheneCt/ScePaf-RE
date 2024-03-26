@@ -27,7 +27,7 @@ namespace paf {
 
 		protected: //0x2B0
 
-			__declspec(dllimport) static const char *m_widget_type;
+			__declspec(dllimport) static const char m_widget_type[];
 		};
 	}
 }

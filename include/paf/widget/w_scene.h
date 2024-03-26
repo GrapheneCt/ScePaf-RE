@@ -143,7 +143,7 @@ namespace paf {
 			DebugFocusCB m_debug_focus_func;
 			int32_t m_unk_3BC;
 
-			__declspec(dllimport) static const char *m_widget_type;
+			__declspec(dllimport) static const char m_widget_type[];
 		};
 	}
 }

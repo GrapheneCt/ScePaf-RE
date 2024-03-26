@@ -61,7 +61,7 @@ namespace paf {
 			PageScrollMode m_pageScrollMode;
 			char m_unk_2D4[0x14];
 
-			__declspec(dllimport) static const char *m_widget_type;
+			__declspec(dllimport) static const char m_widget_type[];
 		};
 	}
 }

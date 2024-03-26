@@ -181,7 +181,7 @@ namespace paf {
 			uint32_t m_dirty;
 			char m_unk_2D8[0x18];
 
-			__declspec(dllimport) static const char *m_widget_type;
+			__declspec(dllimport) static const char m_widget_type[];
 		};
 	}
 }

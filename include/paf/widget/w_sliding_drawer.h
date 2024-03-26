@@ -61,7 +61,7 @@ namespace paf {
 			math::v4 m_view_velocity;
 			math::v4 m_movable_range;
 
-			__declspec(dllimport) static const char *m_widget_type;
+			__declspec(dllimport) static const char m_widget_type[];
 		};
 	}
 }

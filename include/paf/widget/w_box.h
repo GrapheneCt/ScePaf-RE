@@ -156,7 +156,7 @@ namespace paf {
 			LayoutVars m_layout_vars;
 			int m_unk_31C;
 
-			__declspec(dllimport) static const char *m_widget_type;
+			__declspec(dllimport) static const char m_widget_type[];
 
 		private:
 

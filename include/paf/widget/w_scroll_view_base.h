@@ -174,7 +174,7 @@ namespace paf {
 			float m_snap_power;
 			char m_unk_3C4[0x3C];
 
-			__declspec(dllimport) static const char *m_widget_type;
+			__declspec(dllimport) static const char m_widget_type[];
 		};
 
 		class ScrollViewParent : public Widget
@@ -191,7 +191,7 @@ namespace paf {
 
 			char m_unk_27C[0x2C];
 
-			__declspec(dllimport) static const char *m_widget_type;
+			__declspec(dllimport) static const char m_widget_type[];
 		};
 
 		class ScrollViewTimer : public Timer

@@ -120,7 +120,7 @@ namespace paf {
 			float m_normBase;
 			int32_t m_unk_2CC;
 
-			__declspec(dllimport) static const char *m_widget_type;
+			__declspec(dllimport) static const char m_widget_type[];
 		};
 	}
 }

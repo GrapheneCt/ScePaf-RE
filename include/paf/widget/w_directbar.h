@@ -70,7 +70,7 @@ namespace paf {
 			uint32_t m_btnNum;
 			char m_unk_2A0[0x58];
 
-			__declspec(dllimport) static const char *m_widget_type;
+			__declspec(dllimport) static const char m_widget_type[];
 		};
 	}
 }

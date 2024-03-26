@@ -55,7 +55,7 @@ namespace paf {
 			bool m_unk_41D;
 			int m_unk_420[8];
 
-			__declspec(dllimport) static const char *m_widget_type;
+			__declspec(dllimport) static const char m_widget_type[];
 		};
 	}
 }

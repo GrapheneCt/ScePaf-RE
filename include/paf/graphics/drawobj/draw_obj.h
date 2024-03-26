@@ -227,7 +227,7 @@ namespace paf {
 			//common::SharedPtr<Material> m_material;
 			vector<DeleteCBInfo> m_list_delete_cb;
 
-			__declspec(dllimport) static const char *m_drawobj_type;
+			__declspec(dllimport) static const char m_drawobj_type[];
 
 		};
 

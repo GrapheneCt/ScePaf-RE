@@ -112,7 +112,7 @@ namespace paf {
 			intrusive_ptr<Surface> m_tex_surface[4];
 			int32_t m_unk_D4;
 
-			__declspec(dllimport) static const char *m_drawobj_type;
+			__declspec(dllimport) static const char m_drawobj_type[];
 		};
 
 		class PlaneObjParam : public DrawObjParam

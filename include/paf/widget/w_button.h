@@ -100,7 +100,7 @@ namespace paf {
 			int32_t m_unk_2B8;
 			int32_t m_unk_2BC;
 
-			__declspec(dllimport) static const char *m_widget_type;
+			__declspec(dllimport) static const char m_widget_type[];
 		};
 	}
 }

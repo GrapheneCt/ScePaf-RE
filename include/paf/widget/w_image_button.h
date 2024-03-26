@@ -49,7 +49,7 @@ namespace paf {
 
 			char m_unk_2C0[0xA0];
 
-			__declspec(dllimport) static const char *m_widget_type;
+			__declspec(dllimport) static const char m_widget_type[];
 		};
 	}
 }

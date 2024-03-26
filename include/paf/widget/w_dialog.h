@@ -51,7 +51,7 @@ namespace paf {
 			map <int32_t, IDParam> m_parts_id_table;
 			int32_t padding;
 
-			__declspec(dllimport) static const char *m_widget_type;
+			__declspec(dllimport) static const char m_widget_type[];
 		};
 	}
 }

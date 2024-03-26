@@ -52,7 +52,7 @@ namespace paf {
 			listview::Cell *m_cell;
 			char m_unk_280[0x50];
 
-			__declspec(dllimport) static const char *m_widget_type;
+			__declspec(dllimport) static const char m_widget_type[];
 		};
 	}
 }

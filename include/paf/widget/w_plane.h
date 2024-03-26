@@ -38,7 +38,7 @@ namespace paf {
 
 			graph::PlaneObj *m_planeobj;
 
-			__declspec(dllimport) static const char *m_widget_type;
+			__declspec(dllimport) static const char m_widget_type[];
 		};
 	}
 }

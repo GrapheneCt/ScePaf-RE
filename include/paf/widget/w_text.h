@@ -196,7 +196,7 @@ namespace paf {
 			graph::TextObj *m_pTextObj;
 			char m_unk_284[0x54];
 
-			__declspec(dllimport) static const char *m_widget_type;
+			__declspec(dllimport) static const char m_widget_type[];
 		};
 	}
 }

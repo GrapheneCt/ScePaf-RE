@@ -90,7 +90,7 @@ namespace paf {
 			Layouter *m_layouter;
 			char m_unk_4BC[0x94];
 
-			__declspec(dllimport) static const char *m_widget_type;
+			__declspec(dllimport) static const char m_widget_type[];
 		};
 	}
 }

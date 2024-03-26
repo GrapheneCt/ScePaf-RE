@@ -153,7 +153,7 @@ namespace paf {
 			uint32_t m_unk_29A : 16;
 			char m_unk_29C[0x14];
 
-			__declspec(dllimport) static const char *m_widget_type;
+			__declspec(dllimport) static const char m_widget_type[];
 		};
 	}
 }

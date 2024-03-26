@@ -1140,7 +1140,7 @@ namespace paf {
 			Focuser *m_focuser;
 			char m_unk_220[0x5C];
 
-			__declspec (dllimport) static const char *m_widget_type;
+			__declspec (dllimport) static const char m_widget_type[];
 
 			__declspec (dllimport) static int32_t s_base_destroy_count;
 

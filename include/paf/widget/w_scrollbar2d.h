@@ -76,7 +76,7 @@ namespace paf {
 			int32_t m_animFunc;
 			char m_unk_2B0[0x20];
 			
-			__declspec(dllimport) static const char *m_widget_type;
+			__declspec(dllimport) static const char m_widget_type[];
 		};
 	}
 }

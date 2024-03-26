@@ -115,7 +115,7 @@ namespace paf {
 			int m_unk_0x2A0;
 			int m_unk_0x2A4;
 
-			__declspec(dllimport) static const char *m_widget_type;
+			__declspec(dllimport) static const char m_widget_type[];
 		};
 
 
