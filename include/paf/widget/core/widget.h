@@ -57,6 +57,11 @@ namespace paf {
 			int Init();
 			wchar_t *GetString(paf::IDParam const&);
 
+			typedef struct _TextureList {
+				const char *name;
+				int index;
+			} TextureList;
+
 		private:
 			unsigned char m_unk_0x20[0x58];
 

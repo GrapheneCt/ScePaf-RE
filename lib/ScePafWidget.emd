@@ -1673,6 +1673,17 @@ Library: ScePafWidget function: _ZN3paf2ui15CompositeDrawerD0Ev
 Library: ScePafWidget function: _ZN3paf2ui15CompositeDrawerD1Ev
 Library: ScePafWidget function: _ZN3paf2ui15CompositeDrawerD2Ev
 
+Library: ScePafWidget function: _ZN3paf2ui13SlideBarParamC1Ev
+Library: ScePafWidget function: _ZN3paf2ui13SlideBarParamC2Ev
+Library: ScePafWidget function: _ZNK3paf2ui13SlideBarParam12GetParamNameEv
+Library: ScePafWidget function: _ZN3paf2ui13SlideBarParam9ParamNameEv
+Library: ScePafWidget function: _ZN3paf2ui13SlideBarParam3SetEv
+Library: ScePafWidget function: _ZN3paf2ui13SlideBarParam3GetEv
+Library: ScePafWidget function: _ZN3paf2ui13SlideBarParam6CreateEi
+Library: ScePafWidget variable: _ZTVN3paf2ui13SlideBarParamE
+Library: ScePafWidget variable: _ZN3paf2ui13SlideBarParam12m_param_nameE
+Library: ScePafWidget variable: _ZN3paf2ui13SlideBarParam13c_textureListE
+
 Library: ScePafWidget variable: _ZTVN3paf2ui11EnvironmentE
 Library: ScePafWidget variable: _ZTVN3paf2ui7HandlerE
 Library: ScePafWidget variable: _ZN3paf2ui12AnimListener12s_prop_alignE
