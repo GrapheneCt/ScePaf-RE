@@ -52,14 +52,10 @@ namespace paf {
 			virtual int32_t Set();
 			virtual int32_t Get();
 			virtual int32_t Create(int32_t mode);
-			virtual int32_t AttachPlugin(paf::Plugin *plugin){
-				m_plugin = plugin;
-				return 0;
-			}
 			virtual int32_t Write(paf::common::SharedPtr<File> fp, uint32_t type, uint32_t indent);
 
-			void Init();
-			void GetString(paf::IDParam const&);
+			int Init();
+			wchar_t *GetString(paf::IDParam const&);
 
 		private:
 			unsigned char m_unk_0x20[0x58];
@@ -80,7 +76,7 @@ namespace paf {
 			virtual int32_t Read(paf::cxml::Element const *);
 
 			int Init(void);
-			void delete_cb(paf::ui::Widget *, void *);
+			int delete_cb(paf::ui::Widget *, void *);
 			int AddWidget(paf::ui::Widget *);
 			int DelWidget(paf::ui::Widget *);
 
@@ -102,7 +98,8 @@ namespace paf {
 			virtual int32_t Create(int32_t mode);
 
 			int Init(void);
-			void delete_cb(paf::ui::Widget *, void *);
+			int delete_cb(paf::ui::Widget *, void *);
+			// TODO: fix return type
 			void GetHandler(char const *);
 			void SetHandler(int, char const *);
 			void AttachWidget(paf::ui::Widget *);
@@ -145,10 +142,36 @@ namespace paf {
 			int delete_cb(Widget *widget, void*);
 			int AddWidget(Widget *widget);
 			int DelWidget(Widget *widget);
-			void Init();
+			int Init();
 
 		private:
 			unsigned char unk_0x20[0x40];
+
+			__declspec (dllimport) static const char * const s_names[];
+			__declspec (dllimport) static const char m_param_name[];
+		};
+
+		class WidgetLayoutParam : public VersatileParam
+		{
+		public:
+			static const char *ParamName();
+			WidgetLayoutParam();
+			virtual const char *GetParamName() const;
+			virtual ~WidgetLayoutParam();
+			virtual int32_t Set();
+			virtual int32_t Get();
+			virtual int32_t Create(int32_t mode);
+			virtual int32_t Read(paf::cxml::Element *elem);
+			virtual int32_t Write(paf::common::SharedPtr<File> fp, uint32_t type, uint32_t indent);
+
+			int delete_cb(Widget *widget, void*);
+			int Init();
+			int InitResolution(int);
+			int SetTimer(paf::Timer *);
+			int Attach(paf::ui::Widget *);
+
+		private:
+			unsigned char unk_0x20[0x88];
 
 			__declspec (dllimport) static const char * const s_names[];
 			__declspec (dllimport) static const char m_param_name[];
