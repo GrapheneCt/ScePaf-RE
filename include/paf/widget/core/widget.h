@@ -90,6 +90,36 @@ namespace paf {
 			__declspec (dllimport) static const char m_param_name[];
 		};
 
+		class WidgetHandlerParam : public VersatileParam
+		{
+		public:
+			static const char *ParamName();
+			WidgetHandlerParam();
+			virtual const char *GetParamName() const;
+			virtual ~WidgetHandlerParam(); // TODO: there no destructor export.
+			virtual int32_t Set();
+			virtual int32_t Get();
+			virtual int32_t Create(int32_t mode);
+
+			int Init(void);
+			void delete_cb(paf::ui::Widget *, void *);
+			void GetHandler(char const *);
+			void SetHandler(int, char const *);
+			void AttachWidget(paf::ui::Widget *);
+
+			typedef struct _EventList {
+				const char *name;
+				int type;
+			} EventList;
+
+			__declspec (dllimport) static const EventList c_eventList[];
+
+		private:
+			unsigned char unk_0x20[0x14];
+
+			__declspec (dllimport) static const char m_param_name[];
+		};
+
 		class WidgetStyleParam : public VersatileParam
 		{
 		public:
