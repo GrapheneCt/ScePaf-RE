@@ -159,7 +159,7 @@ namespace paf {
 
 			protected:
 
-				__declspec(dllimport) static const char *m_type_name;
+				__declspec(dllimport) static const char m_type_name[];
 			};
 
 			class SegmentSource : public paf::common::RefObj
@@ -183,7 +183,7 @@ namespace paf {
 
 			protected:
 
-				__declspec(dllimport) static const char *m_type_name;
+				__declspec(dllimport) static const char m_type_name[];
 			};
 
 			class CellListAccessor
@@ -262,7 +262,7 @@ namespace paf {
 
 			protected:
 
-				__declspec(dllimport) static const char *m_type_name;
+				__declspec(dllimport) static const char m_type_name[];
 			};
 
 			extern int64_t GetCellID(ListItem *list_item);
