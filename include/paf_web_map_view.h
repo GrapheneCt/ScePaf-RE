@@ -84,6 +84,24 @@ namespace paf {
 			void *m_unk_04;
 		};
 
+		class WebViewParam : public WidgetParam
+		{
+		public:
+
+			static const char *ParamName(void);
+
+			WebViewParam();
+			virtual const char *GetParamName(void) const;
+			virtual ~WebViewParam();
+			virtual int Create(int mode);
+			virtual int Set(void);
+
+		private:
+			unsigned char m_unk_0x78[0x68];
+
+			__declspec(dllimport) static const char m_param_name[];
+		};
+
 		class WebViewStyleParam : public WidgetStyleParam
 		{
 		public:
