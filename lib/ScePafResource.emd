@@ -201,9 +201,9 @@ Library: ScePafResource function: _ZN3paf2ui11WidgetParam3GetEv
 Library: ScePafResource function: _ZN3paf2ui11WidgetParam6CreateEi
 Library: ScePafResource function: _ZN3paf2ui11WidgetParam4InitEv
 Library: ScePafResource function: _ZN3paf2ui11WidgetParam9GetStringERKNS_7IDParamE
-Library: ScePafResource varibale: _ZTVN3paf2ui11WidgetParamE
-Library: ScePafResource varibale: _ZN3paf2ui11WidgetParam12m_param_nameE
-Library: ScePafResource varibale: _ZN3paf2ui11WidgetParam7s_namesE
+Library: ScePafResource variable: _ZTVN3paf2ui11WidgetParamE
+Library: ScePafResource variable: _ZN3paf2ui11WidgetParam12m_param_nameE
+Library: ScePafResource variable: _ZN3paf2ui11WidgetParam7s_namesE
 
 Library: ScePafResource function: _ZN3paf2ui16WidgetStyleParam9ParamNameEv
 Library: ScePafResource function: _ZN3paf2ui16WidgetStyleParamC1Ev
