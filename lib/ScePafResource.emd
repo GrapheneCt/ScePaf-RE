@@ -205,6 +205,20 @@ Library: ScePafResource variable: _ZTVN3paf2ui11WidgetParamE
 Library: ScePafResource variable: _ZN3paf2ui11WidgetParam12m_param_nameE
 Library: ScePafResource variable: _ZN3paf2ui11WidgetParam7s_namesE
 
+Library: ScePafResource function: _ZN3paf2ui16WidgetSoundParamC1Ev
+Library: ScePafResource function: _ZN3paf2ui16WidgetSoundParamC2Ev
+Library: ScePafResource function: _ZNK3paf2ui16WidgetSoundParam12GetParamNameEv
+Library: ScePafResource function: _ZN3paf2ui16WidgetSoundParam9ParamNameEv
+Library: ScePafResource function: _ZN3paf2ui16WidgetSoundParam3SetEv
+Library: ScePafResource function: _ZN3paf2ui16WidgetSoundParam6CreateEi
+Library: ScePafResource function: _ZN3paf2ui16WidgetSoundParam4ReadEPKNS_4cxml7ElementE
+Library: ScePafResource function: _ZN3paf2ui16WidgetSoundParam4InitEv
+Library: ScePafResource function: _ZN3paf2ui16WidgetSoundParam9delete_cbEPNS0_6WidgetEPv
+Library: ScePafResource function: _ZN3paf2ui16WidgetSoundParam9AddWidgetEPNS0_6WidgetE
+Library: ScePafResource function: _ZN3paf2ui16WidgetSoundParam9DelWidgetEPNS0_6WidgetE
+Library: ScePafResource variable: _ZTVN3paf2ui16WidgetSoundParamE
+Library: ScePafResource variable: _ZN3paf2ui16WidgetSoundParam12m_param_nameE
+
 Library: ScePafResource function: _ZN3paf2ui16WidgetStyleParam9ParamNameEv
 Library: ScePafResource function: _ZN3paf2ui16WidgetStyleParamC1Ev
 Library: ScePafResource function: _ZN3paf2ui16WidgetStyleParamC2Ev

@@ -68,6 +68,28 @@ namespace paf {
 			__declspec (dllimport) static const char m_param_name[];
 		};
 
+		class WidgetSoundParam : public VersatileParam
+		{
+		public:
+			static const char *ParamName();
+			WidgetSoundParam();
+			virtual const char *GetParamName() const;
+			virtual ~WidgetSoundParam(); // TODO: there no destructor export.
+			virtual int32_t Set();
+			virtual int32_t Create(int32_t mode);
+			virtual int32_t Read(paf::cxml::Element const *);
+
+			int Init(void);
+			void delete_cb(paf::ui::Widget *, void *);
+			int AddWidget(paf::ui::Widget *);
+			int DelWidget(paf::ui::Widget *);
+
+		private:
+			unsigned char unk_0x20[0x1C];
+
+			__declspec (dllimport) static const char m_param_name[];
+		};
+
 		class WidgetStyleParam : public VersatileParam
 		{
 		public:
