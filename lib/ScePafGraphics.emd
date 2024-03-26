@@ -500,6 +500,7 @@ Library: ScePafGraphics variable: _ZN3paf5graph11SurfacePool11m_pool_listE
 Library: ScePafGraphics variable: _ZTVN3paf8GraphMem18GraphHeapAllocatorE
 Library: ScePafGraphics variable: _ZTVN3paf5graph7TextObjE
 Library: ScePafGraphics variable: _ZTVN3paf5graph7DrawObjE
+Library: ScePafGraphics variable: _ZTVN3paf5graph8PlaneObjE
 Library: ScePafGraphics variable: _ZTVN3paf5graph7SurfaceE
 Library: ScePafGraphics variable: _ZTVN3paf5graph11SurfaceCLUTE
 Library: ScePafGraphics variable: _ZN3paf5graph7Surface13m_active_markE
