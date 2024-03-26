@@ -193,6 +193,18 @@ Library: ScePafResource variable: _ZTVN3paf5graph12DrawObjParamE
 Library: ScePafResource variable: _ZN3paf5graph12DrawObjParam12m_param_nameE
 Library: ScePafResource variable: _ZN3paf5graph12DrawObjParam7s_namesE
 
+Library: ScePafResource function: _ZN3paf2ui11WidgetParam9ParamNameEv
+Library: ScePafResource function: _ZNK3paf2ui11WidgetParam12GetParamNameEv
+Library: ScePafResource function: _ZN3paf2ui11WidgetParam5WriteENS_6common9SharedPtrINS_4FileEEEjj
+Library: ScePafResource function: _ZN3paf2ui11WidgetParam3SetEv
+Library: ScePafResource function: _ZN3paf2ui11WidgetParam3GetEv
+Library: ScePafResource function: _ZN3paf2ui11WidgetParam6CreateEi
+Library: ScePafResource function: _ZN3paf2ui11WidgetParam4InitEv
+Library: ScePafResource function: _ZN3paf2ui11WidgetParam9GetStringERKNS_7IDParamE
+Library: ScePafResource varibale: _ZTVN3paf2ui11WidgetParamE
+Library: ScePafResource varibale: _ZN3paf2ui11WidgetParam12m_param_nameE
+Library: ScePafResource varibale: _ZN3paf2ui11WidgetParam7s_namesE
+
 Library: ScePafResource function: _ZN3paf2ui16WidgetStyleParam9ParamNameEv
 Library: ScePafResource function: _ZN3paf2ui16WidgetStyleParamC1Ev
 Library: ScePafResource function: _ZN3paf2ui16WidgetStyleParamC2Ev
