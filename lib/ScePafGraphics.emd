@@ -517,3 +517,6 @@ Library: ScePafGraphics variable: _ZN3paf5graph8PlaneObj14m_drawobj_typeE
 Library: ScePafGraphics variable: _ZN3paf5graph7TextObj14m_drawobj_typeE
 Library: ScePafGraphics variable: _ZN3paf5graph7DrawObj13s_dirty_countE
 Library: ScePafGraphics variable: _ZN3paf5graph7DrawObj8s_safetyE
+Library: ScePafGraphics variable: _ZTVN3paf5graph11SurfacePoolE
+Library: ScePafGraphics variable: _ZTVN3paf5graph3arl16FragShaderObjectE
+Library: ScePafGraphics variable: _ZTVN3paf5graph3arl16VertShaderObjectE
