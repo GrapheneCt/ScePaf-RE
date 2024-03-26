@@ -7,7 +7,10 @@
 
 #include <kernel.h>
 #include <gxm.h>
+#include <paf/widget/factory.h>
 #include <paf/widget/w_scroll_view.h>
+
+__declspec(dllimport) extern paf::ui::FactoryFuncTable g_factoryWebView;
 
 namespace paf {
 

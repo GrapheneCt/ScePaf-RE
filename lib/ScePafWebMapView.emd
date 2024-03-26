@@ -100,3 +100,4 @@ Library: ScePafWebMapView variable: _ZTVN3paf2ui16IWebViewListenerE
 Library: ScePafWebMapView variable: _ZN3paf2ui7WebView13m_widget_typeE
 Library: ScePafWebMapView variable: _ZN3paf2ui12WebViewParam12m_param_nameE
 Library: ScePafWebMapView variable: _ZN3paf2ui17WebViewStyleParam12m_param_nameE
+Library: ScePafWebMapView variable: g_factoryWebView
