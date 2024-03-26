@@ -42,6 +42,32 @@ namespace paf {
 		class Focuser;
 		class Environment;
 
+		class WidgetParam : public VersatileParam
+		{
+		public:
+			static const char *ParamName();
+			WidgetParam(); // TODO: there no constructor export.
+			virtual const char *GetParamName() const;
+			virtual ~WidgetParam();
+			virtual int32_t Set();
+			virtual int32_t Get();
+			virtual int32_t Create(int32_t mode);
+			virtual int32_t AttachPlugin(paf::Plugin *plugin){
+				m_plugin = plugin;
+				return 0;
+			}
+			virtual int32_t Write(paf::common::SharedPtr<File> fp, uint32_t type, uint32_t indent);
+
+			void Init();
+			void GetString(paf::IDParam const&);
+
+		private:
+			unsigned char m_unk_0x20[0x58];
+
+			__declspec (dllimport) static const char * const s_names[];
+			__declspec (dllimport) static const char m_param_name[];
+		};
+
 		class WidgetStyleParam : public VersatileParam
 		{
 		public:
