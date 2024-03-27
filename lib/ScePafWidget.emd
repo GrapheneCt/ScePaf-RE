@@ -1795,6 +1795,13 @@ Library: ScePafWidget function: _ZN3paf2ui16ButtonStyleParam7GetEachEPNS0_6Widge
 Library: ScePafWidget variable: _ZTVN3paf2ui18SlideBarStyleParamE
 Library: ScePafWidget variable: _ZN3paf2ui18SlideBarStyleParam12m_param_nameE
 
+Library: ScePafWidget function: _ZN3paf2ui18SlideBarSoundParamC1Ev
+Library: ScePafWidget function: _ZN3paf2ui18SlideBarSoundParamC2Ev
+Library: ScePafWidget function: _ZNK3paf2ui18SlideBarSoundParam12GetParamNameEv
+Library: ScePafWidget function: _ZN3paf2ui18SlideBarSoundParam9ParamNameEv
+Library: ScePafWidget variable: _ZTVN3paf2ui18SlideBarSoundParamE
+Library: ScePafWidget variable: _ZN3paf2ui18SlideBarSoundParam12m_param_nameE
+
 Library: ScePafWidget variable: _ZTVN3paf2ui11EnvironmentE
 Library: ScePafWidget variable: _ZTVN3paf2ui7HandlerE
 Library: ScePafWidget variable: _ZN3paf2ui12AnimListener12s_prop_alignE

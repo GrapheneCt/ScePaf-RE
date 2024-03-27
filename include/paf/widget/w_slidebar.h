@@ -49,6 +49,19 @@ namespace paf {
 			__declspec (dllimport) static const char m_param_name[];
 		};
 
+		class SlideBarSoundParam : public WidgetSoundParam
+		{
+		public:
+			static const char *ParamName();
+			SlideBarSoundParam();
+			virtual const char *GetParamName() const;
+			virtual ~SlideBarSoundParam();
+
+		private:
+
+			__declspec (dllimport) static const char m_param_name[];
+		};
+
 		class SlideBar : public Widget
 		{
 		public:
