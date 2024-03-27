@@ -1019,13 +1019,15 @@ Library: ScePafWidget function: _ZN3paf2ui16ScrollBar2dParam9ParamNameEv
 Library: ScePafWidget function: _ZN3paf2ui16ScrollBar2dParamC2Ev
 Library: ScePafWidget function: _ZN3paf2ui16ScrollBar2dParamC1Ev
 
+Library: ScePafWidget function: _ZN3paf2ui21ScrollBar2dStyleParamC1Ev
+Library: ScePafWidget function: _ZN3paf2ui21ScrollBar2dStyleParamC2Ev
 Library: ScePafWidget function: _ZNK3paf2ui21ScrollBar2dStyleParam12GetParamNameEv
 Library: ScePafWidget function: _ZN3paf2ui21ScrollBar2dStyleParam9ParamNameEv
-Library: ScePafWidget function: _ZN3paf2ui21ScrollBar2dStyleParamC2Ev
 Library: ScePafWidget function: _ZN3paf2ui21ScrollBar2dStyleParam6CreateEi
 Library: ScePafWidget function: _ZN3paf2ui21ScrollBar2dStyleParam7SetEachEPNS0_6WidgetE
 Library: ScePafWidget function: _ZN3paf2ui21ScrollBar2dStyleParam7GetEachEPNS0_6WidgetE
-Library: ScePafWidget function: _ZN3paf2ui21ScrollBar2dStyleParamC1Ev
+Library: ScePafWidget variable: _ZTVN3paf2ui21ScrollBar2dStyleParamE
+Library: ScePafWidget variable: _ZN3paf2ui21ScrollBar2dStyleParam12m_param_nameE
 
 Library: ScePafWidget function: _ZN3paf2ui14ScrollBarTouchC1EPNS0_6WidgetEPNS2_11CreateParamE
 Library: ScePafWidget function: _ZNK3paf2ui14ScrollBarTouch9IsInheritEPKc

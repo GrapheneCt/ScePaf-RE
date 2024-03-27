@@ -1,4 +1,4 @@
-﻿/*
+/*
 	Vita Development Suite Libraries
 */
 
@@ -13,6 +13,24 @@ __declspec(dllimport) extern paf::ui::FactoryFuncTable g_factoryScrollBar2d;
 namespace paf {
 
 	namespace ui {
+
+		class ScrollBar2dStyleParam : public WidgetStyleParam
+		{
+		public:
+			static const char *ParamName();
+			ScrollBar2dStyleParam();
+			virtual const char *GetParamName() const;
+			virtual ~ScrollBar2dStyleParam();
+			virtual int32_t Create(int32_t mode);
+
+			virtual int32_t SetEach(Widget *widget);
+			virtual int32_t GetEach(Widget *widget);
+
+		private:
+			unsigned char unk_0x0x60[0x1D8];
+
+			__declspec (dllimport) static const char m_param_name[];
+		};
 
 		class ScrollBar2d : public Widget
 		{
