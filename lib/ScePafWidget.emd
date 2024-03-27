@@ -1684,6 +1684,13 @@ Library: ScePafWidget variable: _ZTVN3paf2ui13SlideBarParamE
 Library: ScePafWidget variable: _ZN3paf2ui13SlideBarParam12m_param_nameE
 Library: ScePafWidget variable: _ZN3paf2ui13SlideBarParam13c_textureListE
 
+Library: ScePafWidget function: _ZN3paf2ui6CanvasC1EPNS0_6WidgetEPNS2_11CreateParamE
+Library: ScePafWidget function: _ZN3paf2ui6CanvasC2EPNS0_6WidgetEPNS2_11CreateParamE
+Library: ScePafWidget function: _ZN3paf2ui6CanvasD0Ev
+Library: ScePafWidget function: _ZN3paf2ui6CanvasD1Ev
+Library: ScePafWidget function: _ZN3paf2ui6CanvasD2Ev
+Library: ScePafWidget variable: _ZTVN3paf2ui6CanvasE
+
 Library: ScePafWidget variable: _ZTVN3paf2ui11EnvironmentE
 Library: ScePafWidget variable: _ZTVN3paf2ui7HandlerE
 Library: ScePafWidget variable: _ZN3paf2ui12AnimListener12s_prop_alignE

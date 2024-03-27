@@ -175,6 +175,7 @@
 #include <paf/widget/w_image_slidebar.h>
 #include <paf/widget/w_list_item.h>
 #include <paf/widget/w_plane.h>
+#include <paf/widget/w_canvas.h>
 #include <paf/widget/w_box.h>
 #include <paf/widget/w_radio_button.h>
 #include <paf/widget/w_image_button.h>
