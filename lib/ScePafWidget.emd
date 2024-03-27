@@ -82,6 +82,7 @@ Library: ScePafWidget function: _ZN3paf2ui17EventListenerList3AddEPNS0_13EventLi
 Library: ScePafWidget function: _ZN3paf2ui17EventListenerList8AddFrontEPNS0_13EventListenerE
 Library: ScePafWidget function: _ZN3paf2ui17EventListenerList3DelEPNS0_13EventListenerE
 Library: ScePafWidget function: _ZN3paf2ui17EventListenerList4FindEPFviPNS0_7HandlerEPNS0_5EventEPvE
+Library: ScePafWidget variable: _ZTVN3paf2ui17EventListenerListE
 
 Library: ScePafWidget function: _ZN3paf2ui10EventQueueC1Ei
 Library: ScePafWidget function: _ZN3paf2ui10EventQueueC2Ei
@@ -1913,6 +1914,7 @@ Library: ScePafWidget variable: _ZN3paf2ui12AnimListener16s_prop_showalphaE
 Library: ScePafWidget variable: _ZN3paf2ui12AnimListener11s_prop_sizeE
 Library: ScePafWidget variable: _ZTVN3paf2ui8LayouterE
 Library: ScePafWidget variable: _ZN3paf2ui8Layouter14s_enter_layoutE
+Library: ScePafWidget variable: _ZTVN3paf2ui8AnimatorE
 Library: ScePafWidget variable: _ZN3paf2ui8Animator16s_enter_animatorE
 Library: ScePafWidget variable: _ZN3paf2ui15AnimListenerObj16s_prop_obj_colorE
 Library: ScePafWidget variable: _ZN3paf2ui15AnimListenerObj15s_prop_obj_moveE
@@ -1923,6 +1925,7 @@ Library: ScePafWidget variable: _ZTVN3paf2ui13AnimQueueBaseE
 Library: ScePafWidget variable: _ZTVN3paf2ui9AnimQueueE
 Library: ScePafWidget variable: _ZTVN3paf2ui6ScreenE
 Library: ScePafWidget variable: _ZN3paf2ui6Screen13s_root_screenE
+Library: ScePafWidget variable: _ZN3paf2ui6Screen13s_target_listE
 Library: ScePafWidget variable: _ZTVN3paf2ui6WidgetE
 Library: ScePafWidget variable: _ZN3paf2ui6Widget13m_widget_typeE
 Library: ScePafWidget variable: _ZN3paf2ui6Widget20s_base_destroy_countE
@@ -2146,3 +2149,22 @@ Library: ScePafWidget variable: _ZTVN3paf2ui16PlaneButtonParamE
 Library: ScePafWidget variable: _ZTVN3paf2ui23PlaneButtonHandlerParamE
 Library: ScePafWidget variable: _ZN3paf2ui16PlaneButtonParam12m_param_nameE
 Library: ScePafWidget variable: _ZN3paf2ui23PlaneButtonHandlerParam12m_param_nameE
+
+Library: ScePafWidget variable: _ZTVN3paf2ui7FocuserE
+Library: ScePafWidget variable: _ZN3paf2ui7Focuser15s_enter_focuserE
+Library: ScePafWidget variable: _ZTVN3paf10TimerQueueE
+Library: ScePafWidget variable: _ZTVN3paf2ui8filelist15FileItemFactoryE
+Library: ScePafWidget variable: _ZTVN3paf2ui15TimeoutListenerE
+Library: ScePafWidget variable: _ZTVN3paf2ui25MultiTouchGestureListenerE
+Library: ScePafWidget variable: _ZTVN3paf2ui14AnimListenerV4E
+Library: ScePafWidget variable: _ZTVN3paf2ui14AnimListenerF1E
+Library: ScePafWidget variable: _ZTVN3paf2ui16TouchTapListenerE
+Library: ScePafWidget variable: _ZTVN3paf2ui22TouchLongPressListenerE
+Library: ScePafWidget variable: _ZTVN3paf2ui14PadTapListenerE
+Library: ScePafWidget variable: _ZTVN3paf2ui20PadLongPressListenerE
+Library: ScePafWidget variable: _ZTVN3paf2ui15UITouchListenerE
+Library: ScePafWidget variable: _ZTVN3paf2ui19UITouchRearListenerE
+Library: ScePafWidget variable: _ZTVN3paf2ui16UIAnalogListenerE
+Library: ScePafWidget variable: _ZTVN3paf2ui13UIPadListenerE
+Library: ScePafWidget variable: _ZTVN3paf2ui16UIMotionListenerE
+Library: ScePafWidget variable: _ZTVN3paf2ui12RollListenerE
