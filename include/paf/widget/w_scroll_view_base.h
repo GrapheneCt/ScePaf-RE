@@ -1,4 +1,4 @@
-﻿/*
+/*
 	Vita Development Suite Libraries
 */
 
@@ -31,6 +31,23 @@ namespace paf {
 		protected:
 
 			math::v2 m_pos;
+		};
+
+		class ScrollViewBaseStyleParam : public WidgetStyleParam
+		{
+		public:
+			static const char *ParamName();
+			ScrollViewBaseStyleParam();
+			virtual const char *GetParamName() const;
+			virtual ~ScrollViewBaseStyleParam();
+			virtual int32_t Create(int32_t mode);
+			virtual int32_t SetEach(Widget *widget);
+			virtual int32_t GetEach(Widget *widget);
+
+		private:
+			unsigned char unk_0x60[0x108];
+
+			__declspec (dllimport) static const char m_param_name[];
 		};
 
 		class ScrollViewBase : public Widget
