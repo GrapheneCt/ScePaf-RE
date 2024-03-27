@@ -1,4 +1,4 @@
-﻿/*
+/*
 	Vita Development Suite Libraries
 */
 
@@ -30,6 +30,25 @@ namespace paf {
 
 			__declspec (dllimport) static const char m_param_name[];
 			__declspec (dllimport) static const WidgetParam::TextureList c_textureList[];
+		};
+
+		class SlideBar : public Widget
+		{
+		public:
+
+			static const char *TypeName(void);
+
+			SlideBar(Widget *_parent, CreateParam *_param);
+
+			virtual ~SlideBar();
+
+			virtual bool IsInherit(char const *) const;
+			virtual char *GetTypeName(void) const;
+
+		protected:
+			unsigned char m_unk_0x27C[0x74];
+
+			__declspec (dllimport) static const char m_widget_type[];
 		};
 	}
 }
