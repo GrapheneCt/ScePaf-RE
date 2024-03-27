@@ -15,9 +15,14 @@ namespace paf {
 		{
 		public:
 
+			static const char *TypeName(void);
+
 			ItemSpin(Widget *_parent, CreateParam *_param);
 
 			virtual ~ItemSpin();
+
+			virtual bool IsInherit(char const *) const;
+			virtual const char *GetTypeName(void) const;
 
 		protected:
 			unsigned char m_unk_0x2B0[0xC];
