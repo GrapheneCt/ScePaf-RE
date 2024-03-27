@@ -186,6 +186,13 @@ namespace paf {
 		{
 		public:
 
+			virtual int HandlerProc(Event *);
+			virtual int HandleKeycodeEvent(Event *);
+			virtual int HandleTouchEvent(Event *);
+			virtual int HandleGestureEvent(Event *);
+			virtual int HandleFocusSwitchEvent(Event *);
+			virtual void EnableFocusEvent(bool);
+
 			enum
 			{
 				ORIGIN_NONE = 0,
