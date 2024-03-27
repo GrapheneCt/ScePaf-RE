@@ -1,4 +1,4 @@
-﻿/*
+/*
 	Vita Development Suite Libraries
 */
 
@@ -13,6 +13,19 @@ __declspec(dllimport) extern paf::ui::FactoryFuncTable g_factoryScrollView;
 namespace paf {
 	
 	namespace ui {
+
+		class ScrollViewStyleParam : public ScrollViewBaseStyleParam
+		{
+		public:
+			static const char *ParamName();
+			virtual const char *GetParamName() const;
+			virtual ~ScrollViewStyleParam();
+
+		private:
+			unsigned char m_unk_0x168[0x28];
+
+			__declspec (dllimport) static const char m_param_name[];
+		};
 
 		class ScrollView : public ScrollViewBase
 		{

@@ -750,6 +750,8 @@ Library: ScePafWidget function: _ZN3paf2ui15ScrollViewParam3GetEv
 
 Library: ScePafWidget function: _ZNK3paf2ui20ScrollViewStyleParam12GetParamNameEv
 Library: ScePafWidget function: _ZN3paf2ui20ScrollViewStyleParam9ParamNameEv
+Library: ScePafWidget variable: _ZTVN3paf2ui20ScrollViewStyleParamE
+Library: ScePafWidget variable: _ZN3paf2ui20ScrollViewStyleParam12m_param_nameE
 
 Library: ScePafWidget function: _ZNK3paf2ui16ScrollViewParent9IsInheritEPKc
 Library: ScePafWidget function: _ZNK3paf2ui16ScrollViewParent11GetTypeNameEv
