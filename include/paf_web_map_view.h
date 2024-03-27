@@ -56,7 +56,7 @@ namespace paf {
 			virtual void unk_fun_17();
 			virtual void unk_fun_18();
 			virtual void unk_fun_19();
-			virtual void unk_fun_20();
+			virtual void OnDownloadStart(int32_t unk, paf::Url const& url, paf::common::String const& content_type);
 			virtual void unk_fun_21();
 			virtual void unk_fun_22();
 			virtual void unk_fun_23();
@@ -137,7 +137,7 @@ namespace paf {
 			virtual int32_t unkFun_300();
 			virtual int32_t unkFun_304();
 			virtual int32_t unkFun_308();
-			virtual int32_t unkFun_30C();
+			virtual int32_t OnDownloadStart(int32_t unk, paf::Url const& url, paf::common::String const& content_type);
 			virtual int32_t unkFun_310();
 			virtual int32_t unkFun_314();
 			virtual int32_t unkFun_318();
