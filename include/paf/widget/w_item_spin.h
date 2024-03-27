@@ -22,7 +22,7 @@ namespace paf {
 			virtual ~ItemSpin();
 
 			virtual bool IsInherit(char const *) const;
-			virtual const char *GetTypeName(void) const;
+			virtual char *GetTypeName(void) const;
 
 		protected:
 			unsigned char m_unk_0x2B0[0xC];
