@@ -1756,6 +1756,12 @@ Library: ScePafWidget function: _ZN3paf2ui5Group8TypeNameEv
 Library: ScePafWidget variable: _ZTVN3paf2ui5GroupE
 Library: ScePafWidget variable: _ZN3paf2ui5Group13m_widget_typeE
 
+Library: ScePafWidget function: _ZNK3paf2ui8Supplier9IsInheritEPKc
+Library: ScePafWidget function: _ZNK3paf2ui8Supplier11GetTypeNameEv
+Library: ScePafWidget function: _ZN3paf2ui8Supplier8TypeNameEv
+Library: ScePafWidget variable: _ZTVN3paf2ui8SupplierE
+Library: ScePafWidget variable: _ZN3paf2ui8Supplier13m_widget_typeE
+
 Library: ScePafWidget variable: _ZTVN3paf2ui11EnvironmentE
 Library: ScePafWidget variable: _ZTVN3paf2ui7HandlerE
 Library: ScePafWidget variable: _ZN3paf2ui12AnimListener12s_prop_alignE

@@ -1,4 +1,4 @@
-﻿/*
+/*
 	Vita Development Suite Libraries
 */
 
@@ -6,7 +6,31 @@
 #define _VDSUITE_USER_PAF_WIDGET_W_SUPPLIER_H
 
 #include <paf/widget/factory.h>
+#include <paf/widget/w_plane.h>
 
 __declspec(dllimport) extern paf::ui::FactoryFuncTable g_factorySupplier;
+
+namespace paf {
+
+	namespace ui {
+
+		class Supplier : public Plane
+		{
+		public:
+
+			static const char *TypeName(void);
+
+			virtual ~Supplier();
+
+			virtual bool IsInherit(char const *) const;
+			virtual char *GetTypeName(void) const;
+
+		protected:
+			unsigned char m_unk_0x280[0x28];
+
+			__declspec (dllimport) static const char m_widget_type[];
+		};
+	}
+}
 
 #endif /* _VDSUITE_USER_PAF_WIDGET_W_SUPPLIER_H */
