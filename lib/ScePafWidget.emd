@@ -1092,13 +1092,15 @@ Library: ScePafWidget function: _ZN3paf2ui14ScrollBarParam9ParamNameEv
 Library: ScePafWidget function: _ZN3paf2ui14ScrollBarParamC2Ev
 Library: ScePafWidget function: _ZN3paf2ui14ScrollBarParam6CreateEi
 
+Library: ScePafWidget function: _ZN3paf2ui19ScrollBarStyleParamC1Ev
+Library: ScePafWidget function: _ZN3paf2ui19ScrollBarStyleParamC2Ev
 Library: ScePafWidget function: _ZNK3paf2ui19ScrollBarStyleParam12GetParamNameEv
 Library: ScePafWidget function: _ZN3paf2ui19ScrollBarStyleParam9ParamNameEv
-Library: ScePafWidget function: _ZN3paf2ui19ScrollBarStyleParamC2Ev
 Library: ScePafWidget function: _ZN3paf2ui19ScrollBarStyleParam6CreateEi
 Library: ScePafWidget function: _ZN3paf2ui19ScrollBarStyleParam7SetEachEPNS0_6WidgetE
 Library: ScePafWidget function: _ZN3paf2ui19ScrollBarStyleParam7GetEachEPNS0_6WidgetE
-Library: ScePafWidget function: _ZN3paf2ui19ScrollBarStyleParamC1Ev
+Library: ScePafWidget variable: _ZTVN3paf2ui19ScrollBarStyleParamE
+Library: ScePafWidget variable: _ZN3paf2ui19ScrollBarStyleParam12m_param_nameE
 
 Library: ScePafWidget function: _ZN3paf2ui13SlidingDrawer20OnPartsLayoutUpdatedEb
 Library: ScePafWidget function: _ZN3paf2ui13SlidingDrawerD1Ev
