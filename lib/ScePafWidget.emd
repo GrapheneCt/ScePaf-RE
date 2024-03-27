@@ -648,16 +648,18 @@ Library: ScePafWidget function: _ZN3paf2ui4Text18HandleTouchReleaseEv
 Library: ScePafWidget function: _ZN3paf2ui4Text17SetStyleAttributeENS_5graph18TextStyleAttributeEjjRKNS_4math2v2E
 Library: ScePafWidget function: _ZN3paf2ui4Text17GetStyleAttributeENS_5graph18TextStyleAttributeEjRNS_4math2v2E
 
+Library: ScePafWidget function: _ZN3paf2ui14TextStyleParamC1Ev
+Library: ScePafWidget function: _ZN3paf2ui14TextStyleParamC2Ev
+Library: ScePafWidget function: _ZN3paf2ui14TextStyleParamD0Ev
+Library: ScePafWidget function: _ZN3paf2ui14TextStyleParamD1Ev
+Library: ScePafWidget function: _ZN3paf2ui14TextStyleParamD2Ev
 Library: ScePafWidget function: _ZNK3paf2ui14TextStyleParam12GetParamNameEv
 Library: ScePafWidget function: _ZN3paf2ui14TextStyleParam9ParamNameEv
-Library: ScePafWidget function: _ZN3paf2ui14TextStyleParamC2Ev
-Library: ScePafWidget function: _ZN3paf2ui14TextStyleParamD1Ev
-Library: ScePafWidget function: _ZN3paf2ui14TextStyleParamD0Ev
-Library: ScePafWidget function: _ZN3paf2ui14TextStyleParamD2Ev
 Library: ScePafWidget function: _ZN3paf2ui14TextStyleParam6CreateEi
 Library: ScePafWidget function: _ZN3paf2ui14TextStyleParam7SetEachEPNS0_6WidgetE
 Library: ScePafWidget function: _ZN3paf2ui14TextStyleParam7GetEachEPNS0_6WidgetE
-Library: ScePafWidget function: _ZN3paf2ui14TextStyleParamC1Ev
+Library: ScePafWidget variable: _ZTVN3paf2ui14TextStyleParamE
+Library: ScePafWidget variable: _ZN3paf2ui14TextStyleParam12m_param_nameE
 
 Library: ScePafWidget function: _ZNK3paf2ui9TextParam12GetParamNameEv
 Library: ScePafWidget function: _ZN3paf2ui9TextParam9ParamNameEv
