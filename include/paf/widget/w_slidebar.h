@@ -32,6 +32,23 @@ namespace paf {
 			__declspec (dllimport) static const WidgetParam::TextureList c_textureList[];
 		};
 
+		class SlideBarStyleParam : public WidgetStyleParam
+		{
+		public:
+			static const char *ParamName();
+			SlideBarStyleParam();
+			virtual const char *GetParamName() const;
+			virtual ~SlideBarStyleParam();
+			virtual int32_t Create(int32_t mode);
+			virtual int32_t SetEach(Widget *widget);
+			virtual int32_t GetEach(Widget *widget);
+
+		private:
+			unsigned char unk_0x60[0x3A8];
+
+			__declspec (dllimport) static const char m_param_name[];
+		};
+
 		class SlideBar : public Widget
 		{
 		public:
