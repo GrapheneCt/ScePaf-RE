@@ -497,12 +497,14 @@ Library: ScePafWidget function: _ZN3paf2ui15StateButtonBase14OnButtonDecideEv
 Library: ScePafWidget function: _ZN3paf2ui15StateButtonBase8SetCheckEbfb
 
 Library: ScePafWidget function: _ZN3paf2ui25StateButtonBaseStyleParamC1Ev
+Library: ScePafWidget function: _ZN3paf2ui25StateButtonBaseStyleParamC2Ev
 Library: ScePafWidget function: _ZNK3paf2ui25StateButtonBaseStyleParam12GetParamNameEv
 Library: ScePafWidget function: _ZN3paf2ui25StateButtonBaseStyleParam9ParamNameEv
-Library: ScePafWidget function: _ZN3paf2ui25StateButtonBaseStyleParamC2Ev
 Library: ScePafWidget function: _ZN3paf2ui25StateButtonBaseStyleParam6CreateEi
 Library: ScePafWidget function: _ZN3paf2ui25StateButtonBaseStyleParam7SetEachEPNS0_6WidgetE
 Library: ScePafWidget function: _ZN3paf2ui25StateButtonBaseStyleParam7GetEachEPNS0_6WidgetE
+Library: ScePafWidget variable: _ZTVN3paf2ui25StateButtonBaseStyleParamE
+Library: ScePafWidget variable: _ZN3paf2ui25StateButtonBaseStyleParam12m_param_nameE
 
 Library: ScePafWidget function: _ZN3paf2ui6ButtonD1Ev
 Library: ScePafWidget function: _ZN3paf2ui6ButtonD0Ev
