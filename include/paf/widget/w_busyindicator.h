@@ -30,6 +30,24 @@ namespace paf {
 			__declspec (dllimport) static const char m_param_name[];
 		};
 
+		class BusyIndicatorStyleParam : public WidgetStyleParam
+		{
+		public:
+			static const char *ParamName();
+			BusyIndicatorStyleParam();
+			virtual const char *GetParamName() const;
+			virtual ~BusyIndicatorStyleParam();
+			virtual int32_t Create(int32_t mode);
+
+			virtual int32_t SetEach(Widget *widget);
+			virtual int32_t GetEach(Widget *widget);
+
+		private:
+			unsigned char m_unk_0x60[0x18];
+
+			__declspec (dllimport) static const char m_param_name[];
+		};
+
 		class BusyIndicator : public Widget
 		{
 		public:
