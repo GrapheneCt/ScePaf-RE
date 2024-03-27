@@ -27,6 +27,19 @@ namespace paf {
 			__declspec (dllimport) static const char m_param_name[];
 		};
 
+		class AppIconBaseStyleParam : public WidgetStyleParam
+		{
+		public:
+			static const char *ParamName();
+			AppIconBaseStyleParam();
+			virtual const char *GetParamName() const;
+			virtual ~AppIconBaseStyleParam();
+
+		private:
+
+			__declspec (dllimport) static const char m_param_name[];
+		};
+
 		class AppIconBase : public Widget
 		{
 		public:

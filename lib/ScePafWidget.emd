@@ -1778,6 +1778,13 @@ Library: ScePafWidget function: _ZNK3paf2ui16AppIconBaseParam12GetParamNameEv
 Library: ScePafWidget variable: _ZTVN3paf2ui16AppIconBaseParamE
 Library: ScePafWidget variable: _ZN3paf2ui16AppIconBaseParam12m_param_nameE
 
+Library: ScePafWidget function: _ZN3paf2ui21AppIconBaseStyleParamC1Ev
+Library: ScePafWidget function: _ZN3paf2ui21AppIconBaseStyleParamC2Ev
+Library: ScePafWidget function: _ZN3paf2ui21AppIconBaseStyleParam9ParamNameEv
+Library: ScePafWidget function: _ZNK3paf2ui21AppIconBaseStyleParam12GetParamNameEv
+Library: ScePafWidget variable: _ZTVN3paf2ui21AppIconBaseStyleParamE
+Library: ScePafWidget variable: _ZN3paf2ui21AppIconBaseStyleParam12m_param_nameE
+
 Library: ScePafWidget variable: _ZTVN3paf2ui11EnvironmentE
 Library: ScePafWidget variable: _ZTVN3paf2ui7HandlerE
 Library: ScePafWidget variable: _ZN3paf2ui12AnimListener12s_prop_alignE
