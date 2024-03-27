@@ -36,7 +36,7 @@ namespace paf {
 
 			WebViewDelegate();
 
-			~WebViewDelegate();
+			virtual ~WebViewDelegate();
 
 			virtual void OnStartLoad(WebView *webview);
 			virtual void OnFinishLoad(WebView *webview, int32_t unk);
@@ -123,6 +123,46 @@ namespace paf {
 			WebView(Widget *_parent, CreateParam *_param);
 
 			~WebView();
+
+			virtual int32_t OnStartLoad();
+			virtual int32_t OnFinishLoad();
+			virtual int32_t OnReceivedError(int32_t error_code, paf::common::String const& error_msg);
+			virtual int32_t OnStartLoadWithRequest();
+			virtual int32_t OnInitializedBrowser();
+			virtual int32_t OnProgressChanged(int32_t progress);
+			virtual int32_t OnTitleChanged(paf::common::String const& title);
+			virtual int32_t OnUrlChanged(Url const& url);
+			virtual int32_t unkFun_298();
+			virtual int32_t unkFun_29C();
+			virtual int32_t unkFun_300();
+			virtual int32_t unkFun_304();
+			virtual int32_t unkFun_308();
+			virtual int32_t unkFun_30C();
+			virtual int32_t unkFun_310();
+			virtual int32_t unkFun_314();
+			virtual int32_t unkFun_318();
+			virtual int32_t OnHistoryStackStatusChanged(bool canBack, bool canForward);
+			virtual int32_t unkFun_320();
+			virtual int32_t unkFun_324();
+			virtual int32_t unkFun_328();
+			virtual int32_t unkFun_32C();
+			virtual int32_t unkFun_330();
+			virtual int32_t unkFun_334();
+			virtual int32_t unkFun_338();
+			virtual int32_t unkFun_33C();
+			virtual int32_t unkFun_340();
+			virtual int32_t unkFun_344();
+			virtual int32_t unkFun_348();
+			virtual int32_t unkFun_34C();
+			virtual int32_t unkFun_350();
+			virtual int32_t unkFun_354();
+			virtual int32_t unkFun_358();
+			virtual int32_t unkFun_35C();
+			virtual int32_t unkFun_360();
+			virtual int32_t unkFun_364();
+			virtual int32_t unkFun_368();
+			virtual int32_t unkFun_36C();
+			virtual int32_t unkFun_370();
 
 			int32_t LoadUrl(Url const& url);
 
