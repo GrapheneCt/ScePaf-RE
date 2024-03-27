@@ -1140,6 +1140,8 @@ Library: ScePafWidget function: _ZNK3paf2ui23SlidingDrawerStyleParam12GetParamNa
 Library: ScePafWidget function: _ZN3paf2ui23SlidingDrawerStyleParam9ParamNameEv
 Library: ScePafWidget function: _ZN3paf2ui23SlidingDrawerStyleParamC2Ev
 Library: ScePafWidget function: _ZN3paf2ui23SlidingDrawerStyleParamC1Ev
+Library: ScePafWidget variable: _ZTVN3paf2ui23SlidingDrawerStyleParamE
+Library: ScePafWidget variable: _ZN3paf2ui23SlidingDrawerStyleParam12m_param_nameE
 
 Library: ScePafWidget function: _ZNK3paf2ui24SlidingDrawerLayoutParam12GetParamNameEv
 Library: ScePafWidget function: _ZN3paf2ui24SlidingDrawerLayoutParam9ParamNameEv
@@ -1195,6 +1197,8 @@ Library: ScePafWidget function: _ZN3paf2ui23ImageSlideBarStyleParam6CreateEi
 Library: ScePafWidget function: _ZN3paf2ui23ImageSlideBarStyleParam7SetEachEPNS0_6WidgetE
 Library: ScePafWidget function: _ZN3paf2ui23ImageSlideBarStyleParam7GetEachEPNS0_6WidgetE
 Library: ScePafWidget function: _ZN3paf2ui23ImageSlideBarStyleParamC1Ev
+Library: ScePafWidget variable: _ZTVN3paf2ui23ImageSlideBarStyleParamE
+Library: ScePafWidget variable: _ZN3paf2ui23ImageSlideBarStyleParam12m_param_nameE
 
 Library: ScePafWidget function: _ZN3paf2ui8ListItemC1EPNS0_6WidgetEPNS2_11CreateParamE
 Library: ScePafWidget function: _ZNK3paf2ui8ListItem9IsInheritEPKc
@@ -1219,6 +1223,8 @@ Library: ScePafWidget function: _ZN3paf2ui18ListItemStyleParamC1Ev
 Library: ScePafWidget function: _ZNK3paf2ui18ListItemStyleParam12GetParamNameEv
 Library: ScePafWidget function: _ZN3paf2ui18ListItemStyleParam9ParamNameEv
 Library: ScePafWidget function: _ZN3paf2ui18ListItemStyleParamC2Ev
+Library: ScePafWidget variable: _ZTVN3paf2ui18ListItemStyleParamE
+Library: ScePafWidget variable: _ZN3paf2ui18ListItemStyleParam12m_param_nameE
 
 Library: ScePafWidget function: _ZN3paf2ui5PlaneC1EPNS0_6WidgetEPNS2_11CreateParamE
 Library: ScePafWidget function: _ZNK3paf2ui5Plane9IsInheritEPKc
@@ -1239,6 +1245,8 @@ Library: ScePafWidget function: _ZN3paf2ui15PlaneStyleParamC1Ev
 Library: ScePafWidget function: _ZNK3paf2ui15PlaneStyleParam12GetParamNameEv
 Library: ScePafWidget function: _ZN3paf2ui15PlaneStyleParam9ParamNameEv
 Library: ScePafWidget function: _ZN3paf2ui15PlaneStyleParamC2Ev
+Library: ScePafWidget variable: _ZTVN3paf2ui15PlaneStyleParamE
+Library: ScePafWidget variable: _ZN3paf2ui15PlaneStyleParam12m_param_nameE
 
 Library: ScePafWidget function: _ZN3paf2ui3Box13SetLayoutTypeENS1_10LayoutTypeE
 Library: ScePafWidget function: _ZN3paf2ui3BoxC1EPNS0_6WidgetEPNS2_11CreateParamE
@@ -1332,6 +1340,8 @@ Library: ScePafWidget function: _ZN3paf2ui21ImageButtonStyleParam6CreateEi
 Library: ScePafWidget function: _ZN3paf2ui21ImageButtonStyleParam7SetEachEPNS0_6WidgetE
 Library: ScePafWidget function: _ZN3paf2ui21ImageButtonStyleParam7GetEachEPNS0_6WidgetE
 Library: ScePafWidget function: _ZN3paf2ui21ImageButtonStyleParam9InitParamEv
+Library: ScePafWidget variable: _ZTVN3paf2ui21ImageButtonStyleParamE
+Library: ScePafWidget variable: _ZN3paf2ui21ImageButtonStyleParam12m_param_nameE
 
 Library: ScePafWidget function: _ZNK3paf2ui23ImageButtonHandlerParam12GetParamNameEv
 Library: ScePafWidget function: _ZN3paf2ui23ImageButtonHandlerParam9ParamNameEv
@@ -1463,6 +1473,8 @@ Library: ScePafWidget function: _ZN3paf2ui19DirectBarStyleParam6CreateEi
 Library: ScePafWidget function: _ZN3paf2ui19DirectBarStyleParam7SetEachEPNS0_6WidgetE
 Library: ScePafWidget function: _ZN3paf2ui19DirectBarStyleParam7GetEachEPNS0_6WidgetE
 Library: ScePafWidget function: _ZN3paf2ui19DirectBarStyleParamC1Ev
+Library: ScePafWidget variable: _ZTVN3paf2ui19DirectBarStyleParamE
+Library: ScePafWidget variable: _ZN3paf2ui19DirectBarStyleParam12m_param_nameE
 
 Library: ScePafWidget function: _ZN3paf2ui11ProgressBar8SetValueEfbNS1_5BarIdE
 Library: ScePafWidget function: _ZN3paf2ui11ProgressBar13SetValueAsyncEfbNS1_5BarIdE
@@ -1524,6 +1536,8 @@ Library: ScePafWidget function: _ZN3paf2ui21ProgressBarStyleParam6CreateEi
 Library: ScePafWidget function: _ZN3paf2ui21ProgressBarStyleParam7SetEachEPNS0_6WidgetE
 Library: ScePafWidget function: _ZN3paf2ui21ProgressBarStyleParam7GetEachEPNS0_6WidgetE
 Library: ScePafWidget function: _ZN3paf2ui21ProgressBarStyleParamC1Ev
+Library: ScePafWidget variable: _ZTVN3paf2ui21ProgressBarStyleParamE
+Library: ScePafWidget variable: _ZN3paf2ui21ProgressBarStyleParam12m_param_nameE
 
 Library: ScePafWidget function: _ZN3paf2ui16ProgressBarTouch14GetPartsWidgetEiPi
 Library: ScePafWidget function: _ZN3paf2ui16ProgressBarTouch14CheckDirtyFlagEv
@@ -1570,6 +1584,8 @@ Library: ScePafWidget function: _ZNK3paf2ui26ProgressBarTouchStyleParam12GetPara
 Library: ScePafWidget function: _ZN3paf2ui26ProgressBarTouchStyleParam9ParamNameEv
 Library: ScePafWidget function: _ZN3paf2ui26ProgressBarTouchStyleParamC2Ev
 Library: ScePafWidget function: _ZN3paf2ui26ProgressBarTouchStyleParamC1Ev
+Library: ScePafWidget variable: _ZTVN3paf2ui26ProgressBarTouchStyleParamE
+Library: ScePafWidget variable: _ZN3paf2ui26ProgressBarTouchStyleParam12m_param_nameE
 
 Library: ScePafWidget function: _ZN3paf2ui6Camera7add_objEPNS0_6WidgetERNS_5graph8DrawInfoE
 Library: ScePafWidget function: _ZN3paf2ui6Camera5SetupEPNS0_6ScreenE
@@ -1634,6 +1650,8 @@ Library: ScePafWidget function: _ZN3paf2ui21PlaneButtonStyleParam4InitEv
 Library: ScePafWidget function: _ZN3paf2ui21PlaneButtonStyleParam6CreateEi
 Library: ScePafWidget function: _ZN3paf2ui21PlaneButtonStyleParam7SetEachEPNS0_6WidgetE
 Library: ScePafWidget function: _ZN3paf2ui21PlaneButtonStyleParam7GetEachEPNS0_6WidgetE
+Library: ScePafWidget variable: _ZTVN3paf2ui21PlaneButtonStyleParamE
+Library: ScePafWidget variable: _ZN3paf2ui21PlaneButtonStyleParam12m_param_nameE
 
 Library: ScePafWidget function: _ZNK3paf2ui23PlaneButtonHandlerParam12GetParamNameEv
 Library: ScePafWidget function: _ZN3paf2ui23PlaneButtonHandlerParam9ParamNameEv
@@ -1836,6 +1854,42 @@ Library: ScePafWidget function: _ZN3paf2ui23BusyIndicatorStyleParam7SetEachEPNS0
 Library: ScePafWidget function: _ZN3paf2ui23BusyIndicatorStyleParam7GetEachEPNS0_6WidgetE
 Library: ScePafWidget variable: _ZTVN3paf2ui23BusyIndicatorStyleParamE
 Library: ScePafWidget variable: _ZN3paf2ui23BusyIndicatorStyleParam12m_param_nameE
+
+Library: ScePafWidget function: _ZNK3paf2ui22CornerButtonStyleParam12GetParamNameEv
+Library: ScePafWidget function: _ZN3paf2ui22CornerButtonStyleParam9ParamNameEv
+Library: ScePafWidget function: _ZN3paf2ui22CornerButtonStyleParam6CreateEi
+Library: ScePafWidget function: _ZN3paf2ui22CornerButtonStyleParam7SetEachEPNS0_6WidgetE
+Library: ScePafWidget function: _ZN3paf2ui22CornerButtonStyleParam7GetEachEPNS0_6WidgetE
+Library: ScePafWidget function: _ZN3paf2ui22CornerButtonStyleParam4InitEv
+Library: ScePafWidget variable: _ZTVN3paf2ui22CornerButtonStyleParamE
+Library: ScePafWidget variable: _ZN3paf2ui22CornerButtonStyleParam12m_param_nameE
+
+Library: ScePafWidget function: _ZN3paf2ui24ScrollBarTouchStyleParamC1Ev
+Library: ScePafWidget function: _ZN3paf2ui24ScrollBarTouchStyleParamC2Ev
+Library: ScePafWidget function: _ZNK3paf2ui24ScrollBarTouchStyleParam12GetParamNameEv
+Library: ScePafWidget function: _ZN3paf2ui24ScrollBarTouchStyleParam9ParamNameEv
+Library: ScePafWidget function: _ZN3paf2ui24ScrollBarTouchStyleParam7SetEachEPNS0_6WidgetE
+Library: ScePafWidget variable: _ZTVN3paf2ui24ScrollBarTouchStyleParamE
+Library: ScePafWidget variable: _ZN3paf2ui24ScrollBarTouchStyleParam12m_param_nameE
+
+Library: ScePafWidget function: _ZNK3paf2ui22PageTurnBaseStyleParam12GetParamNameEv
+Library: ScePafWidget function: _ZN3paf2ui22PageTurnBaseStyleParam9ParamNameEv
+Library: ScePafWidget variable: _ZTVN3paf2ui22PageTurnBaseStyleParamE
+Library: ScePafWidget variable: _ZN3paf2ui22PageTurnBaseStyleParam12m_param_nameE
+
+Library: ScePafWidget function: _ZNK3paf2ui18PageTurnStyleParam12GetParamNameEv
+Library: ScePafWidget function: _ZN3paf2ui18PageTurnStyleParam9ParamNameEv
+Library: ScePafWidget function: _ZN3paf2ui18PageTurnStyleParam7SetEachEPNS0_6WidgetE
+Library: ScePafWidget variable: _ZTVN3paf2ui18PageTurnStyleParamE
+Library: ScePafWidget variable: _ZN3paf2ui18PageTurnStyleParam12m_param_nameE
+
+Library: ScePafWidget function: _ZN3paf2ui17TextBoxStyleParamC1Ev
+Library: ScePafWidget function: _ZN3paf2ui17TextBoxStyleParamC2Ev
+Library: ScePafWidget function: _ZNK3paf2ui17TextBoxStyleParam12GetParamNameEv
+Library: ScePafWidget function: _ZN3paf2ui17TextBoxStyleParam9ParamNameEv
+Library: ScePafWidget function: _ZN3paf2ui17TextBoxStyleParam7SetEachEPNS0_6WidgetE
+Library: ScePafWidget variable: _ZTVN3paf2ui17TextBoxStyleParamE
+Library: ScePafWidget variable: _ZN3paf2ui17TextBoxStyleParam12m_param_nameE
 
 Library: ScePafWidget function: _ZN3paf2ui18SlideBarSoundParamC1Ev
 Library: ScePafWidget function: _ZN3paf2ui18SlideBarSoundParamC2Ev
