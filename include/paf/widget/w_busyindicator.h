@@ -1,4 +1,4 @@
-﻿/*
+/*
 	Vita Development Suite Libraries
 */
 
@@ -13,6 +13,22 @@ __declspec(dllimport) extern paf::ui::FactoryFuncTable g_factoryBusyIndicator;
 namespace paf {
 
 	namespace ui {
+
+		class BusyIndicatorParam : public WidgetParam
+		{
+		public:
+			static const char *ParamName();
+			BusyIndicatorParam();
+			virtual const char *GetParamName() const;
+			virtual ~BusyIndicatorParam();
+			virtual int32_t Set();
+			virtual int32_t Get();
+			virtual int32_t Create(int32_t mode);
+
+		private:
+
+			__declspec (dllimport) static const char m_param_name[];
+		};
 
 		class BusyIndicator : public Widget
 		{
