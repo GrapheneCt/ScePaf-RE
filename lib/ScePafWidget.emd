@@ -1750,6 +1750,12 @@ Library: ScePafWidget function: _ZN3paf2ui8SlideBar8TypeNameEv
 Library: ScePafWidget variable: _ZTVN3paf2ui8SlideBarE
 Library: ScePafWidget variable: _ZN3paf2ui8SlideBar13m_widget_typeE
 
+Library: ScePafWidget function: _ZNK3paf2ui5Group9IsInheritEPKc
+Library: ScePafWidget function: _ZNK3paf2ui5Group11GetTypeNameEv
+Library: ScePafWidget function: _ZN3paf2ui5Group8TypeNameEv
+Library: ScePafWidget variable: _ZTVN3paf2ui5GroupE
+Library: ScePafWidget variable: _ZN3paf2ui5Group13m_widget_typeE
+
 Library: ScePafWidget variable: _ZTVN3paf2ui11EnvironmentE
 Library: ScePafWidget variable: _ZTVN3paf2ui7HandlerE
 Library: ScePafWidget variable: _ZN3paf2ui12AnimListener12s_prop_alignE
