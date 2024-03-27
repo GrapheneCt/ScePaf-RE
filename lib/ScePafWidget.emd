@@ -1801,7 +1801,7 @@ Library: ScePafWidget function: _ZNK3paf2ui18SlideBarStyleParam12GetParamNameEv
 Library: ScePafWidget function: _ZN3paf2ui18SlideBarStyleParam9ParamNameEv
 Library: ScePafWidget function: _ZN3paf2ui18SlideBarStyleParam6CreateEi
 Library: ScePafWidget function: _ZN3paf2ui18SlideBarStyleParam7SetEachEPNS0_6WidgetE
-Library: ScePafWidget function: _ZN3paf2ui16ButtonStyleParam7GetEachEPNS0_6WidgetE
+Library: ScePafWidget function: _ZN3paf2ui18SlideBarStyleParam7GetEachEPNS0_6WidgetE
 Library: ScePafWidget variable: _ZTVN3paf2ui18SlideBarStyleParamE
 Library: ScePafWidget variable: _ZN3paf2ui18SlideBarStyleParam12m_param_nameE
 
