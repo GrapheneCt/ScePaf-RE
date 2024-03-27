@@ -1693,6 +1693,11 @@ Library: ScePafWidget function: _ZN3paf2ui6CanvasD1Ev
 Library: ScePafWidget function: _ZN3paf2ui6CanvasD2Ev
 Library: ScePafWidget variable: _ZTVN3paf2ui6CanvasE
 
+Library: ScePafWidget function: _ZN3paf2ui8SpinBaseC1EPNS0_6WidgetEPNS2_11CreateParamE
+Library: ScePafWidget function: _ZN3paf2ui8SpinBaseC2EPNS0_6WidgetEPNS2_11CreateParamE
+Library: ScePafWidget variable: _ZTVN3paf2ui8SpinBaseE
+Library: ScePafWidget variable: _ZN3paf2ui8SpinBase13m_widget_typeE
+
 Library: ScePafWidget variable: _ZTVN3paf2ui11EnvironmentE
 Library: ScePafWidget variable: _ZTVN3paf2ui7HandlerE
 Library: ScePafWidget variable: _ZN3paf2ui12AnimListener12s_prop_alignE
