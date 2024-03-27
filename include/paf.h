@@ -200,6 +200,7 @@
 #include <paf/widget/w_supplier.h>
 #include <paf/widget/w_spin_base.h>
 #include <paf/widget/w_item_spin.h>
+#include <paf/widget/w_num_spin.h>
 #include <paf/widget/factory.h>
 
 /* AUTOTEST */
