@@ -1728,6 +1728,17 @@ Library: ScePafWidget function: _ZN3paf2ui12PageTurnBase8TypeNameEv
 Library: ScePafWidget variable: _ZTVN3paf2ui12PageTurnBaseE
 Library: ScePafWidget variable: _ZN3paf2ui12PageTurnBase13m_widget_typeE
 
+Library: ScePafWidget function: _ZN3paf2ui8PageTurnC1EPNS0_6WidgetEPNS2_11CreateParamE
+Library: ScePafWidget function: _ZN3paf2ui8PageTurnC2EPNS0_6WidgetEPNS2_11CreateParamE
+Library: ScePafWidget function: _ZN3paf2ui8PageTurnD0Ev
+Library: ScePafWidget function: _ZN3paf2ui8PageTurnD1Ev
+Library: ScePafWidget function: _ZN3paf2ui8PageTurnD2Ev
+Library: ScePafWidget function: _ZNK3paf2ui8PageTurn9IsInheritEPKc
+Library: ScePafWidget function: _ZNK3paf2ui8PageTurn11GetTypeNameEv
+Library: ScePafWidget function: _ZN3paf2ui8PageTurn8TypeNameEv
+Library: ScePafWidget variable: _ZTVN3paf2ui8PageTurnE
+Library: ScePafWidget variable: _ZN3paf2ui8PageTurn13m_widget_typeE
+
 Library: ScePafWidget variable: _ZTVN3paf2ui11EnvironmentE
 Library: ScePafWidget variable: _ZTVN3paf2ui7HandlerE
 Library: ScePafWidget variable: _ZN3paf2ui12AnimListener12s_prop_alignE
