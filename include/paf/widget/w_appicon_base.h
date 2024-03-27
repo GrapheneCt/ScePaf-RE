@@ -1,4 +1,4 @@
-﻿/*
+/*
 	Vita Development Suite Libraries
 */
 
@@ -10,6 +10,22 @@
 namespace paf {
 
 	namespace ui {
+
+		class AppIconBaseParam : public WidgetParam
+		{
+		public:
+			static const char *ParamName();
+			AppIconBaseParam();
+			virtual const char *GetParamName() const;
+			virtual ~AppIconBaseParam();
+			virtual int32_t Set();
+			virtual int32_t Get();
+			virtual int32_t Create(int32_t mode);
+
+		private:
+
+			__declspec (dllimport) static const char m_param_name[];
+		};
 
 		class AppIconBase : public Widget
 		{
