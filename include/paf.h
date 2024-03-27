@@ -190,6 +190,7 @@
 #include <paf/widget/w_busyindicator.h>
 #include <paf/widget/w_appicon_base.h>
 #include <paf/widget/w_appicon2d.h>
+#include <paf/widget/w_appicon_simple.h>
 #include <paf/widget/w_corner_button.h>
 #include <paf/widget/w_composite_button.h>
 #include <paf/widget/w_composite_drawer.h>
