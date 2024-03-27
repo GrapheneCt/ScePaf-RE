@@ -198,6 +198,8 @@
 #include <paf/widget/w_pageturn.h>
 #include <paf/widget/w_slidebar.h>
 #include <paf/widget/w_supplier.h>
+#include <paf/widget/w_spin_base.h>
+#include <paf/widget/w_item_spin.h>
 #include <paf/widget/factory.h>
 
 /* AUTOTEST */
