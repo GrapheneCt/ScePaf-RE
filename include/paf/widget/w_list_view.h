@@ -1,4 +1,4 @@
-﻿/*
+/*
 	Vita Development Suite Libraries
 */
 
@@ -41,6 +41,24 @@ namespace paf {
 				int32_t m_cell_index;
 			};
 		}
+
+		class ListViewStyleParam : public ScrollViewBaseStyleParam
+		{
+		public:
+			static const char *ParamName();
+			ListViewStyleParam();
+			virtual const char *GetParamName() const;
+			virtual ~ListViewStyleParam();
+			virtual int32_t Create(int32_t mode);
+
+			virtual int32_t SetEach(Widget *widget);
+			virtual int32_t GetEach(Widget *widget);
+
+		private:
+			unsigned char unk_0x0x168[0x18];
+
+			__declspec (dllimport) static const char m_param_name[];
+		};
 
 		class ListView : public ScrollViewBase
 		{

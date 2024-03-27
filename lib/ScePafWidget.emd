@@ -973,8 +973,15 @@ Library: ScePafWidget function: _ZN3paf2ui8listview12CellSizeList4FindEf
 Library: ScePafWidget function: _ZNK3paf2ui13ListViewParam12GetParamNameEv
 Library: ScePafWidget function: _ZN3paf2ui13ListViewParam9ParamNameEv
 
+Library: ScePafWidget function: _ZN3paf2ui18ListViewStyleParamC1Ev
+Library: ScePafWidget function: _ZN3paf2ui18ListViewStyleParamC2Ev
 Library: ScePafWidget function: _ZNK3paf2ui18ListViewStyleParam12GetParamNameEv
 Library: ScePafWidget function: _ZN3paf2ui18ListViewStyleParam9ParamNameEv
+Library: ScePafWidget function: _ZN3paf2ui18ListViewStyleParam6CreateEi
+Library: ScePafWidget function: _ZN3paf2ui18ListViewStyleParam7SetEachEPNS0_6WidgetE
+Library: ScePafWidget function: _ZN3paf2ui18ListViewStyleParam7GetEachEPNS0_6WidgetE
+Library: ScePafWidget variable: _ZTVN3paf2ui18ListViewStyleParamE
+Library: ScePafWidget variable: _ZN3paf2ui18ListViewStyleParam12m_param_nameE
 
 Library: ScePafWidget function: _ZN3paf2ui11ScrollBar2d14GetPartsWidgetEiPi
 Library: ScePafWidget function: _ZN3paf2ui11ScrollBar2d13SetColor_coreERKNS_4math2v4E
