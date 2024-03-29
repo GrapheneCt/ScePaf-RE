@@ -249,6 +249,16 @@ namespace paf {
 				return ((m_event_enable & event_type) != 0);
 			}
 
+			int32_t SetTimeoutEvent(int32_t id, float timeout, HandlerCB func, void *data = NULL)
+			{
+				return SetTimerListener(CB_TIMEOUT | (id & 0xFFFF), timeout, new EventCBListener(func, data));
+			}
+
+			int32_t SetIntervalEvent(int32_t id, float interval, HandlerCB func, void *data = NULL)
+			{
+				return SetTimerListener(CB_INTERVAL | (id & 0xFFFF), interval, new EventCBListener(func, data));
+			}
+
 		protected:
 
 			int32_t HandlePointEvent_core(Event *e, bool is_forward);
