@@ -56,6 +56,7 @@ Library: ScePafWidget function: _ZN3paf2ui11Environment11GetHitStackEPNS0_7HitIn
 Library: ScePafWidget function: _ZN3paf2ui11Environment16IsHitStackParentEPNS0_6WidgetE
 Library: ScePafWidget function: _ZN3paf2ui11Environment12ClearHitInfoEPNS0_6WidgetE
 Library: ScePafWidget function: _ZN3paf2ui11Environment15GetLastHitStackEPNS0_7HitInfoE
+Library: ScePafWidget function: _ZN3paf2ui11Environment17UpdateOrientationEv
 Library: ScePafWidget function: _ZN3paf2ui11Environment13SetResolutionEtt nidvalue: 0xE8F38C84
 Library: ScePafWidget function: _ZN3paf2ui11EnvironmentC1EPNS0_16EnvironmentParamEj nidvalue: 0x393F0EF0
 Library: ScePafWidget function: _ZN3paf2ui11EnvironmentC2EPNS0_16EnvironmentParamEj nidvalue: 0x038B47A4
