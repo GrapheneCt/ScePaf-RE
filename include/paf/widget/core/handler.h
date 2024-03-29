@@ -259,6 +259,11 @@ namespace paf {
 				return SetTimerListener(CB_INTERVAL | (id & 0xFFFF), interval, new EventCBListener(func, data));
 			}
 
+			int32_t KillIntervalEvent(int32_t id)
+			{
+				return KillTimer(CB_INTERVAL | (id & 0xFFFF));
+			}
+
 		protected:
 
 			int32_t HandlePointEvent_core(Event *e, bool is_forward);
