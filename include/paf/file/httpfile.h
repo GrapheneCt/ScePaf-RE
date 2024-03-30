@@ -87,7 +87,7 @@ namespace paf {
 			vector<string> header;
 			void *msg_body;
 			size_t msg_body_len;
-			int32_t unk_8C;
+			uint32_t https_flag;
 			uint32_t open_flag;
 			char unk_94[0x24];
 		};
