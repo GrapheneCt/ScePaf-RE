@@ -266,6 +266,11 @@ namespace paf {
 				return m_term_requested;
 			}
 
+			int32_t GetOrientation() const
+			{
+				return m_current_orientation;
+			}
+
 		protected:
 
 			int32_t RegisterTouchDeviceRegion(uint32_t entry, Widget *w);
@@ -282,7 +287,10 @@ namespace paf {
 
 			void OnUpdatePre();
 
-			char m_unk_004[0xD1];
+			char m_unk_004[0xB0];
+			int32_t m_current_orientation;
+			int32_t m_shell_orientation;
+			char m_unk_0BC[0x19];
 			bool m_term_requested;
 			bool m_draw_cutoff;
 			int32_t m_unk_0D8;
