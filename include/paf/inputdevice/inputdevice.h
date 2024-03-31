@@ -9,6 +9,7 @@
 #include <paf/inputdevice/pad/pad.h>
 #include <paf/inputdevice/touchscreen/touchscreen.h>
 #include <paf/inputdevice/motionsensor/motionsensor.h>
+#include <paf/inputdevice/keyboard/keyboard.h>
 
 namespace paf {
 	namespace inputdevice {
@@ -40,6 +41,12 @@ namespace paf {
 			touchscreen::Data *m_touch_rear_data_pre;
 			motionsensor::Data *m_motion_data;
 			motionsensor::Data *m_motion_data_pre;
+			int32_t m_btrm_data;
+			int32_t m_btrm_data_pre;
+			int32_t m_bdrmc_data;
+			int32_t m_bdrmc_data_pre;
+			keyboard::Data *m_keyboard_data;
+			keyboard::Data *m_keyboard_data_pre;
 		};
 
 		extern int32_t Init(InitParam& init_param);

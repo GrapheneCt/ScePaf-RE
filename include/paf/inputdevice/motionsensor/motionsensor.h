@@ -16,7 +16,8 @@ namespace paf {
 			{
 			public:
 
-				uint32_t time_stamp;
+				uint32_t unk_00;
+				uint32_t unk_04;
 				math::v3 accelerometer;
 				math::v3 gyroscope;
 				math::quaternion device_quat;

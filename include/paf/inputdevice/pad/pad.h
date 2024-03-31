@@ -51,12 +51,13 @@ namespace paf {
 					PAD_VOL_MINUS = 0x8000
 				};
 
-				uint64_t ts;
+				uint32_t unk_00;
+				uint32_t unk_04;
 				uint32_t paddata;
-				uint8_t	lx;
-				uint8_t	ly;
-				uint8_t	rx;
-				uint8_t	ry;
+				uint16_t lx;
+				uint16_t ly;
+				uint16_t rx;
+				uint16_t ry;
 			};
 
 			typedef void(*DeviceHandler)(Data*);

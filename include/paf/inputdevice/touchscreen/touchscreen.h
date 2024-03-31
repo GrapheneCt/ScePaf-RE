@@ -48,11 +48,14 @@ namespace paf {
 					STATE_MOVE = 3
 				};
 
-				uint64_t time_stamp;
+				int32_t unk_00;
+				int32_t unk_04;
 				int32_t x;
 				int32_t y;
 				int32_t force;
 				int32_t state;
+				int32_t center_orig_x;
+				int32_t center_orig_y;
 			};
 
 			class DeviceInfo
