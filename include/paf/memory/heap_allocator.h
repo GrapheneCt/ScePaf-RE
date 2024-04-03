@@ -14,6 +14,14 @@
 namespace paf {
 	namespace memory {
 
+		class HeapInfo
+		{
+		public:
+
+			int32_t num_of_free;
+			size_t total_free_size;
+		};
+
 		class HeapAllocator : public MemoryAllocator
 		{
 		public:
@@ -28,14 +36,6 @@ namespace paf {
 				bool disable_assert_on_alloc_failure;
 				AllocationBlockType memblk_type;
 				uint32_t alignment;
-			};
-
-			class HeapInfo
-			{
-			public:
-
-				int32_t num_of_free;
-				size_t total_free_size;
 			};
 
 			HeapAllocator(void *_heap_addr, size_t _heap_size, const char *_heap_name, const Option *option = NULL);
