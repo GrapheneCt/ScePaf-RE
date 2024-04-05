@@ -40,11 +40,13 @@ namespace paf {
 
 			void CBDestroyChecked(void *data);
 
-		protected: //0x28C
+		protected: // 0x290
 
 			Widget *m_slider;
 			RadioButton *m_checked;
-			char m_unk_284[0x8];
+			unsigned int m_unk_284;
+			unsigned int m_unk_288;
+			unsigned int m_unk_28C;
 
 			__declspec(dllimport) static const char m_widget_type[];
 		};
