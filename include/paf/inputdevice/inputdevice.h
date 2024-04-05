@@ -54,6 +54,8 @@ namespace paf {
 		int32_t End();
 
 		int32_t Update(float diff_time);
+
+		int32_t GetCurrPort(void);
 	}
 }
 

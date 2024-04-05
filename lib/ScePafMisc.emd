@@ -729,6 +729,7 @@ Library: ScePafMisc function: _ZN3paf11inputdevice3pad4LockEv
 Library: ScePafMisc function: _ZN3paf11inputdevice3pad6UnlockEv
 Library: ScePafMisc function: _ZN3paf11inputdevice3pad8IsLockedEv
 Library: ScePafMisc function: _ZN3paf11inputdevice3pad16SetDeviceHandlerEPFvPNS1_4DataEE
+Library: ScePafMisc function: _ZN3paf11inputdevice3pad11GetCurrPortEv
 
 Library: ScePafMisc function: _ZN3paf11inputdevice11touchscreen4InitERNS1_9InitParamE
 Library: ScePafMisc function: _ZN3paf11inputdevice11touchscreen3EndEv
