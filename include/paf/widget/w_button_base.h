@@ -128,6 +128,11 @@ namespace paf {
 				return m_disable_color;
 			}
 
+			bool IsChecked()
+			{
+				return m_is_checked;
+			}
+
 		protected: //0x2B0
 
 			int32_t m_unk_27C;
@@ -151,7 +156,11 @@ namespace paf {
 			uint32_t m_repeat_begin : 16;
 			uint32_t m_repeat_msec : 16;
 			uint32_t m_unk_29A : 16;
-			char m_unk_29C[0x14];
+			char m_unk_29C[0x10];
+			char m_unk_2AC;
+			bool m_is_checked;
+			char m_unk_2AE;
+			char m_unk_2AF;
 
 			__declspec(dllimport) static const char m_widget_type[];
 		};

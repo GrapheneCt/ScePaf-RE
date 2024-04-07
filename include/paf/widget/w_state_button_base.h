@@ -73,19 +73,11 @@ namespace paf {
 				return m_frame_time;
 			}
 
-			bool IsChecked()
-			{
-				return m_is_checked;
-			}
-
 		protected: //0x2C8
 
-			char m_unk_2B0;
-			bool m_is_checked;
-			char m_unk_2B2;
-			char m_unk_2B3;
 			int32_t m_frame_num;
 			float m_frame_time;
+			int32_t m_unk_2B8;
 			int32_t m_unk_2BC;
 			int32_t m_unk_2C0;
 			int32_t m_unk_2C4;
