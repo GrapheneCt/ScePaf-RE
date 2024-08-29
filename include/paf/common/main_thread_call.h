@@ -12,13 +12,43 @@ namespace paf {
 		{
 		public:
 
+			class StateCheck
+			{
+			public:
+
+				StateCheck()
+				{
+
+				}
+
+				virtual ~StateCheck();
+
+				virtual bool IsReady()
+				{
+					return true;
+				}
+
+				virtual void Sleep();
+			};
+
 			typedef void(*Function)(void *userdata);
 
-			MainThreadCall(Function func, void *userdata);
+			MainThreadCall(StateCheck *check, Function func, void *userdata);
 
 			~MainThreadCall();
 
-			void Run();
+			StateCheck *GetStateCheck()
+			{
+				return m_check;
+			}
+
+		private:
+
+			static void Run(void *userdata);
+
+			StateCheck *m_check;
+			Function m_func;
+			void *m_userdata;
 		};
 	}
 }
