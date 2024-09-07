@@ -563,6 +563,7 @@ Library: ScePafMisc function: _ZN3paf3rtc19GetCurrentLocalTickEPy
 Library: ScePafMisc function: _ZN3paf3rtc19ParseSQLiteDateTimeEPyPKc
 Library: ScePafMisc function: _ZN3paf3rtc19ParseSQLiteDateTimeEPyPNS0_24SQLiteDateTimeFormatTypeEPKc
 Library: ScePafMisc function: _ZN3paf3rtc21ConvertDateTimeToTickEPKNS0_8DateTimeEPy
+Library: ScePafMisc function: _ZN3paf3rtc21ConvertTickToDateTimeEPKyPNS0_8DateTimeEPNS0_10DateTimeExE
 Library: ScePafMisc function: _ZN3paf3rtc21ParseRFC3339LocalTimeEPyPKc
 Library: ScePafMisc function: _ZN3paf3rtc21GetCurrentNetworkTickEPy
 Library: ScePafMisc function: _ZN3paf3rtc19TickAddMicrosecondsEPyPKyx
