@@ -1789,6 +1789,7 @@ Library: ScePafWidget function: _ZN3paf2ui8SlideBarD2Ev
 Library: ScePafWidget function: _ZNK3paf2ui8SlideBar9IsInheritEPKc
 Library: ScePafWidget function: _ZNK3paf2ui8SlideBar11GetTypeNameEv
 Library: ScePafWidget function: _ZN3paf2ui8SlideBar8TypeNameEv
+Library: ScePafWidget function: _ZN3paf2ui8SlideBar12UpdateSliderEb
 Library: ScePafWidget variable: _ZTVN3paf2ui8SlideBarE
 Library: ScePafWidget variable: _ZN3paf2ui8SlideBar13m_widget_typeE
 
