@@ -161,6 +161,7 @@ Library: ScePafStdc function: sce_paf_printf // not present in 3.60
 Library: ScePafStdc function: sce_paf_printf_dummy
 Library: ScePafStdc function: sce_paf_wprintf // not present in 3.60
 Library: ScePafStdc function: sce_paf_wprintf_dummy
+Library: ScePafStdc function: sce_paf_vprintf_dummy
 
 Library: ScePafStdc variable: sce_paf_is_common_dialog_mode
 Library: ScePafStdc variable: _ZN3paf12basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEE12empty_stringE
