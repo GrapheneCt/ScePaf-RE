@@ -210,6 +210,7 @@ Library: ScePafMisc function: _ZN3paf5Timer24DoFuncCustomElasticOutInEfPKf
 Library: ScePafMisc function: _ZN3paf5Timer4CbrtEf
 Library: ScePafMisc function: _ZN3paf5Timer9InitTimerEfiiiPKf
 Library: ScePafMisc function: _ZN3paf5Timer8SetFuncXEiPKf
+Library: ScePafMisc function: _ZN3paf5Timer15init_func_paramEiPKfPPfPi
 
 Library: ScePafMisc function: _ZN3paf7Timer2DD1Ev
 Library: ScePafMisc function: _ZN3paf7Timer2DD0Ev
