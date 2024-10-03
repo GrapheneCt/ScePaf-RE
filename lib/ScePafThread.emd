@@ -77,7 +77,7 @@ Library: ScePafThread function: _ZN3paf6thread8SyncCallC2EPKc
 Library: ScePafThread function: _ZN3paf6thread8SyncCallD1Ev
 Library: ScePafThread function: _ZN3paf6thread8SyncCallD2Ev
 Library: ScePafThread function: _ZN3paf6thread8SyncCall5CheckEv
-Library: ScePafThread function: _ZN3paf6thread8SyncCall7EnqueueEPFvPvES2_ nidvalue: 0x004445E7
+Library: ScePafThread function: _ZN3paf6thread8SyncCall4CallEPFiPvES2_
 
 Library: ScePafThread function: _ZN3paf6thread13ThreadIDCache5CheckENS1_4TypeE
 Library: ScePafThread function: _ZN3paf6thread13ThreadIDCache3GetENS1_4TypeE
