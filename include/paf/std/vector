@@ -1,4 +1,4 @@
-#ifndef _VDSUITE_USER_PAF_STD_VECTOR_H
+﻿#ifndef _VDSUITE_USER_PAF_STD_VECTOR_H
 #define _VDSUITE_USER_PAF_STD_VECTOR_H
 
 #include <xutility>

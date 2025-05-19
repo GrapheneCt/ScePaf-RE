@@ -1,4 +1,4 @@
-#ifndef _VDSUITE_USER_PAF_STD_ALGORITHM_H
+﻿#ifndef _VDSUITE_USER_PAF_STD_ALGORITHM_H
 #define _VDSUITE_USER_PAF_STD_ALGORITHM_H
 
 #include <algorithm>
