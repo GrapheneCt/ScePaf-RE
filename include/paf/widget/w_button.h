@@ -88,7 +88,7 @@ namespace paf {
 
 			math::v4 GetLayoutSize(math::v4 const& fit_size, math::v4 const& offs);
 
-			StyleType paf::ui::Button::GetStyleType() const
+			StyleType GetStyleType() const
 			{
 				return m_style_type;
 			}

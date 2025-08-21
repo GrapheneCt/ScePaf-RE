@@ -48,7 +48,7 @@ namespace paf {
 					STATE_MOVE = 3
 				};
 
-				int32_t unk_00;
+				int32_t unk_00; // probably 64bit timestamp
 				int32_t unk_04;
 				int32_t x;
 				int32_t y;

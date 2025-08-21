@@ -26,7 +26,7 @@ namespace paf {
 				CB_SCROLLBAR_TOUCH_END = 0x10000003
 			};
 
-			enum PageScrollMode
+			enum PageScrollMode : int32_t
 			{
 				PAGE_SCROLL_MODE_OFF = 0,
 				PAGE_SCROLL_MODE_AUTO = 1,

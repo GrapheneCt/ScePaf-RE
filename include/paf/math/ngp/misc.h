@@ -58,7 +58,7 @@ namespace paf {
 
 		static inline bool is_pow2(int i)
 		{
-			return ((i | 0x80000000U) & i - 1U) == 0;
+			return ((i | 0x80000000U) & (i - 1U)) == 0;
 		}
 
 		static float rand1(uint32_t *seed)

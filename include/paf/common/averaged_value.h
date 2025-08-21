@@ -60,6 +60,7 @@ namespace paf {
 					_last_avg = _sum / _avg;
 					_count = 0;
 				}
+				return *this;
 			}
 
 			operator float() const

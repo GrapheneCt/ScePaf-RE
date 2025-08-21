@@ -5,7 +5,6 @@
 #ifndef _VDSUITE_USER_PAF_COMMON_CALL_LIST_H
 #define _VDSUITE_USER_PAF_COMMON_CALL_LIST_H
 
-#include <scetypes.h>
 #include <paf/thread/rmutex.h>
 
 namespace paf {

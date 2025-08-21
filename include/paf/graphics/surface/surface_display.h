@@ -7,7 +7,11 @@
 
 #include <stddef.h>
 #include <stdint.h>
+#ifdef __SNC__
 #include <scetypes.h>
+#else
+#include <psp2/types.h>
+#endif
 #include <paf/paf_types.h>
 #include <paf/graphics/surface/surface_base.h>
 #include <paf/graphics/surface/surface_screen.h>

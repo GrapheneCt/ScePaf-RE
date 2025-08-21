@@ -7,7 +7,6 @@
 
 #include <stdint.h>
 #include <stddef.h>
-#include <kernel.h>
 #include <paf/paf_types.h>
 #include <paf/file/file.h>
 #include <paf/file/localfile_types.h>

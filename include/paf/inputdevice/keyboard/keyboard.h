@@ -6,7 +6,6 @@
 #define _VDSUITE_USER_PAF_INPUTDEVICE_KEYBOARD_KEYBOARD_H
 
 #include <stdint.h>
-#include <ctrl.h>
 
 namespace paf {
 	namespace inputdevice {

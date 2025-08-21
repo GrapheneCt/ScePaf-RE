@@ -7,8 +7,12 @@
 
 #include <stdint.h>
 #include <stddef.h>
-#include <kernel.h>
 #include <paf/paf_types.h>
+#ifdef __SNC__
+#include <kernel.h>
+#else
+#include <psp2/io/stat.h>
+#endif
 
 namespace paf {
 

@@ -6,7 +6,11 @@
 #define _VDSUITE_USER_PAF_MODULE_MODULE_H
 
 #include <stdint.h>
+#ifdef __SNC__
 #include <scetypes.h>
+#else
+#include <psp2/types.h>
+#endif
 #include <paf/std/stdcxx.h>
 
 namespace paf {

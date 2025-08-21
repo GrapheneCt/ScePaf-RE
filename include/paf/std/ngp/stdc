@@ -1,7 +1,11 @@
 #ifndef _PAF_STD_STDC_H
 #define _PAF_STD_STDC_H
 
+#ifdef __SNC__
 #include <scetypes.h>
+#else
+#include <psp2/types.h>
+#endif
 
 namespace paf {
 	class TTY

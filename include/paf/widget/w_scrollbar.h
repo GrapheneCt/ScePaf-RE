@@ -43,7 +43,7 @@ namespace paf {
 				OBJ_SCROLLBAR_END = 2
 			};
 
-			enum ScrollType
+			enum ScrollType : int32_t
 			{
 				SCROLL_TYPE_VERTICAL = 0,
 				SCROLL_TYPE_HORIZONTAL = 1

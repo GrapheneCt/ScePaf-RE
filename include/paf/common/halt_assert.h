@@ -5,7 +5,7 @@
 #ifndef _VDSUITE_USER_PAF_COMMON_HALT_ASSERT_H
 #define _VDSUITE_USER_PAF_COMMON_HALT_ASSERT_H
 
-#include <scetypes.h>
+#include <stdbool.h>
 
 namespace paf {
 	namespace common_internal {
@@ -19,7 +19,7 @@ namespace paf {
 
 	namespace common {
 
-		__declspec (dllimport) void* _error_callback;
+		__declspec (dllimport) extern void* _error_callback;
 	}
 }
 

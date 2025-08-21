@@ -7,7 +7,6 @@
 
 #include <stdint.h>
 #include <stddef.h>
-#include <kernel.h>
 #include <paf/thread/rmutex.h>
 #include <paf/common/shared_ptr.h>
 #include <paf/file/file.h>

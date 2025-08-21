@@ -40,13 +40,13 @@ namespace paf {
 				PARTS_IMAGE_SLIDEBAR_END = 2
 			};
 
-			enum BaseMode
+			enum BaseMode : int32_t
 			{
 				BASE_MODE_ZERO_BASED = 0,
 				BASE_MODE_ONE_BASED = 1
 			};
 
-			enum TextureMode
+			enum TextureMode : int32_t
 			{
 				TEXTURE_MODE_WHOLE = 0,
 				TEXTURE_MODE_STEP = 1

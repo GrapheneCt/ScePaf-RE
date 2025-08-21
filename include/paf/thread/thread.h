@@ -6,8 +6,13 @@
 #define _VDSUITE_USER_PAF_THREAD_THREAD_H
 
 #include <stdint.h>
+#ifdef __SNC__
 #include <scetypes.h>
 #include <kernel/types.h>
+#else
+#include <psp2/types.h>
+#include <psp2/kernel/sysmem.h>
+#endif
 #include <paf/thread/threadid.h>
 
 namespace paf {

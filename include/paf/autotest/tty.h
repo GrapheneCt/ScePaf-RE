@@ -7,7 +7,11 @@
 
 #include <stdint.h>
 #include <stddef.h>
+#ifdef __SNC__
 #include <kernel.h>
+#else
+#include <psp2/kernel/processmgr.h>
+#endif
 
 namespace paf {
 	namespace autotest
@@ -21,7 +25,7 @@ namespace paf {
 			TestType_Event
 		};
 
-#if defined(SCE_PAF_TOOL_PRX)
+#if defined(SCE_PAF_TOOL_PRX) && defined(__SNC__)
 
 #pragma comment(lib, "libScePafAutoTestTty_stub_weak.a")
 
@@ -45,7 +49,7 @@ namespace paf {
 		#define SCE_PAF_AUTO_TEST_DUMP_FOCUS(format, ...)	paf::autotest::Dump(paf::autotest::TestType_Focus, format, ##__VA_ARGS__)
 		#define SCE_PAF_AUTO_TEST_DUMP_EVENT(format, ...)	paf::autotest::Dump(paf::autotest::TestType_Event, format, ##__VA_ARGS__)
 #else
-		static SceVoid Dump(TestType type, const char *fmt, ...)
+		static void Dump(TestType type, const char *fmt, ...)
 		{
 
 		}

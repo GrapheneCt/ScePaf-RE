@@ -900,7 +900,7 @@ namespace paf {
 
 			int32_t SetAnimDelay(int32_t id, float time, int32_t option)
 			{
-				Timer *timer = new Timer(time, Timer::FUNC_LINEAR, 0, -1, NULL, NULL);
+				Timer *timer = new Timer(time, Timer::FUNC_LINEAR, 0, -1, NULL, 0);
 				AnimListener *listener = new AnimListener(timer, this, NULL, NULL, NULL);
 				return  SetAnimListener(id, listener, option);
 			}

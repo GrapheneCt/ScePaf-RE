@@ -5,8 +5,12 @@
 #ifndef _VDSUITE_USER_PAF_WEB_MAP_VIEW_H
 #define _VDSUITE_USER_PAF_WEB_MAP_VIEW_H
 
-#include <kernel.h>
+#include <stdint.h>
+#ifdef __SNC__
 #include <gxm.h>
+#else
+#include <psp2/gxm.h>
+#endif
 #include <paf/widget/factory.h>
 #include <paf/widget/w_scroll_view.h>
 

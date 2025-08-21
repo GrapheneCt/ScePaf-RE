@@ -7,7 +7,11 @@
 
 #include <stdint.h>
 #include <stddef.h>
+#ifdef __SNC__
 #include <scetypes.h>
+#else
+#include <psp2/types.h>
+#endif
 #include <paf/paf_types.h>
 #include <paf/std/stdcxx.h>
 #include <paf/plugin.h>
@@ -220,7 +224,7 @@ namespace paf {
 
 		Locale GetCommonResourceLocale() const;
 
-		Locale paf::Framework::GetLocale() const
+		Locale GetLocale() const
 		{
 			return m_locale;
 		}

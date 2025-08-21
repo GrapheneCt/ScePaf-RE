@@ -33,7 +33,7 @@ namespace paf {
 				CB_PROGRESSBAR_TOUCH_END = 0x10000004
 			};
 
-			enum SliderMode
+			enum SliderMode : int32_t
 			{
 				SLIDER_MODE_NORMAL = 0,
 				SLIDER_MODE_LIMITED_BY_BACK = 1

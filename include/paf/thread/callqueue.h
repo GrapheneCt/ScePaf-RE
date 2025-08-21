@@ -6,7 +6,6 @@
 #define _VDSUITE_USER_PAF_THREAD_CALLQUEUE_H
 
 #include <stdint.h>
-#include <scetypes.h>
 #include <paf/thread/mutex.h>
 
 namespace paf {

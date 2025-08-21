@@ -6,7 +6,6 @@
 #define _VDSUITE_USER_PAF_JOB_JOB_H
 
 #include <stdint.h>
-#include <scetypes.h>
 #include <paf/std/stdcxx.h>
 #include <paf/common/shared_ptr.h>
 
@@ -59,11 +58,11 @@ namespace paf {
 
 			virtual ~JobItem();
 
-			virtual SceVoid Cancel();
+			virtual void Cancel();
 
-			virtual SceVoid Run() = 0;
+			virtual void Run() = 0;
 
-			virtual SceVoid Finish() = 0;
+			virtual void Finish() = 0;
 
 			bool IsCanceled() const;
 
@@ -87,9 +86,9 @@ namespace paf {
 
 				~Option() { };
 
-				SceInt32 workerPriority;
-				SceSize workerStackSize;
-				SceUInt32 workerNum;
+				int32_t workerPriority;
+				uint32_t workerStackSize;
+				uint32_t workerNum;
 				thread::Thread::Option *workerOpt;
 
 			};

@@ -18,9 +18,10 @@ namespace paf {
 		{
 		public:
 
-			EventCBListener(HandlerCB func, void *data) : m_func(func), m_data(data)
+			EventCBListener(HandlerCB func, void *data)
 			{
-
+				m_func = func;
+				m_data = data;
 			}
 
 			virtual ~EventCBListener()

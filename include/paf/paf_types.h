@@ -11,7 +11,9 @@
 extern "C" {
 #endif
 
+#ifdef __SNC__
 typedef int64_t off_t;
+#endif
 
 typedef enum ImageMode {
 	ImageMode_NONE = -1,

@@ -18,7 +18,7 @@ namespace paf {
 		{
 		public:
 
-			enum AlignMode
+			enum AlignMode : int32_t
 			{
 				ALIGN_CENTER = 0,
 				ALIGN_NONE = 0,
@@ -30,7 +30,7 @@ namespace paf {
 				ALIGN_TOP = 2
 			};
 
-			enum ScaleMode
+			enum ScaleMode : int32_t
 			{
 				SCALE_SIZE = 0,
 				SCALE_SURFACE = 1,

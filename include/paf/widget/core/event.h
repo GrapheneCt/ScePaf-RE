@@ -49,27 +49,27 @@ namespace paf {
 
 			void Forward()
 			{
-				type = type & 0xfff0ffff | ROUTE_FORWARD;
+				type = (type & 0xfff0ffff) | ROUTE_FORWARD;
 			}
 
 			void Back()
 			{
-				type = type & 0xfff0ffff | ROUTE_BACK;
+				type = (type & 0xfff0ffff) | ROUTE_BACK;
 			}
 
 			void Consume()
 			{
-				type = type & 0xf0ffffff | STATE_CONSUME;
+				type = (type & 0xf0ffffff) | STATE_CONSUME;
 			}
 
 			void Direct()
 			{
-				type = type & 0xff0fffff | MODE_DIRECT;
+				type = (type & 0xff0fffff) | MODE_DIRECT;
 			}
 
 			void Do(uint32_t _type, Handler *w)
 			{
-				type = type & 0xff0fffff | MODE_DO;
+				type = (type & 0xff0fffff) | MODE_DO;
 				dotype = _type;
 				target = w;
 			}
@@ -91,7 +91,7 @@ namespace paf {
 
 			void Grabbed()
 			{
-				type = type & 0xfffffff | 0x10000000;
+				type = (type & 0xfffffff) | 0x10000000;
 			}
 
 			void SetDetail(uint32_t _detail)
@@ -101,7 +101,7 @@ namespace paf {
 
 			void SetRoute(int32_t route)
 			{
-				type = type & 0xfff0ffff | route;
+				type = (type & 0xfff0ffff) | route;
 			}
 
 			void SetTarget(Handler *w)
@@ -115,7 +115,7 @@ namespace paf {
 
 			void SetType(uint32_t _type)
 			{
-				type = type & 0xffff0000 | _type & 0xffff;
+				type = (type & 0xffff0000) | (_type & 0xffff);
 			}
 
 			int32_t SetValue4(int32_t val, int32_t num)
@@ -135,7 +135,7 @@ namespace paf {
 
 			void Term()
 			{
-				type = type & 0xfff0ffff | 0x40000;
+				type = (type & 0xfff0ffff) | 0x40000;
 			}
 
 			Event& operator=(Event const& rhs)

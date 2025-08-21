@@ -7,7 +7,6 @@
 
 #include <stdint.h>
 #include <stddef.h>
-#include <kernel.h>
 #include <paf/std/stdcxx.h>
 #include <paf/thread/rmutex.h>
 #include <paf/thread/rwlock.h>

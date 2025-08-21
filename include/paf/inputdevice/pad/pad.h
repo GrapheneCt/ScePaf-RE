@@ -6,7 +6,6 @@
 #define _VDSUITE_USER_PAF_INPUTDEVICE_PAD_PAD_H
 
 #include <stdint.h>
-#include <ctrl.h>
 
 namespace paf {
 	namespace inputdevice {
@@ -51,7 +50,7 @@ namespace paf {
 					PAD_VOL_MINUS = 0x8000
 				};
 
-				uint32_t unk_00;
+				uint32_t unk_00;  // probably 64bit timestamp
 				uint32_t unk_04;
 				uint32_t paddata;
 				uint16_t lx;

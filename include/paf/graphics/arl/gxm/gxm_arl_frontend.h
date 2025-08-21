@@ -6,7 +6,11 @@
 #define _VDSUITE_USER_PAF_GRAPHICS_ARL_GXM_GXM_ARL_FRONTEND_H
 
 #include <stdint.h>
+#ifdef __SNC__
 #include <gxm.h>
+#else
+#include <psp2/gxm.h>
+#endif
 #include <paf/graphics/arl/arl_defines.h>
 #include <paf/common/shared_ptr.h>
 #include <paf/math/math.h>

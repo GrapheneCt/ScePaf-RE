@@ -8,7 +8,9 @@
 #include <paf/std/ngp/memory>
 #include <paf/std/ngp/list>
 #include <paf/std/ngp/utility>
-#include <paf/std/ngp/xtree>
+#ifdef __SNC__
+#include <paf/std/ngp/xtree> ///< Needed for paf::map implementation with SNC
+#endif
 #include <paf/std/ngp/map>
 #include <paf/std/ngp/vector>
 #include <paf/std/ngp/string>

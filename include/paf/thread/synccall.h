@@ -6,7 +6,11 @@
 #define _VDSUITE_USER_PAF_THREAD_SYNCCALL_H
 
 #include <stdint.h>
+#ifdef __SNC__
 #include <scetypes.h>
+#else
+#include <psp2/types.h>
+#endif
 
 namespace paf {
 	namespace thread {

@@ -7,7 +7,12 @@
 
 #include <stddef.h>
 #include <stdint.h>
+#ifdef __SNC__
 #include <gxm.h>
+#else
+#include <psp2/gxm.h>
+#include <psp2/kernel/cpu.h>
+#endif
 #include <paf/paf_types.h>
 #include <paf/std/stdcxx.h>
 #include <paf/thread/mutex.h>
@@ -53,7 +58,11 @@ namespace paf {
 
 			int32_t UnsafeRelease()
 			{
+#ifdef __SNC__
 				sceAtomicDecrement32AcqRel(&m_ref_count);
+#else
+				sceKernelAtomicAddAndGet32((SceInt32 *)&m_ref_count, ~0);
+#endif
 				return m_ref_count;
 			};
 
@@ -232,7 +241,7 @@ namespace paf {
 
 			static intrusive_ptr<Surface> Load(SurfacePool *pool, common::SharedPtr<File> src, LoadOption *option = NULL);
 
-			static intrusive_ptr<Surface> Load(SurfacePool *pool, void *buf, off_t size, LoadOption *option);
+			static intrusive_ptr<Surface> Load(SurfacePool *pool, void *buf, int64_t size, LoadOption *option);
 
 			//static intrusive_ptr<Surface> Load(SurfacePool *pool, void *buf, off_t size, uint32_t ununsed = 0, LoadOption *option = NULL);
 
@@ -352,7 +361,11 @@ namespace paf {
 
 			int32_t UnsafeRelease()
 			{
+#ifdef __SNC__
 				sceAtomicDecrement32AcqRel(&m_ref_count);
+#else
+				sceKernelAtomicAddAndGet32((SceInt32 *)&m_ref_count, ~0);
+#endif
 				return m_ref_count;
 			};
 
