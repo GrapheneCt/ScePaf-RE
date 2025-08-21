@@ -7,9 +7,7 @@
 
 #include <stdint.h>
 #include <stddef.h>
-#include <paf/std/string>
-#include <paf/std/vector>
-#include <paf/std/map>
+#include <paf/std/stdcxx.h>
 #include <paf/common/shared_ptr.h>
 #include <paf/versatileparam/idparam.h>
 

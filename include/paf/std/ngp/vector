@@ -1,8 +1,8 @@
-﻿#ifndef _VDSUITE_USER_PAF_STD_VECTOR_H
-#define _VDSUITE_USER_PAF_STD_VECTOR_H
+#ifndef _PAF_STD_VECTOR_H
+#define _PAF_STD_VECTOR_H
 
 #include <xutility>
-#include <paf/std/memory>
+#include <paf/std/ngp/memory>
 #include <paf/common/halt_assert.h>
 
 namespace paf {

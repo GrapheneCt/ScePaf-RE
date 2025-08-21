@@ -7,8 +7,7 @@
 
 #include <stdint.h>
 #include <stddef.h>
-#include <paf/std/list>
-#include <paf/std/memory>
+#include <paf/std/stdcxx.h>
 #include <paf/math/math.h>
 #include <paf/graphics/surface/surface.h>
 #include <paf/graphics/graphics.h>

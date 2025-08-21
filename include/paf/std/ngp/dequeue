@@ -1,0 +1,7 @@
+#ifndef _PAF_STD_DEQUEUE_H
+#define _PAF_STD_DEQUEUE_H
+
+#include <dequeue>
+#include <paf/std/ngp/std_bridge>
+
+#endif

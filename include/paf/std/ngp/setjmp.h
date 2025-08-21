@@ -1,9 +1,5 @@
-﻿/*
-	Vita Development Suite Libraries
-*/
-
-#ifndef _VDSUITE_USER_PAF_STD_SETJMP_H
-#define _VDSUITE_USER_PAF_STD_SETJMP_H
+﻿#ifndef _PAF_STD_SETJMP_H
+#define _PAF_STD_SETJMP_H
 
 #include <../../setjmp.h>
 
@@ -18,4 +14,4 @@ int sce_paf_setjmp(jmp_buf env);
 }
 #endif
 
-#endif /* _VDSUITE_USER_PAF_STD_SETJMP_H */
+#endif /* _PAF_STD_SETJMP_H */

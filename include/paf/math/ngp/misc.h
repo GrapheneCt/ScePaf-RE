@@ -1,4 +1,4 @@
-﻿/*
+/*
 	Vita Development Suite Libraries
 */
 
@@ -6,7 +6,7 @@
 #define _VDSUITE_USER_PAF_MATH_WIN32_MISC_H
 
 #include <stdint.h>
-#include <paf/std/math.h>
+#include <paf/std/stdc.h>
 #include <paf/common/halt_assert.h>
 
 namespace paf {

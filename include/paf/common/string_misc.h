@@ -7,8 +7,8 @@
 
 #include <stddef.h>
 #include <stdint.h>
-#include <paf/std/string>
-#include <paf/std/stdio.h>
+#include <paf/std/stdcxx.h>
+#include <paf/std/stdc.h>
 
 namespace paf {
 	namespace common {

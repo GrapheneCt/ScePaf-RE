@@ -1,5 +1,5 @@
-﻿#ifndef _VDSUITE_USER_PAF_STD_FUNCTIONAL_H
-#define _VDSUITE_USER_PAF_STD_FUNCTIONAL_H
+#ifndef _PAF_STD_FUNCTIONAL_H
+#define _PAF_STD_FUNCTIONAL_H
 #ifndef _FUNCTIONAL_
 #define _FUNCTIONAL_
 
@@ -3011,6 +3011,6 @@ namespace std {
 
 #endif /* _FUNCTIONAL_ */
 
-#include <paf/std/std_bridge>
+#include <paf/std/ngp/std_bridge>
 
 #endif

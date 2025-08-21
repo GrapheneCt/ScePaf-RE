@@ -33,8 +33,8 @@ namespace paf {
 		virtual int32_t WriteAsync(const void *buf, size_t nbyte) = 0;
 		virtual int32_t SeekAsync(off_t offset, int32_t whence) = 0;
 		virtual int32_t FlushAsync() = 0;
-		virtual int32_t WaitAsync(int32_t *result) = 0;
-		virtual int32_t PollAsync(int32_t *result) = 0;
+		virtual int32_t WaitAsync(int64_t *result) = 0;
+		virtual int32_t PollAsync(int64_t *result) = 0;
 		virtual bool    IsOpened() = 0;
 		virtual bool    IsEof() = 0;
 		virtual int32_t Abort() = 0;

@@ -1,4 +1,4 @@
-﻿/*
+/*
 	Vita Development Suite Libraries
 */
 
@@ -8,9 +8,7 @@
 #include <stdint.h>
 #include <stddef.h>
 #include <paf/paf_types.h>
-#include <paf/std/map>
-#include <paf/std/vector>
-#include <paf/std/string>
+#include <paf/std/stdcxx.h>
 #include <paf/thread/rmutex.h>
 #include <paf/cache/cache_base.h>
 #include <paf/cache/cache_manager.h>

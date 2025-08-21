@@ -1,4 +1,4 @@
-﻿/*
+/*
 	Vita Development Suite Libraries
 */
 
@@ -7,7 +7,7 @@
 
 #include <stdint.h>
 #include <stddef.h>
-#include <paf/std/memory>
+#include <paf/std/stdcxx.h>
 #include <paf/image/image_types.h>
 #include <paf/image/image_region.h>
 #include <paf/graphics/surface/surface.h>

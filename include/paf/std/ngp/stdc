@@ -1,5 +1,5 @@
-﻿#ifndef _VDSUITE_USER_PAF_STD_STDC_H
-#define _VDSUITE_USER_PAF_STD_STDC_H
+#ifndef _PAF_STD_STDC_H
+#define _PAF_STD_STDC_H
 
 #include <scetypes.h>
 

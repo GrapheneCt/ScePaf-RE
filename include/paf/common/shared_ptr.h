@@ -18,9 +18,6 @@ namespace paf {
 			template<class T>
 			class RefCounter
 			{
-
-				template <typename T> friend class SharedPtr;
-
 			public:
 
 				typedef void(*Deleter)(T *p);
@@ -121,6 +118,18 @@ namespace paf {
 					release();
 					m_ptr = p;
 					m_ref_counter = ref_counter;
+					add_ref();
+				}
+			}
+
+			template <typename U>
+			void assign(T* p, detail::RefCounter<U> *ref_counter)
+			{
+				if (p != m_ptr)
+				{
+					release();
+					m_ptr = p;
+					m_ref_counter = reinterpret_cast<detail::RefCounter<T> *>(ref_counter);
 					add_ref();
 				}
 			}

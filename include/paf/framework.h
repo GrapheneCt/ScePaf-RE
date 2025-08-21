@@ -1,4 +1,4 @@
-﻿/*
+/*
 	Vita Development Suite Libraries
 */
 
@@ -9,8 +9,7 @@
 #include <stddef.h>
 #include <scetypes.h>
 #include <paf/paf_types.h>
-#include <paf/std/vector>
-#include <paf/std/string>
+#include <paf/std/stdcxx.h>
 #include <paf/plugin.h>
 
 namespace paf {

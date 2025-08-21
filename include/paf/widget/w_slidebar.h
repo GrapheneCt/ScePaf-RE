@@ -1,4 +1,4 @@
-﻿/*
+/*
 	Vita Development Suite Libraries
 */
 
@@ -75,52 +75,8 @@ namespace paf {
 			virtual bool IsInherit(char const *) const;
 			virtual char *GetTypeName(void) const;
 
-			void UpdateSlider(bool bWithAnim = true); // TODO: this is in virtual really.
-
-			void SetFraction(SceUInt32 fraction){
-				m_fraction = fraction;
-			}
-
-			void SetValue(float value){
-				m_value = value;
-				m_unk_0x294 = (int)(((float)m_fraction) * value);
-				UpdateSlider(false);
-			}
-
-			float GetValue(void){
-				return m_value;
-			}
-
 		protected:
-			void *m_unk_0x27C;
-			unsigned int m_unk_0x280;
-			unsigned int m_unk_0x284;
-			unsigned int m_unk_0x288;
-			unsigned int m_unk_0x28C;
-			unsigned int m_fraction;
-			unsigned int m_unk_0x294;
-			float m_unk_0x298;
-			unsigned int m_unk_0x29C;
-			unsigned int m_unk_0x2A0;
-			unsigned int m_unk_0x2A4;
-			unsigned int m_unk_0x2A8;
-			unsigned int m_unk_0x2AC;
-			unsigned int m_unk_0x2B0;
-			unsigned int m_unk_0x2B4;
-			float m_unk_0x2B8;
-			float m_unk_0x2BC;
-			float m_unk_0x2C0;
-			float m_value;
-			int m_unk_0x2C8;
-			int m_unk_0x2CC;
-			unsigned int m_unk_0x2D0;
-			unsigned int m_unk_0x2D4;
-			unsigned int m_unk_0x2D8;
-			unsigned int m_unk_0x2DC;
-			void *m_unk_0x2E0;
-			unsigned int m_unk_0x2E4;
-			unsigned int m_unk_0x2E8;
-			unsigned int m_unk_0x2EC;
+			unsigned char m_unk_0x27C[0x74];
 
 			__declspec (dllimport) static const char m_widget_type[];
 		};

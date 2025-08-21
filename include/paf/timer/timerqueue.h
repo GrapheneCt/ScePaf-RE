@@ -1,4 +1,4 @@
-﻿/*
+/*
 	Vita Development Suite Libraries
 */
 
@@ -6,7 +6,7 @@
 #define _VDSUITE_USER_PAF_TIMER_TIMERQUEUE_H
 
 #include <stdint.h>
-#include <paf/std/list>
+#include <paf/std/stdcxx.h>
 #include <paf/timer/timerlistener.h>
 
 namespace paf {

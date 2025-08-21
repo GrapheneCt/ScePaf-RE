@@ -1,4 +1,4 @@
-﻿/*
+/*
 	Vita Development Suite Libraries
 */
 
@@ -7,8 +7,7 @@
 
 #include <stdint.h>
 #include <stddef.h>
-#include <paf/std/memory>
-#include <paf/std/list>
+#include <paf/std/stdcxx.h>
 #include <paf/cache/cache_base.h>
 
 namespace paf {

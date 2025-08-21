@@ -1,5 +1,5 @@
-﻿#ifndef _VDSUITE_USER_PAF_STD_MEMORY_H
-#define _VDSUITE_USER_PAF_STD_MEMORY_H
+#ifndef _PAF_STD_MEMORY_H
+#define _PAF_STD_MEMORY_H
 
 #include <paf/memory/heap_allocator.h>
 
@@ -160,6 +160,6 @@ namespace paf {
 }
 
 #include <memory>
-#include <paf/std/std_bridge>
+#include <paf/std/ngp/std_bridge>
 
 #endif

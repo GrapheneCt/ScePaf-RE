@@ -1,4 +1,4 @@
-﻿/*
+/*
 	Vita Development Suite Libraries
 */
 
@@ -6,7 +6,7 @@
 #define _VDSUITE_USER_PAF_MATH_WIN32_V1_IMPL_H
 
 #include <vectormath.h>
-#include <paf/std/math.h>
+#include <paf/std/stdc.h>
 #include <paf/math/math.h>
 #include <paf/math/ngp/v1.h>
 #include <paf/math/ngp/v4.h>

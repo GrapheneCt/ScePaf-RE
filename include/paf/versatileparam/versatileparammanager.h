@@ -1,4 +1,4 @@
-﻿/*
+/*
 	Vita Development Suite Libraries
 */
 
@@ -6,8 +6,7 @@
 #define _VDSUITE_USER_PAF_VERSATILEPARAM_VERSATILEPARAMMANAGER_H
 
 #include <stddef.h>
-#include <paf/std/map>
-#include <paf/std/string>
+#include <paf/std/stdcxx.h>
 #include <paf/math/math.h>
 #include <paf/common/shared_ptr.h>
 #include <paf/versatileparam/idparam.h>

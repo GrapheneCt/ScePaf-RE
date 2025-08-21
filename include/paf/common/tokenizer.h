@@ -7,8 +7,7 @@
 
 #include <stdint.h>
 #include <stddef.h>
-#include <paf/std/string>
-#include <paf/std/vector>
+#include <paf/std/stdcxx.h>
 
 namespace paf {
 	namespace common {

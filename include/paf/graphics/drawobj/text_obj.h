@@ -7,7 +7,7 @@
 
 #include <stdint.h>
 #include <stddef.h>
-#include <paf/std/string>
+#include <paf/std/stdcxx.h>
 #include <paf/graphics/drawobj/draw_obj.h>
 #include <paf/math/math.h>
 #include <paf/graphics/surface/surface.h>

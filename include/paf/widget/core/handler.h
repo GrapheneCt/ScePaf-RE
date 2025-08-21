@@ -6,8 +6,7 @@
 #define _VDSUITE_USER_PAF_WIDGET_CORE_HANDLER_H
 
 #include <stdint.h>
-#include <paf/std/list>
-#include <paf/std/vector>
+#include <paf/std/stdcxx.h>
 #include <paf/widget/types.h>
 #include <paf/widget/core/event.h>
 #include <paf/timer/timerlistener.h>

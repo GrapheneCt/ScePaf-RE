@@ -13,8 +13,22 @@ namespace paf {
 
 		typedef uint64_t Tick;
 
-		class SQLiteDateTimeFormatType;
-		class DateTime;
+		enum SQLiteDateTimeFormatType
+		{
+			a
+		};
+
+		struct DateTime
+		{
+			uint16_t year;
+			uint16_t month;
+			uint16_t day;
+			uint16_t hour;
+			uint16_t minute;
+			uint16_t second;
+			uint32_t microsecond;
+		};
+
 		class DateTimeEx;
 
 		extern int32_t IsLeapYear(uint16_t year);
@@ -31,7 +45,7 @@ namespace paf {
 
 		extern int32_t ConvertDateTimeToTick(DateTime const* src, Tick *pTick);
 
-		extern int32_t ConvertTickToDateTime(Tick *pTick, DateTime *dst);
+		extern int32_t ConvertTickToDateTime(Tick const *pTick, DateTime *dst, DateTimeEx *exdst);
 
 		extern int32_t GetCurrentLocalTick(Tick *pTick);
 

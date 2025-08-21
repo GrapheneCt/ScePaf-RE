@@ -6,8 +6,7 @@
 #define _VDSUITE_USER_PAF_WIDGET_CORE_EVENT_H
 
 #include <stdint.h>
-#include <paf/std/list>
-#include <paf/std/vector>
+#include <paf/std/stdcxx.h>
 
 namespace paf {
 	namespace ui {

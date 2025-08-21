@@ -1,10 +1,10 @@
-﻿#ifndef _VDSUITE_USER_PAF_STDCXX_LIST_H
-#define _VDSUITE_USER_PAF_STDCXX_LIST_H
+#ifndef _PAF_STDCXX_LIST_H
+#define _PAF_STDCXX_LIST_H
 
 #include <stdint.h>
 #include <stddef.h>
-#include <paf/std/memory>
-#include <paf/std/string>
+#include <paf/std/ngp/memory>
+#include <paf/std/ngp/string>
 
 namespace paf {
 	template<class _Type, class _Alloc>

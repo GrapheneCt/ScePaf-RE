@@ -1,9 +1,5 @@
-﻿/*
-	Vita Development Suite Libraries
-*/
-
-#ifndef _VDSUITE_USER_PAF_STD_MATH_H
-#define _VDSUITE_USER_PAF_STD_MATH_H
+﻿#ifndef _PAF_STD_MATH_H
+#define _PAF_STD_MATH_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -28,4 +24,4 @@ float sce_paf_atan2f(float x, float y);
 }
 #endif
 
-#endif /* _VDSUITE_USER_PAF_STD_MATH_H */
+#endif /* _PAF_STD_MATH_H */

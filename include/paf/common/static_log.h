@@ -9,7 +9,7 @@
 #include <stddef.h>
 #include <paf/common/halt_assert.h>
 #include <paf/math/math.h>
-#include <paf/std/stdio.h>
+#include <paf/std/stdc.h>
 
 namespace paf {
 	namespace common {

@@ -5,8 +5,7 @@
 #ifndef _VDSUITE_USER_PAF_GRAPHICS_TEXT_ATTRIBUTED_STRING_H
 #define _VDSUITE_USER_PAF_GRAPHICS_TEXT_ATTRIBUTED_STRING_H
 
-#include <paf/std/string>
-#include <paf/std/list>
+#include <paf/std/stdcxx.h>
 #include <paf/math/math.h>
 #include <paf/graphics/text/text_style.h>
 

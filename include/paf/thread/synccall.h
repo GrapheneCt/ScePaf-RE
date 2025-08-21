@@ -1,4 +1,4 @@
-﻿/*
+/*
 	Vita Development Suite Libraries
 */
 
@@ -15,13 +15,13 @@ namespace paf {
 		{
 		public:
 
-			typedef void(*Function)(void *userdata);
+			typedef int32_t(*Function)(void *userdata);
 
 			SyncCall(const char *name);
 
 			~SyncCall();
 
-			void Enqueue(Function entry, void *userdata);
+			void Call(Function entry, void *userdata);
 
 			void Check();
 

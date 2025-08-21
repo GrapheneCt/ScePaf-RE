@@ -1,11 +1,11 @@
-﻿/*
+/*
 	Vita Development Suite Libraries
 */
 
 #ifndef _VDSUITE_USER_PAF_TIMER_TIMERLISTENERLIST_H
 #define _VDSUITE_USER_PAF_TIMER_TIMERLISTENERLIST_H
 
-#include <paf/std/list>
+#include <paf/std/stdcxx.h>
 #include <paf/thread/rmutex.h>
 
 namespace paf {

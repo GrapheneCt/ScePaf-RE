@@ -9,7 +9,7 @@
 #include <stdint.h>
 #include <gxm.h>
 #include <paf/paf_types.h>
-#include <paf/std/memory>
+#include <paf/std/stdcxx.h>
 #include <paf/thread/mutex.h>
 #include <paf/thread/rmutex.h>
 #include <paf/common/shared_ptr.h>
@@ -419,6 +419,11 @@ namespace paf {
 			int32_t GetWrapT() const
 			{
 				return m_texture_param.wrap_t;
+			}
+
+			Texture *GetTexPages()
+			{
+				return m_tex_pages;
 			}
 
 			void *operator new(size_t size);

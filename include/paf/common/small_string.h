@@ -6,7 +6,7 @@
 #define _VDSUITE_USER_PAF_COMMON_SMALL_STRING_H
 
 #include <stdint.h>
-#include <paf/std/string.h>
+#include <paf/std/stdc.h>
 #include <paf/math/math.h>
 
 namespace paf {

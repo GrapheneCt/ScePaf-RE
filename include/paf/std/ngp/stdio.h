@@ -1,9 +1,5 @@
-﻿/*
-	Vita Development Suite Libraries
-*/
-
-#ifndef _VDSUITE_USER_PAF_STD_STDIO_H
-#define _VDSUITE_USER_PAF_STD_STDIO_H
+﻿#ifndef _PAF_STD_STDIO_H
+#define _PAF_STD_STDIO_H
 
 #include <../../stdio.h>
 
@@ -43,4 +39,4 @@ int sce_paf_fflush(sce_paf_FILE *stream);
 }
 #endif
 
-#endif /* _VDSUITE_USER_PAF_STD_WCHAR_H */
+#endif /* _PAF_STD_WCHAR_H */

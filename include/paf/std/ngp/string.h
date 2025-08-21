@@ -1,9 +1,5 @@
-﻿/*
-	Vita Development Suite Libraries
-*/
-
-#ifndef _VDSUITE_USER_PAF_STD_STRING_H
-#define _VDSUITE_USER_PAF_STD_STRING_H
+﻿#ifndef _PAF_STD_STRING_H
+#define _PAF_STD_STRING_H
 
 #include <../../stddef.h>
 
@@ -45,4 +41,4 @@ void *sce_paf_bcopy(void *destination, const void *source, size_t num);
 }
 #endif
 
-#endif /* _VDSUITE_USER_PAF_STD_STRING_H */
+#endif /* _PAF_STD_STRING_H */
