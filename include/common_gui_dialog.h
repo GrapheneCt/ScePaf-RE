@@ -2,8 +2,11 @@
 #define _VDSUITE_USER_COMMON_GUI_DIALOG_H
 
 #include <paf.h>
-#include <kernel.h>
+#ifdef __SNC__
 #include <appmgr.h>
+#else
+#include <psp2/appmgr.h>
+#endif
 
 namespace sce {
 	namespace CommonGuiDialog {
@@ -11,7 +14,7 @@ namespace sce {
 		class BaseHashTable;
 		class ContentsHashTable;
 
-		enum DIALOG_CB
+		enum DIALOG_CB : int32_t
 		{
 			DIALOG_CB_X = 1,
 			DIALOG_CB_OK,
@@ -23,7 +26,7 @@ namespace sce {
 			DIALOG_CB_ABOUTPSPLUS
 		};
 
-		enum REGISTER_ID
+		enum REGISTER_ID : int32_t
 		{
 			REGISTER_ID_TEXT_MESSAGE_1 = 1,
 			REGISTER_ID_TEXT_MESSAGE_2,
@@ -132,7 +135,7 @@ namespace sce {
 
 			static int32_t SetTexture(int32_t instanceSlot, REGISTER_ID id, paf::intrusive_ptr<paf::graph::Surface> const& tex);
 
-			static int32_t Show(paf::Plugin *workPlugin, paf::wstring *title, paf::wstring *message, Param *param, EventCBListener::HandlerCB buttonCB, ScePVoid pUserArg);
+			static int32_t Show(paf::Plugin *workPlugin, paf::wstring *title, paf::wstring *message, Param *param, EventCBListener::HandlerCB buttonCB, void *pUserArg);
 
 			static int32_t Show(paf::Plugin *workPlugin, paf::wstring *title, paf::wstring *message, Param *param, EventCBListener *cb);
 

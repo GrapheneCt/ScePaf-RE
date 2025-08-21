@@ -7,7 +7,6 @@
 
 #include <stdint.h>
 #include <stddef.h>
-#include <scetypes.h>
 #include <paf.h>
 
 namespace sce {
@@ -141,9 +140,9 @@ namespace sce {
 
 		/*int Test1();
 
-		int Test2(const char *pKey, SceInt32 *value, SceInt32 a3);
+		int Test2(const char *pKey, int32_t *value, int32_t a3);
 
-		int Test3(const char *pKey, SceInt32 value);
+		int Test3(const char *pKey, int32_t value);
 
 		int Test4();*/
 
