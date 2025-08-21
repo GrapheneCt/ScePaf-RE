@@ -6,6 +6,9 @@
 #include <appmgr.h>
 #else
 #include <psp2/appmgr.h>
+#ifndef SCE_APPMGR_APP_ID_THIS
+#define SCE_APPMGR_APP_ID_THIS -2
+#endif
 #endif
 
 namespace sce {
