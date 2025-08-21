@@ -1,4 +1,4 @@
-#ifndef _VDSUITE_USER_PAF_STD_IOSFWD_H
+﻿#ifndef _VDSUITE_USER_PAF_STD_IOSFWD_H
 #define _VDSUITE_USER_PAF_STD_IOSFWD_H
 
 #include <stddef.h>

@@ -1,4 +1,4 @@
-/*
+﻿/*
 	Vita Development Suite Libraries
 */
 

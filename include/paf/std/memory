@@ -1,4 +1,4 @@
-#ifndef _VDSUITE_USER_PAF_STD_MEMORY_H
+﻿#ifndef _VDSUITE_USER_PAF_STD_MEMORY_H
 #define _VDSUITE_USER_PAF_STD_MEMORY_H
 
 #include <paf/memory/heap_allocator.h>
