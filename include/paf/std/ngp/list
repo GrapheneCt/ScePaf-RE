@@ -159,9 +159,10 @@ namespace paf {
 			_list_node<_Type, _Alloc> *cnode = root_node->next;
 			if (cnode != root_node)
 			{
+				_list_node<_Type, _Alloc> *nnode = NULL;
 				do
 				{
-					_list_node<_Type, _Alloc> *nnode = cnode->next;
+					nnode = cnode->next;
 					_release_node(cnode);
 					cnode = nnode;
 				} while (nnode != root_node);
