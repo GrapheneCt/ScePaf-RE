@@ -174,6 +174,8 @@ namespace paf {
 				wstring m_value;
 			};
 
+
+			// TODO: needs paf::vector fix
 			class PropertyList
 			{
 			public:

@@ -1,7 +1,7 @@
 #ifndef _PAF_STD_ALGORITHM_H
 #define _PAF_STD_ALGORITHM_H
 
-#include_next <algorithm>
+#include <algorithm>
 #include <paf/std/ngp/std_bridge>
 
 #endif

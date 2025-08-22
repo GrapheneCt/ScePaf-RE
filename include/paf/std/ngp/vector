@@ -1,6 +1,7 @@
 #ifndef _PAF_STD_VECTOR_H
 #define _PAF_STD_VECTOR_H
 
+//#include <xutility> ///< TODO: check if needed on SNC
 #include <paf/std/ngp/memory>
 #include <paf/common/halt_assert.h>
 

@@ -1,7 +1,7 @@
 ﻿#ifndef _PAF_STD_STDIO_H
 #define _PAF_STD_STDIO_H
 
-#include_next <stdio.h>
+#include <stdio.h>
 
 #ifdef __cplusplus
 extern "C" {
