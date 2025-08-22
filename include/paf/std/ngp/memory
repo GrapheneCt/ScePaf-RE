@@ -159,7 +159,7 @@ namespace paf {
 	};
 }
 
-#include <memory>
+#include_next <memory>
 #include <paf/std/ngp/std_bridge>
 
 #endif

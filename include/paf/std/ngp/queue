@@ -1,7 +1,7 @@
 #ifndef _PAF_STD_QUEUE_H
 #define _PAF_STD_QUEUE_H
 
-#include <queue>
+#include_next <queue>
 #include <paf/std/ngp/std_bridge>
 
 #endif

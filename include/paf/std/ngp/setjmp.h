@@ -1,7 +1,7 @@
 ﻿#ifndef _PAF_STD_SETJMP_H
 #define _PAF_STD_SETJMP_H
 
-#include <../../setjmp.h>
+#include_next <setjmp.h>
 
 #ifdef __cplusplus
 extern "C" {

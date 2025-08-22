@@ -1,7 +1,7 @@
 ﻿#ifndef _PAF_STD_WCTYPE_H
 #define _PAF_STD_WCTYPE_H
 
-#include <../../wchar.h>
+#include <wchar.h>
 
 #ifdef __cplusplus
 extern "C" {
