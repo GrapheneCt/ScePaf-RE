@@ -99,7 +99,7 @@ namespace paf {
 			int32_t m_unk_388;
 			int32_t m_unk_38C;
 
-			__declspec(dllimport) static const char m_widget_type[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_widget_type[];
 		};
 	}
 }

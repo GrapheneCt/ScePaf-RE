@@ -8,7 +8,7 @@
 #include <paf/widget/factory.h>
 #include <paf/widget/w_box.h>
 
-__declspec(dllimport) extern paf::ui::FactoryFuncTable g_factoryDialog;
+SCE_PAF_IMPORTED_FROM_PRX extern paf::ui::FactoryFuncTable g_factoryDialog;
 
 namespace paf {
 
@@ -51,7 +51,7 @@ namespace paf {
 			map <int32_t, IDParam> m_parts_id_table;
 			int32_t padding;
 
-			__declspec(dllimport) static const char m_widget_type[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_widget_type[];
 		};
 	}
 }

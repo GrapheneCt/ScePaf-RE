@@ -8,6 +8,7 @@
 #include <stdint.h>
 #include <stddef.h>
 #include <paf/std/stdcxx.h>
+#include <paf/paf_types.h>
 
 namespace paf {
 	namespace ui {
@@ -55,7 +56,7 @@ namespace paf {
 				m_dirty |= val;
 			}
 
-			__declspec (dllimport) static bool s_enter_layout;
+			SCE_PAF_IMPORTED_FROM_PRX static bool s_enter_layout;
 
 		protected:
 
@@ -103,7 +104,7 @@ namespace paf {
 				m_dirty |= val;
 			}
 
-			__declspec (dllimport) static bool s_enter_animator;
+			SCE_PAF_IMPORTED_FROM_PRX static bool s_enter_animator;
 
 		protected:
 

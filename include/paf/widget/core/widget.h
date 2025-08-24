@@ -18,6 +18,7 @@
 #include <paf/widget/core/handler.h>
 #include <paf/widget/core/layouter.h>
 #include <paf/widget/core/animlistener.h>
+#include <paf/paf_types.h>
 
 namespace paf {
 
@@ -62,8 +63,8 @@ namespace paf {
 		private:
 			unsigned char m_unk_0x20[0x58];
 
-			__declspec (dllimport) static const char * const s_names[];
-			__declspec (dllimport) static const char m_param_name[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char * const s_names[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_param_name[];
 		};
 
 		class WidgetSoundParam : public VersatileParam
@@ -85,7 +86,7 @@ namespace paf {
 		private:
 			unsigned char unk_0x20[0x1C];
 
-			__declspec (dllimport) static const char m_param_name[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_param_name[];
 		};
 
 		class WidgetHandlerParam : public VersatileParam
@@ -111,12 +112,12 @@ namespace paf {
 				int type;
 			} EventList;
 
-			__declspec (dllimport) static const EventList c_eventList[];
+			SCE_PAF_IMPORTED_FROM_PRX static const EventList c_eventList[];
 
 		private:
 			unsigned char unk_0x20[0x14];
 
-			__declspec (dllimport) static const char m_param_name[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_param_name[];
 		};
 
 		class WidgetStyleParam : public VersatileParam
@@ -149,8 +150,8 @@ namespace paf {
 		private:
 			unsigned char unk_0x20[0x40];
 
-			__declspec (dllimport) static const char * const s_names[];
-			__declspec (dllimport) static const char m_param_name[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char * const s_names[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_param_name[];
 		};
 
 		class WidgetLayoutParam : public VersatileParam
@@ -175,8 +176,8 @@ namespace paf {
 		private:
 			unsigned char unk_0x20[0x88];
 
-			__declspec (dllimport) static const char * const s_names[];
-			__declspec (dllimport) static const char m_param_name[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char * const s_names[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_param_name[];
 		};
 
 		class Widget : public Handler
@@ -1144,17 +1145,17 @@ namespace paf {
 			Focuser *m_focuser;
 			char m_unk_220[0x5C];
 
-			__declspec (dllimport) static const char m_widget_type[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_widget_type[];
 
-			__declspec (dllimport) static int32_t s_base_destroy_count;
+			SCE_PAF_IMPORTED_FROM_PRX static int32_t s_base_destroy_count;
 
-			__declspec (dllimport) static int32_t s_destroying_count;
+			SCE_PAF_IMPORTED_FROM_PRX static int32_t s_destroying_count;
 
-			__declspec (dllimport) static int32_t s_instance_count;
+			SCE_PAF_IMPORTED_FROM_PRX static int32_t s_instance_count;
 
-			__declspec (dllimport) static int32_t s_upmat_count_L;
+			SCE_PAF_IMPORTED_FROM_PRX static int32_t s_upmat_count_L;
 
-			__declspec (dllimport) static int32_t s_upmat_count_W;
+			SCE_PAF_IMPORTED_FROM_PRX static int32_t s_upmat_count_W;
 		};
 	}
 }

@@ -10,6 +10,7 @@
 #include <paf/std/stdcxx.h>
 #include <paf/common/shared_ptr.h>
 #include <paf/versatileparam/idparam.h>
+#include <paf/paf_types.h>
 
 namespace paf {
 	namespace common {
@@ -93,7 +94,7 @@ namespace paf {
 
 			private:
 
-				__declspec (dllimport) static const char *m_type_name;
+				SCE_PAF_IMPORTED_FROM_PRX static const char *m_type_name;
 			};
 
 			class StringElement : public PropertyElement
@@ -128,7 +129,7 @@ namespace paf {
 					return s_empty_string;
 				}
 
-				__declspec (dllimport) static const string s_empty_string;
+				SCE_PAF_IMPORTED_FROM_PRX static const string s_empty_string;
 
 			private:
 
@@ -167,7 +168,7 @@ namespace paf {
 					return s_empty_string;
 				}
 
-				__declspec (dllimport) static const wstring s_empty_string;
+				SCE_PAF_IMPORTED_FROM_PRX static const wstring s_empty_string;
 
 			private:
 

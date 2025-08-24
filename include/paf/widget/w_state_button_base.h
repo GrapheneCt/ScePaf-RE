@@ -8,7 +8,7 @@
 #include <paf/widget/factory.h>
 #include <paf/widget/w_button_base.h>
 
-__declspec(dllimport) extern paf::ui::FactoryFuncTable g_factoryStateButtonBase;
+SCE_PAF_IMPORTED_FROM_PRX extern paf::ui::FactoryFuncTable g_factoryStateButtonBase;
 
 namespace paf {
 
@@ -28,7 +28,7 @@ namespace paf {
 		private:
 			unsigned char unk_0x60[0x3E0];
 
-			__declspec (dllimport) static const char m_param_name[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_param_name[];
 		};
 
 		class StateButtonBase : public ButtonBase
@@ -90,7 +90,7 @@ namespace paf {
 			int32_t m_unk_2C0;
 			int32_t m_unk_2C4;
 
-			__declspec(dllimport) static const char m_widget_type[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_widget_type[];
 		};
 	}
 }

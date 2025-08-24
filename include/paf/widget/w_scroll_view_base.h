@@ -9,7 +9,7 @@
 #include <paf/widget/factory.h>
 #include <paf/timer/timer.h>
 
-__declspec(dllimport) extern paf::ui::FactoryFuncTable g_factoryScrollViewBase;
+SCE_PAF_IMPORTED_FROM_PRX extern paf::ui::FactoryFuncTable g_factoryScrollViewBase;
 
 namespace paf {
 
@@ -47,7 +47,7 @@ namespace paf {
 		private:
 			unsigned char unk_0x60[0x108];
 
-			__declspec (dllimport) static const char m_param_name[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_param_name[];
 		};
 
 		class ScrollViewBase : public Widget
@@ -191,7 +191,7 @@ namespace paf {
 			float m_snap_power;
 			char m_unk_3C4[0x3C];
 
-			__declspec(dllimport) static const char m_widget_type[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_widget_type[];
 		};
 
 		class ScrollViewParent : public Widget
@@ -208,7 +208,7 @@ namespace paf {
 
 			char m_unk_27C[0x2C];
 
-			__declspec(dllimport) static const char m_widget_type[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_widget_type[];
 		};
 
 		class ScrollViewTimer : public Timer

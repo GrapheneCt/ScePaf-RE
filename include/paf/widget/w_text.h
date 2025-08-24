@@ -11,7 +11,7 @@
 #include <paf/graphics/text/text_style.h>
 #include <paf/graphics/text/attributed_string.h>
 
-__declspec(dllimport) extern paf::ui::FactoryFuncTable g_factoryText;
+SCE_PAF_IMPORTED_FROM_PRX extern paf::ui::FactoryFuncTable g_factoryText;
 
 namespace paf {
 
@@ -38,7 +38,7 @@ namespace paf {
 		private:
 			unsigned char m_unk_0x60[0x1F8];
 
-			__declspec (dllimport) static const char m_param_name[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_param_name[];
 		};
 
 		class Text : public Widget
@@ -214,7 +214,7 @@ namespace paf {
 			graph::TextObj *m_pTextObj;
 			char m_unk_284[0x54];
 
-			__declspec(dllimport) static const char m_widget_type[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_widget_type[];
 		};
 	}
 }

@@ -8,7 +8,7 @@
 #include <paf/widget/factory.h>
 #include <paf/widget/core/widget.h>
 
-__declspec(dllimport) extern paf::ui::FactoryFuncTable g_factorySlideBar;
+SCE_PAF_IMPORTED_FROM_PRX extern paf::ui::FactoryFuncTable g_factorySlideBar;
 
 namespace paf {
 	namespace ui {
@@ -28,8 +28,8 @@ namespace paf {
 		private:
 			unsigned char m_unk_0x78[0x70];
 
-			__declspec (dllimport) static const char m_param_name[];
-			__declspec (dllimport) static const WidgetParam::TextureList c_textureList[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_param_name[];
+			SCE_PAF_IMPORTED_FROM_PRX static const WidgetParam::TextureList c_textureList[];
 		};
 
 		class SlideBarStyleParam : public WidgetStyleParam
@@ -46,7 +46,7 @@ namespace paf {
 		private:
 			unsigned char unk_0x60[0x3A8];
 
-			__declspec (dllimport) static const char m_param_name[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_param_name[];
 		};
 
 		class SlideBarSoundParam : public WidgetSoundParam
@@ -59,7 +59,7 @@ namespace paf {
 
 		private:
 
-			__declspec (dllimport) static const char m_param_name[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_param_name[];
 		};
 
 		class SlideBar : public Widget
@@ -78,7 +78,7 @@ namespace paf {
 		protected:
 			unsigned char m_unk_0x27C[0x74];
 
-			__declspec (dllimport) static const char m_widget_type[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_widget_type[];
 		};
 	}
 }

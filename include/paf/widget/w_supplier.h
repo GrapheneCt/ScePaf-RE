@@ -8,7 +8,7 @@
 #include <paf/widget/factory.h>
 #include <paf/widget/w_plane.h>
 
-__declspec(dllimport) extern paf::ui::FactoryFuncTable g_factorySupplier;
+SCE_PAF_IMPORTED_FROM_PRX extern paf::ui::FactoryFuncTable g_factorySupplier;
 
 namespace paf {
 
@@ -28,7 +28,7 @@ namespace paf {
 		protected:
 			unsigned char m_unk_0x280[0x28];
 
-			__declspec (dllimport) static const char m_widget_type[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_widget_type[];
 		};
 	}
 }

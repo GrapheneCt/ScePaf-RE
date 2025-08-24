@@ -127,6 +127,12 @@ typedef enum CharEncoding
 
 #define SCE_PAF_OK	(0)
 
+#ifdef __SNC__
+#define SCE_PAF_IMPORTED_FROM_PRX __declspec(dllimport)
+#else
+#define SCE_PAF_IMPORTED_FROM_PRX
+#endif
+
 #ifdef __cplusplus
 }
 #endif

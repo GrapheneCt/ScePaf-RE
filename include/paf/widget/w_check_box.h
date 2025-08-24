@@ -8,7 +8,7 @@
 #include <paf/widget/factory.h>
 #include <paf/widget/w_state_button_base.h>
 
-__declspec(dllimport) extern paf::ui::FactoryFuncTable g_factoryCheckBox;
+SCE_PAF_IMPORTED_FROM_PRX extern paf::ui::FactoryFuncTable g_factoryCheckBox;
 
 namespace paf {
 
@@ -26,7 +26,7 @@ namespace paf {
 
 		protected: //0x2C8
 
-			__declspec(dllimport) static const char m_widget_type[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_widget_type[];
 		};
 	}
 }

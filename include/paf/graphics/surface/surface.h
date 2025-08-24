@@ -86,8 +86,8 @@ namespace paf {
 			void *m_clut;
 			int32_t m_unk_24;
 
-			__declspec (dllimport) static thread::Mutex m_lock_mutex;
-			__declspec (dllimport) static SurfaceListNode m_surface_list;
+			SCE_PAF_IMPORTED_FROM_PRX static thread::Mutex m_lock_mutex;
+			SCE_PAF_IMPORTED_FROM_PRX static SurfaceListNode m_surface_list;
 		};
 
 		class Surface : public SurfaceBase, protected SurfaceListNode
@@ -499,11 +499,11 @@ namespace paf {
 			int32_t m_unk_8C;
 			int32_t m_unk_90;
 
-			__declspec (dllimport) static void* m_active_mark[2];
-			__declspec (dllimport) static int32_t m_initialized;
-			__declspec (dllimport) static thread::RMutex m_list_cs;
-			__declspec (dllimport) static thread::Mutex m_lock_mutex;
-			__declspec (dllimport) static SurfaceListNode m_surface_list;
+			SCE_PAF_IMPORTED_FROM_PRX static void* m_active_mark[2];
+			SCE_PAF_IMPORTED_FROM_PRX static int32_t m_initialized;
+			SCE_PAF_IMPORTED_FROM_PRX static thread::RMutex m_list_cs;
+			SCE_PAF_IMPORTED_FROM_PRX static thread::Mutex m_lock_mutex;
+			SCE_PAF_IMPORTED_FROM_PRX static SurfaceListNode m_surface_list;
 		};
 	}
 }

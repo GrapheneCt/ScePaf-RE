@@ -27,7 +27,7 @@ namespace paf {
 		protected:
 			unsigned char m_unk_0x27C[0x34];
 
-			__declspec (dllimport) static const char m_widget_type[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_widget_type[];
 		};
 	}
 }

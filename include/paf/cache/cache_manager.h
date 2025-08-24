@@ -9,6 +9,7 @@
 #include <stddef.h>
 #include <paf/std/stdcxx.h>
 #include <paf/cache/cache_base.h>
+#include <paf/paf_types.h>
 
 namespace paf {
 
@@ -108,11 +109,11 @@ namespace paf {
 			CacheManagerImpl *m_impl;
 			int32_t m_unk_08;
 
-			__declspec (dllimport) static job::JobQueue *m_jobq_local;
-			__declspec (dllimport) static job::JobQueue *m_jobq_net;
-			__declspec (dllimport) static job::JobQueue *m_jobq_operating;
-			__declspec (dllimport) static list<CacheManager*> m_cache_list;
-			__declspec (dllimport) static int32_t m_ticks;
+			SCE_PAF_IMPORTED_FROM_PRX static job::JobQueue *m_jobq_local;
+			SCE_PAF_IMPORTED_FROM_PRX static job::JobQueue *m_jobq_net;
+			SCE_PAF_IMPORTED_FROM_PRX static job::JobQueue *m_jobq_operating;
+			SCE_PAF_IMPORTED_FROM_PRX static list<CacheManager*> m_cache_list;
+			SCE_PAF_IMPORTED_FROM_PRX static int32_t m_ticks;
 		};
 	}
 }

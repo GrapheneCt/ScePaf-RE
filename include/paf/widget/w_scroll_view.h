@@ -8,7 +8,7 @@
 #include <paf/widget/factory.h>
 #include <paf/widget/w_scroll_view_base.h>
 
-__declspec(dllimport) extern paf::ui::FactoryFuncTable g_factoryScrollView;
+SCE_PAF_IMPORTED_FROM_PRX extern paf::ui::FactoryFuncTable g_factoryScrollView;
 
 namespace paf {
 	
@@ -24,7 +24,7 @@ namespace paf {
 		private:
 			unsigned char m_unk_0x168[0x28];
 
-			__declspec (dllimport) static const char m_param_name[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_param_name[];
 		};
 
 		class ScrollView : public ScrollViewBase
@@ -68,7 +68,7 @@ namespace paf {
 			bool m_unk_41D;
 			int m_unk_420[8];
 
-			__declspec(dllimport) static const char m_widget_type[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_widget_type[];
 		};
 	}
 }

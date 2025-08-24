@@ -7,6 +7,7 @@
 
 #include <paf/std/stdcxx.h>
 #include <paf/thread/rmutex.h>
+#include <paf/paf_types.h>
 
 namespace paf {
 
@@ -47,7 +48,7 @@ namespace paf {
 
 		void Unregister(TimerListener *listener);
 
-		__declspec (dllimport) static TimerListenerList *s_default_list;
+		SCE_PAF_IMPORTED_FROM_PRX static TimerListenerList *s_default_list;
 
 	private:
 

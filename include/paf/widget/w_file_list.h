@@ -9,7 +9,7 @@
 #include <paf/widget/w_list_view.h>
 #include <paf/common/ref_obj.h>
 
-__declspec(dllimport) extern paf::ui::FactoryFuncTable g_factoryFileList;
+SCE_PAF_IMPORTED_FROM_PRX extern paf::ui::FactoryFuncTable g_factoryFileList;
 
 namespace paf {
 
@@ -55,7 +55,7 @@ namespace paf {
 
 		protected: //0x4E8
 
-			__declspec(dllimport) static const char m_widget_type[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_widget_type[];
 		};
 
 		namespace filelist {
@@ -159,7 +159,7 @@ namespace paf {
 
 			protected:
 
-				__declspec(dllimport) static const char m_type_name[];
+				SCE_PAF_IMPORTED_FROM_PRX static const char m_type_name[];
 			};
 
 			class SegmentSource : public paf::common::RefObj
@@ -183,7 +183,7 @@ namespace paf {
 
 			protected:
 
-				__declspec(dllimport) static const char m_type_name[];
+				SCE_PAF_IMPORTED_FROM_PRX static const char m_type_name[];
 			};
 
 			class CellListAccessor
@@ -262,7 +262,7 @@ namespace paf {
 
 			protected:
 
-				__declspec(dllimport) static const char m_type_name[];
+				SCE_PAF_IMPORTED_FROM_PRX static const char m_type_name[];
 			};
 
 			extern int64_t GetCellID(ListItem *list_item);

@@ -8,7 +8,7 @@
 #include <paf/widget/core/widget.h>
 #include <paf/widget/factory.h>
 
-__declspec(dllimport) extern paf::ui::FactoryFuncTable g_factoryBusyIndicator;
+SCE_PAF_IMPORTED_FROM_PRX extern paf::ui::FactoryFuncTable g_factoryBusyIndicator;
 
 namespace paf {
 
@@ -27,7 +27,7 @@ namespace paf {
 
 		private:
 
-			__declspec (dllimport) static const char m_param_name[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_param_name[];
 		};
 
 		class BusyIndicatorStyleParam : public WidgetStyleParam
@@ -45,7 +45,7 @@ namespace paf {
 		private:
 			unsigned char m_unk_0x60[0x18];
 
-			__declspec (dllimport) static const char m_param_name[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_param_name[];
 		};
 
 		class BusyIndicator : public Widget
@@ -79,7 +79,7 @@ namespace paf {
 			int32_t m_unk_2A4;
 
 
-			__declspec(dllimport) static const char m_widget_type[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_widget_type[];
 		};
 	}
 }

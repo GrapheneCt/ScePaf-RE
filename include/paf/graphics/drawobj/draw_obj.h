@@ -10,6 +10,7 @@
 #include <paf/math/math.h>
 #include <paf/graphics/surface/surface.h>
 #include <paf/versatileparam/versatileparam.h>
+#include <paf/paf_types.h>
 
 namespace paf {
 	namespace graph {
@@ -127,8 +128,8 @@ namespace paf {
 			paf::list<int> m_list; // TODO: fix list type
 			unsigned char m_unk_0x34[0x1C];
 
-			__declspec(dllimport) static const char m_param_name[];
-			__declspec(dllimport) static const char * const s_names[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_param_name[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char * const s_names[];
 		};
 
 		class DrawObj
@@ -208,9 +209,9 @@ namespace paf {
 				return *m_rot;
 			}
 
-			__declspec(dllimport) static uint32_t s_dirty_count;
+			SCE_PAF_IMPORTED_FROM_PRX static uint32_t s_dirty_count;
 
-			__declspec(dllimport) static bool s_safety;
+			SCE_PAF_IMPORTED_FROM_PRX static bool s_safety;
 
 		protected:
 
@@ -227,7 +228,7 @@ namespace paf {
 			//common::SharedPtr<Material> m_material;
 			vector<DeleteCBInfo> m_list_delete_cb;
 
-			__declspec(dllimport) static const char m_drawobj_type[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_drawobj_type[];
 
 		};
 

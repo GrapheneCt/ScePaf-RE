@@ -9,7 +9,7 @@
 #include <paf/widget/w_scroll_view_base.h>
 #include <paf/common/shared_ptr.h>
 
-__declspec(dllimport) extern paf::ui::FactoryFuncTable g_factoryListView;
+SCE_PAF_IMPORTED_FROM_PRX extern paf::ui::FactoryFuncTable g_factoryListView;
 
 namespace paf {
 	
@@ -57,7 +57,7 @@ namespace paf {
 		private:
 			unsigned char unk_0x0x168[0x18];
 
-			__declspec (dllimport) static const char m_param_name[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_param_name[];
 		};
 
 		class ListView : public ScrollViewBase
@@ -170,7 +170,7 @@ namespace paf {
 			int32_t m_block_count;
 			char m_unk_424[0xC4];
 
-			__declspec(dllimport) static const char m_widget_type[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_widget_type[];
 		};
 
 		namespace listview {

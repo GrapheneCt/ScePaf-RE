@@ -7,6 +7,7 @@
 
 #include <stdint.h>
 #include <paf/thread/mutex.h>
+#include <paf/paf_types.h>
 
 namespace paf {
 	namespace thread {
@@ -29,7 +30,7 @@ namespace paf {
 
 			uint32_t NumItems();
 
-			__declspec (dllimport) static CallQueue main_thread_callqueue;
+			SCE_PAF_IMPORTED_FROM_PRX static CallQueue main_thread_callqueue;
 
 		private:
 

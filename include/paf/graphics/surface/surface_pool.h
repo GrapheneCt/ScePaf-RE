@@ -8,6 +8,7 @@
 #include <stdint.h>
 #include <stddef.h>
 #include <paf/memory/heap_allocator.h>
+#include <paf/paf_types.h>
 
 namespace paf {
 	namespace graph {
@@ -126,8 +127,8 @@ namespace paf {
 			size_t m_max_usage;
 			thread::Mutex m_mutex;
 
-			__declspec (dllimport) static thread::Mutex m_list_mutex;
-			__declspec (dllimport) static list<SurfacePool*> m_pool_list;
+			SCE_PAF_IMPORTED_FROM_PRX static thread::Mutex m_list_mutex;
+			SCE_PAF_IMPORTED_FROM_PRX static list<SurfacePool*> m_pool_list;
 		};
 	}
 }

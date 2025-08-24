@@ -10,6 +10,7 @@
 #include <paf/graphics/drawobj/draw_obj.h>
 #include <paf/math/math.h>
 #include <paf/graphics/surface/surface.h>
+#include <paf/paf_types.h>
 
 namespace paf {
 	namespace graph {
@@ -112,7 +113,7 @@ namespace paf {
 			intrusive_ptr<Surface> m_tex_surface[4];
 			int32_t m_unk_D4;
 
-			__declspec(dllimport) static const char m_drawobj_type[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_drawobj_type[];
 		};
 
 		class PlaneObjParam : public DrawObjParam
@@ -134,7 +135,7 @@ namespace paf {
 
 			unsigned char m_unk_0x50[0x98];
 
-			__declspec(dllimport) static const char m_param_name[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_param_name[];
 		};
 	}
 }

@@ -142,7 +142,7 @@ namespace paf {
 			uint32_t m_https_flag;
 			graph::SurfacePool *m_surface_pool;
 
-			__declspec (dllimport) static thread::RMutex m_rmutex;
+			SCE_PAF_IMPORTED_FROM_PRX static thread::RMutex m_rmutex;
 		};
 	}
 }

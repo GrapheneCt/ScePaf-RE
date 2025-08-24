@@ -7,6 +7,7 @@
 
 #include <stdint.h>
 #include <paf/math/math.h>
+#include <paf/paf_types.h>
 
 namespace paf {
 
@@ -306,9 +307,9 @@ namespace paf {
 
 		float DoFunc(float _rate, int32_t _func, float _pre, float *_param) const;
 
-		__declspec (dllimport) static float s_tick_interval;
-		__declspec (dllimport) static float s_tick_unit;
-		__declspec (dllimport) static float s_tick_inv;
+		SCE_PAF_IMPORTED_FROM_PRX static float s_tick_interval;
+		SCE_PAF_IMPORTED_FROM_PRX static float s_tick_unit;
+		SCE_PAF_IMPORTED_FROM_PRX static float s_tick_inv;
 
 	protected:
 

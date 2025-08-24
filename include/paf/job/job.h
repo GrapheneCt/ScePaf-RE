@@ -8,6 +8,7 @@
 #include <stdint.h>
 #include <paf/std/stdcxx.h>
 #include <paf/common/shared_ptr.h>
+#include <paf/paf_types.h>
 
 namespace paf {
 	namespace job {
@@ -117,9 +118,9 @@ namespace paf {
 
 			uint32_t NumItems() const;
 
-			__declspec (dllimport) static JobQueue *default_queue;
+			SCE_PAF_IMPORTED_FROM_PRX static JobQueue *default_queue;
 
-			__declspec (dllimport) static list<JobQueue*> queue_list;
+			SCE_PAF_IMPORTED_FROM_PRX static list<JobQueue*> queue_list;
 
 		private:
 

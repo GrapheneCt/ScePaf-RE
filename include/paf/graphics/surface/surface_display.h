@@ -59,7 +59,7 @@ namespace paf {
 
 			int32_t ReleaseFrameBuffer(FrameBufferMode mode);
 
-			__declspec (dllimport) static ScreenSurface *s_offscreen;
+			SCE_PAF_IMPORTED_FROM_PRX static ScreenSurface *s_offscreen;
 
 		private:
 

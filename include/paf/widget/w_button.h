@@ -10,7 +10,7 @@
 #include <paf/graphics/drawobj/plane_obj.h>
 #include <paf/graphics/drawobj/text_obj.h>
 
-__declspec(dllimport) extern paf::ui::FactoryFuncTable g_factoryButton;
+SCE_PAF_IMPORTED_FROM_PRX extern paf::ui::FactoryFuncTable g_factoryButton;
 
 namespace paf {
 
@@ -48,7 +48,7 @@ namespace paf {
 			int m_unk_0x438;
 			int m_unk_0x43C;
 
-			__declspec(dllimport) static const char m_param_name[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_param_name[];
 		};
 
 		class Button : public ButtonBase
@@ -100,7 +100,7 @@ namespace paf {
 			int32_t m_unk_2B8;
 			int32_t m_unk_2BC;
 
-			__declspec(dllimport) static const char m_widget_type[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_widget_type[];
 		};
 	}
 }

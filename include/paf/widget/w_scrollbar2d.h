@@ -8,7 +8,7 @@
 #include <paf/widget/core/widget.h>
 #include <paf/widget/factory.h>
 
-__declspec(dllimport) extern paf::ui::FactoryFuncTable g_factoryScrollBar2d;
+SCE_PAF_IMPORTED_FROM_PRX extern paf::ui::FactoryFuncTable g_factoryScrollBar2d;
 
 namespace paf {
 
@@ -29,7 +29,7 @@ namespace paf {
 		private:
 			unsigned char unk_0x0x60[0x1D8];
 
-			__declspec (dllimport) static const char m_param_name[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_param_name[];
 		};
 
 		class ScrollBar2d : public Widget
@@ -94,7 +94,7 @@ namespace paf {
 			int32_t m_animFunc;
 			char m_unk_2B0[0x20];
 			
-			__declspec(dllimport) static const char m_widget_type[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_widget_type[];
 		};
 	}
 }

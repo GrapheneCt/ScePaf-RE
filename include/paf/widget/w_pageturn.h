@@ -8,7 +8,7 @@
 #include <paf/widget/factory.h>
 #include <paf/widget/w_pageturn_base.h>
 
-__declspec(dllimport) extern paf::ui::FactoryFuncTable g_factoryPageTurn;
+SCE_PAF_IMPORTED_FROM_PRX extern paf::ui::FactoryFuncTable g_factoryPageTurn;
 
 namespace paf {
 
@@ -30,7 +30,7 @@ namespace paf {
 		protected:
 			unsigned char m_unk_0x2B0[0x48];
 
-			__declspec (dllimport) static const char m_widget_type[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_widget_type[];
 		};
 	}
 }

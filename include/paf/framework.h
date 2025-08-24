@@ -287,7 +287,7 @@ namespace paf {
 		SceUID power_cb_id;
 		ui::EnvironmentParam *env_param;
 
-		__declspec (dllimport) static Framework *framework;
+		SCE_PAF_IMPORTED_FROM_PRX static Framework *framework;
 	};
 }
 

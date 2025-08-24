@@ -6,6 +6,7 @@
 #include <paf/std/ngp/iosfwd>
 #include <paf/std/ngp/memory>
 #include <paf/std/ngp/algorithm>
+#include <paf/paf_types.h>
 
 namespace paf {
 template<class _Elem,
@@ -488,7 +489,7 @@ public:
 		return ret;
 	}
 
-	__declspec(dllimport) static _Elem empty_string;
+	SCE_PAF_IMPORTED_FROM_PRX static _Elem empty_string;
 		
 private:
 

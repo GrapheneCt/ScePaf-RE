@@ -11,6 +11,7 @@
 #else
 #include <psp2/types.h>
 #endif
+#include <paf/paf_types.h>
 
 namespace paf {
 	namespace thread {
@@ -29,7 +30,7 @@ namespace paf {
 
 			void Check();
 
-			__declspec (dllimport) static SyncCall main_thread_synccall;
+			SCE_PAF_IMPORTED_FROM_PRX static SyncCall main_thread_synccall;
 
 		private:
 

@@ -8,7 +8,7 @@
 #include <paf/widget/w_scrollbar.h>
 #include <paf/widget/factory.h>
 
-__declspec(dllimport) extern paf::ui::FactoryFuncTable g_factoryScrollBarTouch;
+SCE_PAF_IMPORTED_FROM_PRX extern paf::ui::FactoryFuncTable g_factoryScrollBarTouch;
 
 namespace paf {
 
@@ -61,7 +61,7 @@ namespace paf {
 			PageScrollMode m_pageScrollMode;
 			char m_unk_2D4[0x14];
 
-			__declspec(dllimport) static const char m_widget_type[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_widget_type[];
 		};
 	}
 }

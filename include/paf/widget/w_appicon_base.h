@@ -24,7 +24,7 @@ namespace paf {
 
 		private:
 
-			__declspec (dllimport) static const char m_param_name[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_param_name[];
 		};
 
 		class AppIconBaseStyleParam : public WidgetStyleParam
@@ -37,7 +37,7 @@ namespace paf {
 
 		private:
 
-			__declspec (dllimport) static const char m_param_name[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_param_name[];
 		};
 
 		class AppIconBase : public Widget
@@ -61,7 +61,7 @@ namespace paf {
 
 			char m_unk_27C[0x54];
 
-			__declspec(dllimport) static const char m_widget_type[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_widget_type[];
 		};
 	}
 }

@@ -8,7 +8,7 @@
 #include <paf/widget/w_scroll_view_base.h>
 #include <paf/widget/factory.h>
 
-__declspec(dllimport) extern paf::ui::FactoryFuncTable g_factorySlidingDrawer;
+SCE_PAF_IMPORTED_FROM_PRX extern paf::ui::FactoryFuncTable g_factorySlidingDrawer;
 
 namespace paf {
 	
@@ -61,7 +61,7 @@ namespace paf {
 			math::v4 m_view_velocity;
 			math::v4 m_movable_range;
 
-			__declspec(dllimport) static const char m_widget_type[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_widget_type[];
 		};
 	}
 }
