@@ -1,11 +1,17 @@
-﻿/*
+/*
 	Vita Development Suite Libraries
 */
 
 #ifndef _VDSUITE_USER_PAF_THREAD_RMUTEX_H
 #define _VDSUITE_USER_PAF_THREAD_RMUTEX_H
 
+#include <stdint.h>
+#ifdef __SNC__
 #include <kernel/threadmgr.h>
+#else
+#include <psp2/kernel/threadmgr.h>
+#endif
+#include <paf/paf_types.h>
 
 namespace paf {
 	namespace thread {
@@ -31,7 +37,7 @@ namespace paf {
 
 			void Unlock();
 
-			__declspec (dllimport) static RMutex main_thread_mutex;
+			SCE_PAF_IMPORTED_FROM_PRX static RMutex main_thread_mutex;
 
 		private:
 

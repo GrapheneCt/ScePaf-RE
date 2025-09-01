@@ -7,7 +7,6 @@
 
 #include <stdint.h>
 #include <stddef.h>
-#include <kernel.h>
 #include <paf/paf_types.h>
 #include <paf/file/file.h>
 #include <paf/file/localfile_types.h>
@@ -35,8 +34,8 @@ namespace paf {
 		virtual int32_t WriteAsync(const void *buf, size_t nbyte);
 		virtual int32_t SeekAsync(off_t offset, int32_t whence);
 		virtual int32_t FlushAsync();
-		virtual int32_t WaitAsync(int32_t *result);
-		virtual int32_t PollAsync(int32_t *result);
+		virtual int32_t WaitAsync(int64_t *result);
+		virtual int32_t PollAsync(int64_t *result);
 		virtual bool    IsOpened();
 		virtual bool    IsEof();
 		virtual int32_t Abort();

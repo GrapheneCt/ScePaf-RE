@@ -5,7 +5,7 @@
 #ifndef _VDSUITE_USER_PAF_GRAPHICS_DRAWOBJ_BASIC_SHADER_H
 #define _VDSUITE_USER_PAF_GRAPHICS_DRAWOBJ_BASIC_SHADER_H
 
-#include <paf/std/string.h>
+#include <paf/std/stdc.h>
 #include <paf/graphics/drawobj/shader.h>
 
 namespace paf {

@@ -8,7 +8,7 @@
 #include <paf/widget/core/widget.h>
 #include <paf/widget/factory.h>
 
-__declspec(dllimport) extern paf::ui::FactoryFuncTable g_factoryDirectBar;
+SCE_PAF_IMPORTED_FROM_PRX extern paf::ui::FactoryFuncTable g_factoryDirectBar;
 
 namespace paf {
 
@@ -70,7 +70,7 @@ namespace paf {
 			uint32_t m_btnNum;
 			char m_unk_2A0[0x58];
 
-			__declspec(dllimport) static const char m_widget_type[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_widget_type[];
 		};
 	}
 }

@@ -54,6 +54,16 @@ namespace paf {
 				GpuMapType_NoMap
 			};
 
+			Option()
+			{
+				type = MemoryType_Default;
+				memblock_option = NULL;
+				gpu_map_type = GpuMapType_Default;
+				gpu_map_attrib = 1 | 2;
+				gpu_usse_offset = 0;
+				reserved = 0;
+			}
+
 			MemoryType type;
 			SceKernelAllocMemBlockOpt *memblock_option;
 			GpuMapType gpu_map_type;

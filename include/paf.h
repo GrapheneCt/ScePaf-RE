@@ -9,30 +9,11 @@
 
 /* STDC */
 
-#include <paf/std/stdlib.h>
-#include <paf/std/stdio.h>
-#include <paf/std/string.h>
-#include <paf/std/wchar.h>
-#include <paf/std/wctype.h>
-#include <paf/std/math.h>
-#include <paf/std/setjmp.h>
-#include <paf/std/globalheapsize.h>
-#include <paf/std/__stdc__.h>
+#include <paf/std/stdc.h>
 
 /* STDCXX */
 
-#include <paf/std/std_bridge>
-#include <paf/std/algorithm>
-#include <paf/std/functional>
-#include <paf/std/iosfwd>
-#include <paf/std/memory>
-#include <paf/std/list>
-#include <paf/std/utility>
-#include <paf/std/xtree>
-#include <paf/std/map>
-#include <paf/std/vector>
-#include <paf/std/string>
-#include <paf/std/stdc>
+#include <paf/std/stdcxx.h>
 
 /* THREAD */
 
@@ -87,6 +68,7 @@
 #include <paf/rtc/rtc.h>
 #include <paf/datetime/datetime.h>
 #include <paf/url/url.h>
+#include <paf/http/http.h>
 #include <paf/file/file.h>
 #include <paf/file/localfile_types.h>
 #include <paf/file/httpfile_types.h>

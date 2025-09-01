@@ -8,7 +8,7 @@
 #include <paf/widget/core/widget.h>
 #include <paf/widget/factory.h>
 
-__declspec(dllimport) extern paf::ui::FactoryFuncTable g_factoryImageSlideBar;
+SCE_PAF_IMPORTED_FROM_PRX extern paf::ui::FactoryFuncTable g_factoryImageSlideBar;
 
 namespace paf {
 
@@ -40,13 +40,13 @@ namespace paf {
 				PARTS_IMAGE_SLIDEBAR_END = 2
 			};
 
-			enum BaseMode
+			enum BaseMode : int32_t
 			{
 				BASE_MODE_ZERO_BASED = 0,
 				BASE_MODE_ONE_BASED = 1
 			};
 
-			enum TextureMode
+			enum TextureMode : int32_t
 			{
 				TEXTURE_MODE_WHOLE = 0,
 				TEXTURE_MODE_STEP = 1
@@ -115,7 +115,7 @@ namespace paf {
 			int m_unk_0x2A0;
 			int m_unk_0x2A4;
 
-			__declspec(dllimport) static const char m_widget_type[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_widget_type[];
 		};
 
 

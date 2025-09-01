@@ -8,7 +8,7 @@
 #include <paf/widget/w_progressbar.h>
 #include <paf/widget/factory.h>
 
-__declspec(dllimport) extern paf::ui::FactoryFuncTable g_factoryProgressBarTouch;
+SCE_PAF_IMPORTED_FROM_PRX extern paf::ui::FactoryFuncTable g_factoryProgressBarTouch;
 
 namespace paf {
 
@@ -33,7 +33,7 @@ namespace paf {
 				CB_PROGRESSBAR_TOUCH_END = 0x10000004
 			};
 
-			enum SliderMode
+			enum SliderMode : int32_t
 			{
 				SLIDER_MODE_NORMAL = 0,
 				SLIDER_MODE_LIMITED_BY_BACK = 1
@@ -91,7 +91,7 @@ namespace paf {
 			float m_labelSliderMargin;
 			char m_unk_300[0x18];
 
-			__declspec(dllimport) static const char m_widget_type[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_widget_type[];
 		};
 	}
 }

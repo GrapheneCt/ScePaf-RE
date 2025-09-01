@@ -1,4 +1,4 @@
-﻿/*
+/*
 	Vita Development Suite Libraries
 */
 
@@ -11,7 +11,9 @@
 extern "C" {
 #endif
 
+#ifdef __SNC__
 typedef int64_t off_t;
+#endif
 
 typedef enum ImageMode {
 	ImageMode_NONE = -1,
@@ -124,6 +126,12 @@ typedef enum CharEncoding
 } CharEncoding;
 
 #define SCE_PAF_OK	(0)
+
+#ifdef __SNC__
+#define SCE_PAF_IMPORTED_FROM_PRX __declspec(dllimport)
+#else
+#define SCE_PAF_IMPORTED_FROM_PRX
+#endif
 
 #ifdef __cplusplus
 }

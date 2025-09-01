@@ -8,7 +8,7 @@
 #include <paf/widget/factory.h>
 #include <paf/widget/w_text.h>
 
-__declspec(dllimport) extern paf::ui::FactoryFuncTable g_factoryTextBox;
+SCE_PAF_IMPORTED_FROM_PRX extern paf::ui::FactoryFuncTable g_factoryTextBox;
 
 extern "C"
 {
@@ -115,8 +115,8 @@ namespace paf {
 			static void OnCaretBlinkFadeIn(Timer *timer, AnimListener *anim, void *data1, void *data2, void *data3);
 			static void OnCaretBlinkFadeOut(Timer *timer, AnimListener *anim, void *data1, void *data2, void *data3);
 
-			__declspec(dllimport) static const char m_widget_type[];
-			__declspec(dllimport) static const float c_caretWidth;
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_widget_type[];
+			SCE_PAF_IMPORTED_FROM_PRX static const float c_caretWidth;
 		};
 
 		class TextBoxEditListener

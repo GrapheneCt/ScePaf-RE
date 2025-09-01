@@ -25,7 +25,7 @@ namespace paf {
 
 			}
 
-			assign(T* a_data, size_t a_capacity, size_t a_size)
+			void assign(T* a_data, size_t a_capacity, size_t a_size)
 			{
 				m_buffer = a_data;
 				m_size = a_size;

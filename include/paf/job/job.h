@@ -1,4 +1,4 @@
-﻿/*
+/*
 	Vita Development Suite Libraries
 */
 
@@ -6,10 +6,9 @@
 #define _VDSUITE_USER_PAF_JOB_JOB_H
 
 #include <stdint.h>
-#include <scetypes.h>
-#include <paf/std/string>
-#include <paf/std/list>
+#include <paf/std/stdcxx.h>
 #include <paf/common/shared_ptr.h>
+#include <paf/paf_types.h>
 
 namespace paf {
 	namespace job {
@@ -60,11 +59,11 @@ namespace paf {
 
 			virtual ~JobItem();
 
-			virtual SceVoid Cancel();
+			virtual void Cancel();
 
-			virtual SceVoid Run() = 0;
+			virtual void Run() = 0;
 
-			virtual SceVoid Finish() = 0;
+			virtual void Finish() = 0;
 
 			bool IsCanceled() const;
 
@@ -88,9 +87,9 @@ namespace paf {
 
 				~Option() { };
 
-				SceInt32 workerPriority;
-				SceSize workerStackSize;
-				SceUInt32 workerNum;
+				int32_t workerPriority;
+				uint32_t workerStackSize;
+				uint32_t workerNum;
 				thread::Thread::Option *workerOpt;
 
 			};
@@ -119,9 +118,9 @@ namespace paf {
 
 			uint32_t NumItems() const;
 
-			__declspec (dllimport) static JobQueue *default_queue;
+			SCE_PAF_IMPORTED_FROM_PRX static JobQueue *default_queue;
 
-			__declspec (dllimport) static list<JobQueue*> queue_list;
+			SCE_PAF_IMPORTED_FROM_PRX static list<JobQueue*> queue_list;
 
 		private:
 

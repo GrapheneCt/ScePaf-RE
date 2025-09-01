@@ -1,4 +1,4 @@
-﻿/*
+/*
 	Vita Development Suite Libraries
 */
 
@@ -6,7 +6,7 @@
 #define _VDSUITE_USER_PAF_VERSATILEPARAM_IDPARAM_H
 
 #include <stddef.h>
-#include <paf/std/string>
+#include <paf/std/stdcxx.h>
 
 namespace paf {
 

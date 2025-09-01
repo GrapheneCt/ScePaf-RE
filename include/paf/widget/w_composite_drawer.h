@@ -29,7 +29,7 @@ namespace paf {
 
 			int m_unk_0x27C;
 
-			__declspec(dllimport) static const char m_widget_type[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_widget_type[];
 		};
 	}
 }

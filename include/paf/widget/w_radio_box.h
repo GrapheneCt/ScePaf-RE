@@ -8,7 +8,7 @@
 #include <paf/widget/core/widget.h>
 #include <paf/widget/factory.h>
 
-__declspec(dllimport) extern paf::ui::FactoryFuncTable g_factoryRadioBox;
+SCE_PAF_IMPORTED_FROM_PRX extern paf::ui::FactoryFuncTable g_factoryRadioBox;
 
 namespace paf {
 
@@ -48,7 +48,7 @@ namespace paf {
 			unsigned int m_unk_288;
 			unsigned int m_unk_28C;
 
-			__declspec(dllimport) static const char m_widget_type[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_widget_type[];
 		};
 	}
 }

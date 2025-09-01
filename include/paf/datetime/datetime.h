@@ -38,15 +38,15 @@ namespace paf {
 
 			static void SetDateTimeFormat(const wchar_t *format);
 
-			static rtc::Tick ConvertDateTimeToRtcTick(DateTime& dt);
+			rtc::Tick ConvertDateTimeToRtcTick(DateTime& dt);
 
 			void ConvertRtcTickToDateTime(rtc::Tick *tick);
 
-			void ParseRFC3339(const char *pszDateTime);
+			static DateTime ParseRFC3339(const char *pszDateTime);
 
 			void ParseSQLiteDateTime(const char *pszDateTime);
 
-			void UTC();
+			static DateTime UTC();
 
 			void Now();
 
@@ -95,6 +95,16 @@ namespace paf {
 				return microsecond;
 			}
 
+			int32_t TzOffset() const
+			{
+				return tz_offset;
+			}
+
+			int16_t unk() const
+			{
+				return unk_02;
+			}
+
 		private:
 
 			uint16_t year;
@@ -104,8 +114,9 @@ namespace paf {
 			uint16_t minute;
 			uint16_t second;
 			uint32_t microsecond;
-			uint32_t unk_10;
-			uint8_t unk_14;
+			int32_t tz_offset;
+			bool    parse_failed;
+			int16_t unk_02;
 		};
 	}
 }

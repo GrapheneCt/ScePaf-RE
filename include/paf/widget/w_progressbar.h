@@ -8,7 +8,7 @@
 #include <paf/widget/core/widget.h>
 #include <paf/widget/factory.h>
 
-__declspec(dllimport) extern paf::ui::FactoryFuncTable g_factoryProgressBar;
+SCE_PAF_IMPORTED_FROM_PRX extern paf::ui::FactoryFuncTable g_factoryProgressBar;
 
 namespace paf {
 
@@ -38,26 +38,26 @@ namespace paf {
 				CB_PROGRESSBAR_IMMEDIATE_END = 0x20000001
 			};
 
-			enum BarMode
+			enum BarMode : int32_t
 			{
 				BAR_MODE_SINGLE = 0,
 				BAR_MODE_DOUBLE = 1
 			};
 
-			enum BarId
+			enum BarId : int32_t
 			{
 				BAR_FORE = 0,
 				BAR_BACK = 1
 			};
 
-			enum LabelMode
+			enum LabelMode : int32_t
 			{
 				LABEL_MODE_PERCENTAGE = 0,
 				LABEL_MODE_VALUE = 1,
 				LABEL_MODE_MANUAL = 2
 			};
 
-			enum LabelPosMode
+			enum LabelPosMode : int32_t
 			{
 				LABEL_POS_MODE_CENTER = 0,
 				LABEL_POS_MODE_LEFT = 1,
@@ -181,7 +181,7 @@ namespace paf {
 			uint32_t m_dirty;
 			char m_unk_2D8[0x18];
 
-			__declspec(dllimport) static const char m_widget_type[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_widget_type[];
 		};
 	}
 }

@@ -8,7 +8,7 @@
 #include <paf/widget/factory.h>
 #include <paf/widget/w_scroll_view_base.h>
 
-__declspec(dllimport) extern paf::ui::FactoryFuncTable g_factoryRichText;
+SCE_PAF_IMPORTED_FROM_PRX extern paf::ui::FactoryFuncTable g_factoryRichText;
 
 namespace paf {
 	
@@ -90,7 +90,7 @@ namespace paf {
 			Layouter *m_layouter;
 			char m_unk_4BC[0x94];
 
-			__declspec(dllimport) static const char m_widget_type[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_widget_type[];
 		};
 	}
 }

@@ -7,13 +7,14 @@
 
 #include <stdint.h>
 #include <stddef.h>
-#include <paf/std/string>
+#include <paf/std/stdcxx.h>
 #include <paf/graphics/drawobj/draw_obj.h>
 #include <paf/math/math.h>
 #include <paf/graphics/surface/surface.h>
 #include <paf/graphics/text/text_layout.h>
 #include <paf/graphics/text/text_style.h>
 #include <paf/graphics/text/attributed_string.h>
+#include <paf/paf_types.h>
 
 namespace paf {
 	namespace graph {
@@ -155,7 +156,7 @@ namespace paf {
 			int32_t unk_50;
 			int32_t unk_54;
 
-			__declspec(dllimport) static const char m_drawobj_type[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_drawobj_type[];
 		};
 
 		class TextObjParam : public DrawObjParam
@@ -177,7 +178,7 @@ namespace paf {
 
 			unsigned char m_unk_0x50[0xB8];
 
-			__declspec(dllimport) static const char m_param_name[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_param_name[];
 		};
 	}
 }

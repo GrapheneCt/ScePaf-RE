@@ -7,9 +7,14 @@
 
 #include <stddef.h>
 #include <stdint.h>
+#ifdef __SNC__
 #include <gxm.h>
+#else
+#include <psp2/gxm.h>
+#include <psp2/kernel/cpu.h>
+#endif
 #include <paf/paf_types.h>
-#include <paf/std/memory>
+#include <paf/std/stdcxx.h>
 #include <paf/thread/mutex.h>
 #include <paf/thread/rmutex.h>
 #include <paf/common/shared_ptr.h>
@@ -53,7 +58,11 @@ namespace paf {
 
 			int32_t UnsafeRelease()
 			{
+#ifdef __SNC__
 				sceAtomicDecrement32AcqRel(&m_ref_count);
+#else
+				sceKernelAtomicAddAndGet32((SceInt32 *)&m_ref_count, ~0);
+#endif
 				return m_ref_count;
 			};
 
@@ -77,8 +86,8 @@ namespace paf {
 			void *m_clut;
 			int32_t m_unk_24;
 
-			__declspec (dllimport) static thread::Mutex m_lock_mutex;
-			__declspec (dllimport) static SurfaceListNode m_surface_list;
+			SCE_PAF_IMPORTED_FROM_PRX static thread::Mutex m_lock_mutex;
+			SCE_PAF_IMPORTED_FROM_PRX static SurfaceListNode m_surface_list;
 		};
 
 		class Surface : public SurfaceBase, protected SurfaceListNode
@@ -232,7 +241,7 @@ namespace paf {
 
 			static intrusive_ptr<Surface> Load(SurfacePool *pool, common::SharedPtr<File> src, LoadOption *option = NULL);
 
-			static intrusive_ptr<Surface> Load(SurfacePool *pool, void *buf, off_t size, LoadOption *option);
+			static intrusive_ptr<Surface> Load(SurfacePool *pool, void *buf, int64_t size, LoadOption *option);
 
 			//static intrusive_ptr<Surface> Load(SurfacePool *pool, void *buf, off_t size, uint32_t ununsed = 0, LoadOption *option = NULL);
 
@@ -352,7 +361,11 @@ namespace paf {
 
 			int32_t UnsafeRelease()
 			{
+#ifdef __SNC__
 				sceAtomicDecrement32AcqRel(&m_ref_count);
+#else
+				sceKernelAtomicAddAndGet32((SceInt32 *)&m_ref_count, ~0);
+#endif
 				return m_ref_count;
 			};
 
@@ -421,6 +434,11 @@ namespace paf {
 				return m_texture_param.wrap_t;
 			}
 
+			Texture *GetTexPages()
+			{
+				return m_tex_pages;
+			}
+
 			void *operator new(size_t size);
 
 			void operator delete(void*);
@@ -481,11 +499,11 @@ namespace paf {
 			int32_t m_unk_8C;
 			int32_t m_unk_90;
 
-			__declspec (dllimport) static void* m_active_mark[2];
-			__declspec (dllimport) static int32_t m_initialized;
-			__declspec (dllimport) static thread::RMutex m_list_cs;
-			__declspec (dllimport) static thread::Mutex m_lock_mutex;
-			__declspec (dllimport) static SurfaceListNode m_surface_list;
+			SCE_PAF_IMPORTED_FROM_PRX static void* m_active_mark[2];
+			SCE_PAF_IMPORTED_FROM_PRX static int32_t m_initialized;
+			SCE_PAF_IMPORTED_FROM_PRX static thread::RMutex m_list_cs;
+			SCE_PAF_IMPORTED_FROM_PRX static thread::Mutex m_lock_mutex;
+			SCE_PAF_IMPORTED_FROM_PRX static SurfaceListNode m_surface_list;
 		};
 	}
 }

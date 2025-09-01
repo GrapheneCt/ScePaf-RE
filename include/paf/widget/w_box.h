@@ -8,7 +8,7 @@
 #include <paf/widget/factory.h>
 #include <paf/widget/w_plane.h>
 
-__declspec(dllimport) extern paf::ui::FactoryFuncTable g_factoryBox;
+SCE_PAF_IMPORTED_FROM_PRX extern paf::ui::FactoryFuncTable g_factoryBox;
 
 namespace paf {
 
@@ -156,7 +156,7 @@ namespace paf {
 			LayoutVars m_layout_vars;
 			int m_unk_31C;
 
-			__declspec(dllimport) static const char m_widget_type[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_widget_type[];
 
 		private:
 

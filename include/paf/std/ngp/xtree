@@ -1,5 +1,5 @@
-﻿#ifndef _VDSUITE_USER_PAF_STD_XTREE_H
-#define _VDSUITE_USER_PAF_STD_XTREE_H
+#ifndef _PAF_STD_XTREE_H
+#define _PAF_STD_XTREE_H
 #ifndef _XTREE_
 #define _XTREE_
 
@@ -2605,6 +2605,6 @@ template<class _Traits> inline
 _STD_END
 #endif /* _XTREE_ */
 
-#include <paf/std/std_bridge>
+#include <paf/std/ngp/std_bridge>
 
 #endif

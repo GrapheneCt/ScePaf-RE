@@ -1,11 +1,7 @@
-﻿/*
-	Vita Development Suite Libraries
-*/
+﻿#ifndef _PAF_STD_STDLIB_H
+#define _PAF_STD_STDLIB_H
 
-#ifndef _VDSUITE_USER_PAF_STD_STDLIB_H
-#define _VDSUITE_USER_PAF_STD_STDLIB_H
-
-#include <../../stddef.h>
+#include <stddef.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -39,4 +35,4 @@ void* sce_paf_bsearch(const void *key, const void *ptr, size_t count, size_t siz
 }
 #endif
 
-#endif /* _VDSUITE_USER_PAF_STD_STDLIB_H */
+#endif /* _PAF_STD_STDLIB_H */

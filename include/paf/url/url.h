@@ -6,7 +6,11 @@
 #define _VDSUITE_USER_PAF_URL_URL_H
 
 #include <stdint.h>
+#ifdef __SNC__
 #include <libhttp.h>
+#else
+#include <psp2/net/http.h>
+#endif
 #include <paf/common/string_util.h>
 
 namespace paf {

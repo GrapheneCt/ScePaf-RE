@@ -1,4 +1,4 @@
-﻿/*
+/*
 	Vita Development Suite Libraries
 */
 
@@ -6,12 +6,12 @@
 #define _VDSUITE_USER_PAF_VERSATILEPARAM_VERSATILEPARAM_H
 
 #include <stddef.h>
-#include <paf/std/list>
-#include <paf/std/string>
+#include <paf/std/stdcxx.h>
 #include <paf/math/math.h>
 #include <paf/common/shared_ptr.h>
 #include <paf/versatileparam/idparam.h>
 #include <paf/versatileparam/resourceparam.h>
+#include <paf/paf_types.h>
 
 typedef void* IdParamParamHandle;
 typedef void* TextureParamHandle;
@@ -398,7 +398,7 @@ namespace paf {
 		IDParam m_id;
 		cxml::Element *m_node;
 
-		__declspec (dllimport) static const char *m_param_name;
+		SCE_PAF_IMPORTED_FROM_PRX static const char *m_param_name;
 	};
 
 }

@@ -1,11 +1,12 @@
-﻿#ifndef _VDSUITE_USER_PAF_STD_STRINGCXX_H
-#define _VDSUITE_USER_PAF_STD_STRINGCXX_H
+﻿#ifndef _PAF_STD_STRINGCXX_H
+#define _PAF_STD_STRINGCXX_H
 
 #include <stddef.h>
 #include <stdint.h>
-#include <paf/std/iosfwd>
-#include <paf/std/memory>
-#include <paf/std/algorithm>
+#include <paf/std/ngp/iosfwd>
+#include <paf/std/ngp/memory>
+#include <paf/std/ngp/algorithm>
+#include <paf/paf_types.h>
 
 namespace paf {
 template<class _Elem,
@@ -488,7 +489,7 @@ public:
 		return ret;
 	}
 
-	__declspec(dllimport) static _Elem empty_string;
+	SCE_PAF_IMPORTED_FROM_PRX static _Elem empty_string;
 		
 private:
 

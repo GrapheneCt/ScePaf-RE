@@ -8,7 +8,7 @@
 #include <paf/widget/factory.h>
 #include <paf/widget/w_button.h>
 
-__declspec(dllimport) extern paf::ui::FactoryFuncTable g_factoryCornerButton;
+SCE_PAF_IMPORTED_FROM_PRX extern paf::ui::FactoryFuncTable g_factoryCornerButton;
 
 namespace paf {
 
@@ -28,7 +28,7 @@ namespace paf {
 
 			char m_unk_2C0[0x10];
 
-			__declspec(dllimport) static const char m_widget_type[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_widget_type[];
 		};
 	}
 }

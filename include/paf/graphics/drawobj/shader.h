@@ -5,7 +5,7 @@
 #ifndef _VDSUITE_USER_PAF_GRAPHICS_DRAWOBJ_SHADER_H
 #define _VDSUITE_USER_PAF_GRAPHICS_DRAWOBJ_SHADER_H
 
-#include <paf/std/memory>
+#include <paf/std/stdcxx.h>
 #include <paf/math/math.h>
 
 namespace paf {

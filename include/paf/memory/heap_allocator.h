@@ -1,4 +1,4 @@
-﻿/*
+/*
 	Vita Development Suite Libraries
 */
 
@@ -7,7 +7,7 @@
 
 #include <stdint.h>
 #include <stddef.h>
-#include <paf/std/__stdc__.h>
+#include <paf/std/stdc.h>
 #include <paf/memory/allocator.h>
 #include <paf/thread/mutex.h>
 

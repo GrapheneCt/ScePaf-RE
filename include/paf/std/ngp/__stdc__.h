@@ -1,11 +1,7 @@
-﻿/*
-	Vita Development Suite Libraries
-*/
+﻿#ifndef _PAF_STD___STDC___H
+#define _PAF_STD___STDC___H
 
-#ifndef _VDSUITE_USER_PAF_STD___STDC___H
-#define _VDSUITE_USER_PAF_STD___STDC___H
-
-#include <../../stdint.h>
+#include <stdint.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -19,4 +15,4 @@ void *GetGlobalHeapAllocator();
 }
 #endif
 
-#endif /* _VDSUITE_USER_PAF_STD___STDC___H */
+#endif /* _PAF_STD___STDC___H */

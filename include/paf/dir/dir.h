@@ -6,7 +6,7 @@
 #define _VDSUITE_USER_PAF_DIR_DIR_H
 
 #include <stdint.h>
-#include <paf/std/string>
+#include <paf/std/stdcxx.h>
 
 namespace paf {
 

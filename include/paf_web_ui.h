@@ -5,7 +5,6 @@
 #ifndef _VDSUITE_USER_PAF_WEB_UI_H
 #define _VDSUITE_USER_PAF_WEB_UI_H
 
-#include <kernel.h>
 #include <paf.h>
 
 namespace paf {

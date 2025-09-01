@@ -5,7 +5,7 @@
 #ifndef _VDSUITE_USER_PAF_COMMON_PATH_H
 #define _VDSUITE_USER_PAF_COMMON_PATH_H
 
-#include <paf/std/string>
+#include <paf/std/stdcxx.h>
 
 namespace paf {
 	namespace common {

@@ -7,8 +7,12 @@
 
 #include <stdint.h>
 #include <stddef.h>
-#include <kernel.h>
 #include <paf/paf_types.h>
+#ifdef __SNC__
+#include <kernel.h>
+#else
+#include <psp2/io/stat.h>
+#endif
 
 namespace paf {
 
@@ -55,8 +59,8 @@ namespace paf {
 		virtual int32_t SeekAsync(off_t offset, int32_t whence) = 0;
 		virtual int32_t Flush() = 0;
 		virtual int32_t FlushAsync() = 0;
-		virtual int32_t WaitAsync(int32_t *result) = 0;
-		virtual int32_t PollAsync(int32_t *result) = 0;
+		virtual int32_t WaitAsync(int64_t *result) = 0;
+		virtual int32_t PollAsync(int64_t *result) = 0;
 		virtual int32_t Getstat(FileStat *stat) = 0;
 		virtual int32_t SetPriority(int32_t priority) = 0;
 

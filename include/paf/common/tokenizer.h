@@ -7,8 +7,7 @@
 
 #include <stdint.h>
 #include <stddef.h>
-#include <paf/std/string>
-#include <paf/std/vector>
+#include <paf/std/stdcxx.h>
 
 namespace paf {
 	namespace common {
@@ -50,7 +49,7 @@ namespace paf {
 
 			void addSeparatorChars(string const& value)
 			{
-				for (int32_t i = 0; i != value.size(); i++)
+				for (uint32_t i = 0; i != value.size(); i++)
 				{
 					string sep(value, i, 1);
 					addSeparator(sep);
@@ -75,7 +74,7 @@ namespace paf {
 				}
 				else
 				{
-					for (int32_t i = 0; i != _tokens.size(); i++)
+					for (uint32_t i = 0; i != _tokens.size(); i++)
 					{
 						if (match(_loc._next_pos, _tokens[i].c_str()))
 						{
@@ -87,7 +86,7 @@ namespace paf {
 						}
 					}
 
-					for (int32_t i = 0; i != _separators.size(); i++)
+					for (uint32_t i = 0; i != _separators.size(); i++)
 					{
 						if (match(_loc._next_pos, _separators[i].c_str()))
 						{
@@ -176,7 +175,7 @@ namespace paf {
 			bool match(size_t pos, const char *str) const
 			{
 				const char *spos = str;
-				for (int32_t i = pos; (*spos != '\0' && (i < _src_size)); i++)
+				for (uint32_t i = pos; (*spos != '\0' && (i < _src_size)); i++)
 				{
 					if (*spos != _src[i])
 					{

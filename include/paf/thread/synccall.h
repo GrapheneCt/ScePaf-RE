@@ -1,4 +1,4 @@
-﻿/*
+/*
 	Vita Development Suite Libraries
 */
 
@@ -6,7 +6,12 @@
 #define _VDSUITE_USER_PAF_THREAD_SYNCCALL_H
 
 #include <stdint.h>
+#ifdef __SNC__
 #include <scetypes.h>
+#else
+#include <psp2/types.h>
+#endif
+#include <paf/paf_types.h>
 
 namespace paf {
 	namespace thread {
@@ -15,17 +20,17 @@ namespace paf {
 		{
 		public:
 
-			typedef void(*Function)(void *userdata);
+			typedef int32_t(*Function)(void *userdata);
 
 			SyncCall(const char *name);
 
 			~SyncCall();
 
-			void Enqueue(Function entry, void *userdata);
+			void Call(Function entry, void *userdata);
 
 			void Check();
 
-			__declspec (dllimport) static SyncCall main_thread_synccall;
+			SCE_PAF_IMPORTED_FROM_PRX static SyncCall main_thread_synccall;
 
 		private:
 

@@ -1,4 +1,4 @@
-﻿/*
+/*
 	Vita Development Suite Libraries
 */
 
@@ -8,7 +8,7 @@
 #include <paf/widget/factory.h>
 #include <paf/widget/w_button_base.h>
 
-__declspec(dllimport) extern paf::ui::FactoryFuncTable g_factoryStateButtonBase;
+SCE_PAF_IMPORTED_FROM_PRX extern paf::ui::FactoryFuncTable g_factoryStateButtonBase;
 
 namespace paf {
 
@@ -28,7 +28,7 @@ namespace paf {
 		private:
 			unsigned char unk_0x60[0x3E0];
 
-			__declspec (dllimport) static const char m_param_name[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_param_name[];
 		};
 
 		class StateButtonBase : public ButtonBase
@@ -73,16 +73,24 @@ namespace paf {
 				return m_frame_time;
 			}
 
+			bool IsChecked()
+			{
+				return m_is_checked;
+			}
+
 		protected: //0x2C8
 
+			char m_unk_2B0;
+			bool m_is_checked;
+			char m_unk_2B2;
+			char m_unk_2B3;
 			int32_t m_frame_num;
 			float m_frame_time;
-			int32_t m_unk_2B8;
 			int32_t m_unk_2BC;
 			int32_t m_unk_2C0;
 			int32_t m_unk_2C4;
 
-			__declspec(dllimport) static const char m_widget_type[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_widget_type[];
 		};
 	}
 }

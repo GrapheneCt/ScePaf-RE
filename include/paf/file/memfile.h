@@ -7,7 +7,6 @@
 
 #include <stdint.h>
 #include <stddef.h>
-#include <kernel.h>
 #include <paf/paf_types.h>
 #include <paf/common/shared_ptr.h>
 #include <paf/thread/rmutex.h>
@@ -51,8 +50,8 @@ namespace paf {
 		virtual int32_t SeekAsync(off_t offset, int32_t whence);
 		virtual int32_t Flush();
 		virtual int32_t FlushAsync();
-		virtual int32_t WaitAsync(int32_t *result);
-		virtual int32_t PollAsync(int32_t *result);
+		virtual int32_t WaitAsync(int64_t *result);
+		virtual int32_t PollAsync(int64_t *result);
 		virtual int32_t Getstat(FileStat *stat);
 		virtual int32_t SetPriority(int32_t priority);
 
@@ -70,8 +69,7 @@ namespace paf {
 		size_t mem_size;
 		off_t mem_pos;
 		bool waiting_for_sync;
-		int32_t io_result;
-		int32_t unk_28;
+		off_t io_result;
 		thread::RMutex lock_mutex;
 	};
 }

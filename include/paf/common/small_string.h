@@ -6,7 +6,7 @@
 #define _VDSUITE_USER_PAF_COMMON_SMALL_STRING_H
 
 #include <stdint.h>
-#include <paf/std/string.h>
+#include <paf/std/stdc.h>
 #include <paf/math/math.h>
 
 namespace paf {
@@ -43,7 +43,7 @@ namespace paf {
 			{
 				clear();
 				uint32_t minlen = math::min<uint32_t>(sce_paf_strlen(src), 0xF);
-				int32_t i = 0;
+				uint32_t i = 0;
 				if (minlen != 0)
 				{
 					do {

@@ -1,4 +1,4 @@
-﻿/*
+/*
 	Vita Development Suite Libraries
 */
 
@@ -8,7 +8,7 @@
 #include <stdint.h>
 #include <stddef.h>
 #include <paf/paf_types.h>
-#include <paf/std/string>
+#include <paf/std/stdcxx.h>
 #include <paf/common/shared_ptr.h>
 
 namespace paf {

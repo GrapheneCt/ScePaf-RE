@@ -5,12 +5,17 @@
 #ifndef _VDSUITE_USER_PAF_WEB_MAP_VIEW_H
 #define _VDSUITE_USER_PAF_WEB_MAP_VIEW_H
 
-#include <kernel.h>
+#include <stdint.h>
+#ifdef __SNC__
 #include <gxm.h>
+#else
+#include <psp2/gxm.h>
+#endif
 #include <paf/widget/factory.h>
 #include <paf/widget/w_scroll_view.h>
+#include <paf/paf_types.h>
 
-__declspec(dllimport) extern paf::ui::FactoryFuncTable g_factoryWebView;
+SCE_PAF_IMPORTED_FROM_PRX extern paf::ui::FactoryFuncTable g_factoryWebView;
 
 namespace paf {
 
@@ -99,7 +104,7 @@ namespace paf {
 		private:
 			unsigned char m_unk_0x78[0x68];
 
-			__declspec(dllimport) static const char m_param_name[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_param_name[];
 		};
 
 		class WebViewStyleParam : public WidgetStyleParam
@@ -113,7 +118,7 @@ namespace paf {
 
 		private:
 
-			__declspec(dllimport) static const char m_param_name[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_param_name[];
 		};
 
 		class WebView : public ScrollView //0x830
@@ -200,7 +205,7 @@ namespace paf {
 			WebViewDelegate *m_delegate;
 			char m_unk_45C[0x3D4];
 
-			__declspec(dllimport) static const char *m_widget_type;
+			SCE_PAF_IMPORTED_FROM_PRX static const char *m_widget_type;
 		};
 	}
 

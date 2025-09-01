@@ -1,4 +1,4 @@
-﻿/*
+/*
 	Vita Development Suite Libraries
 */
 
@@ -10,7 +10,7 @@
 #include <paf/math/ngp/v3.h>
 #include <paf/math/ngp/v4.h>
 #include <paf/common/halt_assert.h>
-#include <paf/std/string>
+#include <paf/std/stdcxx.h>
 
 namespace paf {
 	namespace math {

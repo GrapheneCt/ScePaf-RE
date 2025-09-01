@@ -1,11 +1,7 @@
-﻿/*
-	Vita Development Suite Libraries
-*/
+﻿#ifndef _PAF_STD_WCHAR_H
+#define _PAF_STD_WCHAR_H
 
-#ifndef _VDSUITE_USER_PAF_STD_WCHAR_H
-#define _VDSUITE_USER_PAF_STD_WCHAR_H
-
-#include <../../wchar.h>
+#include <wchar.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -42,4 +38,4 @@ int sce_paf_vswprintf(wchar_t *buffer, size_t bufsz, const wchar_t *format, va_l
 }
 #endif
 
-#endif /* _VDSUITE_USER_PAF_STD_WCHAR_H */
+#endif /* _PAF_STD_WCHAR_H */

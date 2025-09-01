@@ -7,9 +7,7 @@
 
 #include <stdint.h>
 #include <stddef.h>
-#include <paf/std/string>
-#include <paf/std/list>
-#include <paf/std/map>
+#include <paf/std/stdcxx.h>
 #include <paf/common/char_encoding.h>
 
 namespace paf {
@@ -31,9 +29,9 @@ namespace paf {
 
 			~String();
 
-			void Split(char delimiter);
+			String& Split(char delimiter);
 
-			void Split(string const& delimiter);
+			String& Split(string const& delimiter);
 
 			void SetFormattedString(char const* format, ...);
 

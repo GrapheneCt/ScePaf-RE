@@ -1,4 +1,4 @@
-﻿/*
+/*
 	Vita Development Suite Libraries
 */
 
@@ -8,9 +8,7 @@
 #include <stdint.h>
 #include <stddef.h>
 #include <paf/paf_types.h>
-#include <paf/std/map>
-#include <paf/std/vector>
-#include <paf/std/string>
+#include <paf/std/stdcxx.h>
 #include <paf/thread/rmutex.h>
 #include <paf/cache/cache_base.h>
 #include <paf/cache/cache_manager.h>
@@ -144,7 +142,7 @@ namespace paf {
 			uint32_t m_https_flag;
 			graph::SurfacePool *m_surface_pool;
 
-			__declspec (dllimport) static thread::RMutex m_rmutex;
+			SCE_PAF_IMPORTED_FROM_PRX static thread::RMutex m_rmutex;
 		};
 	}
 }

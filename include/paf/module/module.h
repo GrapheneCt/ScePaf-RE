@@ -6,9 +6,12 @@
 #define _VDSUITE_USER_PAF_MODULE_MODULE_H
 
 #include <stdint.h>
+#ifdef __SNC__
 #include <scetypes.h>
-#include <paf/std/string>
-#include <paf/std/map>
+#else
+#include <psp2/types.h>
+#endif
+#include <paf/std/stdcxx.h>
 
 namespace paf {
 
@@ -38,6 +41,8 @@ namespace paf {
 
 		void *GetInterface(int32_t version) const;
 
+		int32_t GetHandle();
+
 	private:
 
 		ModuleImpl *impl;
@@ -52,7 +57,7 @@ namespace paf {
 			return name;
 		}
 
-		SceUID GetHandle() const
+		int32_t GetHandle() const
 		{
 			return handle;
 		}
@@ -77,6 +82,11 @@ namespace paf {
 		int32_t option;
 		int32_t result;
 	};
+
+	inline int32_t Module::GetHandle()
+	{
+		return impl->GetHandle();
+	}
 }
 
 #endif /* _VDSUITE_USER_PAF_MODULE_MODULE_H */

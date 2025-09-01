@@ -23,7 +23,7 @@ namespace paf {
 
 		protected: //0x2D0
 
-			__declspec(dllimport) static const char m_widget_type[];
+			SCE_PAF_IMPORTED_FROM_PRX static const char m_widget_type[];
 		};
 	}
 }

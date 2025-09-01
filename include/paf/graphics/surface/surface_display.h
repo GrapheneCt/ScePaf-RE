@@ -7,7 +7,11 @@
 
 #include <stddef.h>
 #include <stdint.h>
+#ifdef __SNC__
 #include <scetypes.h>
+#else
+#include <psp2/types.h>
+#endif
 #include <paf/paf_types.h>
 #include <paf/graphics/surface/surface_base.h>
 #include <paf/graphics/surface/surface_screen.h>
@@ -55,7 +59,7 @@ namespace paf {
 
 			int32_t ReleaseFrameBuffer(FrameBufferMode mode);
 
-			__declspec (dllimport) static ScreenSurface *s_offscreen;
+			SCE_PAF_IMPORTED_FROM_PRX static ScreenSurface *s_offscreen;
 
 		private:
 

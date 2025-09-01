@@ -1,4 +1,4 @@
-﻿/*
+/*
 	Vita Development Suite Libraries
 */
 
@@ -7,10 +7,13 @@
 
 #include <stdint.h>
 #include <stddef.h>
+#ifdef __SNC__
 #include <scetypes.h>
+#else
+#include <psp2/types.h>
+#endif
 #include <paf/paf_types.h>
-#include <paf/std/vector>
-#include <paf/std/string>
+#include <paf/std/stdcxx.h>
 #include <paf/plugin.h>
 
 namespace paf {
@@ -221,7 +224,7 @@ namespace paf {
 
 		Locale GetCommonResourceLocale() const;
 
-		Locale paf::Framework::GetLocale() const
+		Locale GetLocale() const
 		{
 			return m_locale;
 		}
@@ -284,7 +287,7 @@ namespace paf {
 		SceUID power_cb_id;
 		ui::EnvironmentParam *env_param;
 
-		__declspec (dllimport) static Framework *framework;
+		SCE_PAF_IMPORTED_FROM_PRX static Framework *framework;
 	};
 }
 
