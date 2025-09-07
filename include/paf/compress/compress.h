@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_COMPRESS_COMPRESS_H
-#define _VDSUITE_USER_PAF_COMPRESS_COMPRESS_H
+#ifndef _PAF_COMPRESS_COMPRESS_H
+#define _PAF_COMPRESS_COMPRESS_H
 
 #include <stdint.h>
 #include <stddef.h>
@@ -20,7 +20,7 @@ namespace paf {
 
 	namespace compress {
 
-		enum CompressType
+		enum CompressType : int32_t
 		{
 			CompressType_None = 0,
 			CompressType_Zlib = 1
@@ -30,4 +30,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_COMPRESS_COMPRESS_H */
+#endif /* _PAF_COMPRESS_COMPRESS_H */

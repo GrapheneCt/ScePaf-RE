@@ -1,0 +1,11 @@
+/*
+	ScePaf-RE Project
+*/
+
+#ifndef _PAF_STDCXX_LIST_H
+#define _PAF_STDCXX_LIST_H
+
+#include <list>
+#include <paf/std/generic/stdcxx_bridge>
+
+#endif /* _PAF_STDCXX_LIST_H */

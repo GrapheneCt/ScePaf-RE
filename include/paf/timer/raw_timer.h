@@ -1,9 +1,9 @@
 /*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_TIMER_RAW_TIMER_H
-#define _VDSUITE_USER_PAF_TIMER_RAW_TIMER_H
+#ifndef _PAF_TIMER_RAW_TIMER_H
+#define _PAF_TIMER_RAW_TIMER_H
 
 #include <stddef.h>
 #include <stdint.h>
@@ -12,54 +12,54 @@
 typedef uint64_t TimeType;
 
 namespace paf {
-	
+
 	extern TimeType get_time_internal();
 
 	class RawTimer
 	{
 	public:
 
-		RawTimer(size_t _Ave = 0) : _val(_Ave), _start_flag(false)
+		RawTimer(size_t _Ave = 0) : m_val(_Ave), m_start_flag(false)
 		{
-			_start = get_time_internal();
+			m_start = get_time_internal();
 		}
 
 		void start()
 		{
-			_start = get_time_internal();
-			_start_flag = true;
+			m_start = get_time_internal();
+			m_start_flag = true;
 		}
 
 		void end()
 		{
-			if (_start_flag)
+			if (m_start_flag)
 			{
-				_val += seconds();
-				_start_flag = false;
+				m_val += seconds();
+				m_start_flag = false;
 			}
 		}
 
 		float seconds() const
 		{
-			return (float)(get_time_internal() - _start) / 1000000.0f;
+			return (float)(get_time_internal() - m_start) / 1000000.0f;
 		}
 
 		float milliseconds() const
 		{
-			return (float)(get_time_internal() - _start) / 1000.0f;
+			return (float)(get_time_internal() - m_start) / 1000.0f;
 		}
 
 		float average() const
 		{
-			return _val;
+			return m_val;
 		}
 
 	private:
 
-		TimeType _start;
-		common::AveragedValue<float> _val;
-		bool _start_flag;
+		TimeType m_start;
+		common::AveragedValue<float> m_val;
+		bool m_start_flag;
 	};
 }
 
-#endif /* _VDSUITE_USER_PAF_TIMER_RAW_TIMER_H */
+#endif /* _PAF_TIMER_RAW_TIMER_H */

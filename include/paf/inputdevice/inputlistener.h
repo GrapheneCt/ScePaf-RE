@@ -1,9 +1,9 @@
 /*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_INPUTDEVICE_INPUTLISTENER_H
-#define _VDSUITE_USER_PAF_INPUTDEVICE_INPUTLISTENER_H
+#ifndef _PAF_INPUTDEVICE_INPUTLISTENER_H
+#define _PAF_INPUTDEVICE_INPUTLISTENER_H
 
 #include <stdint.h>
 #include <paf/inputdevice/inputdevice.h>
@@ -203,4 +203,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_INPUTDEVICE_INPUTLISTENER_H */
+#endif /* _PAF_INPUTDEVICE_INPUTLISTENER_H */

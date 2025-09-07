@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_COMMON_PROPERTY_LIST_H
-#define _VDSUITE_USER_PAF_COMMON_PROPERTY_LIST_H
+#ifndef _PAF_COMMON_PROPERTY_LIST_H
+#define _PAF_COMMON_PROPERTY_LIST_H
 
 #include <stdint.h>
 #include <stddef.h>
@@ -83,16 +83,16 @@ namespace paf {
 
 				virtual bool IsInherit(const char *type);
 
-				virtual char *GetTypeName() const;
+				virtual const char *GetTypeName() const;
 
 				virtual ~PropertyElement()
 				{
 
 				}
 
-				char *TypeName();
+				const char *TypeName();
 
-			private:
+			protected:
 
 				SCE_PAF_IMPORTED_FROM_PRX static const char *m_type_name;
 			};
@@ -101,7 +101,7 @@ namespace paf {
 			{
 			public:
 
-				static string& GetString(SharedPtr<PropertyElement> value);
+				static string const& GetString(SharedPtr<PropertyElement> value);
 
 				StringElement(string const& value) : m_value(value)
 				{
@@ -110,14 +110,14 @@ namespace paf {
 
 				virtual bool IsInherit(const char *type);
 
-				virtual char *GetTypeName() const;
+				virtual const char *GetTypeName() const;
 
 				virtual ~StringElement()
 				{
 
 				}
 
-				char *TypeName();
+				const char *TypeName();
 
 				string& GetValue()
 				{
@@ -133,6 +133,8 @@ namespace paf {
 
 			private:
 
+				SCE_PAF_IMPORTED_FROM_PRX static const char *m_type_name;
+
 				string m_value;
 			};
 
@@ -140,7 +142,7 @@ namespace paf {
 			{
 			public:
 
-				static wstring& GetString(SharedPtr<PropertyElement> value);
+				static wstring const& GetString(SharedPtr<PropertyElement> value);
 
 				WStringElement(wstring const& value) : m_value(value)
 				{
@@ -149,14 +151,14 @@ namespace paf {
 
 				virtual bool IsInherit(const char *type);
 
-				virtual char *GetTypeName() const;
+				virtual const char *GetTypeName() const;
 
 				virtual ~WStringElement()
 				{
 
 				}
 
-				char *TypeName();
+				const char *TypeName();
 
 				wstring& GetValue()
 				{
@@ -171,6 +173,8 @@ namespace paf {
 				SCE_PAF_IMPORTED_FROM_PRX static const wstring s_empty_string;
 
 			private:
+
+				SCE_PAF_IMPORTED_FROM_PRX static const char *m_type_name;
 
 				wstring m_value;
 			};
@@ -206,11 +210,11 @@ namespace paf {
 				SharedPtr<PropertyElement> GetElement(size_t sce_paf_index) const;
 				SharedPtr<PropertyElement> GetElement(IDParam const& key) const;
 
-				string& GetString(size_t sce_paf_index) const;
-				string& GetString(IDParam const& key) const;
+				string const& GetString(size_t sce_paf_index) const;
+				string const& GetString(IDParam const& key) const;
 
-				wstring& GetWString(size_t sce_paf_index) const;
-				wstring& GetWString(IDParam const& key) const;
+				wstring const& GetWString(size_t sce_paf_index) const;
+				wstring const& GetWString(IDParam const& key) const;
 
 				PropertyValue GetValue(size_t sce_paf_index) const;
 				PropertyValue GetValue(IDParam const& key) const;
@@ -229,4 +233,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_COMMON_PROPERTY_LIST_H */
+#endif /* _PAF_COMMON_PROPERTY_LIST_H */

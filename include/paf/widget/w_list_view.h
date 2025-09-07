@@ -1,9 +1,9 @@
 /*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_WIDGET_W_LIST_VIEW_H
-#define _VDSUITE_USER_PAF_WIDGET_W_LIST_VIEW_H
+#ifndef _PAF_WIDGET_W_LIST_VIEW_H
+#define _PAF_WIDGET_W_LIST_VIEW_H
 
 #include <paf/widget/factory.h>
 #include <paf/widget/w_scroll_view_base.h>
@@ -73,20 +73,20 @@ namespace paf {
 				CB_LIST_VIEW_END = 0x10000009
 			};
 
-			enum LayoutType
+			enum LayoutType : int32_t
 			{
 				LAYOUT_TYPE_LIST = 0,
 				LAYOUT_TYPE_GRID = 1,
 				LAYOUT_TYPE_LIST_VARIABLE = 2
 			};
 
-			enum ScrollType
+			enum ScrollType : int32_t
 			{
 				SCROLL_TYPE_VERTICAL = 0,
 				SCROLL_TYPE_HORIZONTAL = 1
 			};
 
-			enum FocusAlignType
+			enum FocusAlignType : int32_t
 			{
 				FOCUS_ALIGN_TYPE_HEAD = 0,
 				FOCUS_ALIGN_TYPE_CENTER = 1,
@@ -406,4 +406,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_WIDGET_W_LIST_VIEW_H */
+#endif /* _PAF_WIDGET_W_LIST_VIEW_H */

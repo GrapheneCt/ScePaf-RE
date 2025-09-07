@@ -1,0 +1,12 @@
+﻿/*
+	ScePaf-RE Project
+*/
+
+#ifndef _PAF_STDCXX_BRIDGE_H
+#define _PAF_STDCXX_BRIDGE_H
+
+namespace paf {
+	using namespace std;
+}
+
+#endif /* _PAF_STDCXX_BRIDGE_H */

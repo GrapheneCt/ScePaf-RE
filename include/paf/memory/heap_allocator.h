@@ -1,15 +1,27 @@
 /*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_HEAP_ALLOCATOR_H
-#define _VDSUITE_USER_PAF_HEAP_ALLOCATOR_H
+#ifndef _PAF_HEAP_ALLOCATOR_H
+#define _PAF_HEAP_ALLOCATOR_H
 
 #include <stdint.h>
 #include <stddef.h>
 #include <paf/std/stdc.h>
 #include <paf/memory/allocator.h>
 #include <paf/thread/mutex.h>
+
+#if defined(__SNC__)
+#include <scetypes.h>
+#define SCE_PAF_MEMBLOCK_TYPE SceUID
+#elif defined(__vita__)
+#include <psp2/types.h>
+#define SCE_PAF_MEMBLOCK_TYPE SceUID
+#elif defined(_WIN32)
+#define SCE_PAF_MEMBLOCK_TYPE void*
+#else
+#error Current target platform is not supported or no target platform defined
+#endif
 
 namespace paf {
 	namespace memory {
@@ -18,7 +30,7 @@ namespace paf {
 		{
 		public:
 
-			int32_t num_of_free;
+			size_t num_of_free;
 			size_t total_free_size;
 		};
 
@@ -42,7 +54,7 @@ namespace paf {
 
 			virtual uint32_t GetType() const;
 			virtual AllocationBlockType GetBlockType() const;
-			virtual char *GetName() const;
+			virtual const char *GetName() const;
 			virtual void GetRange(void **membase, size_t *size) const;
 			virtual size_t GetFreeSize();
 
@@ -70,7 +82,7 @@ namespace paf {
 
 			void *sce_paf_memalign_d(size_t alignment, size_t size, const char *filename = NULL, int32_t lineno = 0, int32_t type = 0);
 
-			void sce_paf_musable_size(void *ptr);
+			size_t sce_paf_musable_size(void *ptr);
 
 			void sce_paf_dump_heap_status();
 
@@ -88,23 +100,18 @@ namespace paf {
 
 		private:
 
-			void* heap_id;
-			void* heap_addr;
-			size_t heap_size;
-			char heap_name[32];
-			bool memory_attached;
-			bool heap_disable_dbgprint;
-			bool heap_disable_assert_on_alloc_failure;
-			thread::Mutex mutex;
-			SceUID memblk_id;
-			uint32_t heap_memblk_type;
+			void* m_heap_id;
+			void* m_heap_addr;
+			size_t m_heap_size;
+			char m_heap_name[32];
+			bool m_memory_attached;
+			bool m_heap_disable_dbgprint;
+			bool m_heap_disable_assert_on_alloc_failure;
+			thread::Mutex m_mutex;
+			SCE_PAF_MEMBLOCK_TYPE m_memblk_id;
+			paf::memory::AllocationBlockType m_heap_memblk_type;
 		};
-
-		static inline HeapAllocator *GetGlobalHeapAllocator()
-		{
-			return (HeapAllocator *)::GetGlobalHeapAllocator();
-		}
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_HEAP_ALLOCATOR_H */
+#endif /* _PAF_HEAP_ALLOCATOR_H */

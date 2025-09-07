@@ -1,14 +1,14 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_MODULE_MODULE_H
-#define _VDSUITE_USER_PAF_MODULE_MODULE_H
+#ifndef _PAF_MODULE_MODULE_H
+#define _PAF_MODULE_MODULE_H
 
 #include <stdint.h>
-#ifdef __SNC__
+#if defined(__SNC__)
 #include <scetypes.h>
-#else
+#elif defined(__vita__)
 #include <psp2/types.h>
 #endif
 #include <paf/std/stdcxx.h>
@@ -21,7 +21,7 @@ namespace paf {
 	{
 	public:
 
-		enum Option
+		enum Option : int32_t
 		{
 			Option_None = 0,
 			Option_UseInterface = 1,
@@ -89,4 +89,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_MODULE_MODULE_H */
+#endif /* _PAF_MODULE_MODULE_H */

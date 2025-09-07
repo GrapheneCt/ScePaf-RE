@@ -1,9 +1,13 @@
+/*
+	ScePaf-RE Project
+*/
+
 #ifndef _PAF_STD_STDC_H
 #define _PAF_STD_STDC_H
 
-#ifdef __SNC__
+#if defined(__SNC__)
 #include <scetypes.h>
-#else
+#elif defined(__vita__)
 #include <psp2/types.h>
 #endif
 

@@ -1,23 +1,25 @@
 /*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_GRAPHICS_GRAPHICS_H
-#define _VDSUITE_USER_PAF_GRAPHICS_GRAPHICS_H
+#ifndef _PAF_GRAPHICS_GRAPHICS_H
+#define _PAF_GRAPHICS_GRAPHICS_H
 
 #include <stdint.h>
 
-typedef enum FrameBufferMode {
-    FrameBuffer_Normal=0,
-    FrameBuffer_Shared_Create=1,
-    FrameBuffer_Shared_Share=2,
-    FrameBuffer_Shared_OffScreen=3,
-    FrameBuffer_Given=4
+typedef enum FrameBufferMode : int32_t
+{
+	FrameBuffer_Normal=0,
+	FrameBuffer_Shared_Create=1,
+	FrameBuffer_Shared_Share=2,
+	FrameBuffer_Shared_OffScreen=3,
+	FrameBuffer_Given=4
 } FrameBufferMode;
 
-typedef enum ParameterBufferLocation {
-    ParameterBuffer_CDRAM=0,
-    ParameterBuffer_LPDDR=1
+typedef enum ParameterBufferLocation : int32_t
+{
+	ParameterBuffer_CDRAM=0,
+	ParameterBuffer_LPDDR=1
 } ParameterBufferLocation;
 
 namespace paf {
@@ -113,4 +115,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_GRAPHICS_GRAPHICS_H */
+#endif /* _PAF_GRAPHICS_GRAPHICS_H */

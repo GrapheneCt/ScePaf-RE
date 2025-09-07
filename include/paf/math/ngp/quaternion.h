@@ -1,9 +1,9 @@
 /*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_MATH_WIN32_QUATERNION_H
-#define _VDSUITE_USER_PAF_MATH_WIN32_QUATERNION_H
+#ifndef _PAF_MATH_NGP_QUATERNION_H
+#define _PAF_MATH_NGP_QUATERNION_H
 
 #include <vectormath.h>
 #include <paf/math/ngp/v4.h>
@@ -122,4 +122,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_MATH_WIN32_QUATERNION_H */ 
+#endif /* _PAF_MATH_NGP_QUATERNION_H */ 

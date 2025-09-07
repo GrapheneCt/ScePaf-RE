@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_GRAPHICS_GRAPHMEM_GRAPHMEM_H
-#define _VDSUITE_USER_PAF_GRAPHICS_GRAPHMEM_GRAPHMEM_H
+#ifndef _PAF_GRAPHICS_GRAPHMEM_GRAPHMEM_H
+#define _PAF_GRAPHICS_GRAPHMEM_GRAPHMEM_H
 
 #include <stdint.h>
 #include <stddef.h>
@@ -22,14 +22,14 @@ namespace paf {
 			virtual ~GraphHeapAllocator();
 		};
 
-		enum DeviceType
+		enum DeviceType : int32_t
 		{
 			DeviceType_SystemMemory,
 			DeviceType_VideoMemory,
 			DeviceType_SharedMemory
 		};
 
-		enum ModeType
+		enum ModeType : int32_t
 		{
 			ModeType_Normal = 0,
 			ModeType_CommonDialog = 1
@@ -39,14 +39,14 @@ namespace paf {
 		{
 		public:
 
-			enum MemoryType
+			enum MemoryType : int32_t
 			{
 				MemoryType_Default,
 				MemoryType_Tool,
 				MemoryType_Phycont
 			};
 
-			enum GpuMapType
+			enum GpuMapType : int32_t
 			{
 				GpuMapType_Default,
 				GpuMapType_VertexUsse,
@@ -84,4 +84,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_GRAPHICS_GRAPHMEM_GRAPHMEM_H */
+#endif /* _PAF_GRAPHICS_GRAPHMEM_GRAPHMEM_H */

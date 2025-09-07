@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_WIDGET_CORE_WIDGET_H
-#define _VDSUITE_USER_PAF_WIDGET_CORE_WIDGET_H
+#ifndef _PAF_WIDGET_CORE_WIDGET_H
+#define _PAF_WIDGET_CORE_WIDGET_H
 
 #include <stdint.h>
 #include <paf/std/stdcxx.h>
@@ -390,13 +390,13 @@ namespace paf {
 				OBJ_ROOT = 0
 			};
 
-			enum DrawOrder
+			enum DrawOrder : int32_t
 			{
 				DRAW_ORDER_SIBLINGS_FIRST = 0,
 				DRAW_ORDER_CHILDREN_FIRST = 1
 			};
 
-			enum LoopEffect
+			enum LoopEffect : int32_t
 			{
 				LOOP_EFFECT_NONE = 0,
 				LOOP_EFFECT_1,
@@ -1160,4 +1160,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_WIDGET_CORE_WIDGET_H */
+#endif /* _PAF_WIDGET_CORE_WIDGET_H */

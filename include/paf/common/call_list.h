@@ -1,10 +1,12 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_COMMON_CALL_LIST_H
-#define _VDSUITE_USER_PAF_COMMON_CALL_LIST_H
+#ifndef _PAF_COMMON_CALL_LIST_H
+#define _PAF_COMMON_CALL_LIST_H
 
+#include <stdint.h>
+#include <paf/std/stdcxx.h>
 #include <paf/thread/rmutex.h>
 
 namespace paf {
@@ -24,19 +26,37 @@ namespace paf {
 
 			CallList();
 
-			virtual ~CallList() = 0;
+			~CallList()
+			{
 
-			int32_t GetNum();
+			}
 
-			void Register(Function entry, void *userdata);
+			uint32_t GetNum();
 
-			int32_t Unregister(Function entry, void *userdata);
+			void Register(Function entry, void *userdata = NULL);
+
+			void Unregister(Function entry, void *userdata = NULL);
 
 			void Update(paf::thread::Mutex *extMtx);
 
 		private:
 
-			char m_unk00[0x18];
+			class CallItem
+			{
+			public:
+
+				CallItem(Function entry, void *userdata) : m_func(entry), m_data(userdata)
+				{
+
+				}
+
+				Function m_func;
+				void *m_data;
+			};
+
+			list<CallItem> m_list;
+			list<CallItem>::const_iterator m_iterator;
+			bool m_iterator_updated;
 			thread::RMutex m_item_mtx;
 		};
 
@@ -44,11 +64,11 @@ namespace paf {
 
 			typedef void(*Function)(void *userdata);
 
-			extern void Register(Function func, void *userdata);
+			extern void Register(Function func, void *userdata = NULL);
 
-			extern void Unregister(Function func, void *userdata);
+			extern void Unregister(Function func, void *userdata = NULL);
 		}
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_COMMON_CALL_LIST_H */
+#endif /* _PAF_COMMON_CALL_LIST_H */

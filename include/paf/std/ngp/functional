@@ -1,3 +1,7 @@
+/*
+	ScePaf-RE Project
+*/
+
 #ifndef _PAF_STD_FUNCTIONAL_H
 #define _PAF_STD_FUNCTIONAL_H
 #ifndef _FUNCTIONAL_
@@ -3011,6 +3015,6 @@ namespace std {
 
 #endif /* _FUNCTIONAL_ */
 
-#include <paf/std/ngp/std_bridge>
+#include <paf/std/ngp/stdcxx_bridge>
 
 #endif

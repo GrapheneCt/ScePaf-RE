@@ -1,9 +1,9 @@
 /*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_INPUTDEVICE_KEYBOARD_KEYBOARD_H
-#define _VDSUITE_USER_PAF_INPUTDEVICE_KEYBOARD_KEYBOARD_H
+#ifndef _PAF_INPUTDEVICE_KEYBOARD_KEYBOARD_H
+#define _PAF_INPUTDEVICE_KEYBOARD_KEYBOARD_H
 
 #include <stdint.h>
 
@@ -15,7 +15,7 @@ namespace paf {
 			{
 			public:
 
-				enum Keycode
+				enum Keycode : int32_t
 				{
 					KB_UP = 1,
 					KB_DOWN,
@@ -31,4 +31,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_INPUTDEVICE_KEYBOARD_KEYBOARD_H */
+#endif /* _PAF_INPUTDEVICE_KEYBOARD_KEYBOARD_H */

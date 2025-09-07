@@ -1,5 +1,13 @@
-﻿#ifndef _PAF_HTTP_HTTP_H
+﻿/*
+	ScePaf-RE Project
+*/
+
+#ifndef _PAF_HTTP_HTTP_H
 #define _PAF_HTTP_HTTP_H
+
+#include <paf/common/shared_ptr.h>
+#include <paf/buffer/buffer.h>
+#include <paf/file/file.h>
 
 #ifndef SCE_PAF_NO_NETWORK
 
@@ -99,6 +107,8 @@ namespace paf {
 			int32_t Connect(const char *url, const char *method, void *unkCbClass, uint64_t postContentLength);
 
 			int32_t Read(common::SharedPtr<Buffer>& pBuf, int32_t *pReadSize = NULL);
+
+			int32_t Read(common::SharedPtr<File>& pFile, int64_t maxReadSize = 0xFFFFFFFFFFFFFFFF);
 
 			int32_t Abort();
 

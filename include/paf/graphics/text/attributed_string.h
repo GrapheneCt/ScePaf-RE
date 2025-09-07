@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_GRAPHICS_TEXT_ATTRIBUTED_STRING_H
-#define _VDSUITE_USER_PAF_GRAPHICS_TEXT_ATTRIBUTED_STRING_H
+#ifndef _PAF_GRAPHICS_TEXT_ATTRIBUTED_STRING_H
+#define _PAF_GRAPHICS_TEXT_ATTRIBUTED_STRING_H
 
 #include <paf/std/stdcxx.h>
 #include <paf/math/math.h>
@@ -86,4 +86,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_GRAPHICS_TEXT_ATTRIBUTED_STRING_H */
+#endif /* _PAF_GRAPHICS_TEXT_ATTRIBUTED_STRING_H */

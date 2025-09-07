@@ -1,4 +1,8 @@
-﻿#ifndef _PAF_STD_STDIO_H
+﻿/*
+	ScePaf-RE Project
+*/
+
+#ifndef _PAF_STD_STDIO_H
 #define _PAF_STD_STDIO_H
 
 #include <stdio.h>
@@ -34,6 +38,7 @@ long int sce_paf_ftell(sce_paf_FILE * stream);
 int sce_paf_fgetc(sce_paf_FILE * stream);
 int sce_paf_fputc(int c, sce_paf_FILE *stream);
 int sce_paf_fflush(sce_paf_FILE *stream);
+#define sce_paf_printf sceClibPrintf
 
 #ifdef __cplusplus
 }

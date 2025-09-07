@@ -1,24 +1,36 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_WIDGET_CORE_ENVIRONMENT_H
-#define _VDSUITE_USER_PAF_WIDGET_CORE_ENVIRONMENT_H
+#ifndef _PAF_WIDGET_CORE_ENVIRONMENT_H
+#define _PAF_WIDGET_CORE_ENVIRONMENT_H
+
+#ifndef SCE_PAF_NO_WIDGETS
 
 #include <stdint.h>
 #include <stddef.h>
 #include <paf/std/stdcxx.h>
 #include <paf/math/math.h>
-#include <paf/graphics/surface/surface.h>
-#include <paf/graphics/graphics.h>
+#include <paf/timer/raw_timer.h>
 #include <paf/widget/core/event.h>
 #include <paf/paf_types.h>
+#if defined(__SNC__) || defined(__vita__)
+#include <paf/graphics/surface/surface.h>
+#include <paf/graphics/graphics.h>
+#elif defined(_WIN32)
+
+#else
+#error Current target platform is not supported or no target platform defined
+#endif
 
 namespace paf {
 	namespace ui {
 
 		class Widget;
 		class HitInfo;
+		class EnvironmentParamEx;
+
+#if defined(__SNC__) || defined(__vita__)
 
 		class Screen
 		{
@@ -149,6 +161,102 @@ namespace paf {
 			SCE_PAF_IMPORTED_FROM_PRX static Screen *s_root_screen;
 		};
 
+		class FocusInfo
+		{
+		public:
+
+			enum
+			{
+				MAX_HISTORIES = 2
+			};
+
+			class History
+			{
+			public:
+
+				Widget *src;
+				Widget *dst;
+				uint32_t key_code;
+			};
+
+			void Hide();
+
+			void AddFocusHistory(Widget *src, Widget *dst, uint32_t key_code);
+
+			void RemoveFocusHistory(Widget *w);
+
+			Widget *FindFocusHistory(Widget *dst, uint32_t key_code);
+
+		private:
+
+			FocusInfo();
+
+			~FocusInfo();
+
+			Widget *focus_view;
+			/*
+			Widget *focused_widget;
+			Widget *focused_scene;
+			math::v4 focus_pos;
+			math::v4 focus_size;
+			bool focus_visible : 1;
+			*/
+			char m_unk_04[0x74];
+			History m_histories[MAX_HISTORIES];
+			size_t m_num_histories;
+		};
+
+#elif defined(_WIN32)
+
+		class Screen
+		{
+		public:
+
+			Screen(wstring const& app_name, uint32_t width, uint32_t height, uint32_t zoom_level, bool allow_dpi_override, bool simulator_mode);
+
+			~Screen();
+
+			int32_t Swap();
+
+			void *GetHandle() const
+			{
+				return m_whandle;
+			}
+
+		private:
+
+			void *m_whandle;
+			TimeType m_last_frame_time;
+		};
+
+		class EnvironmentParamEx
+		{
+		public:
+
+			EnvironmentParamEx()
+			{
+				width = 0;
+				height = 0;
+				zoom_level = 0;
+				allow_dpi_override = false;
+				simulator_mode = false;
+			}
+
+			~EnvironmentParamEx()
+			{
+
+			}
+
+			uint32_t width;
+			uint32_t height;
+			wstring app_name;
+			uint32_t zoom_level;
+			bool allow_dpi_override;
+			bool simulator_mode;
+		};
+
+#endif
+
 		class EnvironmentParam
 		{
 		public:
@@ -175,7 +283,7 @@ namespace paf {
 
 			virtual int32_t unkFun_08(int32_t width, int32_t height, int32_t mode);
 			virtual int32_t unkFun_0C(int32_t mode1, int32_t mode2);
-			virtual int32_t unkFun_10();
+			virtual EnvironmentParam *Copy();
 
 		private:
 
@@ -186,6 +294,8 @@ namespace paf {
 		{
 		public:
 
+			friend class Framework;
+
 			enum
 			{
 				GESTURE_PRIO_TAP = 10,
@@ -195,7 +305,7 @@ namespace paf {
 				GESTURE_PRIO_MOCHI = 110
 			};
 
-			Environment(EnvironmentParam *param, uint32_t screen_orientation);
+			Environment(EnvironmentParam *param, uint32_t screen_orientation, const EnvironmentParamEx *platform_param = NULL);
 
 			virtual ~Environment();
 
@@ -287,6 +397,8 @@ namespace paf {
 
 			void OnUpdatePre();
 
+#if defined(__SNC__) || defined(__vita__)
+
 			char m_unk_004[0xB0];
 			int32_t m_current_orientation;
 			int32_t m_shell_orientation;
@@ -301,53 +413,21 @@ namespace paf {
 			list<Widget*> m_scenes_onupdate;
 			Screen *m_screen;
 			char m_unk_330[0x2A6C];
+
+#elif defined(_WIN32)
+
+			int32_t m_current_orientation;
+			bool m_term_requested;
+			bool m_draw_cutoff;
+			EventQueue m_ev_queue;
+			Screen *m_screen;
+
+#endif
 		};
 
-		class FocusInfo
-		{
-		public:
-
-			enum
-			{
-				MAX_HISTORIES = 2
-			};
-
-			class History
-			{
-			public:
-
-				Widget *src;
-				Widget *dst;
-				uint32_t key_code;
-			};
-
-			void Hide();
-
-			void AddFocusHistory(Widget *src, Widget *dst, uint32_t key_code);
-
-			void RemoveFocusHistory(Widget *w);
-
-			Widget *FindFocusHistory(Widget *dst, uint32_t key_code);
-
-		private:
-
-			FocusInfo();
-
-			~FocusInfo();
-
-			Widget *focus_view;
-			/*
-			Widget *focused_widget;
-			Widget *focused_scene;
-			math::v4 focus_pos;
-			math::v4 focus_size;
-			bool focus_visible : 1;
-			*/
-			char m_unk_04[0x74];
-			History m_histories[MAX_HISTORIES];
-			size_t m_num_histories;
-		};
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_WIDGET_CORE_ENVIRONMENT_H */
+#endif /* SCE_PAF_NO_WIDGETS */
+
+#endif /* _PAF_WIDGET_CORE_ENVIRONMENT_H */

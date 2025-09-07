@@ -1,12 +1,17 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_DIR_DIR_H
-#define _VDSUITE_USER_PAF_DIR_DIR_H
+#ifndef _PAF_DIR_DIR_H
+#define _PAF_DIR_DIR_H
 
 #include <stdint.h>
 #include <paf/std/stdcxx.h>
+#if defined(__SNC__)
+#include <scetypes.h>
+#elif defined(__vita__)
+#include <psp2/types.h>
+#endif
 
 namespace paf {
 
@@ -14,7 +19,7 @@ namespace paf {
 	{
 	public:
 
-		enum Type
+		enum Type : int32_t
 		{
 			Type_Dir,
 			Type_File,
@@ -70,4 +75,4 @@ namespace paf {
 	};
 }
 
-#endif /* _VDSUITE_USER_PAF_DIR_DIR_H */
+#endif /* _PAF_DIR_DIR_H */

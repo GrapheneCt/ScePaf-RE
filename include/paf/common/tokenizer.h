@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_COMMON_TOKENIZER_H
-#define _VDSUITE_USER_PAF_COMMON_TOKENIZER_H
+#ifndef _PAF_COMMON_TOKENIZER_H
+#define _PAF_COMMON_TOKENIZER_H
 
 #include <stdint.h>
 #include <stddef.h>
@@ -35,21 +35,21 @@ namespace paf {
 
 			void init(const char *text, size_t size)
 			{
-				_src = text;
-				_src_size = size;
+				m_src = text;
+				m_src_size = size;
 			}
 
 			void addSeparator(string const& value)
 			{
 				if (!value.empty())
 				{
-					_separators.push_back(value);
+					m_separators.push_back(value);
 				}
 			}
 
 			void addSeparatorChars(string const& value)
 			{
-				for (uint32_t i = 0; i != value.size(); i++)
+				for (size_t i = 0; i != value.size(); i++)
 				{
 					string sep(value, i, 1);
 					addSeparator(sep);
@@ -58,53 +58,53 @@ namespace paf {
 
 			void done()
 			{
-				_loc._type = Location::DONE;
-				_loc._pos = _loc._next_pos;
-				_loc._dirty = false;
-				_loc._word = "";
+				m_loc.m_type = Location::DONE;
+				m_loc.m_pos = m_loc.m_next_pos;
+				m_loc.m_dirty = false;
+				m_loc.m_word = "";
 			}
 
 			void next1()
 			{
-				Location::Type prev_type = _loc._type;
+				Location::Type prev_type = m_loc.m_type;
 
-				if (_loc._next_pos == _src_size)
+				if (m_loc.m_next_pos == m_src_size)
 				{
 					done();
 				}
 				else
 				{
-					for (uint32_t i = 0; i != _tokens.size(); i++)
+					for (size_t i = 0; i != m_tokens.size(); i++)
 					{
-						if (match(_loc._next_pos, _tokens[i].c_str()))
+						if (match(m_loc.m_next_pos, m_tokens[i].c_str()))
 						{
-							_loc._type = Location::TOKEN;
-							_loc._pos = _loc._next_pos;
-							_loc._next_pos = _loc._next_pos + _tokens[i].size();
-							_loc._dirty = true;
+							m_loc.m_type = Location::TOKEN;
+							m_loc.m_pos = m_loc.m_next_pos;
+							m_loc.m_next_pos = m_loc.m_next_pos + m_tokens[i].size();
+							m_loc.m_dirty = true;
 							return;
 						}
 					}
 
-					for (uint32_t i = 0; i != _separators.size(); i++)
+					for (size_t i = 0; i != m_separators.size(); i++)
 					{
-						if (match(_loc._next_pos, _separators[i].c_str()))
+						if (match(m_loc.m_next_pos, m_separators[i].c_str()))
 						{
-							_loc._type = Location::SEPARATOR;
-							_loc._pos = _loc._next_pos;
-							_loc._next_pos = _loc._next_pos + _separators[i].size();
-							_loc._dirty = true;
+							m_loc.m_type = Location::SEPARATOR;
+							m_loc.m_pos = m_loc.m_next_pos;
+							m_loc.m_next_pos = m_loc.m_next_pos + m_separators[i].size();
+							m_loc.m_dirty = true;
 							return;
 						}
 					}
 
 					if ((prev_type == Location::TOKEN) || (prev_type == Location::SEPARATOR))
 					{
-						_loc._pos = _loc._next_pos;
+						m_loc.m_pos = m_loc.m_next_pos;
 					}
-					_loc._type = Location::SCAN;
-					_loc._dirty = true;
-					_loc._next_pos = _loc._next_pos + 1;
+					m_loc.m_type = Location::SCAN;
+					m_loc.m_dirty = true;
+					m_loc.m_next_pos = m_loc.m_next_pos + 1;
 				}
 			}
 
@@ -112,41 +112,41 @@ namespace paf {
 			{
 				char delim;
 
-				if (_loc._pos < _src_size)
+				if (m_loc.m_pos < m_src_size)
 				{
 					do
 					{
-						if (_src[_loc._pos] == '\"') break;
-						_loc._pos = _loc._pos + 1;
-					} while (_loc._pos < _src_size);
+						if (m_src[m_loc.m_pos] == '\"') break;
+						m_loc.m_pos = m_loc.m_pos + 1;
+					} while (m_loc.m_pos < m_src_size);
 				}
 
-				if (_loc._pos == _src_size)
+				if (m_loc.m_pos == m_src_size)
 				{
 					done();
 				}
 				else
 				{
-					_loc._pos = _loc._pos + 1;
-					_loc._next_pos = _loc._pos;
+					m_loc.m_pos = m_loc.m_pos + 1;
+					m_loc.m_next_pos = m_loc.m_pos;
 					delim = '\0';
-					if (_loc._next_pos < _src_size)
+					if (m_loc.m_next_pos < m_src_size)
 					{
 						do
 						{
-							if ((_src[_loc._next_pos] == '\"') && (delim != '\\')) break;
-							_loc._next_pos = _loc._next_pos + 1;
-							delim = _src[_loc._next_pos];
-						} while (_loc._next_pos < _src_size);
+							if ((m_src[m_loc.m_next_pos] == '\"') && (delim != '\\')) break;
+							m_loc.m_next_pos = m_loc.m_next_pos + 1;
+							delim = m_src[m_loc.m_next_pos];
+						} while (m_loc.m_next_pos < m_src_size);
 					}
-					if (_loc._next_pos == _src_size)
+					if (m_loc.m_next_pos == m_src_size)
 					{
 						done();
 					}
 					else
 					{
-						_loc._type = Location::OTHER;
-						_loc._dirty = true;
+						m_loc.m_type = Location::OTHER;
+						m_loc.m_dirty = true;
 					}
 				}
 
@@ -155,18 +155,18 @@ namespace paf {
 
 			Tokenizer& operator++()
 			{
-				if (_loc._type != Location::DONE)
+				if (m_loc.m_type != Location::DONE)
 				{
 					while (true)
 					{
-						Location old_loc(_loc);
+						Location old_loc(m_loc);
 						next1();
-						if ((old_loc._type == Location::SCAN) && (_loc._type != Location::SCAN))
+						if ((old_loc.m_type == Location::SCAN) && (m_loc.m_type != Location::SCAN))
 						{
-							_loc = old_loc;
-							_loc._type = Location::OTHER;
+							m_loc = old_loc;
+							m_loc.m_type = Location::OTHER;
 						}
-						if (((_loc._type == Location::TOKEN) || (_loc._type == Location::OTHER)) || (_loc._type == Location::DONE)) break;
+						if (((m_loc.m_type == Location::TOKEN) || (m_loc.m_type == Location::OTHER)) || (m_loc.m_type == Location::DONE)) break;
 					}
 				}
 				return *this;
@@ -175,9 +175,9 @@ namespace paf {
 			bool match(size_t pos, const char *str) const
 			{
 				const char *spos = str;
-				for (uint32_t i = pos; (*spos != '\0' && (i < _src_size)); i++)
+				for (size_t i = pos; (*spos != '\0' && (i < m_src_size)); i++)
 				{
-					if (*spos != _src[i])
+					if (*spos != m_src[i])
 					{
 						return false;
 					}
@@ -188,17 +188,17 @@ namespace paf {
 
 			bool isDone() const
 			{
-				return (_loc._type == Location::DONE);
+				return (m_loc.m_type == Location::DONE);
 			}
 
 			string& word()
 			{
-				if (_loc._dirty)
+				if (m_loc.m_dirty)
 				{
-					_loc._word = string(_src, _loc._pos, _loc._next_pos - _loc._pos);
-					_loc._dirty = false;
+					m_loc.m_word = string(m_src, m_loc.m_pos, m_loc.m_next_pos - m_loc.m_pos);
+					m_loc.m_dirty = false;
 				}
-				return _loc._word;
+				return m_loc.m_word;
 			}
 
 			bool operator==(const char *str) const
@@ -214,9 +214,9 @@ namespace paf {
 				else
 				{
 					spos = str;
-					for (i = _loc._pos; ((*spos != '\0' && (i < _src_size)) && (i < _loc._next_pos)); i++)
+					for (i = m_loc.m_pos; ((*spos != '\0' && (i < m_src_size)) && (i < m_loc.m_next_pos)); i++)
 					{
-						if (*spos != this->_src[i])
+						if (*spos != this->m_src[i])
 						{
 							return false;
 						}
@@ -224,7 +224,7 @@ namespace paf {
 					}
 
 					ret = false;
-					if ((*spos == '\0') && (i == _loc._next_pos))
+					if ((*spos == '\0') && (i == m_loc.m_next_pos))
 					{
 						ret = true;
 					}
@@ -244,7 +244,7 @@ namespace paf {
 			{
 			public:
 
-				enum Type
+				enum Type : int32_t
 				{
 					INITIAL,
 					TOKEN,
@@ -254,40 +254,40 @@ namespace paf {
 					DONE
 				};
 
-				Location() : _type(INITIAL), _pos(0), _next_pos(0), _dirty(true)
+				Location() : m_type(INITIAL), m_pos(0), m_next_pos(0), m_dirty(true)
 				{
 
 				}
 
-				Location(Location const& other) : _type(other._type), _pos(other._pos), _next_pos(other._next_pos), _dirty(other._dirty), _word(other._word)
+				Location(Location const& other) : m_type(other.m_type), m_pos(other.m_pos), m_next_pos(other.m_next_pos), m_dirty(other.m_dirty), m_word(other.m_word)
 				{
 
 				}
 
 				Location& operator=(Location const& rhs)
 				{
-					_type = rhs._type;
-					_pos = rhs._pos;
-					_next_pos = rhs._next_pos;
-					_dirty = rhs._dirty;
-					_word = rhs._word;
+					m_type = rhs.m_type;
+					m_pos = rhs.m_pos;
+					m_next_pos = rhs.m_next_pos;
+					m_dirty = rhs.m_dirty;
+					m_word = rhs.m_word;
 					return *this;
 				}
 
-				Type _type;
-				size_t _pos;
-				size_t _next_pos;
-				bool _dirty;
-				string _word;
+				Type m_type;
+				size_t m_pos;
+				size_t m_next_pos;
+				bool m_dirty;
+				string m_word;
 			};
 
-			const char *_src;
-			size_t _src_size;
-			vector<string> _tokens;
-			vector<string> _separators;
-			Location _loc;
+			const char *m_src;
+			size_t m_src_size;
+			vector<string> m_tokens;
+			vector<string> m_separators;
+			Location m_loc;
 		};
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_COMMON_TOKENIZER_H */
+#endif /* _PAF_COMMON_TOKENIZER_H */

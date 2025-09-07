@@ -1,12 +1,19 @@
 /*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_MATH_RECT_H
-#define _VDSUITE_USER_PAF_MATH_RECT_H
+#ifndef _PAF_MATH_RECT_H
+#define _PAF_MATH_RECT_H
 
+#if defined(__SNC__)
+#include <paf/math/ngp/v1.h>
 #include <paf/math/ngp/v2.h>
 #include <paf/math/ngp/v4.h>
+#elif defined(_WIN32)
+#include <paf/math/generic/v1.h>
+#include <paf/math/generic/v2.h>
+#include <paf/math/generic/v4.h>
+#endif
 
 namespace paf {
 	namespace math {
@@ -90,12 +97,12 @@ namespace paf {
 
 		private:
 
-			float _x_center;
-			float _y_center;
-			float _h;
-			float _w;
+			float m_x_center;
+			float m_y_center;
+			float m_h;
+			float m_w;
 		};
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_MATH_RECT_H */ 
+#endif /* _PAF_MATH_RECT_H */ 

@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_WIDGET_FACTORY_H
-#define _VDSUITE_USER_PAF_WIDGET_FACTORY_H
+#ifndef _PAF_WIDGET_FACTORY_H
+#define _PAF_WIDGET_FACTORY_H
 
 #include <stdint.h>
 #include <stddef.h>
@@ -49,4 +49,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_WIDGET_FACTORY_H */
+#endif /* _PAF_WIDGET_FACTORY_H */

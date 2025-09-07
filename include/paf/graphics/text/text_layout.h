@@ -1,16 +1,16 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_GRAPHICS_TEXT_TEXT_LAYOUT_H
-#define _VDSUITE_USER_PAF_GRAPHICS_TEXT_TEXT_LAYOUT_H
+#ifndef _PAF_GRAPHICS_TEXT_TEXT_LAYOUT_H
+#define _PAF_GRAPHICS_TEXT_TEXT_LAYOUT_H
 
 #include <paf/math/math.h>
 
 namespace paf {
 	namespace graph {
 		
-		enum TextLayoutAttribute
+		enum TextLayoutAttribute : int32_t
 		{
 			TextLayoutAttribute_AlignX = 0,
 			TextLayoutAttribute_AlignY = 1,
@@ -31,19 +31,22 @@ namespace paf {
 			TextLayoutAttribute_LayoutOnly = 16
 		};
 
-		enum TextLayoutAlignX {
+		enum TextLayoutAlignX : int32_t
+		{
 			TextLayoutAlignX_Left = 0,
 			TextLayoutAlignX_Center = 1,
 			TextLayoutAlignX_Right = 2
 		};
 
-		enum TextLayoutAlignY {
+		enum TextLayoutAlignY : int32_t
+		{
 			TextLayoutAlignY_Top = 0,
 			TextLayoutAlignY_Center = 1,
 			TextLayoutAlignY_Bottom = 2
 		};
 
-		enum TextLayoutState {
+		enum TextLayoutState : int32_t
+		{
 			TextLayoutState_None = 0,
 			TextLayoutState_InvalidLayout = 1,
 			TextLayoutState_InvalidGeometry = 2,
@@ -58,7 +61,8 @@ namespace paf {
 			TextLayoutState_Abort = 1024
 		};
 
-		typedef enum TextLayoutTextAlign {
+		typedef enum TextLayoutTextAlign : int32_t
+		{
 			TextLayoutTextAlign_Left = 0,
 			TextLayoutTextAlign_Center = 1,
 			TextLayoutTextAlign_Right = 2
@@ -104,4 +108,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_GRAPHICS_TEXT_TEXT_LAYOUT_H */
+#endif /* _PAF_GRAPHICS_TEXT_TEXT_LAYOUT_H */

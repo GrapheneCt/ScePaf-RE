@@ -1,7 +1,11 @@
+/*
+	ScePaf-RE Project
+*/
+
 #ifndef _PAF_STD_ALGORITHM_H
 #define _PAF_STD_ALGORITHM_H
 
 #include <algorithm>
-#include <paf/std/ngp/std_bridge>
+#include <paf/std/ngp/stdcxx_bridge>
 
 #endif

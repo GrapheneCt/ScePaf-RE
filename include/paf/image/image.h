@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_IMAGE_IMAGE_H
-#define _VDSUITE_USER_PAF_IMAGE_IMAGE_H
+#ifndef _PAF_IMAGE_IMAGE_H
+#define _PAF_IMAGE_IMAGE_H
 
 #include <stddef.h>
 #include <stdint.h>
@@ -172,17 +172,17 @@ namespace paf {
 
 			static ImageFormat DetectFormat(void *addr, size_t size);
 
-			static ImageFormat DetectFormat(const char *filename, off_t offset, size_t size);
+			static ImageFormat DetectFormat(const char *filename, int64_t offset, size_t size);
 
-			static ImageFormat DetectFormat(common::SharedPtr<File> file, off_t offset, size_t size);
+			static ImageFormat DetectFormat(common::SharedPtr<File> file, int64_t offset, size_t size);
 
 			static ImageFormat DetectFormat(common::SharedPtr<Buffer> buf);
 
-			static common::SharedPtr<Image> Open(const char *filename, memory::HeapAllocator *allocator, ImageFormat format, off_t offset, size_t size);
+			static common::SharedPtr<Image> Open(const char *filename, memory::HeapAllocator *allocator, ImageFormat format, int64_t offset, size_t size);
 
 			static common::SharedPtr<Image> Open(void *addr, size_t size, memory::HeapAllocator *allocator, ImageFormat format);
 
-			static common::SharedPtr<Image> Open(common::SharedPtr<File> file, memory::HeapAllocator *allocator, ImageFormat format, off_t offset, size_t size);
+			static common::SharedPtr<Image> Open(common::SharedPtr<File> file, memory::HeapAllocator *allocator, ImageFormat format, int64_t offset, size_t size);
 
 			static common::SharedPtr<Image> Open(common::SharedPtr<Buffer> buffptr, memory::HeapAllocator *allocator, ImageFormat format);
 
@@ -371,4 +371,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_IMAGE_IMAGE_H */
+#endif /* _PAF_IMAGE_IMAGE_H */

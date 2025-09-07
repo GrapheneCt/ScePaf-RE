@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_GRAPHICS_DRAWOBJ_BASIC_SHADER_H
-#define _VDSUITE_USER_PAF_GRAPHICS_DRAWOBJ_BASIC_SHADER_H
+#ifndef _PAF_GRAPHICS_DRAWOBJ_BASIC_SHADER_H
+#define _PAF_GRAPHICS_DRAWOBJ_BASIC_SHADER_H
 
 #include <paf/std/stdc.h>
 #include <paf/graphics/drawobj/shader.h>
@@ -35,4 +35,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_GRAPHICS_DRAWOBJ_BASIC_SHADER_H */
+#endif /* _PAF_GRAPHICS_DRAWOBJ_BASIC_SHADER_H */

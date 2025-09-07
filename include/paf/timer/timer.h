@@ -1,9 +1,9 @@
 /*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_TIMER_TIMER_H
-#define _VDSUITE_USER_PAF_TIMER_TIMER_H
+#ifndef _PAF_TIMER_TIMER_H
+#define _PAF_TIMER_TIMER_H
 
 #include <stdint.h>
 #include <paf/math/math.h>
@@ -19,7 +19,9 @@ namespace paf {
 		{
 			STATE_STANDBY = 0,
 			STATE_ACTIVE = 1,
-			STATE_FINISHED = 2
+			STATE_FINISHED = 2,
+			STATE_UNK_3 = 3,
+			STATE_UNK_4 = 4
 		};
 
 		enum Repeat
@@ -32,60 +34,96 @@ namespace paf {
 
 		enum Func
 		{
-			FUNC_LINEAR = 0,
-			FUNC_SLOWDOWN = 1,
-			FUNC_FASTUP = 2,
-			FUNC_ANGULAR = 3,
-			FUNC_EXPONENT = 4,
-			FUNC_BEZIER_3D = 5,
-			FUNC_SWING = 6,
-			FUNC_QUAD_IN = 7,
-			FUNC_CUBIC_IN = 8,
-			FUNC_QUART_IN = 9,
-			FUNC_QUINT_IN = 10,
-			FUNC_SINE_IN = 11,
-			FUNC_EXPO_IN = 12,
-			FUNC_CIRQ_IN = 13,
-			FUNC_BACK_IN = 14,
-			FUNC_ELASTIC_IN = 15,
-			FUNC_BOUNCE_IN = 16,
-			FUNC_QUAD_OUT = 17,
-			FUNC_CUBIC_OUT = 18,
-			FUNC_QUART_OUT = 19,
-			FUNC_QUINT_OUT = 20,
-			FUNC_SINE_OUT = 21,
-			FUNC_EXPO_OUT = 22,
-			FUNC_CIRQ_OUT = 23,
-			FUNC_BACK_OUT = 24,
-			FUNC_ELASTIC_OUT = 25,
-			FUNC_BOUNCE_OUT = 26,
-			FUNC_QUAD_INOUT = 27,
-			FUNC_CUBIC_INOUT = 28,
-			FUNC_QUART_INOUT = 29,
-			FUNC_QUINT_INOUT = 30,
-			FUNC_SINE_INOUT = 31,
-			FUNC_EXPO_INOUT = 32,
-			FUNC_CIRQ_INOUT = 33,
-			FUNC_BACK_INOUT = 34,
-			FUNC_ELASTIC_INOUT = 35,
-			FUNC_BOUNCE_INOUT = 36,
-			FUNC_CUSTOM_EXPO_IN = 37,
-			FUNC_CUSTOM_EXPO_OUT = 38,
-			FUNC_CUSTOM_EXPO_INOUT = 39,
-			FUNC_CUSTOM_EXPO_OUTIN = 40,
-			FUNC_CUSTOM_PARABOLIC_IN = 41,
-			FUNC_CUSTOM_PARABOLIC_OUT = 42,
-			FUNC_CUSTOM_PARABOLIC_INOUT = 43,
-			FUNC_CUSTOM_PARABOLIC_OUTIN = 44,
-			FUNC_CUSTOM_BOUNCE_IN = 45,
-			FUNC_CUSTOM_BOUNCE_OUT = 46,
-			FUNC_CUSTOM_BOUNCE_INOUT = 47,
-			FUNC_CUSTOM_BOUNCE_OUTIN = 48,
-			FUNC_CUSTOM_ELASTIC_IN = 49,
-			FUNC_CUSTOM_ELASTIC_OUT = 50,
-			FUNC_CUSTOM_ELASTIC_INOUT = 51,
-			FUNC_CUSTOM_ELASTIC_OUTIN = 52,
-			FUNC_CUSTOM = 53,
+			FUNC_LINEAR,
+			FUNC_SLOWDOWN,
+			FUNC_FASTUP,
+			FUNC_ANGULAR,
+			FUNC_EXPONENT,
+			FUNC_BEZIER_3D,
+			FUNC_SWING,
+			FUNC_QUAD_IN,
+			FUNC_CUBIC_IN,
+			FUNC_QUART_IN,
+			FUNC_QUINT_IN,
+			FUNC_SINE_IN,
+			FUNC_EXPO_IN,
+
+			FUNC_EXPO_IN_UNK_13,
+			FUNC_EXPO_IN_UNK_14,
+			FUNC_EXPO_IN_UNK_15,
+			FUNC_EXPO_IN_UNK_16,
+
+			FUNC_CIRQ_IN,
+			FUNC_BACK_IN,
+			FUNC_ELASTIC_IN,
+			FUNC_BOUNCE_IN,
+			FUNC_QUAD_OUT,
+			FUNC_CUBIC_OUT,
+			FUNC_QUART_OUT,
+			FUNC_QUINT_OUT,
+			FUNC_SINE_OUT,
+			FUNC_EXPO_OUT,
+
+			FUNC_EXPO_OUT_UNK_27,
+			FUNC_EXPO_OUT_UNK_28,
+			FUNC_EXPO_OUT_UNK_29,
+			FUNC_EXPO_OUT_UNK_30,
+
+			FUNC_CIRQ_OUT,
+			FUNC_BACK_OUT,
+			FUNC_ELASTIC_OUT,
+			FUNC_BOUNCE_OUT,
+			FUNC_QUAD_INOUT,
+			FUNC_CUBIC_INOUT,
+			FUNC_QUART_INOUT,
+			FUNC_QUINT_INOUT,
+			FUNC_SINE_INOUT,
+			FUNC_EXPO_INOUT,
+
+			FUNC_EXPO_INOUT_UNK_41,
+			FUNC_EXPO_INOUT_UNK_42,
+			FUNC_EXPO_INOUT_UNK_43,
+			FUNC_EXPO_INOUT_UNK_44,
+
+			FUNC_CIRQ_INOUT,
+			FUNC_BACK_INOUT,
+			FUNC_ELASTIC_INOUT,
+			FUNC_BOUNCE_INOUT,
+
+			FUNC_UNK_49,
+			FUNC_UNK_50,
+			FUNC_UNK_51,
+			FUNC_UNK_52,
+			FUNC_UNK_53,
+			FUNC_UNK_54,
+
+			FUNC_CUSTOM_EXPO_IN,
+			FUNC_CUSTOM_EXPO_OUT,
+			FUNC_CUSTOM_EXPO_INOUT,
+			FUNC_CUSTOM_EXPO_OUTIN,
+			FUNC_CUSTOM_PARABOLIC_IN,
+			FUNC_CUSTOM_PARABOLIC_OUT,
+			FUNC_CUSTOM_PARABOLIC_INOUT,
+			FUNC_CUSTOM_PARABOLIC_OUTIN,
+			FUNC_CUSTOM_BOUNCE_IN,
+			FUNC_CUSTOM_BOUNCE_OUT,
+			FUNC_CUSTOM_BOUNCE_INOUT,
+			FUNC_CUSTOM_BOUNCE_OUTIN,
+			FUNC_CUSTOM_ELASTIC_IN,
+			FUNC_CUSTOM_ELASTIC_OUT,
+			FUNC_CUSTOM_ELASTIC_INOUT,
+			FUNC_CUSTOM_ELASTIC_OUTIN,
+
+			FUNC_CUSTOM_UNK_71,
+			FUNC_CUSTOM_UNK_72,
+			FUNC_CUSTOM_UNK_73,
+			FUNC_CUSTOM_UNK_74,
+			FUNC_CUSTOM_UNK_75,
+			FUNC_CUSTOM_UNK_76,
+			FUNC_CUSTOM_UNK_77,
+			FUNC_CUSTOM_UNK_78,
+
+			FUNC_CUSTOM,
 		};
 
 		static float Cbrt(float input);
@@ -194,7 +232,7 @@ namespace paf {
 
 		void DoFinish()
 		{
-			m_state = 2;
+			m_state = STATE_FINISHED;
 			if (GetRepeat() == REPEAT_RBACK)
 			{
 				m_curr = 0.0f;
@@ -212,7 +250,7 @@ namespace paf {
 			m_curr = curr * 0.001f;
 		}
 
-		void SetFunc(int32_t func, float* param)
+		void SetFunc(int32_t func, const float* param)
 		{
 			SetFuncX(func, param);
 		}
@@ -231,7 +269,7 @@ namespace paf {
 
 		bool IsFinished()
 		{
-			return (m_state == 2);
+			return (m_state == STATE_FINISHED);
 		}
 
 		bool IsAllFinished()
@@ -274,11 +312,16 @@ namespace paf {
 
 		float GetTime() const
 		{
-			if (m_state == 0)
+			if (m_state == STATE_STANDBY)
 			{
 				return 0.0f;
 			}
 			return m_curr * 1000.0f;
+		}
+
+		int32_t GetState() const
+		{
+			return m_state;
 		}
 
 		int32_t GetRepeatCount() const
@@ -288,7 +331,7 @@ namespace paf {
 
 		float GetTimeNormal() const
 		{
-			if (m_state == 0)
+			if (m_state == STATE_STANDBY)
 			{
 				return 0.0f;
 			}
@@ -297,7 +340,7 @@ namespace paf {
 
 		float GetTotalTime() const
 		{
-			return m_total * 1000.0;
+			return m_total * 1000.0f;
 		}
 
 		bool IsFirstTick() const
@@ -307,16 +350,18 @@ namespace paf {
 
 		float DoFunc(float _rate, int32_t _func, float _pre, float *_param) const;
 
-		SCE_PAF_IMPORTED_FROM_PRX static float s_tick_interval;
 		SCE_PAF_IMPORTED_FROM_PRX static float s_tick_unit;
 		SCE_PAF_IMPORTED_FROM_PRX static float s_tick_inv;
+		SCE_PAF_IMPORTED_FROM_PRX static float s_tick_interval;
 
 	protected:
+
+		int32_t init_func_param(int32_t func, const float *param, float **ret_param, int32_t *ret_param_num);
 
 		float m_total;
 		float m_total_inv;
 		float m_curr;
-		char m_repeat_count;
+		uint8_t m_repeat_count;
 		uint32_t m_repeat : 4;
 		uint32_t m_state : 4;
 		bool m_first_tick : 1;
@@ -327,45 +372,51 @@ namespace paf {
 		uint32_t m_param_x_num : 4;
 		float *m_param_x;
 		float m_mapped_x;
+
+	private:
+
+		int32_t check_bezier_param(float *param);
+
+		int32_t check_custom_param(float *param);
 	};
 
 	class Timer2D : public Timer
 	{
 	public:
 
-	Timer2D(float total, int32_t func_x, int32_t func_y, int32_t repeat, int32_t rep_count, float *param_x, float *param_y, int32_t userdata) :
-		Timer(total, func_x, repeat, rep_count, param_x, userdata)
-	{
-		m_is_2d = true;
-		m_param_y_num = 0;
-		m_param_y = NULL;
-		m_mapped_y = 0.0f;
-		SetFuncY(func_y, param_y);
-	}
+		Timer2D(float total, int32_t func_x, int32_t func_y, int32_t repeat, int32_t rep_count, float *param_x, float *param_y, int32_t userdata) :
+			Timer(total, func_x, repeat, rep_count, param_x, userdata)
+		{
+			m_is_2d = true;
+			m_param_y_num = 0;
+			m_param_y = NULL;
+			m_mapped_y = 0.0f;
+			SetFuncY(func_y, param_y);
+		}
 
-	virtual ~Timer2D();
+		virtual ~Timer2D();
 
-	float DoTick();
+		float DoTick();
 
-	void SetFuncY(int32_t func, const float* param);
+		void SetFuncY(int32_t func, const float* param);
 
-	float GetValueY() const
-	{
-		return m_mapped_y;
-	}
+		float GetValueY() const
+		{
+			return m_mapped_y;
+		}
 
-	void ResetTimer()
-	{
-		Timer::ResetTimer();
-		sync_mapped();
-	}
-
-	void sync_mapped()
-	{
-		m_mapped_y = m_mapped_x;
-	}
+		void ResetTimer()
+		{
+			Timer::ResetTimer();
+			sync_mapped();
+		}
 
 	protected:
+
+		void sync_mapped()
+		{
+			m_mapped_y = m_mapped_x;
+		}
 
 		uint32_t m_func_y : 8;
 		uint32_t m_param_y_num : 4;
@@ -404,13 +455,13 @@ namespace paf {
 			sync_mapped();
 		}
 
+	protected:
+
 		void sync_mapped()
 		{
 			Timer2D::sync_mapped();
 			m_mapped_z = m_mapped_x;
 		}
-
-	protected:
 
 		uint32_t m_func_z : 8;
 		uint32_t m_param_z_num : 4;
@@ -419,4 +470,4 @@ namespace paf {
 	};
 }
 
-#endif /* _VDSUITE_USER_PAF_TIMER_TIMER_H */
+#endif /* _PAF_TIMER_TIMER_H */

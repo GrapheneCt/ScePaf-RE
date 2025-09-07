@@ -1,9 +1,9 @@
 /*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_MEMORY_ALLOCATOR_H
-#define _VDSUITE_USER_PAF_MEMORY_ALLOCATOR_H
+#ifndef _PAF_MEMORY_ALLOCATOR_H
+#define _PAF_MEMORY_ALLOCATOR_H
 
 #include <stdint.h>
 #include <stddef.h>
@@ -11,7 +11,7 @@
 namespace paf {
 	namespace memory {
 
-		enum AllocationBlockType
+		enum AllocationBlockType : int32_t
 		{
 			AllocationBlockType_User = 0,
 			AllocationBlockType_User_Cdlg = 1
@@ -28,7 +28,7 @@ namespace paf {
 
 			virtual uint32_t GetType() const = 0;
 			virtual AllocationBlockType GetBlockType() const = 0;
-			virtual char *GetName() const = 0;
+			virtual const char *GetName() const = 0;
 			virtual void GetRange(void **membase, size_t *size) const = 0;
 			virtual size_t GetFreeSize() = 0;
 
@@ -40,4 +40,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_MEMORY_ALLOCATOR_H */
+#endif /* _PAF_MEMORY_ALLOCATOR_H */

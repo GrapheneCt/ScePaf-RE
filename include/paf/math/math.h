@@ -1,11 +1,11 @@
 /*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_MATH_MATH_H
-#define _VDSUITE_USER_PAF_MATH_MATH_H
+#ifndef _PAF_MATH_MATH_H
+#define _PAF_MATH_MATH_H
 
-#ifdef __SNC__
+#if defined(__SNC__)
 
 #include <paf/math/ngp/misc.h>
 #include <paf/math/ngp/v1.h>
@@ -22,10 +22,26 @@
 #include <paf/math/ngp/spherical_coords.h>
 #include <paf/math/rect.h>
 
-#else
+#elif defined(_WIN32)
+
+#include <paf/math/generic/misc.h>
+#include <paf/math/generic/v1.h>
+#include <paf/math/generic/v1_impl.h>
+#include <paf/math/generic/v2.h>
+#include <paf/math/generic/v2_impl.h>
+#include <paf/math/generic/v3.h>
+#include <paf/math/generic/v3_impl.h>
+#include <paf/math/generic/v4.h>
+#include <paf/math/generic/v4_impl.h>
+#include <paf/math/generic/matrix.h>
+#include <paf/math/generic/matrix3x3.h>
+#include <paf/math/generic/quaternion.h>
+#include <paf/math/generic/spherical_coords.h>
+#include <paf/math/rect.h>
+
+#elif defined(__vita__)
 
 #include <paf/math/ngp/misc.h>
-
 #include <psp2/types.h>
 
 namespace paf {
@@ -160,6 +176,8 @@ namespace paf {
 	}
 }
 
+#else
+#error Current target platform is not supported or no target platform defined
 #endif
 
-#endif /* _VDSUITE_USER_PAF_MATH_MATH_H */ 
+#endif /* _PAF_MATH_MATH_H */ 

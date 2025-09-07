@@ -1,3 +1,7 @@
+/*
+	ScePaf-RE Project
+*/
+
 #ifndef _PAF_STD_MEMORY_H
 #define _PAF_STD_MEMORY_H
 
@@ -125,7 +129,7 @@ namespace paf {
 
 		const_pointer address(const_reference x) const { return &x; }
 
-		size_type max_size() const { return paf::memory::GetGlobalHeapAllocator()->GetFreeSize() / sizeof(value_type); }
+		size_type max_size() const { return ((paf::memory::HeapAllocator *)GetGlobalHeapAllocator())->GetFreeSize() / sizeof(value_type); }
 
 		pointer allocate(size_type n, const void * hint = 0)
 		{
@@ -160,6 +164,6 @@ namespace paf {
 }
 
 #include <memory>
-#include <paf/std/ngp/std_bridge>
+#include <paf/std/ngp/stdcxx_bridge>
 
 #endif

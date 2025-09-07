@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_IMAGE_IMAGE_ARRAY_H
-#define _VDSUITE_USER_PAF_IMAGE_IMAGE_ARRAY_H
+#ifndef _PAF_IMAGE_IMAGE_ARRAY_H
+#define _PAF_IMAGE_IMAGE_ARRAY_H
 
 #include <stddef.h>
 #include <stdint.h>
@@ -77,4 +77,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_IMAGE_IMAGE_ATTRIBUTE_H */
+#endif /* _PAF_IMAGE_IMAGE_ARRAY_H */

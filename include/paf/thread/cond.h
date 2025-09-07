@@ -1,15 +1,22 @@
 /*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_THREAD_COND_H
-#define _VDSUITE_USER_PAF_THREAD_COND_H
+#ifndef _PAF_THREAD_COND_H
+#define _PAF_THREAD_COND_H
 
 #include <stdint.h>
-#ifdef __SNC__
+#if defined(__SNC__)
 #include <kernel/threadmgr.h>
-#else
+#define SCE_PAF_COND_TYPE SceKernelLwCondWork
+#elif defined(__vita__)
 #include <psp2/kernel/threadmgr.h>
+#define SCE_PAF_COND_TYPE SceKernelLwCondWork
+#elif defined(_WIN32)
+#include <Windows.h>
+#define SCE_PAF_COND_TYPE CONDITION_VARIABLE
+#else
+#error Current target platform is not supported or no target platform defined
 #endif
 
 namespace paf {
@@ -21,18 +28,24 @@ namespace paf {
 		{
 		public:
 
-			enum Option
+			enum Option : int32_t
 			{
 				Option_None = 0,
 				Option_FIFO = 1,
 				Option_Default = 0
 			};
 
+			enum
+			{
+				NoError = 0,
+				Timeout = 1
+			};
+
 			Cond(Mutex& mutex, const char *name, int32_t option = Option_Default);
 
 			~Cond();
 
-			bool Wait(int32_t timeout_msec = 0);
+			int32_t Wait(int32_t timeout_msec = 0);
 
 			void Notify();
 
@@ -40,10 +53,10 @@ namespace paf {
 
 		private:
 
-			Mutex* mutex;
-			SceKernelLwCondWork cond;
+			Mutex* m_mutex;
+			SCE_PAF_COND_TYPE m_cond;
 		};
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_THREAD_COND_H */
+#endif /* _PAF_THREAD_COND_H */

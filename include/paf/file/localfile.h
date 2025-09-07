@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_FILE_LOCALFILE_H
-#define _VDSUITE_USER_PAF_FILE_LOCALFILE_H
+#ifndef _PAF_FILE_LOCALFILE_H
+#define _PAF_FILE_LOCALFILE_H
 
 #include <stdint.h>
 #include <stddef.h>
@@ -29,7 +29,7 @@ namespace paf {
 		{
 		public:
 
-			OpenArg() : file_type(1), filename(NULL), flag(SCE_O_RDONLY), mode(0) {};
+			OpenArg() : file_type(Type_Local), filename(NULL), flag(RDONLY), mode(0) {};
 
 			uint32_t file_type;
 			const char *filename;
@@ -43,7 +43,7 @@ namespace paf {
 
 		virtual int32_t GetFileType() const;
 		virtual int32_t GetCapability() const;
-		virtual off_t   GetFileSize() const;
+		virtual int64_t GetFileSize() const;
 		virtual int32_t Open(const File::OpenArg *param);
 		virtual int32_t OpenAsync(const File::OpenArg *param);
 		virtual int32_t Close();
@@ -55,8 +55,8 @@ namespace paf {
 		virtual int32_t ReadAsync(void *buf, size_t nbyte);
 		virtual int32_t Write(const void *buf, size_t nbyte);
 		virtual int32_t WriteAsync(const void *buf, size_t nbyte);
-		virtual off_t   Seek(off_t offset, int32_t whence);
-		virtual int32_t SeekAsync(off_t offset, int32_t whence);
+		virtual int64_t Seek(int64_t offset, int32_t whence);
+		virtual int32_t SeekAsync(int64_t offset, int32_t whence);
 		virtual int32_t Flush();
 		virtual int32_t FlushAsync();
 		virtual int32_t WaitAsync(int64_t *result);
@@ -82,7 +82,7 @@ namespace paf {
 
 		static int32_t RenameFile(const char *oldname, const char *newname);
 
-		static SceOff GetFileSize(const char *path);
+		static int64_t GetFileSize(const char *path);
 
 		static bool Exists(const char *path);
 
@@ -94,10 +94,10 @@ namespace paf {
 
 	private:
 
-		thread::RMutex m_lock_mutex;
+		mutable thread::RMutex m_lock_mutex;
 		LocalFileImpl *m_pimpl;
 		memory::HeapAllocator *m_allocator;
 	};
 }
 
-#endif /* _VDSUITE_USER_PAF_FILE_LOCALFILE_H */
+#endif /* _PAF_FILE_LOCALFILE_H */

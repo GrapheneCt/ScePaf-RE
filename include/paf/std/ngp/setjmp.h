@@ -1,4 +1,8 @@
-﻿#ifndef _PAF_STD_SETJMP_H
+﻿/*
+	ScePaf-RE Project
+*/
+
+#ifndef _PAF_STD_SETJMP_H
 #define _PAF_STD_SETJMP_H
 
 #include <setjmp.h>

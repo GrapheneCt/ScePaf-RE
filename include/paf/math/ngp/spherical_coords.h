@@ -1,9 +1,9 @@
 /*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_MATH_WIN32_SPHERICAL_COORDS_H
-#define _VDSUITE_USER_PAF_MATH_WIN32_SPHERICAL_COORDS_H
+#ifndef _PAF_MATH_NGP_SPHERICAL_COORDS_H
+#define _PAF_MATH_NGP_SPHERICAL_COORDS_H
 
 namespace paf {
 	namespace math {
@@ -11,4 +11,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_MATH_WIN32_SPHERICAL_COORDS_H */ 
+#endif /* _PAF_MATH_NGP_SPHERICAL_COORDS_H */ 

@@ -1,9 +1,9 @@
 /*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_VERSATILEPARAM_RESOURCEPARAM_H
-#define _VDSUITE_USER_PAF_VERSATILEPARAM_RESOURCEPARAM_H
+#ifndef _PAF_VERSATILEPARAM_RESOURCEPARAM_H
+#define _PAF_VERSATILEPARAM_RESOURCEPARAM_H
 
 #include <stddef.h>
 #include <paf/std/stdcxx.h>
@@ -24,7 +24,7 @@ namespace paf {
 	{
 	public:
 
-		enum Semantic
+		enum Semantic : int32_t
 		{
 			SEMANTIC_INT = 0,
 			SEMANTIC_INT2 = 1,
@@ -48,7 +48,7 @@ namespace paf {
 			SEMANTIC_RESOARRAY = 19
 		};
 
-		enum ReadType
+		enum ReadType : int32_t
 		{
 			READTYPE_FROM_PARAMLIST = 0,
 			READTYPE_FROM_XMLATTRIBUTE = 1
@@ -89,4 +89,4 @@ namespace paf {
 
 }
 
-#endif /* _VDSUITE_USER_PAF_VERSATILEPARAM_RESOURCEPARAM_H */
+#endif /* _PAF_VERSATILEPARAM_RESOURCEPARAM_H */

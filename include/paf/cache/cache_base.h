@@ -1,9 +1,9 @@
 /*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_CACHE_CACHE_BASE_H
-#define _VDSUITE_USER_PAF_CACHE_CACHE_BASE_H
+#ifndef _PAF_CACHE_CACHE_BASE_H
+#define _PAF_CACHE_CACHE_BASE_H
 
 #include <stdint.h>
 #include <stddef.h>
@@ -118,7 +118,7 @@ namespace paf {
 				return m_regist_manager;
 			}
 
-			off_t GetSize()
+			int64_t GetSize()
 			{
 				return m_size;
 			}
@@ -171,7 +171,7 @@ namespace paf {
 			CacheJobRunner *m_job;
 			string m_path;
 			void *m_data;
-			off_t m_size;
+			int64_t m_size;
 			size_t m_read_size;
 			size_t m_read_offset;
 
@@ -194,4 +194,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_CACHE_CACHE_BASE_H */
+#endif /* _PAF_CACHE_CACHE_BASE_H */

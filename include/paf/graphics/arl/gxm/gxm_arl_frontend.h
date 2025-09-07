@@ -1,14 +1,14 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_GRAPHICS_ARL_GXM_GXM_ARL_FRONTEND_H
-#define _VDSUITE_USER_PAF_GRAPHICS_ARL_GXM_GXM_ARL_FRONTEND_H
+#ifndef _PAF_GRAPHICS_ARL_GXM_GXM_ARL_FRONTEND_H
+#define _PAF_GRAPHICS_ARL_GXM_GXM_ARL_FRONTEND_H
 
 #include <stdint.h>
-#ifdef __SNC__
+#if defined(__SNC__)
 #include <gxm.h>
-#else
+#elif defined(__vita__)
 #include <psp2/gxm.h>
 #endif
 #include <paf/graphics/arl/arl_defines.h>
@@ -139,4 +139,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_GRAPHICS_ARL_GXM_GXM_ARL_FRONTEND_H */
+#endif /* _PAF_GRAPHICS_ARL_GXM_GXM_ARL_FRONTEND_H */

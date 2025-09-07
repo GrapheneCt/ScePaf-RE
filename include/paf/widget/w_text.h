@@ -1,9 +1,9 @@
 /*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_WIDGET_W_TEXT_H
-#define _VDSUITE_USER_PAF_WIDGET_W_TEXT_H
+#ifndef _PAF_WIDGET_W_TEXT_H
+#define _PAF_WIDGET_W_TEXT_H
 
 #include <paf/widget/core/widget.h>
 #include <paf/widget/factory.h>
@@ -93,19 +93,19 @@ namespace paf {
 				ANIM_TEXT_END = 0x10010
 			};
 
-			enum ScrollType
+			enum ScrollType : int32_t
 			{
 				SCROLL_TYPE_HORIZONTAL = 1,
 				SCROLL_TYPE_VERTICAL = 2
 			};
 
-			enum CharAnimType
+			enum CharAnimType : int32_t
 			{
 				CHAR_ANIM_TYPE_WAVE = 1,
 				CHAR_ANIM_TYPE_CUSTOM = 2
 			};
 
-			enum StyleType
+			enum StyleType : int32_t
 			{
 				MIN_STYLE_TYPE = 0,
 				STYLE_MANUAL = 0,
@@ -219,4 +219,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_WIDGET_W_TEXT_H */
+#endif /* _PAF_WIDGET_W_TEXT_H */

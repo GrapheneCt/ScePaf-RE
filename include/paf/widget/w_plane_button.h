@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_WIDGET_W_PLANE_BUTTON_H
-#define _VDSUITE_USER_PAF_WIDGET_W_PLANE_BUTTON_H
+#ifndef _PAF_WIDGET_W_PLANE_BUTTON_H
+#define _PAF_WIDGET_W_PLANE_BUTTON_H
 
 #include <paf/widget/factory.h>
 #include <paf/widget/w_button_base.h>
@@ -24,7 +24,7 @@ namespace paf {
 				OBJ_BTN_END = 1
 			};
 
-			enum StyleType
+			enum StyleType : int32_t
 			{
 				MIN_STYLE_TYPE = 0,
 				STYLE_MANUAL = 0,
@@ -56,4 +56,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_WIDGET_W_PLANE_BUTTON_H */
+#endif /* _PAF_WIDGET_W_PLANE_BUTTON_H */

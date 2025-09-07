@@ -1,9 +1,9 @@
 /*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_VERSATILEPARAM_VERSATILEPARAM_H
-#define _VDSUITE_USER_PAF_VERSATILEPARAM_VERSATILEPARAM_H
+#ifndef _PAF_VERSATILEPARAM_VERSATILEPARAM_H
+#define _PAF_VERSATILEPARAM_VERSATILEPARAM_H
 
 #include <stddef.h>
 #include <paf/std/stdcxx.h>
@@ -403,4 +403,4 @@ namespace paf {
 
 }
 
-#endif /* _VDSUITE_USER_PAF_VERSATILEPARAM_VERSATILEPARAM_H */
+#endif /* _PAF_VERSATILEPARAM_VERSATILEPARAM_H */

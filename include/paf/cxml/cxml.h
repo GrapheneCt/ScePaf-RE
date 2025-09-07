@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_CXML_CXML_H
-#define _VDSUITE_USER_PAF_CXML_CXML_H
+#ifndef _PAF_CXML_CXML_H
+#define _PAF_CXML_CXML_H
 
 #include <stdint.h>
 #include <stddef.h>
@@ -19,7 +19,7 @@ namespace paf {
 		class File;
 
 		/// 属性の型を表す列挙型
-		enum AttributeType
+		enum AttributeType : int32_t
 		{
 			AttributeType_None = 0, 		///< 属性が存在しない
 			AttributeType_Int = 1,			///< 整数(32bit)
@@ -37,7 +37,7 @@ namespace paf {
 		};
 
 		/// アクセスモード
-		enum AccessMode
+		enum AccessMode : int32_t
 		{
 			AccessMode_ReadWrite, 			///< 読み書きモード
 			AccessMode_ReadOnly_File,		///< ファイルをオープンする読み取り専用モード
@@ -45,7 +45,7 @@ namespace paf {
 		};
 
 		/// メモリ確保/開放の用途の種類
-		enum AllocationType
+		enum AllocationType : int32_t
 		{
 			AllocationType_Alloc_Tree,
 			AllocationType_Alloc_IDTable,
@@ -99,7 +99,7 @@ namespace paf {
 			int32_t filetable_size;
 		};
 
-		SceVoid DefaultAllocator(AllocationType type, ScePVoid userdata, ScePVoid old_addr, SceSize required_size, ScePVoid* addr, SceSize* size);
+		extern void DefaultAllocator(AllocationType type, void *userdata, void *old_addr, uint32_t required_size, void **addr, uint32_t *size);
 
 		/// CXML文書クラス
 		class Document
@@ -183,7 +183,10 @@ namespace paf {
 			bool IsValidElement(int32_t offset) const;
 			bool IsValidAttribute(int32_t offset) const;
 			const char * GetIDString(int32_t offset) const;
+			uint32_t GetHash(int32_t offset) const;
+			uint32_t GetIDHash(int32_t offset) const;
 			const char * GetString(int32_t offset) const;
+			const wchar_t * GetWString(int32_t offset) const;
 			const int32_t * GetIntArray(int32_t offset, uint32_t num) const;
 			const float * GetFloatArray(int32_t offset, uint32_t num) const;
 			const void * GetFileAddr(int32_t offset, uint32_t size) const;
@@ -489,7 +492,7 @@ namespace paf {
 			/// @note 条件に一致する要素が発見されなかった場合には、無効なElementオブジェクトが返る
 			extern cxml::Element FindChildElement(const cxml::Element & parent, const char * name, const char * idname = 0, const char * idvalue = 0);
 
-			extern cxml::Element FindChildElement(const cxml::Element & parent, const char * name, const char * idname = 0, SceUInt32 idhashvalue = 0);
+			extern cxml::Element FindChildElement(const cxml::Element & parent, const char * name, const char * idhashname = 0, uint32_t idhashvalue = 0);
 
 			extern cxml::Element FindChildElement(const cxml::Element & parent, const char * name);
 
@@ -497,21 +500,21 @@ namespace paf {
 			/// @param elm [in] 検索対象となる要素
 			/// @param attr [out] 使われていない属性を格納するためのポインタ
 			/// @return 結果値(CXML_OK、CXML_ERROR_XXXのいずれか)
-			extern SceInt32 FindEmptyAttribute(const cxml::Element & elm, cxml::Attribute * attr);
+			extern int32_t FindEmptyAttribute(const cxml::Element & elm, cxml::Attribute * attr);
 
 			/// 要素の指定された名前の整数型の属性を取得する
 			/// @param elm [in] 要素
 			/// @param attrname [in] 属性の名前
 			/// @param i [out] 属性の値を格納するためのポインタ
 			/// @return 結果値(CXML_OK、CXML_ERROR_XXXのいずれか)
-			extern SceInt32 GetInt(const cxml::Element & elm, const char * attrname, SceInt32 * i);
+			extern int32_t GetInt(const cxml::Element & elm, const char * attrname, int32_t * i);
 
 			/// 要素の指定された名前の浮動少数型の属性を取得する
 			/// @param elm [in] 要素
 			/// @param attrname [in] 属性の名前
 			/// @param f [out] 属性の値を格納するためのポインタ
 			/// @return 結果値(CXML_OK、CXML_ERROR_XXXのいずれか)
-			SceInt32 GetFloat(const cxml::Element & elm, const char * attrname, SceFloat32 * f);
+			extern int32_t GetFloat(const cxml::Element & elm, const char * attrname, float * f);
 
 			/// 要素の指定された名前の文字列型の属性を取得する
 			/// @param elm [in] 要素
@@ -519,7 +522,7 @@ namespace paf {
 			/// @param str [out] 文字列のアドレスを格納するためのポインタ
 			/// @param len [out] 文字列の長さを格納するためのポインタ
 			/// @return 結果値(CXML_OK、CXML_ERROR_XXXのいずれか)
-			extern SceInt32 GetString(const cxml::Element & elm, const char * attrname, const char ** str, SceUInt32 * len);
+			extern int32_t GetString(const cxml::Element & elm, const char * attrname, const char ** str, uint32_t * len);
 
 			/// 要素の指定された名前の文字列型の属性を取得する
 			/// @param elm [in] 要素
@@ -527,7 +530,7 @@ namespace paf {
 			/// @param str [out] 文字列のアドレスを格納するためのポインタ
 			/// @param len [out] 文字列の長さを格納するためのポインタ
 			/// @return 結果値(CXML_OK、CXML_ERROR_XXXのいずれか)
-			extern SceInt32 GetWString(const cxml::Element & elm, const char * attrname, const wchar_t ** str, SceUInt32 * len);
+			extern int32_t GetWString(const cxml::Element & elm, const char * attrname, const wchar_t ** str, uint32_t * len);
 
 			/// 要素の指定された名前の整数配列型の属性を取得する
 			/// @param elm [in] 要素
@@ -535,7 +538,7 @@ namespace paf {
 			/// @param addr [out] 配列の先頭アドレスを格納するためのポインタ
 			/// @param num [out] 配列の要素数を格納するためのポインタ
 			/// @return 結果値(CXML_OK、CXML_ERROR_XXXのいずれか)
-			extern SceInt32 GetIntArray(const cxml::Element & elm, const char * attrname, const SceInt32 ** addr, SceUInt32 * num);
+			extern int32_t GetIntArray(const cxml::Element & elm, const char * attrname, const int32_t ** addr, uint32_t * num);
 
 			/// 要素の指定された名前の浮動少数配列型の属性を取得する
 			/// @param elm [in] 要素
@@ -543,21 +546,21 @@ namespace paf {
 			/// @param addr [out] 配列の先頭アドレスを格納するためのポインタ
 			/// @param num [out] 配列の要素数を格納するためのポインタ
 			/// @return 結果値(CXML_OK、CXML_ERROR_XXXのいずれか)
-			extern SceInt32 GetFloatArray(const cxml::Element & elm, const char * attrname, const SceFloat32 ** addr, SceUInt32 * num);
+			extern int32_t GetFloatArray(const cxml::Element & elm, const char * attrname, const float ** addr, uint32_t * num);
 
 			/// 要素の指定された名前のファイル型の属性を取得する
 			/// @param elm [in] 要素
 			/// @param attrname [in] 属性の名前
 			/// @param file [out] Fileオブジェクトを格納するためのポインタ
 			/// @return 結果値(CXML_OK、CXML_ERROR_XXXのいずれか)
-			extern SceInt32 GetFile(const cxml::Element & elm, const char * attrname, cxml::File * file);
+			extern int32_t GetFile(const cxml::Element & elm, const char * attrname, cxml::File * file);
 
 			/// 要素の指定された名前のID型の属性を取得する
 			/// @param elm [in] 要素
 			/// @param attrname [in] 属性の名前
 			/// @param str [out] ID文字列のアドレスを格納するためのポインタ
 			/// @return 結果値(CXML_OK、CXML_ERROR_XXXのいずれか)
-			extern SceInt32 GetID(const cxml::Element & elm, const char * attrname, const char ** str);
+			extern int32_t GetID(const cxml::Element & elm, const char * attrname, const char ** str);
 
 			/// 要素の指定された名前のID参照型の属性を取得する
 			/// @param elm [in] 要素
@@ -565,15 +568,86 @@ namespace paf {
 			/// @param str [out] ID文字列のアドレスを格納するためのポインタ
 			/// @param entity [out] ID参照の実体を示すElementオブジェクトを格納するためのポインタ
 			/// @return 結果値(CXML_OK、CXML_ERROR_XXXのいずれか)
-			extern SceInt32 GetIDRef(const cxml::Element & elm, const char * attrname, const char ** str, cxml::Element * entity);
+			extern int32_t GetIDRef(const cxml::Element & elm, const char * attrname, const char ** str, cxml::Element * entity);
 
-			extern SceInt32 GetHash(const cxml::Element & elm, const char * attrname, SceUInt32 * hash);
+			extern int32_t GetHash(const cxml::Element & elm, const char * attrname, uint32_t * hash);
 
-			extern SceInt32 GetIDHash(const cxml::Element & elm, const char * attrname, SceUInt32 * idhash);
+			extern int32_t GetIDHash(const cxml::Element & elm, const char * attrname, uint32_t * idhash);
 
-			extern SceInt32 GetIDHashRef(const cxml::Element & elm, const char * attrname, SceUInt32 * idhash, cxml::Element * entity);
+			extern int32_t GetIDHashRef(const cxml::Element & elm, const char * attrname, uint32_t * idhash, cxml::Element * entity);
 		}
+
+		/// 要素のバイナリ表現
+		struct ElementBin
+		{
+			int32_t name;
+			int32_t attr_num;
+			int32_t parent;
+			int32_t prev;
+			int32_t next;
+			int32_t first_child;
+			int32_t last_child;
+		};
+
+		/// 属性のバイナリ表現
+		struct AttributeBin
+		{
+			int32_t name;
+			int32_t type;
+
+			struct StringData
+			{
+				int32_t offset;
+				int32_t len;
+			};
+
+			struct WStringData
+			{
+				int32_t offset;
+				int32_t len;
+			};
+
+			struct IntArrayData
+			{
+				int32_t offset;
+				int32_t num;
+			};
+
+			struct FloatArrayData
+			{
+				int32_t offset;
+				int32_t num;
+			};
+
+			struct FileData
+			{
+				int32_t offset;
+				int32_t size;
+			};
+
+			union
+			{
+				int32_t i;
+				float f;
+				StringData s;
+				WStringData ws;
+				IntArrayData ia;
+				FloatArrayData fa;
+				FileData file;
+				int32_t id;
+				int32_t idref;
+				int32_t hash;
+				int32_t idhash;
+			};
+		};
+
+		/// IDのバイナリ表現
+		struct IDBin
+		{
+			int32_t entity_offset;
+			char id[0];
+		};
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_CXML_CXML_H */
+#endif /* _PAF_CXML_CXML_H */

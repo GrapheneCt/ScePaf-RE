@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_WIDGET_W_SLIDING_DRAWER_H
-#define _VDSUITE_USER_PAF_WIDGET_W_SLIDING_DRAWER_H
+#ifndef _PAF_WIDGET_W_SLIDING_DRAWER_H
+#define _PAF_WIDGET_W_SLIDING_DRAWER_H
 
 #include <paf/widget/w_scroll_view_base.h>
 #include <paf/widget/factory.h>
@@ -18,7 +18,7 @@ namespace paf {
 		{
 		public:
 
-			enum SNAP_ALIGN_TYPE
+			enum SNAP_ALIGN_TYPE : int32_t
 			{
 				SNAP_ALIGN_CENTER = 0,
 				SNAP_ALIGN_TOP = 1,
@@ -27,7 +27,7 @@ namespace paf {
 				SNAP_ALIGN_RIGHT = 4
 			};
 
-			enum MOVABLE_DIRECTION_TYPE
+			enum MOVABLE_DIRECTION_TYPE : int32_t
 			{
 				MOVABLE_DIRECTION_NONE = 0,
 				MOVABLE_DIRECTION_HORIZONTAL = 1,
@@ -66,4 +66,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_WIDGET_W_SLIDING_DRAWER_H */
+#endif /* _PAF_WIDGET_W_SLIDING_DRAWER_H */

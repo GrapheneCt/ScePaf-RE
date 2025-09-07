@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_FILE_LOCALFILE_TYPES_H
-#define _VDSUITE_USER_PAF_FILE_LOCALFILE_TYPES_H
+#ifndef _PAF_FILE_LOCALFILE_TYPES_H
+#define _PAF_FILE_LOCALFILE_TYPES_H
 
 #include <stdint.h>
 #include <paf/paf_types.h>
@@ -11,17 +11,15 @@
 
 namespace paf {
 
-	class LocalFileStat
+	struct LocalFileStat
 	{
-	public:
-
 		int32_t				st_mode;
 		uint32_t			st_attr;
-		off_t				st_size;
+		int64_t				st_size;
 		datetime::DateTime	st_ctime;
 		datetime::DateTime	st_atime;
 		datetime::DateTime	st_mtime;
 	};
 }
 
-#endif /* _VDSUITE_USER_PAF_FILE_LOCALFILE_TYPES_H */
+#endif /* _PAF_FILE_LOCALFILE_TYPES_H */

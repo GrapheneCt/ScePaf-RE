@@ -1,11 +1,23 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_AVOUT_SOUND_H
-#define _VDSUITE_USER_PAF_AVOUT_SOUND_H
+#ifndef _PAF_AVOUT_SOUND_H
+#define _PAF_AVOUT_SOUND_H
+
+#ifndef SCE_PAF_NO_SOUND
 
 #include <stdint.h>
+
+#if defined(__SNC__) || defined(__vita__) || defined(_WIN32)
+
+#else
+#error Current target platform is not supported or no target platform defined
+#endif
+
+#if defined(_WIN32)
+#undef PlaySound
+#endif
 
 namespace paf {
 	namespace sound {
@@ -14,7 +26,7 @@ namespace paf {
 		{
 		public:
 
-			enum Mode
+			enum Mode : int32_t
 			{
 				Mode_Normal = 0,
 				Mode_CommonDialog = 1,
@@ -49,23 +61,34 @@ namespace paf {
 			{
 			public:
 
-				enum State
+				enum State : int32_t
 				{
 					State_Default = 0,
 					State_Playing = 1,
 					State_Stopped = 2,
 				};
 
-				int32_t state;
-				char *buffer;
+				State state;
+				const char *buffer;
+#if defined(__SNC__) || defined(__vita__)
 				int32_t no;
+				char unk_0C[0xC];
+#elif defined(_WIN32)
+				bool is_2ch;
+				uint64_t sound_left_mono;
+				uint64_t sound_right;
+				uint64_t source_left_mono;
+				uint64_t source_right;
+				uint64_t sfx_left_mono;
+				uint64_t sfx_right;
+#endif
 			};
 
 			void Init(int32_t mode);
 
 			char m_common_se[0x528];
 			int32_t m_is_init;
-			int32_t m_unk_52C;
+			int32_t m_disable_count;
 			bool m_enabled;
 			Sound m_sounds[8];
 			int32_t m_se_num;
@@ -73,4 +96,6 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_AVOUT_SOUND_H */
+#endif /* SCE_PAF_NO_SOUND */
+
+#endif /* _PAF_AVOUT_SOUND_H */

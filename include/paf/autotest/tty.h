@@ -1,15 +1,15 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_AUTOTEST_TTY_H
-#define _VDSUITE_USER_PAF_AUTOTEST_TTY_H
+#ifndef _PAF_AUTOTEST_TTY_H
+#define _PAF_AUTOTEST_TTY_H
 
 #include <stdint.h>
 #include <stddef.h>
-#ifdef __SNC__
+#if defined(__SNC__)
 #include <kernel.h>
-#else
+#elif defined (__vita__)
 #include <psp2/kernel/processmgr.h>
 #endif
 
@@ -17,7 +17,7 @@ namespace paf {
 	namespace autotest
 	{
 
-		enum TestType
+		enum TestType : int32_t
 		{
 			TestType_UserDefined,
 			TestType_Class,
@@ -64,4 +64,4 @@ namespace paf {
 	};
 }
 
-#endif /* _VDSUITE_USER_PAF_AUTOTEST_TTY_H */
+#endif /* _PAF_AUTOTEST_TTY_H */

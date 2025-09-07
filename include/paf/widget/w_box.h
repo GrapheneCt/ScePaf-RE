@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_WIDGET_W_BOX_H
-#define _VDSUITE_USER_PAF_WIDGET_W_BOX_H
+#ifndef _PAF_WIDGET_W_BOX_H
+#define _PAF_WIDGET_W_BOX_H
 
 #include <paf/widget/factory.h>
 #include <paf/widget/w_plane.h>
@@ -18,7 +18,7 @@ namespace paf {
 		{
 		public:
 
-			enum LayoutType
+			enum LayoutType : int32_t
 			{
 				MIN_LAYOUT_TYPE = 0,
 				LAYOUT_MANUAL = 0,
@@ -28,7 +28,7 @@ namespace paf {
 				MAX_LAYOUT_TYPE = 2
 			};
 
-			enum ChildrenAdjust
+			enum ChildrenAdjust : int32_t
 			{
 				CHILDREN_ADJUST_NONE = 0,
 				MIN_CHILDREN_ADJUST = 0,
@@ -40,7 +40,7 @@ namespace paf {
 				NUM_CHILDREN_ADJUST = 5
 			};
 
-			enum SpaceAdjust
+			enum SpaceAdjust : int32_t
 			{
 				MIN_SPACE_ADJUST = 0,
 				SPACE_ADJUST_NONE = 0,
@@ -49,7 +49,7 @@ namespace paf {
 				NUM_SPACE_ADJUST = 2
 			};
 
-			enum ChildrenAdjustState
+			enum ChildrenAdjustState : int32_t
 			{
 				CHILDREN_ADJUST_INIT = 0,
 				CHILDREN_ADJUST_WAIT = 1,
@@ -167,4 +167,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_WIDGET_W_BOX_H */
+#endif /* _PAF_WIDGET_W_BOX_H */

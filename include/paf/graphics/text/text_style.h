@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_GRAPHICS_TEXT_TEXT_STYLE_H
-#define _VDSUITE_USER_PAF_GRAPHICS_TEXT_TEXT_STYLE_H
+#ifndef _PAF_GRAPHICS_TEXT_TEXT_STYLE_H
+#define _PAF_GRAPHICS_TEXT_TEXT_STYLE_H
 
 #include <stdint.h>
 #include <paf/math/math.h>
@@ -11,7 +11,7 @@
 namespace paf {
 	namespace graph {
 		
-		enum FontFamily
+		enum FontFamily : int32_t
 		{
 			FontFamily_0,
 			FontFamily_1,
@@ -25,7 +25,7 @@ namespace paf {
 			FontFamily_9
 		};
 
-		enum TextStyleAttribute
+		enum TextStyleAttribute : int32_t
 		{
 			TextStyleAttribute_Family = 0,
 			TextStyleAttribute_Point = 1,
@@ -92,4 +92,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_GRAPHICS_TEXT_TEXT_STYLE_H */
+#endif /* _PAF_GRAPHICS_TEXT_TEXT_STYLE_H */

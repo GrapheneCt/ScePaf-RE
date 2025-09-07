@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_COMMON_STRING_MISC_H
-#define _VDSUITE_USER_PAF_COMMON_STRING_MISC_H
+#ifndef _PAF_COMMON_STRING_MISC_H
+#define _PAF_COMMON_STRING_MISC_H
 
 #include <stddef.h>
 #include <stdint.h>
@@ -59,6 +59,15 @@ namespace paf {
 			sce_paf_snprintf(buf, sizeof(buf), "%u", value);
 			return buf;
 		}
+
+		/*
+		static inline string ToString(size_t value)
+		{
+			char buf[64];
+			sce_paf_snprintf(buf, sizeof(buf), "%zu", value);
+			return buf;
+		}
+		*/
 
 		static inline string ToString(const void *value)
 		{
@@ -118,4 +127,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_COMMON_STRING_MISC_H */
+#endif /* _PAF_COMMON_STRING_MISC_H */

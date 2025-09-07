@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_COMMON_JOB_CALL_QUEUE_H
-#define _VDSUITE_USER_PAF_COMMON_JOB_CALL_QUEUE_H
+#ifndef _PAF_COMMON_JOB_CALL_QUEUE_H
+#define _PAF_COMMON_JOB_CALL_QUEUE_H
 
 #include <stdint.h>
 #include <paf/thread/mutex.h>
@@ -51,4 +51,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_COMMON_JOB_CALL_QUEUE_H */
+#endif /* _PAF_COMMON_JOB_CALL_QUEUE_H */

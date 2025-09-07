@@ -1,15 +1,15 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_GRAPHICS_SURFACE_SURFACE_SCREEN_H
-#define _VDSUITE_USER_PAF_GRAPHICS_SURFACE_SURFACE_SCREEN_H
+#ifndef _PAF_GRAPHICS_SURFACE_SURFACE_SCREEN_H
+#define _PAF_GRAPHICS_SURFACE_SURFACE_SCREEN_H
 
 #include <stddef.h>
 #include <stdint.h>
-#ifdef __SNC__
+#if defined(__SNC__)
 #include <gxm.h>
-#else
+#elif defined(__vita__)
 #include <psp2/gxm.h>
 #endif
 #include <paf/paf_types.h>
@@ -87,4 +87,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_GRAPHICS_SURFACE_SURFACE_SCREEN_H */
+#endif /* _PAF_GRAPHICS_SURFACE_SURFACE_SCREEN_H */

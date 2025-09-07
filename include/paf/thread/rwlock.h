@@ -1,15 +1,22 @@
 /*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_THREAD_RWLOCK_H
-#define _VDSUITE_USER_PAF_THREAD_RWLOCK_H
+#ifndef _PAF_THREAD_RWLOCK_H
+#define _PAF_THREAD_RWLOCK_H
 
 #include <stdint.h>
-#ifdef __SNC__
+#if defined(__SNC__)
 #include <scetypes.h>
-#else
+#define SCE_PAF_RWLOCK_TYPE SceUID
+#elif defined(__vita__)
 #include <psp2/types.h>
+#define SCE_PAF_RWLOCK_TYPE SceUID
+#elif defined(_WIN32)
+#include <Windows.h>
+#define SCE_PAF_RWLOCK_TYPE SRWLOCK
+#else
+#error Current target platform is not supported or no target platform defined
 #endif
 
 namespace paf {
@@ -19,7 +26,7 @@ namespace paf {
 		{
 		public:
 
-			enum Option
+			enum Option : int32_t
 			{
 				Option_None = 0,
 				Option_Default = 0
@@ -39,11 +46,10 @@ namespace paf {
 
 		private:
 
-			SceUID evf;
-			int32_t counter;
-
+			SCE_PAF_RWLOCK_TYPE m_evf;
+			int32_t m_counter;
 		};
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_THREAD_RWLOCK_H */
+#endif /* _PAF_THREAD_RWLOCK_H */

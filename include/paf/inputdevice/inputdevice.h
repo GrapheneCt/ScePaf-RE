@@ -1,9 +1,9 @@
 /*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_INPUTDEVICE_INPUTDEVICE_H
-#define _VDSUITE_USER_PAF_INPUTDEVICE_INPUTDEVICE_H
+#ifndef _PAF_INPUTDEVICE_INPUTDEVICE_H
+#define _PAF_INPUTDEVICE_INPUTDEVICE_H
 
 #include <stdint.h>
 #include <paf/inputdevice/pad/pad.h>
@@ -18,7 +18,7 @@ namespace paf {
 		{
 		public:
 
-			enum Mode
+			enum Mode : int32_t
 			{
 				Mode_Normal = 0,
 				Mode_DigitalAnalog = 1,
@@ -59,4 +59,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_INPUTDEVICE_INPUTDEVICE_H */
+#endif /* _PAF_INPUTDEVICE_INPUTDEVICE_H */

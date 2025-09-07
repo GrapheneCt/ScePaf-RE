@@ -1,15 +1,15 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_GRAPHICS_SURFACE_SURFACE_H
-#define _VDSUITE_USER_PAF_GRAPHICS_SURFACE_SURFACE_H
+#ifndef _PAF_GRAPHICS_SURFACE_SURFACE_H
+#define _PAF_GRAPHICS_SURFACE_SURFACE_H
 
 #include <stddef.h>
 #include <stdint.h>
-#ifdef __SNC__
+#if defined(__SNC__)
 #include <gxm.h>
-#else
+#elif defined(__vita__)
 #include <psp2/gxm.h>
 #include <psp2/kernel/cpu.h>
 #endif
@@ -58,9 +58,9 @@ namespace paf {
 
 			int32_t UnsafeRelease()
 			{
-#ifdef __SNC__
+#if defined(__SNC__)
 				sceAtomicDecrement32AcqRel(&m_ref_count);
-#else
+#elif defined(__vita__)
 				sceKernelAtomicAddAndGet32((SceInt32 *)&m_ref_count, ~0);
 #endif
 				return m_ref_count;
@@ -94,13 +94,13 @@ namespace paf {
 		{
 		public:
 
-			enum FrameBufferType
+			enum FrameBufferType : int32_t
 			{
 				FRAME_BUFFER_LATEST = 0,
 				FRAME_BUFFER_RENDERING = 1
 			};
 
-			enum TextureFilter
+			enum TextureFilter : int32_t
 			{
 				NEAREST = 0,
 				LINEAR = 1,
@@ -110,7 +110,7 @@ namespace paf {
 				LINEAR_MIPMAP_LINEAR = 5,
 			};
 
-			enum TextureWrap
+			enum TextureWrap : int32_t
 			{
 				CLAMP = 0,
 				REPEAT = 1,
@@ -124,21 +124,21 @@ namespace paf {
 				CLAMP_HALF_BORDER = 9,
 			};
 
-			enum SurfaceType
+			enum SurfaceType : int32_t
 			{
 				TypeTexture = 0,
 				TypeScreen = 1,
 				TypeDisplay = 2,
 			};
 
-			enum MemClass
+			enum MemClass : int32_t
 			{
 				Fixed = 0,
 				Permanent = 1,
 				Unallocated = 2
 			};
 
-			enum PageMode
+			enum PageMode : int32_t
 			{
 				Refer = 0,
 				Render = 1
@@ -183,7 +183,7 @@ namespace paf {
 				int32_t unk_08;
 				int32_t error;
 				void *data_buff;
-				off_t size;
+				int64_t size;
 				void*(*cb_alloc_heap)(size_t, bool *, void *);
 				void *alloc_heap_userdata;
 				void(*cb_free_heap)(void *, void *);
@@ -243,7 +243,7 @@ namespace paf {
 
 			static intrusive_ptr<Surface> Load(SurfacePool *pool, void *buf, int64_t size, LoadOption *option);
 
-			//static intrusive_ptr<Surface> Load(SurfacePool *pool, void *buf, off_t size, uint32_t ununsed = 0, LoadOption *option = NULL);
+			//static intrusive_ptr<Surface> Load(SurfacePool *pool, void *buf, int64_t size, uint32_t ununsed = 0, LoadOption *option = NULL);
 
 			Surface(SurfacePool *pool, int32_t width, int32_t height, ImageMode format, ImageOrder order, int32_t num_page, int32_t num_level, bool unk_base_08);
 
@@ -361,9 +361,9 @@ namespace paf {
 
 			int32_t UnsafeRelease()
 			{
-#ifdef __SNC__
+#if defined(__SNC__)
 				sceAtomicDecrement32AcqRel(&m_ref_count);
-#else
+#elif defined(__vita__)
 				sceKernelAtomicAddAndGet32((SceInt32 *)&m_ref_count, ~0);
 #endif
 				return m_ref_count;
@@ -508,4 +508,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_GRAPHICS_SURFACE_SURFACE_H */
+#endif /* _PAF_GRAPHICS_SURFACE_SURFACE_H */

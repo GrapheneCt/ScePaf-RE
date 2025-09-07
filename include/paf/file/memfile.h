@@ -1,15 +1,16 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_FILE_MEMFILE_H
-#define _VDSUITE_USER_PAF_FILE_MEMFILE_H
+#ifndef _PAF_FILE_MEMFILE_H
+#define _PAF_FILE_MEMFILE_H
 
 #include <stdint.h>
 #include <stddef.h>
 #include <paf/paf_types.h>
 #include <paf/common/shared_ptr.h>
 #include <paf/thread/rmutex.h>
+#include <paf/job/job.h>
 #include <paf/file/file.h>
 
 namespace paf {
@@ -24,17 +25,17 @@ namespace paf {
 		{
 		public:
 
-			OpenArg() : file_type(2) {};
+			OpenArg() : file_type(Type_Mem) {};
 
 			uint32_t file_type;
-			common::SharedPtr<Buffer> buffer;
+			common::SharedPtr<Buffer const> buffer;
 		};
 
 		MemFile();
 
 		virtual int32_t GetFileType() const;
 		virtual int32_t GetCapability() const;
-		virtual off_t   GetFileSize() const;
+		virtual int64_t GetFileSize() const;
 		virtual int32_t Open(const File::OpenArg *param);
 		virtual int32_t OpenAsync(const File::OpenArg *param);
 		virtual int32_t Close();
@@ -46,8 +47,8 @@ namespace paf {
 		virtual int32_t ReadAsync(void *buf, size_t nbyte);
 		virtual int32_t Write(const void *buf, size_t nbyte);
 		virtual int32_t WriteAsync(const void *buf, size_t nbyte);
-		virtual off_t   Seek(off_t offset, int32_t whence);
-		virtual int32_t SeekAsync(off_t offset, int32_t whence);
+		virtual int64_t Seek(int64_t offset, int32_t whence);
+		virtual int32_t SeekAsync(int64_t offset, int32_t whence);
 		virtual int32_t Flush();
 		virtual int32_t FlushAsync();
 		virtual int32_t WaitAsync(int64_t *result);
@@ -57,21 +58,35 @@ namespace paf {
 
 		virtual ~MemFile();
 
+		void SetWritable(bool writable)
+		{
+			m_is_writable = writable;
+		}
+
+		bool IsWritable() const
+		{
+			return m_is_writable;
+		}
+
 		static common::SharedPtr<MemFile> Open(const void *ptr, size_t size, int32_t *error);
 
 		static common::SharedPtr<MemFile> Open(common::SharedPtr<Buffer const> buffer, int32_t *error);
 
 	private:
 
-		bool is_opened;
-		common::SharedPtr<Buffer const> buffer;
-		void *mem_addr;
-		size_t mem_size;
-		off_t mem_pos;
-		bool waiting_for_sync;
-		off_t io_result;
-		thread::RMutex lock_mutex;
+		bool m_is_opened;
+		bool m_is_writable;
+		common::SharedPtr<Buffer const> m_buffer;
+		const void *m_mem_addr;
+		size_t m_mem_size;
+		int64_t m_mem_pos;
+		bool m_waiting_for_sync;
+		int64_t m_io_result;
+		mutable thread::RMutex m_lock_mutex;
+#if defined(_WIN32)
+		common::SharedPtr<job::JobItem> m_as_job;
+#endif
 	};
 }
 
-#endif /* _VDSUITE_USER_PAF_FILE_MEMFILE_H */
+#endif /* _PAF_FILE_MEMFILE_H */

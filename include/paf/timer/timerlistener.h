@@ -1,9 +1,9 @@
 /*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_TIMER_TIMERLISTENER_H
-#define _VDSUITE_USER_PAF_TIMER_TIMERLISTENER_H
+#ifndef _PAF_TIMER_TIMERLISTENER_H
+#define _PAF_TIMER_TIMERLISTENER_H
 
 #include <paf/timer/timer.h>
 
@@ -62,4 +62,4 @@ namespace paf {
 	};
 }
 
-#endif /* _VDSUITE_USER_PAF_TIMER_TIMERLISTENER_H */
+#endif /* _PAF_TIMER_TIMERLISTENER_H */

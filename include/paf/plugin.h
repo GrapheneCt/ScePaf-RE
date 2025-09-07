@@ -1,15 +1,16 @@
 /*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_PLUGIN_H
-#define _VDSUITE_USER_PAF_PLUGIN_H
+#ifndef _PAF_PLUGIN_H
+#define _PAF_PLUGIN_H
 
 #include <stdint.h>
 #include <stddef.h>
 #include <paf/paf_types.h>
 #include <paf/std/stdcxx.h>
 #include <paf/common/shared_ptr.h>
+#include <paf/versatileparam/idparam.h>
 #include <paf/cxml/cxml.h>
 #include <paf/widget/core/event.h>
 #include <paf/widget/core/layouter.h>
@@ -20,6 +21,7 @@ namespace paf {
 	class Module;
 	class VersatileParamManager;
 	class Plugin;
+	class Timer;
 
 	namespace resource {
 
@@ -34,6 +36,7 @@ namespace paf {
 	namespace graph {
 
 		class SurfacePool;
+		class Surface;
 		class DrawObj;
 	}
 
@@ -73,7 +76,8 @@ namespace paf {
 		void *userdata;
 	};
 
-	class WidgetResourceInfo : public ui::Widget::UserData
+	// TODO: ui::Widget::UserData ???
+	class WidgetResourceInfo/* : public ui::Widget::UserData*/
 	{
 	public:
 
@@ -107,7 +111,7 @@ namespace paf {
 	{
 	public:
 
-		enum Option //for InitParam::option
+		enum Option : int32_t//for InitParam::option
 		{
 			Option_None = 0,
 			Option_AutoOpen = 1,
@@ -119,21 +123,21 @@ namespace paf {
 			Option_Default = 28
 		};
 
-		enum LoadUnloadOption
+		enum LoadUnloadOption : int32_t
 		{
 			LoadUnloadOption_None = 0,
 			LoadUnloadOption_DontLockInputDevice = 1,
 			LoadUnloadOption_Default = 0,
 		};
 
-		enum ArgumentType
+		enum ArgumentType : int32_t
 		{
 			ArgumentType_Int = 0,
 			ArgumentType_Float = 1,
 			ArgumentType_String = 2,
 		};
 
-		enum TransitionType
+		enum TransitionType : int32_t
 		{
 			TransitionType_None,
 			TransitionType_SlideFromTop,	// maps to 0xE
@@ -142,19 +146,19 @@ namespace paf {
 			TransitionType_SlideFromRight,	// maps to 0x11
 		};
 
-		enum PageOption //for PageOpenParam::option
+		enum PageOption : int32_t //for PageOpenParam::option
 		{
 			PageOption_None = 0,
 			PageOption_Create = 1,
 		};
 
-		enum ResolutionDebugMode
+		enum ResolutionDebugMode : int32_t
 		{
 			ResolutionDebugMode_Off = 0,
 			ResolutionDebugMode_Add2 = 1,
 		};
 
-		enum PageDebugMode
+		enum PageDebugMode : int32_t
 		{
 			PageDebugMode_PageVisual = 0,
 			PageDebugMode_PageVisualEdit = 1,
@@ -491,7 +495,7 @@ namespace paf {
 			return locale;
 		}
 
-		char *GetName() const
+		const char *GetName() const
 		{
 			return name.c_str();
 		}
@@ -638,4 +642,4 @@ namespace paf {
 	};
 }
 
-#endif /* _VDSUITE_USER_PAF_PLUGIN_H */
+#endif /* _PAF_PLUGIN_H */

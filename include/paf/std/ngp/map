@@ -1,7 +1,11 @@
+/*
+	ScePaf-RE Project
+*/
+
 #ifndef _PAF_STD_MAP_H
 #define _PAF_STD_MAP_H
 
-#ifdef __SNC__
+#if defined(__SNC__)
 
 #ifndef _MAP_
 #define _MAP_
@@ -491,16 +495,13 @@ template<class _Kty,
 _STD_END
 #endif /* _MAP_ */
 
-#include <paf/std/ngp/std_bridge>
+#include <paf/std/ngp/stdcxx_bridge>
 
 namespace paf {
 	typedef class map<string, string> token_map_t;
 }
 
-#else
-
-#ifndef _VDSUITE_USER_PAF_STD_MAP_H
-#define _VDSUITE_USER_PAF_STD_MAP_H
+#elif defined(__vita__)
 
 // #include <paf/std/xtree>
 // gcc map broke paf widget layout
@@ -508,7 +509,7 @@ namespace paf {
 #include <paf/std/ngp/utility>
 #include <paf/std/ngp/memory>
 #include <paf/std/ngp/string>
-#include <paf/std/ngp/std_bridge>
+#include <paf/std/ngp/stdcxx_bridge>
 
 namespace paf {
 
@@ -668,6 +669,4 @@ namespace paf {
 
 #endif
 
-#endif
-
-#endif
+#endif /* _PAF_STD_MAP_H */

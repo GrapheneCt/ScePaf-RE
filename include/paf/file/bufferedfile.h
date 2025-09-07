@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_FILE_BUFFEREDFILE_H
-#define _VDSUITE_USER_PAF_FILE_BUFFEREDFILE_H
+#ifndef _PAF_FILE_BUFFEREDFILE_H
+#define _PAF_FILE_BUFFEREDFILE_H
 
 #include <stdint.h>
 #include <stddef.h>
@@ -37,7 +37,7 @@ namespace paf {
 
 		virtual int32_t GetFileType() const;
 		virtual int32_t GetCapability() const;
-		virtual off_t   GetFileSize() const;
+		virtual int64_t GetFileSize() const;
 		virtual int32_t Open(const File::OpenArg *param);
 		virtual int32_t OpenAsync(const File::OpenArg *param);
 		virtual int32_t Close();
@@ -49,12 +49,12 @@ namespace paf {
 		virtual int32_t ReadAsync(void *buf, size_t nbyte);
 		virtual int32_t Write(const void *buf, size_t nbyte);
 		virtual int32_t WriteAsync(const void *buf, size_t nbyte);
-		virtual off_t   Seek(off_t offset, int32_t whence);
-		virtual int32_t SeekAsync(off_t offset, int32_t whence);
+		virtual int64_t Seek(int64_t offset, int32_t whence);
+		virtual int32_t SeekAsync(int64_t offset, int32_t whence);
 		virtual int32_t Flush();
 		virtual int32_t FlushAsync();
-		virtual int32_t WaitAsync(int32_t *result);
-		virtual int32_t PollAsync(int32_t *result);
+		virtual int32_t WaitAsync(int64_t *result);
+		virtual int32_t PollAsync(int64_t *result);
 		virtual int32_t Getstat(FileStat *stat);
 		virtual int32_t SetPriority(int32_t priority);
 
@@ -80,4 +80,4 @@ namespace paf {
 	};
 }
 
-#endif /* _VDSUITE_USER_PAF_FILE_BUFFEREDFILE_H */
+#endif /* _PAF_FILE_BUFFEREDFILE_H */

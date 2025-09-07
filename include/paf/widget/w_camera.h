@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_WIDGET_W_CAMERA_H
-#define _VDSUITE_USER_PAF_WIDGET_W_CAMERA_H
+#ifndef _PAF_WIDGET_W_CAMERA_H
+#define _PAF_WIDGET_W_CAMERA_H
 
 #include <paf/widget/core/widget.h>
 
@@ -104,4 +104,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_WIDGET_W_CAMERA_H */
+#endif /* _PAF_WIDGET_W_CAMERA_H */

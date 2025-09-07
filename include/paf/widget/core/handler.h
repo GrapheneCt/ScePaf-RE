@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_WIDGET_CORE_HANDLER_H
-#define _VDSUITE_USER_PAF_WIDGET_CORE_HANDLER_H
+#ifndef _PAF_WIDGET_CORE_HANDLER_H
+#define _PAF_WIDGET_CORE_HANDLER_H
 
 #include <stdint.h>
 #include <paf/std/stdcxx.h>
@@ -285,4 +285,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_WIDGET_CORE_HANDLER_H */
+#endif /* _PAF_WIDGET_CORE_HANDLER_H */

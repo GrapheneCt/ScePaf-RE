@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_WIDGET_W_BUTTON_BASE_H
-#define _VDSUITE_USER_PAF_WIDGET_W_BUTTON_BASE_H
+#ifndef _PAF_WIDGET_W_BUTTON_BASE_H
+#define _PAF_WIDGET_W_BUTTON_BASE_H
 
 #include <paf/widget/core/widget.h>
 #include <paf/widget/factory.h>
@@ -39,7 +39,7 @@ namespace paf {
 				BTN_MODE_PRESSOVER = 1
 			};
 
-			enum ButtonState
+			enum ButtonState : int32_t
 			{
 				ST_BTN_NORMAL = 0,
 				ST_BTN_DISABLE = 1,
@@ -158,4 +158,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_WIDGET_W_BUTTON_BASE_H */
+#endif /* _PAF_WIDGET_W_BUTTON_BASE_H */

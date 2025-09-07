@@ -1,4 +1,8 @@
-﻿#ifndef _PAF_STD_STRINGCXX_H
+﻿/*
+	ScePaf-RE Project
+*/
+
+#ifndef _PAF_STD_STRINGCXX_H
 #define _PAF_STD_STRINGCXX_H
 
 #include <stddef.h>

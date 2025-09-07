@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_GRAPHICS_DRAWOBJ_TEXT_OBJ_H
-#define _VDSUITE_USER_PAF_GRAPHICS_DRAWOBJ_TEXT_OBJ_H
+#ifndef _PAF_GRAPHICS_DRAWOBJ_TEXT_OBJ_H
+#define _PAF_GRAPHICS_DRAWOBJ_TEXT_OBJ_H
 
 #include <stdint.h>
 #include <stddef.h>
@@ -183,4 +183,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_GRAPHICS_DRAWOBJ_TEXT_OBJ_H */
+#endif /* _PAF_GRAPHICS_DRAWOBJ_TEXT_OBJ_H */

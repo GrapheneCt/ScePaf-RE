@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_COMMON_STATIC_LOG_H
-#define _VDSUITE_USER_PAF_COMMON_STATIC_LOG_H
+#ifndef _PAF_COMMON_STATIC_LOG_H
+#define _PAF_COMMON_STATIC_LOG_H
 
 #include <stdint.h>
 #include <stddef.h>
@@ -19,14 +19,11 @@ namespace paf {
 		public:
 
 			template <typename T>
-			StaticLog(T& r) : _pos(0), _size(0)
+			StaticLog(T& r) : m_pos(0), m_size(0)
 			{
-				_buffer = r.front();
-				_capacity = r.size() - 1;
-				if (_capacity == 0)
-				{
-					paf::common_internal::on_error();
-				}
+				m_buffer = r.front();
+				m_capacity = r.size() - 1;
+				SCE_PAF_ASSERT(" *** error ", NULL, m_capacity != 0);
 				clear('\0');
 			}
 
@@ -38,7 +35,7 @@ namespace paf {
 			size_t col() const
 			{
 				size_t ncol = 0;
-				for (int32_t cpos = _pos; (-1 < cpos) && (_buffer[cpos] != '\n'); cpos--)
+				for (int32_t cpos = m_pos; (-1 < cpos) && (m_buffer[cpos] != '\n'); cpos--)
 				{
 					ncol++;
 				}
@@ -47,18 +44,18 @@ namespace paf {
 
 			char *c_str() const
 			{
-				_buffer[_capacity] = '\0';
-				return _buffer;
+				m_buffer[m_capacity] = '\0';
+				return m_buffer;
 			}
 
 			void nchars(char c, size_t n)
 			{
 				size_t i = 0;
-				while ((i < n && (_pos < _capacity)))
+				while ((i < n && (m_pos < m_capacity)))
 				{
-					_buffer[_pos] = c;
+					m_buffer[m_pos] = c;
 					i++;
-					_pos++;
+					m_pos++;
 				}
 			}
 
@@ -70,57 +67,57 @@ namespace paf {
 			void clear(char c)
 			{
 				size_t i = 0;
-				if (_capacity != 0)
+				if (m_capacity != 0)
 				{
 					do
 					{
-						_buffer[i] = c;
+						m_buffer[i] = c;
 						i++;
-					} while (i != _capacity);
+					} while (i != m_capacity);
 				}
-				_pos = 0;
-				_size = 0;
-				_tmp[0] = '\0';
-				_buffer[_capacity] = '\0';
+				m_pos = 0;
+				m_size = 0;
+				m_tmp[0] = '\0';
+				m_buffer[m_capacity] = '\0';
 			}
 
 			StaticLog& operator<<(const char *value)
 			{
 				int32_t i = 0;
-				while ((value[i] != '\0' && (_pos < _capacity)))
+				while ((value[i] != '\0' && (m_pos < m_capacity)))
 				{
-					_buffer[_pos] = value[i];
+					m_buffer[m_pos] = value[i];
 					i++;
-					_pos++;
+					m_pos++;
 				}
 				return *this;
 			}
 
 			StaticLog& operator<<(int32_t value)
 			{
-				sce_paf_snprintf(_tmp, sizeof(_tmp), "%i", value);
-				*this << _tmp;
+				sce_paf_snprintf(m_tmp, sizeof(m_tmp), "%i", value);
+				*this << m_tmp;
 				return *this;
 			}
 
 			StaticLog& operator<<(uint32_t value)
 			{
-				sce_paf_snprintf(_tmp, sizeof(_tmp), "%u", value);
-				*this << _tmp;
+				sce_paf_snprintf(m_tmp, sizeof(m_tmp), "%u", value);
+				*this << m_tmp;
 				return *this;
 			}
 
 			StaticLog& operator<<(float value)
 			{
-				sce_paf_snprintf(_tmp, sizeof(_tmp), "%f", value);
-				*this << _tmp;
+				sce_paf_snprintf(m_tmp, sizeof(m_tmp), "%f", value);
+				*this << m_tmp;
 				return *this;
 			}
 
 			StaticLog& operator<<(const void *value)
 			{
-				sce_paf_snprintf(_tmp, sizeof(_tmp), "0x%p", value);
-				*this << _tmp;
+				sce_paf_snprintf(m_tmp, sizeof(m_tmp), "0x%p", value);
+				*this << m_tmp;
 				return *this;
 			}
 
@@ -132,13 +129,13 @@ namespace paf {
 
 		private:
 
-			size_t _pos;
-			size_t _size;
-			char _tmp[128];
-			char *_buffer;
-			size_t _capacity;
+			size_t m_pos;
+			size_t m_size;
+			char m_tmp[128];
+			char *m_buffer;
+			size_t m_capacity;
 		};
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_COMMON_STATIC_LOG_H */
+#endif /* _PAF_COMMON_STATIC_LOG_H */

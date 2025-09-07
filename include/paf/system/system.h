@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_SYSTEM_SYSTEM_H
-#define _VDSUITE_USER_PAF_SYSTEM_SYSTEM_H
+#ifndef _PAF_SYSTEM_SYSTEM_H
+#define _PAF_SYSTEM_SYSTEM_H
 
 #include <stdint.h>
 #include <stddef.h>
@@ -11,10 +11,11 @@
 namespace paf {
 	namespace system {
 
-		enum ModelType
+		enum ModelType : int32_t
 		{
 			ModelType_Vita = 0,
-			ModelType_Dolce = 1
+			ModelType_Dolce = 1,
+			ModelType_WIN32 = 2,
 		};
 
 		extern bool SupportsMultiController(); //vsh capability 1
@@ -38,8 +39,10 @@ namespace paf {
 
 		extern ModelType GetModelType();
 
+		#define SCE_PAF_IS_VITA (paf::system::GetModelType() == paf::system::ModelType_Vita)
 		#define SCE_PAF_IS_DOLCE (paf::system::GetModelType() == paf::system::ModelType_Dolce)
+		#define SCE_PAF_IS_WIN32 (paf::system::GetModelType() == paf::system::ModelType_WIN32)
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_SYSTEM_SYSTEM_H */
+#endif /* _PAF_SYSTEM_SYSTEM_H */

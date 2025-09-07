@@ -1,9 +1,9 @@
 /*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_MATH_WIN32_MISC_H
-#define _VDSUITE_USER_PAF_MATH_WIN32_MISC_H
+#ifndef _PAF_MATH_NGP_MISC_H
+#define _PAF_MATH_NGP_MISC_H
 
 #include <stdint.h>
 #include <paf/std/stdc.h>
@@ -81,4 +81,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_MATH_WIN32_MISC_H */ 
+#endif /* _PAF_MATH_NGP_MISC_H */ 

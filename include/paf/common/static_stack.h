@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_COMMON_STATIC_STACK_H
-#define _VDSUITE_USER_PAF_COMMON_STATIC_STACK_H
+#ifndef _PAF_COMMON_STATIC_STACK_H
+#define _PAF_COMMON_STATIC_STACK_H
 
 #include <stddef.h>
 #include <paf/common/halt_assert.h>
@@ -18,47 +18,47 @@ namespace paf {
 
 			StaticStack(T default_value)
 			{
-				_stack[0] = default_value;
+				m_stack[0] = default_value;
 			}
 
 			bool empty() const
 			{
-				return (_size == 0);
+				return (m_size == 0);
 			}
 
 			void pop()
 			{
-				if (1 < _size)
+				if (1 < m_size)
 				{
-					_size--;
+					m_size--;
 				}
 			}
 
 			void push()
 			{
-				if (_size < CAPACITY)
+				if (m_size < CAPACITY)
 				{
-					_stack[_size] = *top();
-					_size++;
+					m_stack[m_size] = *top();
+					m_size++;
 				}
 			}
 
 			T& top()
 			{
-				return _stack + (_size - 1);
+				return m_stack + (m_size - 1);
 			}
 
 			T& top() const
 			{
-				return _stack + (_size - 1);
+				return m_stack + (m_size - 1);
 			}
 
 		private:
 
-			size_t _size;
-			T _stack[CAPACITY];
+			size_t m_size;
+			T m_stack[CAPACITY];
 		};
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_COMMON_STATIC_STACK_H */
+#endif /* _PAF_COMMON_STATIC_STACK_H */

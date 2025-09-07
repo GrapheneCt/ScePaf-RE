@@ -1,0 +1,31 @@
+/*
+	ScePaf-RE Project
+*/
+
+#ifndef _PAF_STDCXX_STDC_H
+#define _PAF_STDCXX_STDC_H
+
+#include <paf/std/generic/stdint.h>
+#if defined(_WIN32)
+#include <stdio.h>
+#define SCE_PAF_TTY_TYPE FILE*
+#else
+#error Current target platform is not supported or no target platform defined
+#endif
+
+namespace paf {
+	class TTY
+	{
+	public:
+
+		TTY();
+
+		~TTY();
+
+		SCE_PAF_TTY_TYPE fd_stdout;
+		SCE_PAF_TTY_TYPE fd_stdin;
+		SCE_PAF_TTY_TYPE fd_extratty;
+	};
+}
+
+#endif /* _PAF_STDCXX_STDC_H */

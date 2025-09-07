@@ -1,4 +1,8 @@
-﻿#ifndef _PAF_STD_WCTYPE_H
+﻿/*
+	ScePaf-RE Project
+*/
+
+#ifndef _PAF_STD_WCTYPE_H
 #define _PAF_STD_WCTYPE_H
 
 #include <wchar.h>

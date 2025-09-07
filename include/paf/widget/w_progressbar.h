@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_WIDGET_W_PROGRESSBAR_H
-#define _VDSUITE_USER_PAF_WIDGET_W_PROGRESSBAR_H
+#ifndef _PAF_WIDGET_W_PROGRESSBAR_H
+#define _PAF_WIDGET_W_PROGRESSBAR_H
 
 #include <paf/widget/core/widget.h>
 #include <paf/widget/factory.h>
@@ -186,4 +186,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_WIDGET_W_PROGRESSBAR_H */
+#endif /* _PAF_WIDGET_W_PROGRESSBAR_H */

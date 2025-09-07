@@ -1,9 +1,9 @@
 /*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_CACHE_CACHE_MANAGER_H
-#define _VDSUITE_USER_PAF_CACHE_CACHE_MANAGER_H
+#ifndef _PAF_CACHE_CACHE_MANAGER_H
+#define _PAF_CACHE_CACHE_MANAGER_H
 
 #include <stdint.h>
 #include <stddef.h>
@@ -34,7 +34,7 @@ namespace paf {
 			typedef bool(*CancelFunc)(void *userdata);
 			typedef bool(*CheckCache)(CacheBase*);
 
-			enum JobQueueType
+			enum JobQueueType : int32_t
 			{
 				JOBQ_TYPE_LOCAL = 0,
 				JOBQ_TYPE_NET = 1,
@@ -118,4 +118,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_CACHE_CACHE_MANAGER_H */
+#endif /* _PAF_CACHE_CACHE_MANAGER_H */

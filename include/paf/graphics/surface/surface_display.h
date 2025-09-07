@@ -1,15 +1,15 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_GRAPHICS_SURFACE_SURFACE_DISPLAY_H
-#define _VDSUITE_USER_PAF_GRAPHICS_SURFACE_SURFACE_DISPLAY_H
+#ifndef _PAF_GRAPHICS_SURFACE_SURFACE_DISPLAY_H
+#define _PAF_GRAPHICS_SURFACE_SURFACE_DISPLAY_H
 
 #include <stddef.h>
 #include <stdint.h>
-#ifdef __SNC__
+#if defined(__SNC__)
 #include <scetypes.h>
-#else
+#elif defined(__vita__)
 #include <psp2/types.h>
 #endif
 #include <paf/paf_types.h>
@@ -23,7 +23,7 @@ namespace paf {
 		{
 		public:
 
-			enum FrameBufferMode
+			enum FrameBufferMode : int32_t
 			{
 				FrameBuffer_Normal = 0,
 				FrameBuffer_Shared_Create = 1,
@@ -68,4 +68,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_GRAPHICS_SURFACE_SURFACE_DISPLAY_H */
+#endif /* _PAF_GRAPHICS_SURFACE_SURFACE_DISPLAY_H */

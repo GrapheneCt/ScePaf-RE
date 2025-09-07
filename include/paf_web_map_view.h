@@ -13,9 +13,8 @@
 #endif
 #include <paf/widget/factory.h>
 #include <paf/widget/w_scroll_view.h>
-#include <paf/paf_types.h>
 
-SCE_PAF_IMPORTED_FROM_PRX extern paf::ui::FactoryFuncTable g_factoryWebView;
+__declspec(dllimport) extern paf::ui::FactoryFuncTable g_factoryWebView;
 
 namespace paf {
 
@@ -104,7 +103,7 @@ namespace paf {
 		private:
 			unsigned char m_unk_0x78[0x68];
 
-			SCE_PAF_IMPORTED_FROM_PRX static const char m_param_name[];
+			__declspec(dllimport) static const char m_param_name[];
 		};
 
 		class WebViewStyleParam : public WidgetStyleParam
@@ -118,7 +117,7 @@ namespace paf {
 
 		private:
 
-			SCE_PAF_IMPORTED_FROM_PRX static const char m_param_name[];
+			__declspec(dllimport) static const char m_param_name[];
 		};
 
 		class WebView : public ScrollView //0x830
@@ -205,7 +204,7 @@ namespace paf {
 			WebViewDelegate *m_delegate;
 			char m_unk_45C[0x3D4];
 
-			SCE_PAF_IMPORTED_FROM_PRX static const char *m_widget_type;
+			__declspec(dllimport) static const char *m_widget_type;
 		};
 	}
 

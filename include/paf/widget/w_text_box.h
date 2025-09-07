@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_WIDGET_W_TEXT_BOX_H
-#define _VDSUITE_USER_PAF_WIDGET_W_TEXT_BOX_H
+#ifndef _PAF_WIDGET_W_TEXT_BOX_H
+#define _PAF_WIDGET_W_TEXT_BOX_H
 
 #include <paf/widget/factory.h>
 #include <paf/widget/w_text.h>
@@ -136,4 +136,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_WIDGET_W_TEXT_BOX_H */
+#endif /* _PAF_WIDGET_W_TEXT_BOX_H */

@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_GRAPHICS_SURFACE_SURFACE_BASE_H
-#define _VDSUITE_USER_PAF_GRAPHICS_SURFACE_SURFACE_BASE_H
+#ifndef _PAF_GRAPHICS_SURFACE_SURFACE_BASE_H
+#define _PAF_GRAPHICS_SURFACE_SURFACE_BASE_H
 
 #include <stdint.h>
 #include <paf/paf_types.h>
@@ -48,4 +48,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_GRAPHICS_SURFACE_SURFACE_BASE_H */
+#endif /* _PAF_GRAPHICS_SURFACE_SURFACE_BASE_H */

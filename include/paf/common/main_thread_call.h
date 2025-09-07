@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_COMMON_MAIN_THREAD_CALL_H
-#define _VDSUITE_USER_PAF_COMMON_MAIN_THREAD_CALL_H
+#ifndef _PAF_COMMON_MAIN_THREAD_CALL_H
+#define _PAF_COMMON_MAIN_THREAD_CALL_H
 
 namespace paf {
 	namespace common {
@@ -21,7 +21,10 @@ namespace paf {
 
 				}
 
-				virtual ~StateCheck();
+				virtual ~StateCheck()
+				{
+
+				}
 
 				virtual bool IsReady()
 				{
@@ -46,6 +49,11 @@ namespace paf {
 
 			static void Run(void *userdata);
 
+			void Execute()
+			{
+				m_func(m_userdata);
+			}
+
 			StateCheck *m_check;
 			Function m_func;
 			void *m_userdata;
@@ -53,4 +61,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_COMMON_MAIN_THREAD_CALL_H */
+#endif /* _PAF_COMMON_MAIN_THREAD_CALL_H */

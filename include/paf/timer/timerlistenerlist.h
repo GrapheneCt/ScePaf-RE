@@ -1,9 +1,9 @@
 /*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_TIMER_TIMERLISTENERLIST_H
-#define _VDSUITE_USER_PAF_TIMER_TIMERLISTENERLIST_H
+#ifndef _PAF_TIMER_TIMERLISTENERLIST_H
+#define _PAF_TIMER_TIMERLISTENERLIST_H
 
 #include <paf/std/stdcxx.h>
 #include <paf/thread/rmutex.h>
@@ -21,15 +21,22 @@ namespace paf {
 		{
 		public:
 
-			ListenerParam(TimerListener *listener, bool interval, void *data1, void *data2);
+			ListenerParam(TimerListener *_listener, bool _interval, void *_data1, void *_data2);
 
-		private:
-
-			TimerListener* m_listener;
-			void* m_data1;
-			void* m_data2;
-			bool m_interval;
+			TimerListener* listener;
+			void* data1;
+			void* data2;
+			bool interval;
 		};
+
+		static TimerListenerList *DefaultList()
+		{
+			return s_default_list;
+		}
+
+		static void Init();
+
+		static void Exit();
 
 		TimerListenerList();
 
@@ -38,19 +45,15 @@ namespace paf {
 
 		}
 
-		void Init();
-
-		void Exit();
-
 		void Update();
 
 		void Register(ListenerParam const& param);
 
 		void Unregister(TimerListener *listener);
 
-		SCE_PAF_IMPORTED_FROM_PRX static TimerListenerList *s_default_list;
-
 	private:
+
+		SCE_PAF_IMPORTED_FROM_PRX static TimerListenerList *s_default_list;
 
 		list<ListenerParam> m_list;
 		list<ListenerParam>::iterator m_iterator;
@@ -59,4 +62,4 @@ namespace paf {
 	};
 }
 
-#endif /* _VDSUITE_USER_PAF_TIMER_TIMERLISTENERLIST_H */
+#endif /* _PAF_TIMER_TIMERLISTENERLIST_H */

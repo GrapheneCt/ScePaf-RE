@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_COMMON_SHARED_PTR_H
-#define _VDSUITE_USER_PAF_COMMON_SHARED_PTR_H
+#ifndef _PAF_COMMON_SHARED_PTR_H
+#define _PAF_COMMON_SHARED_PTR_H
 
 #include <stdint.h>
 #include <paf/thread/atomic.h>
@@ -88,7 +88,7 @@ namespace paf {
 			}
 
 			template <typename U>
-			SharedPtr(const SharedPtr<U>& r) : m_ptr(r.m_ptr), m_ref_counter(r.m_ref_counter)
+			SharedPtr(const SharedPtr<U>& r) : m_ptr(r.m_ptr), m_ref_counter(reinterpret_cast<detail::RefCounter<T> *>(r.m_ref_counter))
 			{
 				add_ref();
 			}
@@ -147,6 +147,13 @@ namespace paf {
 				return *this;
 			}
 
+			SharedPtr<T>& operator=(T* ptr)
+			{
+				release();
+				init(ptr);
+				return *this;
+			}
+
 			void release()
 			{
 				if ((m_ptr != NULL) && (m_ref_counter->dec_counter() == 1))
@@ -187,6 +194,8 @@ namespace paf {
 			}
 
 		private:
+
+			template <typename U> friend class SharedPtr;
 
 			void init(T* p)
 			{
@@ -275,4 +284,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_COMMON_SHARED_PTR_H */
+#endif /* _PAF_COMMON_SHARED_PTR_H */

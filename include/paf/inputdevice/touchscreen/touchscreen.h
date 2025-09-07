@@ -1,9 +1,9 @@
 /*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_INPUTDEVICE_TOUCHSCREEN_TOUCHSCREEN_H
-#define _VDSUITE_USER_PAF_INPUTDEVICE_TOUCHSCREEN_TOUCHSCREEN_H
+#ifndef _PAF_INPUTDEVICE_TOUCHSCREEN_TOUCHSCREEN_H
+#define _PAF_INPUTDEVICE_TOUCHSCREEN_TOUCHSCREEN_H
 
 #include <stdint.h>
 
@@ -27,7 +27,7 @@ namespace paf {
 			{
 			public:
 
-				enum Mode
+				enum Mode : int32_t
 				{
 					Mode_Normal = 0,
 					Mode_CommonDialog = 2,
@@ -108,4 +108,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_INPUTDEVICE_TOUCHSCREEN_TOUCHSCREEN_H */
+#endif /* _PAF_INPUTDEVICE_TOUCHSCREEN_TOUCHSCREEN_H */

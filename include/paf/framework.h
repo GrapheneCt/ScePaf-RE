@@ -1,15 +1,15 @@
 /*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_FRAMEWORK_H
-#define _VDSUITE_USER_PAF_FRAMEWORK_H
+#ifndef _PAF_FRAMEWORK_H
+#define _PAF_FRAMEWORK_H
 
 #include <stdint.h>
 #include <stddef.h>
-#ifdef __SNC__
+#if defined(__SNC__)
 #include <scetypes.h>
-#else
+#elif defined(__vita__)
 #include <psp2/types.h>
 #endif
 #include <paf/paf_types.h>
@@ -33,6 +33,7 @@ namespace paf {
 	namespace graph {
 
 		class SurfacePool;
+		class Surface;
 	}
 
 	namespace sound {
@@ -51,17 +52,26 @@ namespace paf {
 	{
 	public:
 
-		enum Mode //for InitParam::mode
+		typedef void(*LoadCRFinishCallback)();
+		typedef void(*UnloadCRFinishCallback)();
+		typedef void(*ShutdownCallback)(void*);
+
+		typedef void(*LoadFinishCallback)(Plugin *);
+		typedef void(*UnloadFinishCallback)(const char *);
+
+#if defined(__SNC__) || defined(__vita__)
+
+		enum Mode : int32_t //for InitParam::mode
 		{
-			Mode_Normal = 0,
-			Mode_Shell = 1,			// Do not use shared memory even when possible. Force CDRAM usage for some heaps. GXM flags set to 0x6 (create shared param buffer)
-			Mode_Application = 2,
-			Mode_ApplicationB = 3,	//FrameBuffer_Shared_OffScreen
-			Mode_ApplicationC = 4,
-			Mode_CommonDialog = 5,
+			Mode_Normal = 0,		// FrameBuffer_Normal
+			Mode_Shell = 1,			// FrameBuffer_Shared_Create. Do not use shared memory even when possible. Force CDRAM usage for some heaps. GXM flags set to 0x6 (create shared param buffer)
+			Mode_Application = 2,	// FrameBuffer_Shared_Share
+			Mode_ApplicationB = 3,	// FrameBuffer_Shared_OffScreen
+			Mode_ApplicationC = 4,	// Can switch between 2 and 3 at runtime
+			Mode_CommonDialog = 5,	// FrameBuffer_Given
 		};
 
-		enum FrameworkOption //for InitParam::option?
+		enum FrameworkOption : int32_t //for InitParam::option?
 		{
 			FrameworkOption_None = 0,
 			FrameworkOption_OneFrameMode = 1,
@@ -71,19 +81,12 @@ namespace paf {
 
 		};
 
-		enum PvfOption // for InitParam::pvf_option
+		enum PvfOption : int32_t // for InitParam::pvf_option
 		{
 			PvfOption_ExtraFontMusicArib = 1,
 			PvfOption_ExtraFontKr0 = 8,
 			PvfOption_ExtraFontCn0 = 16
 		};
-
-		typedef void(*LoadCRFinishCallback)();
-		typedef void(*UnloadCRFinishCallback)();
-		typedef void(*ShutdownCallback)(void*);
-
-		typedef void(*LoadFinishCallback)(Plugin *);
-		typedef void(*UnloadFinishCallback)(const char *);
 
 		class InitParam
 		{
@@ -129,7 +132,7 @@ namespace paf {
 			Locale locale;
 			uint32_t enter_button_assign;
 			bool allow_button_control;
-			bool unk_opt_1;
+			bool show_focus;
 			bool ext_control;
 			bool unk_opt_2;
 			ui::EnvironmentParam *env_param;
@@ -140,7 +143,7 @@ namespace paf {
 			uint32_t message_dialog_listener;
 			uint32_t unk_9C;
 			void *webview_listener;
-			void * web_edit_listener;
+			void *web_edit_listener;
 			uint32_t sound_mode;
 			uint32_t unk_AC;
 			uint32_t unk_B0;
@@ -165,6 +168,63 @@ namespace paf {
 			graph::SurfacePool *surface_pool;
 			int32_t draw_priority;
 		};
+
+#elif defined(_WIN32)
+
+		enum Mode : int32_t //for InitParam::mode
+		{
+			Mode_Normal = 0,
+		};
+
+		enum FrameworkOption : int32_t //for InitParam::option?
+		{
+			FrameworkOption_None = 0,
+			FrameworkOption_OneFrameMode = 1,
+
+		};
+
+		class InitParam
+		{
+		public:
+
+			InitParam();
+
+			~InitParam()
+			{
+
+			};
+
+			uint32_t zoom_level;
+			bool allow_dpi_override;
+			bool simulator_mode;
+			uint32_t screen_width;
+			uint32_t screen_height;
+			wstring app_name;
+			ui::EnvironmentParam *env_param;
+			uint32_t mode;
+			uint32_t option;
+			uint32_t sound_mode;
+		};
+
+		class CommonResourceInitParam
+		{
+		public:
+
+			CommonResourceInitParam();
+
+			~CommonResourceInitParam()
+			{
+
+			};
+
+			string resource_file;
+			uint8_t *resource_data;
+			uint32_t resource_data_size;
+			uint32_t private_heap_size;
+			memory::HeapAllocator *private_heap;
+		};
+
+#endif
 
 		static void SampleInit(InitParam *init_param);
 
@@ -258,37 +318,62 @@ namespace paf {
 
 		void UnloadFinishedAction(DestructPluginData *data);
 
-		uint32_t run_loop_count;
-		vector<Plugin*> plugin_list;
-		Plugin *active_plugin;
-		int32_t loading_plugin_count;
-		Plugin *common_resource_plugin;
-		LoadCRFinishCallback *load_finish_callback;
-		UnloadCRFinishCallback *unload_finish_callback;
-		ShutdownCallback *shutdown_callback;
-		void *shutdown_callback_userdata;
-		char unk_30[0x04];
-		memory::HeapAllocator *decode_heap;
-		bool decode_heap_created;
-		memory::HeapAllocator *plugin_heap;
-		bool plugin_heap_created;
-		void *surface_pool_addr;
-		graph::SurfacePool *surface_pool;
+		void Main(int32_t **inout);
+
+#if defined(__SNC__) || defined(__vita__)
+
+		uint32_t m_run_loop_count;
+		vector<Plugin*> m_plugin_list;
+		Plugin *m_active_plugin;
+		int32_t m_loading_plugin_count;
+		Plugin *m_common_resource_plugin;
+		LoadCRFinishCallback m_load_finish_callback;
+		UnloadCRFinishCallback m_unload_finish_callback;
+		ShutdownCallback m_shutdown_callback;
+		void *m_shutdown_callback_userdata;
+		char m_unk_30[0x04];
+		memory::HeapAllocator *m_decode_heap;
+		bool m_decode_heap_created;
+		memory::HeapAllocator *m_plugin_heap;
+		bool m_plugin_heap_created;
+		void *m_surface_pool_addr;
+		graph::SurfacePool *m_surface_pool;
 		ui::Environment *m_env;
 		ui::Screen *m_scr;
 		uint32_t m_mode;
 		uint32_t m_option;
 		Locale m_locale;
-		thread::Mutex *update_mutex;
-		thread::Cond *update_cond;
-		thread::RWLock *list_lock;
-		sound::Output *sound_output;
-		bool shutdown_requested;
-		SceUID power_cb_id;
-		ui::EnvironmentParam *env_param;
+		thread::Mutex *m_update_mutex;
+		thread::Cond *m_update_cond;
+		thread::RWLock *m_list_lock;
+		sound::Output *m_sound_output;
+		bool m_shutdown_requested;
+		SceUID m_power_cb_id;
+		ui::EnvironmentParam *m_env_param;
+
+#elif defined(_WIN32)
+
+		uint32_t m_run_loop_count;
+		vector<Plugin*> m_plugin_list;
+		int32_t m_loading_plugin_count;
+		ShutdownCallback m_shutdown_callback;
+		void *m_shutdown_callback_userdata;
+		ui::Environment *m_env;
+		ui::Screen *m_scr;
+		uint32_t m_mode;
+		uint32_t m_option;
+		Locale m_locale;
+		thread::Mutex *m_update_mutex;
+		thread::Cond *m_update_cond;
+		thread::RWLock *m_list_lock;
+		sound::Output *m_sound_output;
+		bool m_shutdown_requested;
+		ui::EnvironmentParam *m_env_param;
+
+#endif
 
 		SCE_PAF_IMPORTED_FROM_PRX static Framework *framework;
 	};
 }
 
-#endif /* _VDSUITE_USER_PAF_FRAMEWORK_H */
+#endif /* _PAF_FRAMEWORK_H */

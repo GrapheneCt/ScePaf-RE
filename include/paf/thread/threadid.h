@@ -1,24 +1,29 @@
 /*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_THREAD_THREADID_H
-#define _VDSUITE_USER_PAF_THREAD_THREADID_H
+#ifndef _PAF_THREAD_THREADID_H
+#define _PAF_THREAD_THREADID_H
 
 #include <stdint.h>
-#ifdef __SNC__
+#if defined(__SNC__)
 #include <scetypes.h>
-#else
-#include <psp2/types.h>
-#endif
-
 typedef SceUID ThreadID;
+#elif defined(__vita__)
+#include <psp2/types.h>
+typedef SceUID ThreadID;
+#elif defined(_WIN32)
+#include <Windows.h>
+typedef DWORD ThreadID;
+#else
+#error Current target platform is not supported or no target platform defined
+#endif
 
 namespace paf {
 	namespace thread {
 		namespace ThreadIDCache {
 
-			enum Type
+			enum Type : int32_t
 			{
 				Type_Main,
 				Type_MAX
@@ -33,4 +38,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_THREAD_THREADID_H */
+#endif /* _PAF_THREAD_THREADID_H */

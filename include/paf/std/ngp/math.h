@@ -1,4 +1,8 @@
-﻿#ifndef _PAF_STD_MATH_H
+﻿/*
+	ScePaf-RE Project
+*/
+
+#ifndef _PAF_STD_MATH_H
 #define _PAF_STD_MATH_H
 
 #ifdef __cplusplus

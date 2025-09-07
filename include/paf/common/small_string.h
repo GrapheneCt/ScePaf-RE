@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_COMMON_SMALL_STRING_H
-#define _VDSUITE_USER_PAF_COMMON_SMALL_STRING_H
+#ifndef _PAF_COMMON_SMALL_STRING_H
+#define _PAF_COMMON_SMALL_STRING_H
 
 #include <stdint.h>
 #include <paf/std/stdc.h>
@@ -23,10 +23,10 @@ namespace paf {
 
 			String16(String16 const& src)
 			{
-				_data[0] = src._data[0];
-				_data[1] = src._data[1];
-				_data[2] = src._data[2];
-				_data[3] = src._data[3];
+				m_data[0] = src.m_data[0];
+				m_data[1] = src.m_data[1];
+				m_data[2] = src.m_data[2];
+				m_data[3] = src.m_data[3];
 			}
 
 			String16(const char *src)
@@ -46,33 +46,34 @@ namespace paf {
 				uint32_t i = 0;
 				if (minlen != 0)
 				{
-					do {
-						*(char *)((int)_data + i) = src[i];
+					do
+					{
+						*(char *)((uintptr_t)m_data + i) = src[i];
 						i++;
 					} while (i < minlen);
 				}
-				*(char *)((int)_data + i) = 0;
+				*(char *)((uintptr_t)m_data + i) = 0;
 				return;
 			}
 
 			void clear()
 			{
-				_data[0] = 0;
-				_data[1] = 0;
-				_data[2] = 0;
-				_data[3] = 0;
+				m_data[0] = 0;
+				m_data[1] = 0;
+				m_data[2] = 0;
+				m_data[3] = 0;
 			}
 
 			char *c_str() const
 			{
-				return (char *)_data;
+				return (char *)m_data;
 			}
 
 		private:
 
-			uint32_t _data[4];
+			uint32_t m_data[4];
 		};
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_COMMON_SMALL_STRING_H */
+#endif /* _PAF_COMMON_SMALL_STRING_H */

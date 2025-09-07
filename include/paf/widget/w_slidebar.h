@@ -1,9 +1,9 @@
 /*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_WIDGET_W_SLIDEBAR_H
-#define _VDSUITE_USER_PAF_WIDGET_W_SLIDEBAR_H
+#ifndef _PAF_WIDGET_W_SLIDEBAR_H
+#define _PAF_WIDGET_W_SLIDEBAR_H
 
 #include <paf/widget/factory.h>
 #include <paf/widget/core/widget.h>
@@ -75,12 +75,60 @@ namespace paf {
 			virtual bool IsInherit(char const *) const;
 			virtual char *GetTypeName(void) const;
 
+			void UpdateSlider(bool bWithAnim = true); // TODO: this is in virtual really.
+
+			void SetFraction(SceUInt32 fraction)
+			{
+				m_fraction = fraction;
+			}
+
+			void SetValue(float value)
+			{
+				m_value = value;
+				m_unk_0x294 = (int32_t)(((float)m_fraction) * value);
+				UpdateSlider(false);
+			}
+
+			float GetValue()
+			{
+				return m_value;
+			}
+
 		protected:
-			unsigned char m_unk_0x27C[0x74];
+
+			void *m_unk_0x27C;
+			uint32_t m_unk_0x280;
+			uint32_t m_unk_0x284;
+			uint32_t m_unk_0x288;
+			uint32_t m_unk_0x28C;
+			uint32_t m_fraction;
+			uint32_t m_unk_0x294;
+			float m_unk_0x298;
+			uint32_t m_unk_0x29C;
+			uint32_t m_unk_0x2A0;
+			uint32_t m_unk_0x2A4;
+			uint32_t m_unk_0x2A8;
+			uint32_t m_unk_0x2AC;
+			uint32_t m_unk_0x2B0;
+			uint32_t m_unk_0x2B4;
+			float m_unk_0x2B8;
+			float m_unk_0x2BC;
+			float m_unk_0x2C0;
+			float m_value;
+			int32_t m_unk_0x2C8;
+			int32_t m_unk_0x2CC;
+			uint32_t m_unk_0x2D0;
+			uint32_t m_unk_0x2D4;
+			uint32_t m_unk_0x2D8;
+			uint32_t m_unk_0x2DC;
+			void *m_unk_0x2E0;
+			uint32_t m_unk_0x2E4;
+			uint32_t m_unk_0x2E8;
+			uint32_t m_unk_0x2EC;
 
 			SCE_PAF_IMPORTED_FROM_PRX static const char m_widget_type[];
 		};
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_WIDGET_W_SLIDEBAR_H */
+#endif /* _PAF_WIDGET_W_SLIDEBAR_H */

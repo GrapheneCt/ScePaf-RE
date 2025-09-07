@@ -1,17 +1,25 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_URL_URL_H
-#define _VDSUITE_USER_PAF_URL_URL_H
+#ifndef _PAF_URL_URL_H
+#define _PAF_URL_URL_H
+
+#ifndef SCE_PAF_NO_NETWORK
 
 #include <stdint.h>
-#ifdef __SNC__
-#include <libhttp.h>
-#else
-#include <psp2/net/http.h>
-#endif
 #include <paf/common/string_util.h>
+#if defined(__SNC__)
+#include <libhttp.h>
+#define SCE_PAF_URL_TYPE SceHttpUriElement
+#elif defined(__vita__)
+#include <psp2/net/http.h>
+#define SCE_PAF_URL_TYPE SceHttpUriElement
+#elif defined(_WIN32)
+#define SCE_PAF_URL_TYPE void*
+#else
+#error Current target platform is not supported or no target platform defined
+#endif
 
 namespace paf {
 	
@@ -81,7 +89,9 @@ namespace paf {
 
 	private:
 
-		SceHttpUriElement m_url;
+		void ParseUrl();
+
+		SCE_PAF_URL_TYPE m_url;
 		int32_t m_unk_30;
 		bool m_unk_34;
 		bool m_unk_35;
@@ -89,4 +99,6 @@ namespace paf {
 	};
 }
 
-#endif /* _VDSUITE_USER_PAF_URL_URL_H */
+#endif /* SCE_PAF_NO_NETWORK */
+
+#endif /* _PAF_URL_URL_H */

@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_COMMON_STRING_UTIL_H
-#define _VDSUITE_USER_PAF_COMMON_STRING_UTIL_H
+#ifndef _PAF_COMMON_STRING_UTIL_H
+#define _PAF_COMMON_STRING_UTIL_H
 
 #include <stdint.h>
 #include <stddef.h>
@@ -11,6 +11,11 @@
 #include <paf/common/char_encoding.h>
 
 namespace paf {
+
+	typedef class paf::list<paf::string> token_list_t;
+
+	typedef class paf::map<paf::string, paf::string> token_map_t;
+
 	namespace common {
 
 		class String
@@ -39,11 +44,25 @@ namespace paf {
 
 			String& operator+=(String const& rhs);
 
-			String& operator+(String const& rhs);
+			String operator+(String const& rhs);
 
 			bool operator==(String const& s);
 
 			bool operator!=(String const& s);
+
+			String& operator=(string const& s)
+			{
+				m_wstring.clear();
+				m_string = s;
+				return *this;
+			}
+
+			String& operator=(wstring const& s)
+			{
+				m_string.clear();
+				m_wstring = s;
+				return *this;
+			}
 
 			wstring GetWString() const;
 
@@ -92,4 +111,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_COMMON_STRING_UTIL_H */
+#endif /* _PAF_COMMON_STRING_UTIL_H */

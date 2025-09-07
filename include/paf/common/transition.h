@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_COMMON_TRANSITION_H
-#define _VDSUITE_USER_PAF_COMMON_TRANSITION_H
+#ifndef _PAF_COMMON_TRANSITION_H
+#define _PAF_COMMON_TRANSITION_H
 
 #include <stdint.h>
 
@@ -17,7 +17,7 @@ namespace paf {
 	namespace common {
 		namespace transition {
 
-			enum Type
+			enum Type : int32_t
 			{
 				Type_Reset = 0xFF,
 				Type_FadeinFast = 0,
@@ -58,4 +58,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_COMMON_REF_OBJ_H */
+#endif /* _PAF_COMMON_TRANSITION_H */

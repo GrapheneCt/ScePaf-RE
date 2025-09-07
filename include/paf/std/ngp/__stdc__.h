@@ -1,4 +1,8 @@
-﻿#ifndef _PAF_STD___STDC___H
+﻿/*
+	ScePaf-RE Project
+*/
+
+#ifndef _PAF_STD___STDC___H
 #define _PAF_STD___STDC___H
 
 #include <stdint.h>

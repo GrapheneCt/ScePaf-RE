@@ -1,9 +1,9 @@
 /*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_WIDGET_W_SCROLL_VIEW_BASE_H
-#define _VDSUITE_USER_PAF_WIDGET_W_SCROLL_VIEW_BASE_H
+#ifndef _PAF_WIDGET_W_SCROLL_VIEW_BASE_H
+#define _PAF_WIDGET_W_SCROLL_VIEW_BASE_H
 
 #include <paf/widget/core/widget.h>
 #include <paf/widget/factory.h>
@@ -70,7 +70,7 @@ namespace paf {
 				CB_SCROLL_VIEW_BASE_END = 0x10000005
 			};
 
-			enum MoveDir
+			enum MoveDir : int32_t
 			{
 				MoveDir_None = 0,
 				MoveDir_X = 1,
@@ -215,7 +215,7 @@ namespace paf {
 		{
 		public:
 
-			enum TimerType
+			enum TimerType : int32_t
 			{
 				TIMER_TYPE_MOVE = 0,
 				TIMER_TYPE_MOTION = 1,
@@ -233,4 +233,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_WIDGET_W_SCROLL_VIEW_BASE_H */
+#endif /* _PAF_WIDGET_W_SCROLL_VIEW_BASE_H */

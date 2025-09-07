@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_COMMON_PATH_H
-#define _VDSUITE_USER_PAF_COMMON_PATH_H
+#ifndef _PAF_COMMON_PATH_H
+#define _PAF_COMMON_PATH_H
 
 #include <paf/std/stdcxx.h>
 
@@ -20,4 +20,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_COMMON_STRING_UTIL_H */
+#endif /* _PAF_COMMON_PATH_H */

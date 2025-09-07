@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_IMAGE_IMAGE_REGION_H
-#define _VDSUITE_USER_PAF_IMAGE_IMAGE_REGION_H
+#ifndef _PAF_IMAGE_IMAGE_REGION_H
+#define _PAF_IMAGE_IMAGE_REGION_H
 
 #include <stdint.h>
 #include <paf/paf_types.h>
@@ -228,4 +228,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_IMAGE_IMAGE_REGION_H */
+#endif /* _PAF_IMAGE_IMAGE_REGION_H */

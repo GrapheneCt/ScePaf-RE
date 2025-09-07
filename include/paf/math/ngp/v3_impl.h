@@ -1,9 +1,9 @@
 /*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_MATH_WIN32_V3_IMPL_H
-#define _VDSUITE_USER_PAF_MATH_WIN32_V3_IMPL_H
+#ifndef _PAF_MATH_NGP_V3_IMPL_H
+#define _PAF_MATH_NGP_V3_IMPL_H
 
 #include <vectormath.h>
 #include <paf/math/math.h>
@@ -386,4 +386,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_MATH_WIN32_V3_IMPL_H */ 
+#endif /* _PAF_MATH_NGP_V3_IMPL_H */ 

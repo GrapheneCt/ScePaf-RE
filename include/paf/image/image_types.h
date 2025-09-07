@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_IMAGE_IMAGE_TYPES_H
-#define _VDSUITE_USER_PAF_IMAGE_IMAGE_TYPES_H
+#ifndef _PAF_IMAGE_IMAGE_TYPES_H
+#define _PAF_IMAGE_IMAGE_TYPES_H
 
 #include <stdint.h>
 #include <stddef.h>
@@ -12,7 +12,7 @@
 namespace paf {
 	namespace image {
 
-		enum ImageFormat
+		enum ImageFormat : int32_t
 		{
 			ImageFormat_None = 0,
 			ImageFormat_Png = 1,
@@ -25,20 +25,20 @@ namespace paf {
 			ImageFormat_Gxt = 8
 		};
 
-		enum ImageXType
+		enum ImageXType : int32_t
 		{
 			ImageXType_None = 0,
 			ImageXType_HalfSize = 1,
 			ImageXType_ConstantSize = 2
 		};
 
-		enum ImageYType
+		enum ImageYType : int32_t
 		{
 			ImageYType_None = 0,
 			ImageYType_Sequence = 1
 		};
 
-		enum ImageResizeType
+		enum ImageResizeType : int32_t
 		{
 			ImageResizeType_None = 0,
 			ImageResizeType_NearestNeighbor = 1,
@@ -51,14 +51,14 @@ namespace paf {
 			ImageResizeType_Lanczos3Filter = 8
 		};
 
-		enum ImageFlipType
+		enum ImageFlipType : int32_t
 		{
 			ImageFlipType_None = 0,
 			ImageFlipType_LeftRight = 1,
 			ImageFlipType_TopButtom = 2
 		};
 
-		enum ImageRotateType
+		enum ImageRotateType : int32_t
 		{
 			ImageRotateType_None = 0,
 			ImageRotateType_Degree90 = 1,
@@ -66,7 +66,7 @@ namespace paf {
 			ImageRotateType_Degree270 = 3
 		};
 
-		enum ImageDecoderType
+		enum ImageDecoderType : int32_t
 		{
 			ImageDecoderType_None = 0,
 			ImageDecoderType_SSDecoder = 1,
@@ -74,7 +74,7 @@ namespace paf {
 			ImageDecoderType_OldDecoder = 3
 		};
 
-		enum ImageConvertModeType
+		enum ImageConvertModeType : int32_t
 		{
 			ImageConvertModeType_Default = 0,
 			ImageConvertModeType_LowQuality = 1,
@@ -97,4 +97,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_IMAGE_IMAGE_TYPES_H */
+#endif /* _PAF_IMAGE_IMAGE_TYPES_H */

@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_GRAPHICS_SURFACE_SURFACE_POOL_H
-#define _VDSUITE_USER_PAF_GRAPHICS_SURFACE_SURFACE_POOL_H
+#ifndef _PAF_GRAPHICS_SURFACE_SURFACE_POOL_H
+#define _PAF_GRAPHICS_SURFACE_SURFACE_POOL_H
 
 #include <stdint.h>
 #include <stddef.h>
@@ -79,7 +79,7 @@ namespace paf {
 		{
 		public:
 
-			enum MemoryType
+			enum MemoryType : int32_t
 			{
 				MemoryType_Normal,
 				MemoryType_SharedHost,
@@ -133,4 +133,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_GRAPHICS_SURFACE_SURFACE_POOL_H */
+#endif /* _PAF_GRAPHICS_SURFACE_SURFACE_POOL_H */

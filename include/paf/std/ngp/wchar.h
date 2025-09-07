@@ -1,4 +1,8 @@
-﻿#ifndef _PAF_STD_WCHAR_H
+﻿/*
+	ScePaf-RE Project
+*/
+
+#ifndef _PAF_STD_WCHAR_H
 #define _PAF_STD_WCHAR_H
 
 #include <wchar.h>

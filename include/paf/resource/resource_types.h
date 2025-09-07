@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_IMAGE_RESOURCE_TYPES_H
-#define _VDSUITE_USER_PAF_IMAGE_RESOURCE_TYPES_H
+#ifndef _PAF_IMAGE_RESOURCE_TYPES_H
+#define _PAF_IMAGE_RESOURCE_TYPES_H
 
 #include <stdint.h>
 #include <stddef.h>
@@ -12,7 +12,7 @@
 namespace paf {
 	namespace resource {
 
-		enum TableType
+		enum TableType : int32_t
 		{
 			TableType_Unknown = -1,
 			TableType_Page = 0,
@@ -27,7 +27,7 @@ namespace paf {
 			TableType_Template = 9
 		};
 
-		enum SoundType
+		enum SoundType : int32_t
 		{
 			SoundType_Unknown = -1,
 			SoundType_WAV,
@@ -39,4 +39,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_IMAGE_RESOURCE_TYPES_H */
+#endif /* _PAF_IMAGE_RESOURCE_TYPES_H */

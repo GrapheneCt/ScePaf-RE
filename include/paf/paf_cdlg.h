@@ -1,15 +1,15 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_PAF_CDLG_H
-#define _VDSUITE_USER_PAF_PAF_CDLG_H
+#ifndef _PAF_PAF_CDLG_H
+#define _PAF_PAF_CDLG_H
 
 #include <stdint.h>
 #include <stddef.h>
-#ifdef __SNC__
+#if defined(__SNC__)
 #include <gxm.h>
-#else
+#elif defined(__vita__)
 #include <psp2/gxm.h>
 #endif
 
@@ -32,4 +32,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_PAF_CDLG_H */
+#endif /* _PAF_PAF_CDLG_H */

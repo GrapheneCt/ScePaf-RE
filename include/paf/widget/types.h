@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_WIDGET_TYPES_H
-#define _VDSUITE_USER_PAF_WIDGET_TYPES_H
+#ifndef _PAF_WIDGET_TYPES_H
+#define _PAF_WIDGET_TYPES_H
 
 #include <stdint.h>
 #include <stddef.h>
@@ -12,7 +12,7 @@
 namespace paf {
 	namespace ui {
 
-		enum EvType
+		enum EvType : int32_t
 		{
 			EV_NOEFFECT = 0x0,
 			EV_KEYCODE = 0x20,
@@ -92,4 +92,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_WIDGET_TYPES_H */
+#endif /* _PAF_WIDGET_TYPES_H */

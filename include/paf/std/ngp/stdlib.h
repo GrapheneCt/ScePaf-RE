@@ -1,4 +1,8 @@
-﻿#ifndef _PAF_STD_STDLIB_H
+﻿/*
+	ScePaf-RE Project
+*/
+
+#ifndef _PAF_STD_STDLIB_H
 #define _PAF_STD_STDLIB_H
 
 #include <stddef.h>

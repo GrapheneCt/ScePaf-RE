@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_GRAPHICS_DRAWOBJ_DRAW_OBJ_H
-#define _VDSUITE_USER_PAF_GRAPHICS_DRAWOBJ_DRAW_OBJ_H
+#ifndef _PAF_GRAPHICS_DRAWOBJ_DRAW_OBJ_H
+#define _PAF_GRAPHICS_DRAWOBJ_DRAW_OBJ_H
 
 #include <stdint.h>
 #include <stddef.h>
@@ -19,14 +19,14 @@ namespace paf {
 		class DrawEnv;
 		class DrawObj;
 
-		enum BlendType
+		enum BlendType : int32_t
 		{
 			BLEND_DISABLE = 0,
 			BLEND_INTERPOLATION = 1,
 			BLEND_ADDITION = 2
 		};
 
-		enum CompareType
+		enum CompareType : int32_t
 		{
 			COMP_ALWAYS = 1,
 			COMP_NEVER = 2,
@@ -38,20 +38,20 @@ namespace paf {
 			COMP_GREATER = 8
 		};
 
-		enum LightType
+		enum LightType : int32_t
 		{
 			LIGHT_DISABLE = 0,
 			LIGHT_STANDARD = 1
 		};
 
-		enum CullFaceType
+		enum CullFaceType : int32_t
 		{
 			CULL_FACE_DISABLE = 0,
 			CULL_FACE_CW = 1,
 			CULL_FACE_CCW = 2
 		};
 
-		enum BoolType
+		enum BoolType : int32_t
 		{
 			BOOL_FALSE = 0,
 			BOOL_TRUE = 1
@@ -236,4 +236,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_GRAPHICS_DRAWOBJ_DRAW_OBJ_H */
+#endif /* _PAF_GRAPHICS_DRAWOBJ_DRAW_OBJ_H */

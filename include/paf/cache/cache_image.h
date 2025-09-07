@@ -1,9 +1,9 @@
 /*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_CACHE_CACHE_IMAGE_H
-#define _VDSUITE_USER_PAF_CACHE_CACHE_IMAGE_H
+#ifndef _PAF_CACHE_CACHE_IMAGE_H
+#define _PAF_CACHE_CACHE_IMAGE_H
 
 #include <stdint.h>
 #include <stddef.h>
@@ -85,4 +85,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_CACHE_CACHE_IMAGE_H */
+#endif /* _PAF_CACHE_CACHE_IMAGE_H */

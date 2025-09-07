@@ -1,9 +1,9 @@
 /*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_TIMER_TIMERQUEUE_H
-#define _VDSUITE_USER_PAF_TIMER_TIMERQUEUE_H
+#ifndef _PAF_TIMER_TIMERQUEUE_H
+#define _PAF_TIMER_TIMERQUEUE_H
 
 #include <stdint.h>
 #include <paf/std/stdcxx.h>
@@ -66,4 +66,4 @@ namespace paf {
 	};
 }
 
-#endif /* _VDSUITE_USER_PAF_TIMER_TIMERQUEUE_H */
+#endif /* _PAF_TIMER_TIMERQUEUE_H */

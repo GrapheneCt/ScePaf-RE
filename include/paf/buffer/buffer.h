@@ -1,13 +1,15 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_BUFFER_BUFFER_H
-#define _VDSUITE_USER_PAF_BUFFER_BUFFER_H
+#ifndef _PAF_BUFFER_BUFFER_H
+#define _PAF_BUFFER_BUFFER_H
 
 #include <stdint.h>
 #include <stddef.h>
 #include <paf/common/shared_ptr.h>
+#include <paf/memory/heap_allocator.h>
+#include <paf/std/stdc.h>
 
 namespace paf {
 
@@ -20,24 +22,24 @@ namespace paf {
 	{
 	public:
 
-		Buffer() : addr(NULL), size(0)
+		Buffer() : m_addr(NULL), m_size(0)
 		{
 
 		}
 
 		virtual void* GetAddr()
 		{
-			return addr;
+			return m_addr;
 		}
 
 		virtual const void* GetAddr() const
 		{
-			return addr;
+			return m_addr;
 		}
 
 		virtual size_t GetSize() const
 		{
-			return size;
+			return m_size;
 		}
 
 		virtual ~Buffer()
@@ -47,19 +49,24 @@ namespace paf {
 
 	protected:
 
-		void* addr;
-		size_t size;
+		void* m_addr;
+		size_t m_size;
 	};
 
 	class SubBuffer : public Buffer
 	{
 	public:
 
-		static common::SharedPtr<SubBuffer> Create(void *addr, size_t size, common::SharedPtr<Buffer> buffer);
+		virtual ~SubBuffer()
+		{
+
+		};
+
+		static common::SharedPtr<SubBuffer> Create(void *_addr, size_t _size, common::SharedPtr<Buffer> _buffer);
 
 	private:
 
-		common::SharedPtr<Buffer> buffer;
+		common::SharedPtr<Buffer> m_buffer;
 	};
 
 	class SubConstBuffer : public Buffer
@@ -68,22 +75,32 @@ namespace paf {
 
 		virtual const void* GetAddr() const
 		{
-			return const_addr;
+			return m_const_addr;
 		}
 
-		static common::SharedPtr<SubConstBuffer> Create(const void *addr, size_t size, common::SharedPtr<Buffer> buffer);
+		virtual ~SubConstBuffer()
+		{
+
+		};
+
+		static common::SharedPtr<SubConstBuffer> Create(const void *_addr, size_t _size, common::SharedPtr<Buffer> _buffer);
 
 	private:
 
-		const void* const_addr;
-		common::SharedPtr<Buffer> buffer;
+		const void* m_const_addr;
+		common::SharedPtr<Buffer> m_buffer;
 	};
 
 	class UnmanagedBuffer : public Buffer
 	{
 	public:
 
-		static common::SharedPtr<UnmanagedBuffer> Create(void *addr, size_t size);
+		virtual ~UnmanagedBuffer()
+		{
+
+		};
+
+		static common::SharedPtr<UnmanagedBuffer> Create(void *_addr, size_t _size);
 	};
 
 	class UnmanagedConstBuffer : public Buffer
@@ -92,37 +109,47 @@ namespace paf {
 
 		virtual const void* GetAddr() const
 		{
-			return const_addr;
+			return m_const_addr;
 		}
+
+		virtual ~UnmanagedConstBuffer()
+		{
+
+		};
 
 		static common::SharedPtr<UnmanagedConstBuffer> Create(const void *addr, size_t size);
 
 	private:
 
-		const void* const_addr;
+		const void* m_const_addr;
 	};
 
 	class MallocBuffer : public Buffer
 	{
 	public:
 
-		static common::SharedPtr<MallocBuffer> Create(void *addr, size_t size);
+		virtual ~MallocBuffer()
+		{
+			sce_paf_free(m_addr);
+		}
 
-		static common::SharedPtr<MallocBuffer> Allocate(size_t size);
+		static common::SharedPtr<MallocBuffer> Create(void *_addr, size_t _size);
+
+		static common::SharedPtr<MallocBuffer> Allocate(size_t _size);
 	};
 
 	class HeapAllocBuffer : public Buffer
 	{
 	public:
 
-		static common::SharedPtr<HeapAllocBuffer> Create(void *addr, size_t size, memory::HeapAllocator *alloc);
+		static common::SharedPtr<HeapAllocBuffer> Create(void *_addr, size_t _size, memory::HeapAllocator *_alloc);
 
-		static common::SharedPtr<HeapAllocBuffer> Allocate(size_t size, memory::HeapAllocator *alloc);
+		static common::SharedPtr<HeapAllocBuffer> Allocate(size_t _size, memory::HeapAllocator *_alloc);
 
 	private:
 
-		memory::HeapAllocator *allocator;
+		memory::HeapAllocator *m_allocator;
 	};
 }
 
-#endif /* _VDSUITE_USER_PAF_BUFFER_BUFFER_H */
+#endif /* _PAF_BUFFER_BUFFER_H */

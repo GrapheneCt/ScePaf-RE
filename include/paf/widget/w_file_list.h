@@ -1,9 +1,9 @@
 ﻿/*
-	Vita Development Suite Libraries
+	ScePaf-RE Project
 */
 
-#ifndef _VDSUITE_USER_PAF_WIDGET_W_FILE_LIST_H
-#define _VDSUITE_USER_PAF_WIDGET_W_FILE_LIST_H
+#ifndef _PAF_WIDGET_W_FILE_LIST_H
+#define _PAF_WIDGET_W_FILE_LIST_H
 
 #include <paf/widget/factory.h>
 #include <paf/widget/w_list_view.h>
@@ -107,7 +107,7 @@ namespace paf {
 					string m_storage_path;
 				};
 
-				enum QueueType
+				enum QueueType : int32_t
 				{
 					Queue_Fast = 0,
 					Queue_Normal = 1,
@@ -272,4 +272,4 @@ namespace paf {
 	}
 }
 
-#endif /* _VDSUITE_USER_PAF_WIDGET_W_FILE_LIST_H */
+#endif /* _PAF_WIDGET_W_FILE_LIST_H */

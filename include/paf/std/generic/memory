@@ -1,0 +1,165 @@
+/*
+	ScePaf-RE Project
+*/
+
+#include <paf/std/stdc.h>
+#include <paf/memory/heap_allocator.h>
+
+#ifndef _PAF_STDCXX_MEMORY_H
+#define _PAF_STDCXX_MEMORY_H 1
+
+namespace paf {
+
+	template <typename T>
+	class intrusive_ptr
+	{
+	public:
+
+		inline intrusive_ptr()
+		{
+			m_ptr = NULL;
+		}
+
+		inline intrusive_ptr(T *p, bool add_ref_flag)
+		{
+			m_ptr = p;
+			if (add_ref_flag)
+			{
+				add_ref();
+			}
+		}
+
+		inline intrusive_ptr(const intrusive_ptr<T>& r)
+		{
+			m_ptr = r.m_ptr;
+			add_ref();
+		}
+
+		inline ~intrusive_ptr()
+		{
+			if (m_ptr != NULL)
+			{
+				m_ptr->Release();
+			}
+		}
+
+		inline void clear()
+		{
+			if (m_ptr != NULL)
+			{
+				m_ptr->Release();
+				m_ptr = NULL;
+			}
+		}
+
+		inline intrusive_ptr<T>& operator=(T *p)
+		{
+			assign(p);
+			return *this;
+		}
+
+		inline intrusive_ptr<T>& operator=(const intrusive_ptr<T>& r)
+		{
+			assign(r.m_ptr);
+			return *this;
+		}
+
+		inline T* get() const
+		{
+			return m_ptr;
+		}
+
+		inline T& operator*() const
+		{
+			return *m_ptr;
+		}
+
+		inline T* operator->() const
+		{
+			return m_ptr;
+		}
+
+	protected:
+
+		inline void assign(T *p)
+		{
+			if (p != m_ptr)
+			{
+				if (m_ptr != NULL)
+				{
+					m_ptr->Release();
+				}
+				m_ptr = p;
+				add_ref();
+			}
+		}
+
+		inline void add_ref()
+		{
+			if (m_ptr != NULL)
+			{
+				m_ptr->AddRef();
+			}
+		}
+
+		T* m_ptr;
+	};
+
+	template <class T> class allocator;
+	// Specialize for void:
+
+	template <> class allocator<void> {
+	public:
+		typedef void*       pointer;
+		typedef const void* const_pointer;
+		typedef void  value_type;
+		template <class U> struct rebind { typedef allocator<U> other; };
+	};
+
+	template <class T> class allocator {
+	public:
+		typedef T value_type;
+		typedef size_t size_type;
+		typedef size_t difference_type;
+
+		typedef T* pointer;
+		typedef const T* const_pointer;
+
+		typedef T& reference;
+		typedef const T& const_reference;
+
+		pointer address(reference r) const { return &r; }
+		const_pointer address(const_reference r) const { return &r; }
+
+		allocator() {}
+		template <class U> allocator(const allocator<U>&);
+		~allocator() {}
+
+		template<class U> struct rebind { typedef allocator<U> other; };
+
+		size_type max_size() const { return ((paf::memory::HeapAllocator *)GetGlobalHeapAllocator())->GetFreeSize() / sizeof(value_type); }
+
+		//Space for n Ts
+		pointer allocate(size_type n, typename allocator<void>::const_pointer = 0)
+		{
+			return static_cast<pointer>(sce_paf_malloc(n * sizeof(T)));
+		}
+
+		void deallocate(pointer p, size_type)
+		{
+			sce_paf_free(p);
+		}
+
+		//Use placement new to engage the constructor
+		void construct(pointer p, const T& val) { new((void*)p) T(val); }
+		void construct(pointer p) { new((void*)p) T(); }
+		void destroy(pointer p) { ((T*)p)->~T(); }	//Call destructor
+
+		bool operator==(const allocator& other)
+		{
+			return true;
+		}
+	};
+}
+
+#endif /* _PAF_STDCXX_MEMORY_H */
